@@ -208,7 +208,8 @@ $(function () {
     }
 
     // TODO: re-factor semantics
-    function getTracks(query, offset) {
+    function getTracks(query, offset, options) {
+        options = $.extend({}, options);
         var fetch;
         if (offset) {
             fetch = $.get(query);
@@ -225,8 +226,10 @@ $(function () {
         fetch.then(function (response) {
             cache.response = response;
             // new search?
-            if (!cache.tracks) {
-                resetTracks()
+            if (!cache.tracks || options.new) {
+                cache.$main.scrollTop(0);
+                cache.offset = 0;
+                cache.tracks = [];
             }
             if (response.collection.length) {
                 cache.tracks = cache.tracks.concat(response.collection);
@@ -234,20 +237,11 @@ $(function () {
                 if (response.next_href) {
                     cache.query.push(response.next_href);
                 }
-            } else {
-                // no results found
-                resetTracks();
             }
-            drawItems(response.collection, {
+            drawItems(response.collection || [], {
                 append: offset || false
             });
         });
-    }
-
-    function resetTracks() {
-        cache.$main.scrollTop(0);
-        cache.offset = 0;
-        cache.tracks = [];
     }
 
     function getRandomTrackIndex() {
@@ -325,34 +319,32 @@ $(function () {
             }
             cache.index = $item.index();
             /* beautify ignore:end */
-            setTimeout(function () {
-                SC.stream('/tracks/' + track.id).then(function (player) {
-                    // avoid triggering flash, as per: https://github.com/soundcloud/soundcloud-javascript/issues/39
-                    if (player.options.protocols[0] === 'rtmp') {
-                        player.options.protocols.splice(0, 1);
+            SC.stream('/tracks/' + track.id).then(function (player) {
+                // avoid triggering flash, as per: https://github.com/soundcloud/soundcloud-javascript/issues/39
+                if (player.options.protocols[0] === 'rtmp') {
+                    player.options.protocols.splice(0, 1);
+                }
+                if (cache.player && cache.player.isPlaying()) {
+                    cache.player.pause();
+                }
+                cache.player = player;
+                cache.player.on('created', function () {
+                    if (!cache.$player.is(':visible')) {
+                        showPlayer();
                     }
-                    if (cache.player && cache.player.isPlaying()) {
-                        cache.player.pause();
-                    }
-                    cache.player = player;
-                    cache.player.on('created', function () {
-                        if (!cache.$player.is(':visible')) {
-                            showPlayer();
-                        }
-                    }).on('play-start', function () {
-                        // updateProgressBar(true); // TODO: inspect necessity
-                    }).on('finish', function () {
-                        cache.played.push(cache.index);
-                        nextTrack();
-                    }).on('time', function () {
-                        updateProgressBar();
-                    });
-                    cache.$player_playPause.click();
-                    if (cache.isdev) {
-                        console.info('playing:', track.title);
-                    }
+                }).on('play-start', function () {
+                    // updateProgressBar(true); // TODO: inspect necessity
+                }).on('finish', function () {
+                    cache.played.push(cache.index);
+                    nextTrack();
+                }).on('time', function () {
+                    updateProgressBar();
                 });
-            }, cache.isdev ? cache.devPlayerLoaderDelay : 0);
+                cache.$player_playPause.click();
+                if (cache.isdev) {
+                    console.info('playing:', track.title);
+                }
+            });
         });
 
         cache.$player__buttons = $('.btn', cache.$player).click(function () {
@@ -436,7 +428,9 @@ $(function () {
                 return;
             }
             cache.searchQuery = this.value;
-            getTracks(this.value);
+            getTracks(this.value, null, {
+                new: true,
+            });
         }));
 
         cache.$menu.click(function () {
