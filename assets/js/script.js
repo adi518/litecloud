@@ -181,26 +181,27 @@ $(function () {
     }
 
     function previousTrack() {
-        var previousIndex = cache.index - 1,
-            $items = $('.list__item', cache.$list);
-        if (cache.tracks[cache.offset][previousIndex]) {
-            $items.get(previousIndex).click();
+        var previousIndex = cache.index - 1;
+        var $items = $('.list__item', cache.$list);
+        var $previousItem = $items.get(previousIndex);
+        if (cache.tracks[previousIndex] && $previousItem) {
+            $previousItem.click();
         } else if (cache.repeat) {
             $items.get(0).click();
         }
     }
 
     function nextTrack() {
-        cache.played.push(cache.index);
-        var nextIndex = cache.index + 1,
-            $items = $('.list__item', cache.$list);
+        var nextIndex = cache.index + 1;
+        var $items = $('.list__item', cache.$list);
+        var $nextItem = $items.get(nextIndex);
         if (cache.shuffle) {
             var randomIndex = getRandomTrackIndex();
             if (cache.tracks[randomIndex]) {
                 $items.get(randomIndex).click();
             }
-        } else if (cache.tracks[nextIndex]) {
-            $items.get(nextIndex).click();
+        } else if (cache.tracks[nextIndex] && $nextItem) {
+            $nextItem.click();
         } else if (cache.repeat) {
             $items.get(0).click();
         }
@@ -236,7 +237,7 @@ $(function () {
             } else {
                 // no results found
                 resetTracks();
-            }            
+            }
             drawItems(response.collection, {
                 append: offset || false
             });
@@ -341,6 +342,7 @@ $(function () {
                     }).on('play-start', function () {
                         // updateProgressBar(true); // TODO: inspect necessity
                     }).on('finish', function () {
+                        cache.played.push(cache.index);
                         nextTrack();
                     }).on('time', function () {
                         updateProgressBar();
