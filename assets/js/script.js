@@ -14,17 +14,14 @@ $(function () {
         version: '0.1',
         testKeyword: 'coldplay',
         test: true,
-        debug: true,
-        dev: window.location.hash.substring(1) === 'dev',
+        isdev: window.location.hash.substring(1) === 'dev',
         keyupDebounceDelay: 500,
         devLoaderDelay: 500,
         devPlayerLoaderDelay: 0,
         init: {
             grid: true
         },
-        // devPlayerLoaderDelay: 1500,
         clientId: 'd3cc13db45cba4f1ff6846dc46b0ef8a',
-        widgetUrl: 'https://w.soundcloud.com/player/?url=http://api.soundcloud.com/tracks/1848538',
         truncatedTitleLength: 20,
         played: [],
         queryOptions: {
@@ -114,20 +111,24 @@ $(function () {
         return ('0' + val).slice(-2);
     }
 
+    function stripHTML(val) {
+        return $('<p>' + val + '</p>').text();
+    }
+
     function drawItems(tracks, options) {
         options = $.extend({}, options);
         var markup = '';
-        var counter = 0;
+        var counter = 0; // eslint-disable-line
         var duration;
         if (tracks.length) {
             tracks.forEach(function (track) {
                 if (!track.custom) {
-                    track.custom = splitTrackTitle($('<p>' + track.title + '</p>').text());
+                    track.custom = splitTrackTitle(stripHTML(track.title));
                 }
                 if (track.artwork_url) {
                     counter++;
                     track.artwork_url = track.artwork_url.replace(/large/g, 't300x300');
-                    if (cache.dev) {
+                    if (cache.isdev) {
                         track.artwork_url.replace(/https:\/\/i1.sndcdn.com/g, 'assets/images/mockup');
                     }
                 }
@@ -152,8 +153,8 @@ $(function () {
                 markup += '</li>';
                 markup += '</div>';
             });
-            console.info('total tracks:', tracks.length);
-            console.info('total art-covers:', counter);
+            // console.info('total tracks:', tracks.length);
+            // console.info('total art-covers:', counter);
         } else {
             markup = '<div class="list__item">Your search - <b>' + cache.searchQuery + '</b> - did not match any tracks.</div>';
             cache.$body.removeClass('body--show-grid-view');
@@ -174,8 +175,6 @@ $(function () {
     }
 
     function replayTrack() {
-        // $items = $('.list__item', cache.$list).get(cache.index).click();
-        // $items.get(cache.index).click();
         updateProgressBar(true);
         cache.player.seek(0);
         cache.player.play();
@@ -197,10 +196,10 @@ $(function () {
             $items = $('.list__item', cache.$list);
         if (cache.shuffle) {
             var randomIndex = getRandomTrackIndex();
-            if (cache.tracks[cache.offset][randomIndex]) {
+            if (cache.tracks[randomIndex]) {
                 $items.get(randomIndex).click();
             }
-        } else if (cache.tracks[cache.offset][nextIndex]) {
+        } else if (cache.tracks[nextIndex]) {
             $items.get(nextIndex).click();
         } else if (cache.repeat) {
             $items.get(0).click();
@@ -223,43 +222,43 @@ $(function () {
         }
         // handle response
         fetch.then(function (response) {
-            if (cache.dev) {
-                cache.response = response; // dev-only
+            cache.response = response;
+            // new search?
+            if (!cache.tracks) {
+                resetTracks()
             }
-            if (response.collection) {
-                if (!cache.tracks || !offset) {
-                    cache.$main.scrollTop(0);
-                    cache.tracks = [];
-                    cache.offset = 0;
-                }
-                cache.tracks.push(response.collection);
-                // is paginated response?
+            if (response.collection.length) {
+                cache.tracks = cache.tracks.concat(response.collection);
+                // is partitioned response? https://developers.soundcloud.com/blog/offset-pagination-deprecated
                 if (response.next_href) {
                     cache.query.push(response.next_href);
                 }
-            }
-            drawItems(cache.tracks[cache.offset], {
+            } else {
+                // no results found
+                resetTracks();
+            }            
+            drawItems(response.collection, {
                 append: offset || false
             });
         });
     }
 
-    function isEmptyResult() {
-        return cache.query.length && cache.tracks[0].length === 0;
+    function resetTracks() {
+        cache.$main.scrollTop(0);
+        cache.offset = 0;
+        cache.tracks = [];
     }
 
     function getRandomTrackIndex() {
-        var randomIndex = getRandomInt(0, cache.tracks[cache.offset].length - 1);
-        if ($.inArray(randomIndex, cache.played) >= 0) {
-            if (cache.played.length === cache.tracks[cache.offset]) {
-                if (cache.debug) {
-                    console.log('played all songs @ offset:', cache.offset);
-                }
-                return 0;
-            }
-            getRandomTrackIndex();
+        if (cache.played.length === cache.tracks.length) {
+            console.log('played all tracks!');
+            return 0;
         }
-        return randomIndex;
+        var randomIndex = getRandomInt(0, cache.tracks.length - 1);
+        if ($.inArray(randomIndex, cache.played) === -1) {
+            return randomIndex;
+        }
+        getRandomTrackIndex();
     }
 
     function getRandomInt(min, max) {
@@ -268,25 +267,8 @@ $(function () {
         return Math.floor(Math.random() * (max - min)) + min;
     }
 
-    function updateHeaderView() {
-        cache.header__height = cache.$header.outerHeight();
-        // cache.$main.css('padding-top', 'calc(' + cache.header__height + 'px + 1rem)');
-        // cache.$main.css('top', 'calc(' + cache.header__height + 'px + 1rem)');
-        // console.log(cache.header__height);
-        // cache.$main.css({
-        // transform: 'translateY(' + (cache.header__height + 1) + 'px)',
-        // height: 'calc(100% - ' + cache.header__height + 'px - 2rem - 1px)'
-        // });
-    }
-
-    function updateFooterView() {
-        // cache.pagination__height = cache.$pagination.outerHeight();
-        // cache.$main.css('margin-bottom', 'calc(' + cache.pagination__height + 'px + 1rem)');
-    }
-
     function showPlayer() {
         cache.$player.removeClass('hidden');
-        updateHeaderView();
     }
 
     function splitTrackTitle(raw) {
@@ -302,22 +284,19 @@ $(function () {
         console.info('app version:', cache.version);
 
         cache.$audio[0].controls = false;
-        // cache.header__height = cache.$header.outerHeight();
         cache.$body.removeClass('body--show-loader');
-
-        // updateHeaderView();
 
         /* bind events */
 
         cache.$list.on('click', '.list__item', function () {
             // detect no-results
-            if (isEmptyResult()) {
+            if (!cache.tracks.length) {
                 return;
             }
-            var $item = $(this),
-                track = cache.tracks[cache.offset][$item.index()],
-                hasArtCover = track.artwork_url ? true : false;
-            // abort if user hit a playing track
+            var $item = $(this);
+            var track = cache.tracks[$item.index()];
+            var hasArtCover = track.artwork_url ? true : false;
+            // abort if user hit an already playing track
             if (cache.index === $item.index()) {
                 return;
             }
@@ -331,18 +310,19 @@ $(function () {
                                         .find('.list__playing-animation').removeClass('spin');
             }
             cache.$mask.css('background-image', 'url(' + (track.artwork_url || '') + ')');
-            // cache.$body.addClass('body--show-playing').toggleClass('body--show-mask', hasArtCover);
             cache.$body.toggleClass('body--show-mask', hasArtCover).toggleClass('body--animate-mask', hasArtCover);
+
+            // show what's playing
+            cache.$body.addClass('body--show-playing');
             cache.$playing.toggleClass('playing--no-artcover', !hasArtCover);
             cache.$playing_title.text(track.custom.title); // .html can cause script-tag execution
             cache.$playing_artist.text(track.custom.artist);
             if (hasArtCover) {
                 cache.$playing_thumbnail.css('background-image', 'url(' + track.artwork_url + ')');
             } else {
-                cache.$playing_thumbnail.css('background-image', 'none');
+                cache.$playing_thumbnail.css('background-image', '');
             }
             cache.index = $item.index();
-            updateFooterView();
             /* beautify ignore:end */
             setTimeout(function () {
                 SC.stream('/tracks/' + track.id).then(function (player) {
@@ -359,22 +339,21 @@ $(function () {
                             showPlayer();
                         }
                     }).on('play-start', function () {
-                        // updateProgressBar(true);
+                        // updateProgressBar(true); // TODO: inspect necessity
                     }).on('finish', function () {
                         nextTrack();
                     }).on('time', function () {
                         updateProgressBar();
                     });
                     cache.$player_playPause.click();
-                    if (cache.debug) {
+                    if (cache.isdev) {
                         console.info('playing:', track.title);
                     }
                 });
-            }, cache.dev ? cache.devPlayerLoaderDelay : 0);
+            }, cache.isdev ? cache.devPlayerLoaderDelay : 0);
         });
 
         cache.$player__buttons = $('.btn', cache.$player).click(function () {
-            // var $btn = $(this);
             switch (this.id.replace(/player-/g, '')) {
             case 'playPause':
                 togglePlayPause();
@@ -392,10 +371,10 @@ $(function () {
         });
 
         cache.$nav__buttons = $('.btn', cache.$nav).click(function () {
-            var $btn = $(this),
-                action = $btn.data('action'),
-                toggle = $btn.data('toggle'),
-                dismiss = $btn.data('dismiss');
+            var $btn = $(this);
+            var action = $btn.data('action');
+            var toggle = $btn.data('toggle');
+            var dismiss = $btn.data('dismiss');
             if (toggle) {
                 $btn.addClass('hidden');
                 cache.$nav__buttons.filter('[data-modifier = ' + toggle + ']').not(this).removeClass('hidden');
@@ -440,10 +419,12 @@ $(function () {
                 parseInt($this.css('border-top-width'), 10) +
                 parseInt($this.css('border-bottom-width'), 10);
             if (scrollPosition == totalHeight) {
-                if (cache.tracks[cache.offset + 1]) {
-                    drawItems(cache.tracks[++cache.offset]);
-                } else if (cache.query[cache.offset + 1]) {
-                    getTracks(cache.query[++cache.offset], true);
+                if (cache.query[cache.offset + 1]) {
+                    if (cache.isdev) {
+                        getTracks(cache.query[cache.offset], true);
+                    } else {
+                        getTracks(cache.query[++cache.offset], true);
+                    }
                 }
             }
         });
@@ -478,7 +459,7 @@ $(function () {
 
     /* beam me up scotty! */
 
-    if (cache.dev) {
+    if (cache.isdev) {
         console.warn('initialized development-mode, loaded mockup data...');
         cache.player = mockup.player;
         SC = mockup.SC;
@@ -488,5 +469,5 @@ $(function () {
         });
     }
 
-    setTimeout(init, cache.dev ? cache.devLoaderDelay : 0);
+    setTimeout(init, cache.isdev ? cache.devLoaderDelay : 0);
 });

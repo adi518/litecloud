@@ -1,0 +1,46 @@
+/* scss-lint:disable Compass::PropertyWithMixin */
+/* scss-lint:disable ColorKeyword */
+/* scss-lint:disable ColorVariable */
+
+.playing {
+    @extend %display-none;
+    cursor: default;
+    padding-top: to-rem(10);
+
+    &--no-artcover {
+        .playing__thumbnail {
+            border-radius: 0;
+            background-image: url('../images/ic_album_black_48px.svg');
+        }
+    }
+
+    &__thumbnail {
+        border-radius: 50%;
+        width: to-rem($playing-thumbnail-size);
+        height: to-rem($playing-thumbnail-size);
+        background-size: cover;
+    }
+
+    &__description {
+        color: #666;
+    }
+
+    &__artist {
+        &:not(:empty) {
+            padding-top: to-rem(10);
+            color: #fff;
+        }
+
+        &:empty {
+            + .playing__title {
+                padding-top: to-rem(10);
+            }
+        }
+    }
+
+    &__title {
+        &:not(:empty) {
+            padding-top: to-rem(5);
+        }
+    }
+}

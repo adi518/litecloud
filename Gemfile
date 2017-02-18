@@ -1,7 +1,4 @@
-source 'https://rubygems.org'
-git 'https://github.com/ably-forks/compass', branch: 'sass-deprecation-warning-fix' do
-  gem 'compass-core'
-end
+source 'http://rubygems.org'
 gem 'compass'
 gem 'support-for'
 gem 'normalize-scss'

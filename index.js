@@ -46,7 +46,7 @@ function createWindow() {
         //
     } else {
         options.minWidth = 1280;
-        options.minWidth = 1024;
+        options.minHeight = 1024;
         // options.frame = false; // removes the entire interface, relevant once implementing proprietary interface
     }
 
