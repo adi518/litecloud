@@ -1,0 +1,54 @@
+# scss_files: 'src/sass/**/*.css.scss'
+# exclude: 'src/sass/_vendor/**'
+
+linters:
+    PseudoElement:
+        enabled: false
+
+    PropertySortOrder:
+        enabled: false
+
+    DuplicateProperty:
+        enabled: false
+
+    Indentation:
+        allow_non_nested_indentation: true
+        width: 4
+
+    SelectorDepth:
+        max_depth: 16
+
+    SpaceAfterPropertyColon:
+        enabled: true
+
+    Compass::*:
+        enabled: true
+
+    NestingDepth:
+        enabled: true
+        max_depth: 16
+        # ignore_parent_selectors: true
+
+    IdSelector:
+        enabled: false
+
+    ImportantRule:
+        enabled: false
+
+    QualifyingElement:
+        allow_element_with_attribute: true
+        allow_element_with_class: true
+        allow_element_with_id: true
+
+    PlaceholderInExtend:
+      enabled: false
+
+    Comment:
+        enabled: false
+
+    VendorPrefix:
+        excluded_identifiers: ['touch-action']
+
+    SelectorFormat:
+        enabled: true
+        convention: hyphenated_BEM

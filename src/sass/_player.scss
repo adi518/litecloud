@@ -1,0 +1,62 @@
+/* scss-lint:disable all */
+// ref: https://css-tricks.com/html5-progress-element/
+
+#player {
+    //
+    &:not(.hidden) {
+        + #search {
+            margin-top: to-rem(10);
+        }
+    }
+
+    // .logo {
+    //     @extend %float-right;
+    //     @extend %no-outline;
+    //     margin-right: 0;
+    //     color: #555;
+    //     font-size: 1.5rem;
+    //     cursor: pointer;
+    // }
+
+    .btn--player {
+        @extend %float-left;
+
+        &:not(:last-child) {
+            margin-right: to-rem(10);
+        }
+    }
+
+    // progress:not([value]) {
+    progress {
+        @extend %display-block;
+        @extend %full-width; // has user-agent default
+        @extend %cursor-pointer;
+        // reset the default appearance
+        -webkit-appearance: none;
+        appearance: none;
+        height: to-rem(5);
+        transition: height .3s;
+        top: 0;
+        left: 0;
+
+        &::-webkit-progress-bar {
+            transition: width .2s;
+        }
+
+        &::-webkit-progress-value {
+            //
+        }
+
+        &:hover {
+            height: to-rem(10);
+        }
+    }
+
+    // .pause {}
+    // .stop {}
+    // .volume-plus {}
+    // .volume-minus {}
+    // .mute {}
+    // .unmute {}
+    // .replay {}
+}

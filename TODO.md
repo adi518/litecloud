@@ -1,0 +1,7 @@
+- [x] Basic functionality
+- [ ] Convert to React.js
+- [ ] Feature - Playlists
+- [ ] Feature - Discover
+- [ ] Feature - Top 100
+- [ ] Mobile version
+- [ ] Wrap in Electron

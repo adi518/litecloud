@@ -1,0 +1,54 @@
+doctype html
+html(lang="en")
+    head
+        title= "Litecloud"
+        meta(charset="utf-8")
+        meta(http-equiv="x-ua-compatible" content="ie=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(rel="stylesheet" href="assets/css/styles.css")
+        link(rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700")
+    body(id="body" class="body--show-loader body--theme-spotify")
+        //- header(id="header" class="header--new-style")
+        //- div(id="main-container")
+        nav(id="nav" class="nav nav--main")
+            #player(class="hidden")
+                audio#audio(type='audio/mpeg' controls='')
+                #media-controls
+                    progress#progress-bar(min='0', max='100', value='0') 0% played
+                    nav.nav--player.clearfix
+                        button#player-playPause(class="btn btn--player" title='play') &#9654;&nbsp;play
+                        button#player-replay(class="btn btn--player" title='replay') &#10226;&nbsp;replay
+                        button#player-next(class="btn btn--player" title='next') &#10095;&nbsp;next
+                        button#player-previous(class="btn btn--player" title='previous') &#10094;&nbsp;previous
+            input(id="search" name="search" type="text" placeholder="...")
+            button(class="btn btn--nav" data-modifier="body--show-grid-view" data-toggle="body--show-grid-view" data-dismiss="true") &#9783;&nbsp;grid view
+            button(class="btn btn--nav hidden" data-modifier="body--show-grid-view" data-toggle="body--show-grid-view" data-dismiss="true") &#9776;&nbsp;list view
+            button(class="btn btn--nav" data-action="repeat") &#8766;&nbsp;repeat
+            button(class="btn btn--nav" data-action="shuffle") &#10547;&nbsp;shuffle
+            button(class="btn btn--nav" data-action="autoplay") &#9738;&nbsp;autoplay
+            //- button(class="btn hidden" data-modifier="body--dark-theme" data-toggle="body--dark-theme")&#9763;&nbsp;dark-theme
+            //- button(class="btn" data-modifier="body--dark-theme" data-toggle="body--dark-theme")&#9728;&nbsp;light-theme
+        main(id="main")
+            section(id="list" class="list")
+        //- div(id="playing" class="playing")
+            //- div(id="playing-thumbnail" class="playing__thumbnail")
+            //- div(class="playing__description")
+                //- div(id="playing-artist" class="playing__artist")
+                //- div(id="playing-title" class="playing__title")
+        //- button(id="menu")
+            //- <i class="fa fa-cog" aria-hidden="true"></i>
+        //-     i(class="dot")
+        div(class="loader3 loader--global")
+            div(class="inner one")
+            div(class="inner two")
+            div(class="inner three")
+        div(class="overlay")
+        div(id="mask" class="mask")
+        script(src="assets/js/script.js")
+        script(src="assets/js/vendor/jquery.$$.min.js")
+        script(src="assets/js/vendor/jquery.ba-throttle-debounce.min.js")
+        script(src="assets/js/vendor/soundcloud/sdk-3.1.2.js")
+        script(src="assets/js/jquery-extensions.js")
+        script(src="assets/js/mockup.js")
+        script.
+            require('./renderer.js')

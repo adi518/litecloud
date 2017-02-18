@@ -1,0 +1,187 @@
+/* scss-lint:disable Compass::PropertyWithMixin */
+/* scss-lint:disable ColorVariable */
+
+%display-none {
+    display: none;
+}
+
+%display-flex {
+    display: flex;
+}
+
+%display-block {
+    display: block;
+}
+
+%display-inline-block {
+    display: inline-block;
+}
+
+%display-inline {
+    display: inline-block;
+}
+
+%visible {
+    visibility: visible;
+}
+
+%invisible {
+    visibility: hidden;
+}
+
+%hidden {
+    @extend %display-none;
+}
+
+%float-left {
+    float: left;
+}
+
+%float-right {
+    float: right;
+}
+
+%float-none {
+    float: none;
+}
+
+%clear-both {
+    clear: both;
+}
+
+%position-relative {
+    position: relative;
+}
+
+%position-absolute {
+    position: absolute;
+}
+
+%position-fixed {
+    position: fixed;
+}
+
+%position-static {
+    position: static;
+}
+
+%auto-margin {
+    margin: auto;
+}
+
+%auto-horizontal-margin {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+%no-margin {
+    margin: 0;
+}
+
+%no-padding {
+    padding: 0;
+}
+
+%full-width {
+    width: 100%;
+}
+
+%full-height {
+    height: 100%;
+}
+
+%overflow-hidden {
+    overflow: hidden;
+}
+
+%overflow-auto {
+    overflow: auto;
+}
+
+%white-space-nowrap {
+    white-space: nowrap;
+}
+
+%text-overflow-ellipsis {
+    text-overflow: ellipsis;
+}
+
+%font-family-gotham {
+    font-family: 'Gotham SSm A', 'Gotham SSm B', Interstate, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Garuda, Verdana, Tahoma, sans-serif;
+}
+
+%half-border-radius {
+    border-radius: 50%;
+}
+
+%cursor-pointer {
+    cursor: pointer;
+}
+
+%no-user-select {
+    /* scss-lint:disable VendorPrefix */
+    -webkit-user-select: none;
+    user-select: none;
+    /* scss-lint:disable VendorPrefix */
+}
+
+%clearfix {
+    &:after,
+    &:before {
+        @extend %overflow-hidden;
+        display: block;
+        content: '\0020';
+        height: 0;
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+%content-empty {
+    content: '';
+}
+
+%no-outline {
+    outline: 0;
+}
+
+%animation-fill-mode-forwards {
+    animation-fill-mode: forwards;
+}
+
+%custom-vertical-align {
+    @include vertical-align;
+}
+
+%lowercase {
+    text-transform: lowercase;
+}
+
+%uppercase {
+    text-transform: uppercase;
+}
+
+/* custom */
+
+%icono {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    font-style: normal;
+    color: #ddd;
+    text-align: left;
+    text-indent: -9999px;
+    direction: ltr;
+
+    &:after,
+    &:before {
+        content: '';
+        pointer-events: none;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+}

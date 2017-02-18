@@ -1,0 +1,40 @@
+/* scss-lint:disable Compass::PropertyWithMixin */
+
+.nav--main,
+.overlay,
+.mask,
+header,
+main,
+progress {
+    @extend %position-fixed;
+    // pass rendering to a gpu thread, important for fps performance
+    // ref: https://benfrain.com/improving-css-performance-fixed-position-elements/
+    // ref: http://stackoverflow.com/questions/12969228/chrome-slow-scrolling-with-fixed-position-elements
+    // ref: http://stackoverflow.com/questions/17410287/position-fixed-has-a-very-bad-performance-on-mobile-tablet-devices-when-scrol
+    backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
+}
+
+header {
+    z-index: 3;
+}
+
+.nav--main {
+    z-index: 2;
+}
+
+main {
+    z-index: 2;
+}
+
+.mask {
+    z-index: 0;
+
+    &:after {
+        z-index: 1;
+    }
+}
+
+.overlay {
+    z-index: 9;
+}

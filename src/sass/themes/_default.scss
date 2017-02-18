@@ -1,0 +1,90 @@
+/* scss-lint:disable Compass::PropertyWithMixin */
+/* scss-lint:disable ColorVariable */
+/* scss-lint:disable ColorKeyword */
+
+// layout
+
+header {
+    background-color: whitesmoke;
+    border-bottom: 2px solid lightgray;
+}
+
+main {
+    // background-color: #fff;
+}
+
+.overlay {
+    background-color: whitesmoke;
+}
+
+.mask {
+    background-color: whitesmoke;
+    background-blend-mode: color;
+}
+
+// components
+
+#player {
+    progress {
+        &::-webkit-progress-bar {
+            background-color: transparent;
+        }
+
+        &::-webkit-progress-value {
+            background-color: plum;
+            // background-color: rgba(0, 0, 0, .45);
+        }
+    }
+}
+
+::-webkit-input-placeholder {
+    color: #000;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: lightslategrey;
+}
+
+.btn--nav {
+    background-color: transparent;
+    border-width: 0;
+
+    &:hover {
+        color: plum;
+    }
+}
+
+.loader2 {
+    border-top-color: plum;
+}
+
+.list {
+    &:not(:empty):not(.no-results) {
+        .list__item {
+            &:hover {
+                color: lightslategrey;
+            }
+        }
+    }
+
+    &__thumbnail {
+        color: #fff;
+        background-color: lightslategrey;
+    }
+
+    &__item--visited {
+        color: #818181;
+
+        &.list__item--no-artwork .list__thumbnail {
+            background-color: plum;
+        }
+    }
+
+    &__tag {
+        color: #fff;
+        background-color: #000;
+    }
+}
+
+// states
+//

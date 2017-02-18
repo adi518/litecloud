@@ -1,0 +1,24 @@
+$root-font-scale: 100 !default; // 100% = cross-browser 16px; unit: percent, ref: http://pxtoem.com/
+$root-font-size: 16 * $root-font-scale / 100;
+$app-width: calc(100% - 250px) !default;
+$app-min-width: 670px !default;
+$thumbnail-size: 135px !default;
+$large-thumbnail-size: 195px !default;
+$playing-animation-size: 2rem !default;
+$large-playing-animation-size: 3rem !default;
+$global-loader-size: 5rem !default;
+$search-line-height: 1.5rem !default;
+$header-vertical-padding: to-rem(10 * 2) !default;
+$header-height-expression: 2.5rem + #{$header-vertical-padding} + 2px !default;
+$header-height: calc(#{$header-height-expression}) !default;
+$main-padding-top: calc(#{$header-height-expression} + 1rem) !default;
+// $item-font-family: SourceSansLocal, source-sans-pro, Source Sans Pro, -apple-system, Roboto, pt sans, calibri, sans-serif !default;
+// $main-padding-top: calc(#{$header-height-expression} + 1rem) !default;
+// $main-padding-top-with-player: calc(#{$header-height-expression} + 166px + #{to-rem(15)} + 1rem) !default;
+
+// COLORS
+$orange: #f50 !default;
+$moroccan-blue: #0e4a64;
+
+// FONT-AWESOME
+// $fa-font-path: !default;

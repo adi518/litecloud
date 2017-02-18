@@ -1,0 +1,29 @@
+/* scss-lint:disable Compass::PropertyWithMixin */
+@import 'normalize';
+
+// bof: normalize
+@include normalize;
+// eof: normalize
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+html {
+    box-sizing: border-box;
+
+    * {
+        &:after,
+        &:before,
+        &:not(head) {
+            box-sizing: inherit;
+        }
+    }
+}
+
+iframe {
+    @extend %display-block;
+}

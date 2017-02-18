@@ -1,0 +1,15 @@
+.clearfix {
+    @extend %clearfix;
+}
+
+.hidden {
+    @extend %display-none;
+
+    &--important {
+        display: none !important;
+    }
+}
+
+.preload * {
+    transition: none !important;
+}

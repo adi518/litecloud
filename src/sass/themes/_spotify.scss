@@ -1,0 +1,113 @@
+/* scss-lint:disable Compass::PropertyWithMixin */
+/* scss-lint:disable ColorVariable */
+/* scss-lint:disable ColorKeyword */
+/* scss-lint:disable Indentation */
+//
+@mixin theme-spotify {
+     @include theme-dark;
+
+    .btn--nav {
+        &.btn--selected {
+            color: lime;
+        }
+
+        &:hover {
+            color: lime;
+        }
+    }
+
+    #menu {
+        &:hover {
+            .dot,
+            .dot:after,
+            .dot:before {
+                background-color: lime;
+            }
+        }
+    }
+
+    // components
+
+    .loader--global-wave {
+        .sk-rect {
+            background-color: lime;
+        }
+    }
+
+    .loader2 {
+        border-top-color: lime;
+        //
+        @at-root {
+            .list__item--no-artwork {
+                .loader2 {
+                    border-color: rgba(255, 255, 255, .15);
+                    border-top-color: #fff;
+                }
+            }
+        }
+    }
+
+    .btn {
+        &.btn--player {
+            &:hover {
+                color: lime;
+            }
+        }
+
+        &.btn--style-1 {
+            &.btn--selected {
+                color: lime;
+
+                &:hover {
+                    color: lime;
+                }
+            }
+        }
+
+        &.btn--player-icon {
+            &:hover {
+                color: lime;
+            }
+        }
+    }
+
+    #player {
+        progress {
+            &::-webkit-progress-bar {
+                background-color: rgba(0, 0, 0, .5);
+            }
+
+            &::-webkit-progress-value {
+                background-color: lime;
+            }
+        }
+    }
+
+    .list {
+        &:not(:empty):not(.no-results) .list__item:hover {
+            .list__track-title {
+                color: lime;
+            }
+        }
+
+        &__item {
+            &.list__item--no-artwork {
+                &:hover {
+                    .list__thumbnail {
+                        background-color: limegreen;
+                    }
+                }
+            }
+        }
+
+        &__item--selected {
+            &.list__item--no-artwork .list__thumbnail {
+                background-color: limegreen;
+            }
+        }
+    }
+}
+
+.body--theme-spotify {
+    @include theme-spotify;
+}

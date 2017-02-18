@@ -1,0 +1,151 @@
+/* scss-lint:disable Compass::PropertyWithMixin */
+/* scss-lint:disable ColorKeyword */
+/* scss-lint:disable ColorVariable */
+// order matters!
+// @import 'vendor/hamburgers/hamburgers';
+// font-awesome
+@import 'vendor/font-awesome/font-awesome';
+// spinkit
+@import '../../node_modules/spinkit/scss/spinners/3-wave';
+// icono
+// @import '../../node_modules/icono/sass/variables';
+// @import '../../node_modules/icono/sass/mixins';
+// @import '../../node_modules/icono/sass/functions';
+// @import '../../node_modules/icono/sass/generals';
+// @import '../../node_modules/icono/sass/icons/headphone';
+// loader
+@import 'scrollbar';
+@import 'loader';
+@import 'loader2';
+@import 'list';
+
+// replaced simplebar with native webkit scrollbar css
+// .simplebar-track .simplebar-scrollbar {
+//     background-color: #333;
+// }
+
+#search {
+    @extend %full-width;
+    @extend %display-block;
+    @extend %no-outline;
+    padding-left: to-rem(15);
+    padding-right: to-rem(15);
+    border-width: 0;
+    border-radius: 30px;
+    line-height: $search-line-height;
+    margin-bottom: 20px;
+}
+
+::-webkit-input-placeholder {
+    //
+}
+
+button {
+    &:not(.btn) {
+        @extend %cursor-pointer;
+    }
+}
+
+i,
+span {
+    &.btn {
+        @extend %display-inline-block;
+    }
+}
+
+%clear-btn {
+    background-color: transparent;
+    border-width: 0;
+}
+
+%btn--style-1 {
+    @extend %no-outline;
+}
+
+.btn {
+    @extend %cursor-pointer;
+    @extend %uppercase;
+    font-style: normal;
+    transition: color .2s;
+
+    &.btn--clear,
+    &.btn--style-1 {
+        @extend %clear-btn;
+    }
+
+    &.btn--style-1 {
+        @extend %btn--style-1;
+    }
+
+    &.btn--player {
+        @extend %clear-btn;
+        @extend %no-outline;
+
+        i {
+            @extend %display-block;
+        }
+    }
+
+    &.btn--player-icon {
+        @extend %clear-btn;
+        @extend %no-outline;
+        font-size: .65rem;
+
+        i {
+            @extend %display-block;
+        }
+    }
+
+    &.btn--nav {
+        @extend %btn--style-1;
+        @extend %full-width;
+        text-align: left;
+        line-height: 2rem;
+        height: calc(2rem + 1px);
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+    }
+}
+
+// inspiration: http://tobiasahlin.com/demo/animated-menu/
+#menu {
+    @extend %clear-btn;
+    @extend %float-left;
+    @extend %no-outline;
+    @include transform-style(preserve-3d);
+    height: to-rem(32);
+    padding-right: to-rem(15);
+
+    .dot {
+        @extend %display-block;
+    }
+}
+
+// ref: http://tympanus.net/Development/DotNavigationStyles/
+// ref: https://codepen.io/sebj54/pen/shdHw
+.dot,
+.dot:after,
+.dot:before {
+    width: to-rem(4);
+    height: to-rem(4);
+    border-radius: 50%;
+}
+
+.dot {
+    @extend %position-relative;
+
+    &:after,
+    &:before {
+        @extend %content-empty;
+        @extend %position-absolute;
+        left: 0;
+    }
+
+    &:before {
+        top: to-rem(10);
+    }
+
+    &:after {
+        bottom: to-rem(10);
+    }
+}

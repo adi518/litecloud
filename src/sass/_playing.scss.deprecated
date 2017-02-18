@@ -1,0 +1,65 @@
+/* scss-lint:disable Compass::PropertyWithMixin */
+/* scss-lint:disable ColorKeyword */
+/* scss-lint:disable ColorVariable */
+
+.playing {
+    $thumbnail-size: 2rem;
+    @extend %clearfix; // unneeded if height is set
+    @extend %cursor-pointer;
+    @include hide;
+    border-bottom: 1px solid #222;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+
+    &--no-artcover {
+        .playing__thumbnail {
+            image-rendering: auto;
+            border: 1px solid #000;
+            background-color: #161616;
+
+            &:after {
+                @extend %content-empty;
+                @extend %display-block;
+                @extend %auto-horizontal-margin;
+                @include vertical-align;
+                width: 1rem;
+                height: 1rem;
+                background-size: 1rem 1rem;
+                background-image: url('../images/ic_album_black_48px.svg');
+            }
+        }
+    }
+
+    &__thumbnail {
+        @extend %float-left;
+        width: $thumbnail-size;
+        height: $thumbnail-size;
+        background-size: cover;
+        image-rendering: -webkit-optimize-contrast;
+    }
+
+    &__description {
+        @extend %float-left;
+        padding-left: to-rem(15);
+        line-height: initial;
+        font-size: .7rem;
+        // font-size: to-rem(14);
+        color: #666;
+    }
+
+    &__artist {
+        color: #fff;
+
+        &:empty {
+            + .playing__title {
+                color: #fff;
+                padding-top: 0;
+            }
+        }
+    }
+
+    &__title {
+        padding-top: to-rem(5);
+        font-size: .6rem;
+    }
+}
