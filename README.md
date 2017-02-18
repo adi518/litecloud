@@ -5,7 +5,7 @@
 Hit `run-all.vbs` to compile SCSS & view @ localhost:8000. Alternatively, you can use `live-preview`, such as in [Brackets](http://brackets.io/).
 
 ## Support
-Please [open an issue](https://github.com/adi518/soundcloud-spa/issues) for support.
+Please [open an issue](https://github.com/adi518/litecloud/issues) for support.
 
 ## Development & Contributing
 * [Node.js](https://nodejs.org/en/) (```Stable```)
@@ -13,4 +13,4 @@ Please [open an issue](https://github.com/adi518/soundcloud-spa/issues) for supp
 ## Preview
 ![Alt](preview.jpg)
 
-![Alt](preview2.jpg)
+![Alt](preview-list.jpg)
