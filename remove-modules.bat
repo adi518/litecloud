@@ -1,1 +1,1 @@
-rimraf node_modules bower_components
+rimraf node_modules

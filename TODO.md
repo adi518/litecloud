@@ -1,7 +1,8 @@
 - [x] Basic functionality
-- [ ] Convert to React.js
+- [x] Wrap in Electron
+- [ ] Implement React
+- [ ] Feature - Favorites/Liked
 - [ ] Feature - Playlists
 - [ ] Feature - Discover
 - [ ] Feature - Top 100
 - [ ] Mobile version
-- [ ] Wrap in Electron
