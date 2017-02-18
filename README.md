@@ -1,5 +1,5 @@
 ## Prerequisites
-* `git clone https://github.com/adi518/soundcloud-spa.git`
+* `git clone https://github.com/adi518/litecloud.git`
 
 ## Run
 Hit `run-all.vbs` to compile SCSS & view @ localhost:8000. Alternatively, you can use `live-preview`, such as in [Brackets](http://brackets.io/).
