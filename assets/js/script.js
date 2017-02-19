@@ -392,17 +392,9 @@ $(function () {
         cache.$progress_bar.click(function (e) {
             var posX = e.pageX - $(this).position().left;
             if (cache.player.isPlaying()) {
-                cache.player.seek(posX / cache.$progress_bar.width() * cache.tracks[cache.offset][cache.index].duration);
+                cache.player.seek(posX / cache.$progress_bar.width() * cache.tracks[cache.index].duration);
             }
         });
-
-        // TODO: remove
-        // cache.$prev.click(function () {
-        //     drawItems(cache.tracks[--cache.offset]);
-        //     cache.$prev.toggle(cache.offset ? true : false);
-        //     var isMoreTracks = cache.tracks[cache.offset + 1] || cache.query[cache.offset + 1];
-        //     cache.$next.toggle(isMoreTracks ? true : false);
-        // });
 
         cache.$main.scroll(function () {
             var $this = $(this);
