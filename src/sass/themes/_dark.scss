@@ -112,17 +112,21 @@ $init-loader-color: $orange;
     }
 
     .list {
-        &:not(:empty):not(.no-results) .list__item:hover {
+        &.no-results {
+            color: #555;
+        }
+
+        &:not(.no-results) .list__item:hover {
+            &:hover {
+                background-color: #191919;
+            }
+
             .list__track-title {
                 color: $orange;
             }
         }
 
         &__item {
-            &:hover {
-                background-color: #191919;
-            }
-
             .list__thumbnail {
                 background-color: #111;
             }

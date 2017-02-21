@@ -4527,32 +4527,36 @@ body.body--show-grid-view .list__item {
 .no-results .list__item {
   text-align: center;
 }
+/* line 9, src/sass/_list.scss */
+.no-results .list__item:hover {
+  background-color: transparent;
+}
 
-/* line 11, src/sass/_list.scss */
+/* line 15, src/sass/_list.scss */
 .list {
   padding-top: 2.1875rem;
   padding-bottom: 2.1875rem;
   margin-left: 1.25rem;
   margin-right: 1.25rem;
 }
-/* line 17, src/sass/_list.scss */
+/* line 21, src/sass/_list.scss */
 .list:not(:empty) {
   list-style-type: none;
 }
-/* line 27, src/sass/_list.scss */
+/* line 31, src/sass/_list.scss */
 .list__item {
   padding-right: 2.1875rem;
   transition: padding .2s;
 }
-/* line 34, src/sass/_list.scss */
+/* line 38, src/sass/_list.scss */
 .list__item:hover .list__list {
   margin-top: 0.625rem;
 }
-/* line 39, src/sass/_list.scss */
+/* line 43, src/sass/_list.scss */
 .list__item:not(:first-child) {
   margin-top: 2.1875rem;
 }
-/* line 44, src/sass/_list.scss */
+/* line 48, src/sass/_list.scss */
 .list__item.list__item--no-artwork .list__icon {
   transform: translateY(-50%);
   position: relative;
@@ -4565,15 +4569,15 @@ body.body--show-grid-view .list__item {
   margin: 0 auto;
   opacity: .45;
 }
-/* line 56, src/sass/_list.scss */
+/* line 60, src/sass/_list.scss */
 .list__item.list__item--no-artwork .list__thumbnail {
   image-rendering: auto;
 }
-/* line 61, src/sass/_list.scss */
+/* line 65, src/sass/_list.scss */
 .list__item.list__item--no-artwork:hover .list__icon {
   opacity: .5;
 }
-/* line 68, src/sass/_list.scss */
+/* line 72, src/sass/_list.scss */
 .list__thumbnail {
   height: 135px;
   width: 135px;
@@ -4583,7 +4587,7 @@ body.body--show-grid-view .list__item {
   transition: background-color .2s, background-blend-mode .2s;
   image-rendering: -webkit-optimize-contrast;
 }
-/* line 79, src/sass/_list.scss */
+/* line 83, src/sass/_list.scss */
 .list__item--selected {
   padding-top: 0.625rem;
   padding-bottom: 0.625rem;
@@ -4591,46 +4595,46 @@ body.body--show-grid-view .list__item {
   border-bottom-width: 1px;
   border-bottom-style: solid;
 }
-/* line 87, src/sass/_list.scss */
+/* line 91, src/sass/_list.scss */
 .list__item--selected:hover .list__list {
   margin-top: 0;
 }
-/* line 92, src/sass/_list.scss */
+/* line 96, src/sass/_list.scss */
 .list__item--selected.list__item--no-artwork .list__icon {
   display: none;
 }
-/* line 96, src/sass/_list.scss */
+/* line 100, src/sass/_list.scss */
 .list__item--selected .list__playing-animation-wrapper {
   height: inherit;
 }
-/* line 101, src/sass/_list.scss */
+/* line 105, src/sass/_list.scss */
 .list__item--selected .list__thumbnail {
   background-blend-mode: multiply;
 }
-/* line 106, src/sass/_list.scss */
+/* line 110, src/sass/_list.scss */
 .list__item--selected .list__list {
   margin-top: 0;
 }
-/* line 111, src/sass/_list.scss */
+/* line 115, src/sass/_list.scss */
 .list__list {
   list-style-type: none;
   transition: margin-top, .1s;
 }
 @media screen and (max-width: 600px) {
-  /* line 111, src/sass/_list.scss */
+  /* line 115, src/sass/_list.scss */
   .list__list {
     font-size: 1rem;
   }
-  /* line 119, src/sass/_list.scss */
+  /* line 123, src/sass/_list.scss */
   .list__list .list__truncated {
     font-size: 0;
   }
 }
-/* line 125, src/sass/_list.scss */
+/* line 129, src/sass/_list.scss */
 .list__truncated {
   font-size: 0;
 }
-/* line 133, src/sass/_list.scss */
+/* line 137, src/sass/_list.scss */
 .list__playing-animation {
   position: relative;
   display: block;
@@ -4640,7 +4644,7 @@ body.body--show-grid-view .list__item {
   width: 2rem;
   height: 2rem;
 }
-/* line 143, src/sass/_list.scss */
+/* line 147, src/sass/_list.scss */
 .list__tag {
   position: absolute;
   right: 0;
@@ -4651,11 +4655,11 @@ body.body--show-grid-view .list__item {
   max-width: 70%;
 }
 
-/* line 158, src/sass/_list.scss */
+/* line 162, src/sass/_list.scss */
 small {
   font-size: 100%;
 }
-/* line 161, src/sass/_list.scss */
+/* line 165, src/sass/_list.scss */
 small:not(:last-child):after {
   content: ' – ';
 }
@@ -4979,6 +4983,13 @@ small:not(:last-child):after {
   float: right;
 }
 
+/* line 25, src/sass/_helper-classes.scss */
+b,
+strong {
+  font-weight: 400;
+  font-family: "Montserrat-Medium";
+}
+
 /* scss-lint:disable Compass::PropertyWithMixin */
 /* scss-lint:disable ColorVariable */
 /* scss-lint:disable ColorKeyword */
@@ -5175,7 +5186,7 @@ body.body--show-grid-view .list__thumbnail {
   background-color: #000;
 }
 
-/* line 184, src/sass/themes/_dark.scss */
+/* line 188, src/sass/themes/_dark.scss */
 .body--theme-dark {
   background-color: #111;
 }
@@ -5265,60 +5276,64 @@ body.body--show-grid-view .list__thumbnail {
 .body--theme-dark .btn--player-icon:hover {
   color: #f50;
 }
-/* line 116, src/sass/themes/_dark.scss */
-.body--theme-dark .list:not(:empty):not(.no-results) .list__item:hover .list__track-title {
-  color: #f50;
+/* line 115, src/sass/themes/_dark.scss */
+.body--theme-dark .list.no-results {
+  color: #555;
 }
-/* line 122, src/sass/themes/_dark.scss */
-.body--theme-dark .list__item:hover {
+/* line 120, src/sass/themes/_dark.scss */
+.body--theme-dark .list:not(.no-results) .list__item:hover:hover {
   background-color: #191919;
 }
-/* line 126, src/sass/themes/_dark.scss */
+/* line 124, src/sass/themes/_dark.scss */
+.body--theme-dark .list:not(.no-results) .list__item:hover .list__track-title {
+  color: #f50;
+}
+/* line 130, src/sass/themes/_dark.scss */
 .body--theme-dark .list__item .list__thumbnail {
   background-color: #111;
 }
-/* line 132, src/sass/themes/_dark.scss */
+/* line 136, src/sass/themes/_dark.scss */
 .body--theme-dark .list__item.list__item--no-artwork:hover .list__thumbnail {
   background-color: #f50;
 }
-/* line 136, src/sass/themes/_dark.scss */
+/* line 140, src/sass/themes/_dark.scss */
 .body--theme-dark .list__item.list__item--no-artwork:hover .list__playing-animation {
   color: #fff;
 }
-/* line 143, src/sass/themes/_dark.scss */
+/* line 147, src/sass/themes/_dark.scss */
 .body--theme-dark .list__item--selected {
   background-color: #151515;
   border-bottom-color: #252525;
 }
-/* line 147, src/sass/themes/_dark.scss */
+/* line 151, src/sass/themes/_dark.scss */
 .body--theme-dark .list__item--selected .list__thumbnail {
   background-color: #666;
 }
-/* line 151, src/sass/themes/_dark.scss */
+/* line 155, src/sass/themes/_dark.scss */
 .body--theme-dark .list__item--selected.list__item--no-artwork .list__thumbnail {
   background-color: #f50;
 }
-/* line 156, src/sass/themes/_dark.scss */
+/* line 160, src/sass/themes/_dark.scss */
 .body--theme-dark .list__list {
   text-shadow: 0 1px 2px #000;
 }
-/* line 160, src/sass/themes/_dark.scss */
+/* line 164, src/sass/themes/_dark.scss */
 .body--theme-dark .list__track-meta {
   color: #444;
 }
-/* line 165, src/sass/themes/_dark.scss */
+/* line 169, src/sass/themes/_dark.scss */
 .body--theme-dark .list__track-title {
   color: #818181;
 }
-/* line 170, src/sass/themes/_dark.scss */
+/* line 174, src/sass/themes/_dark.scss */
 .body--theme-dark .playing .header {
   color: #555;
 }
-/* line 174, src/sass/themes/_dark.scss */
+/* line 178, src/sass/themes/_dark.scss */
 .body--theme-dark .playing__title {
   color: #fff;
 }
-/* line 178, src/sass/themes/_dark.scss */
+/* line 182, src/sass/themes/_dark.scss */
 .body--theme-dark .playing__artist {
   color: #555;
 }
@@ -5413,60 +5428,64 @@ body.body--show-grid-view .list__thumbnail {
 .body--theme-spotify .btn--player-icon:hover {
   color: #f50;
 }
-/* line 116, src/sass/themes/_dark.scss */
-.body--theme-spotify .list:not(:empty):not(.no-results) .list__item:hover .list__track-title {
-  color: #f50;
+/* line 115, src/sass/themes/_dark.scss */
+.body--theme-spotify .list.no-results {
+  color: #555;
 }
-/* line 122, src/sass/themes/_dark.scss */
-.body--theme-spotify .list__item:hover {
+/* line 120, src/sass/themes/_dark.scss */
+.body--theme-spotify .list:not(.no-results) .list__item:hover:hover {
   background-color: #191919;
 }
-/* line 126, src/sass/themes/_dark.scss */
+/* line 124, src/sass/themes/_dark.scss */
+.body--theme-spotify .list:not(.no-results) .list__item:hover .list__track-title {
+  color: #f50;
+}
+/* line 130, src/sass/themes/_dark.scss */
 .body--theme-spotify .list__item .list__thumbnail {
   background-color: #111;
 }
-/* line 132, src/sass/themes/_dark.scss */
+/* line 136, src/sass/themes/_dark.scss */
 .body--theme-spotify .list__item.list__item--no-artwork:hover .list__thumbnail {
   background-color: #f50;
 }
-/* line 136, src/sass/themes/_dark.scss */
+/* line 140, src/sass/themes/_dark.scss */
 .body--theme-spotify .list__item.list__item--no-artwork:hover .list__playing-animation {
   color: #fff;
 }
-/* line 143, src/sass/themes/_dark.scss */
+/* line 147, src/sass/themes/_dark.scss */
 .body--theme-spotify .list__item--selected {
   background-color: #151515;
   border-bottom-color: #252525;
 }
-/* line 147, src/sass/themes/_dark.scss */
+/* line 151, src/sass/themes/_dark.scss */
 .body--theme-spotify .list__item--selected .list__thumbnail {
   background-color: #666;
 }
-/* line 151, src/sass/themes/_dark.scss */
+/* line 155, src/sass/themes/_dark.scss */
 .body--theme-spotify .list__item--selected.list__item--no-artwork .list__thumbnail {
   background-color: #f50;
 }
-/* line 156, src/sass/themes/_dark.scss */
+/* line 160, src/sass/themes/_dark.scss */
 .body--theme-spotify .list__list {
   text-shadow: 0 1px 2px #000;
 }
-/* line 160, src/sass/themes/_dark.scss */
+/* line 164, src/sass/themes/_dark.scss */
 .body--theme-spotify .list__track-meta {
   color: #444;
 }
-/* line 165, src/sass/themes/_dark.scss */
+/* line 169, src/sass/themes/_dark.scss */
 .body--theme-spotify .list__track-title {
   color: #818181;
 }
-/* line 170, src/sass/themes/_dark.scss */
+/* line 174, src/sass/themes/_dark.scss */
 .body--theme-spotify .playing .header {
   color: #555;
 }
-/* line 174, src/sass/themes/_dark.scss */
+/* line 178, src/sass/themes/_dark.scss */
 .body--theme-spotify .playing__title {
   color: #fff;
 }
-/* line 178, src/sass/themes/_dark.scss */
+/* line 182, src/sass/themes/_dark.scss */
 .body--theme-spotify .playing__artist {
   color: #555;
 }
@@ -5637,7 +5656,6 @@ main {
 
 /* line 42, src/sass/_layout.scss */
 #title-bar {
-  -webkit-app-region: drag;
   height: 2.5rem;
   box-shadow: inset 0 -1px 0 #090909;
   background: #151515;

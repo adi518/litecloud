@@ -21,3 +21,9 @@
 .pull-right {
     float: right;
 }
+
+b,
+strong {
+    font-weight: 400;
+    font-family: $font-family-bold;
+}

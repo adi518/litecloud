@@ -3,6 +3,8 @@
 /*global $, $$, mockup, SC:true */
 
 window.$ = window.jQuery = require('jquery');
+const {BrowserWindow} = require('electron').remote
+const drag = require('electron-drag');
 
 'use strict';
 
@@ -33,6 +35,9 @@ $(function () {
     var selectors = [
         '#body',
         '#title-bar',
+        '#minimize',
+        '#maximize',
+        '#terminate',
         '#main-container',
         '#main',
         '#mask',
@@ -270,7 +275,9 @@ $(function () {
     function init() {
 
         console.info('app version:', cache.version);
-        
+
+        drag('#title-bar');
+
         cache.$audio[0].controls = false;
         cache.$body.removeClass('body--show-loader');
 
@@ -406,7 +413,7 @@ $(function () {
             }
         });
 
-        cache.$search.keyup($.debounce(cache.keyupDebounceDelay, function () {
+        cache.$search.keyup($.debounce(cache.keyupDebounceDelay, function() {
             if (this.value === '') {
                 return;
             }
@@ -416,16 +423,38 @@ $(function () {
             });
         }));
 
-        cache.$menu.click(function () {
+        cache.$menu.click(() => {
             cache.$body.toggleClass('body--show-menu');
+        });
+
+        // Minimize task
+        cache.$minimize.click((event) => { // eslint-disable-line
+            var window = BrowserWindow.getFocusedWindow();
+            window.minimize();
+        });
+
+        // Maximize window
+        cache.$maximize.click((event) => { // eslint-disable-line
+            var window = BrowserWindow.getFocusedWindow();
+            if (window.isMaximized()) {
+                window.unmaximize();
+            } else {
+                window.maximize();
+            }
+        });
+
+        // Close app
+        cache.$terminate.click((event) => { // eslint-disable-line
+            var window = BrowserWindow.getFocusedWindow();
+            window.close();
         });
 
         // now test it ;)
         if (cache.test) {
             cache.$search.val(cache.testKeyword).keyup();
 
+            // reset search field
             setTimeout(function () {
-                // reset search
                 cache.$search.val('');
             }, cache.keyupDebounceDelay);
 
@@ -436,7 +465,7 @@ $(function () {
         }
     }
 
-    /* beam me up scotty! */
+    // beam me up scotty!
 
     if (cache.isdev) {
         console.warn('initialized development-mode, loaded mockup data...');

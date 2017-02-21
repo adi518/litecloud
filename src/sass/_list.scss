@@ -5,6 +5,10 @@
 .no-results {
     .list__item {
         text-align: center;
+
+        &:hover {
+            background-color: transparent;
+        }
     }
 }
 
