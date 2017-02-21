@@ -17,6 +17,6 @@ Hit `start.bat` or `start-dev.bat` to launch in development mode.
 Please [open an issue](https://github.com/adi518/litecloud/issues) for support.
 
 ## Preview
-![Alt](preview.jpg)
+![Alt](preview.png)
 
-![Alt](preview-list.jpg)
+![Alt](preview-list.png)
