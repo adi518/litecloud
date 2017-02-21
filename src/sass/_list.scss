@@ -30,6 +30,12 @@
         padding-right: to-rem(35);
         transition: padding .2s;
 
+        &:hover {
+            .list__list {
+                margin-top: to-rem(10);
+            }
+        }
+
         &:not(:first-child) {
             margin-top: to-rem(35);
         }
@@ -77,6 +83,12 @@
         border-bottom-width: 1px; // experimental
         border-bottom-style: solid; // experimental
 
+        &:hover {
+            .list__list {
+                margin-top: 0;
+            }
+        }
+
         &.list__item--no-artwork .list__icon {
             display: none; // do not use @extend here
         }
@@ -90,11 +102,16 @@
             @extend %position-relative;
             background-blend-mode: multiply;
         }
+
+        .list__list {
+            margin-top: 0;
+        }
     }
 
     &__list {
         @extend %overflow-hidden; // prevents content wrap around
         list-style-type: none;
+        transition: margin-top, .1s;
         //
         @media screen and (max-width: 600px) {
             font-size: to-rem(16);

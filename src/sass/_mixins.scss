@@ -14,6 +14,10 @@
         }
     }
 }
+@mixin dim($value) {
+    width: $value;
+    height: $value;
+}
 @mixin hide {
     @extend %display-none;
 }

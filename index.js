@@ -40,6 +40,7 @@ function createWindow() {
         width: 1580,
         height: 1024,
         icon: 'favicon.ico',
+        frame: false, // removes the entire interface, relevant once implementing proprietary interface
     }
 
     if (isdev) {
@@ -47,7 +48,6 @@ function createWindow() {
     } else {
         options.minWidth = 1580;
         options.minHeight = 1024;
-        // options.frame = false; // removes the entire interface, relevant once implementing proprietary interface
     }
 
     mainWindow = new BrowserWindow(options)

@@ -32,46 +32,32 @@ button {
     font-family: 'Montserrat';
 }
 
-// header {
-//     @extend %full-width;
-//     transition: padding .2s;
-//     left: 0;
-//     top: 0;
-//     padding: to-rem(15) to-rem(12);
-//     opacity: .985;
-//
-//     &.header--new-style {
-//         padding: 0;
-//         border-width: 0;
-//
-//         #player {
-//             padding: to-rem(15) to-rem(35) 0;
-//         }
-//
-//         #search {
-//             border-radius: 0;
-//             border-width: 0;
-//         }
-//     }
-// }
-
 main {
     @extend %overflow-auto;
     @extend %full-height;
     width: $app-width;
-    transform: translate3d(to-rem(300), 0 , 0);
+    transform: translate3d($sidebar-width, $title-bar-height, 0);
+}
+
+#title-bar {
+    @extend %full-width;
+    @extend %no-user-select;
+    -webkit-app-region: drag;
+    height: $title-bar-height;
+    box-shadow: inset 0 -1px 0 #090909;
+    background: #151515;
+    padding-top: to-rem(10);
 }
 
 .nav {
     &--main {
         @extend %full-height;
         @extend %no-user-select;
-        width: to-rem(300);
-        padding: to-rem(20);
-        padding-top: to-rem(35);
-        border-radius: 0 4px 0 0;
-        transition: transform .5s;
+        width: $sidebar-width;
+        height: calc(100% - #{$title-bar-height});
+        padding: to-rem(35) to-rem(20) to-rem(20);
         box-shadow: inset -1px 0 0 #141414;
+        transform: translate3d(0, $title-bar-height, 0);
     }
 
     &--player {

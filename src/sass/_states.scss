@@ -95,6 +95,12 @@ body {
                 &:hover {
                     background-color: transparent;
 
+                    &:hover {
+                        .list__list {
+                            margin-top: 0; // resets list-view on item hover
+                        }
+                    }
+
                     .list__thumbnail {
                         background-blend-mode: screen;
                     }

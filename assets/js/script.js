@@ -32,6 +32,7 @@ $(function () {
 
     var selectors = [
         '#body',
+        '#title-bar',
         '#main-container',
         '#main',
         '#mask',
@@ -67,7 +68,7 @@ $(function () {
             /* beautify ignore:end */
             cache['$' + _selector] = $$(selector);
         } catch (e) {
-            console.error('invalid selector!');
+            console.error('invalid selector');
         }
     });
 
@@ -117,7 +118,7 @@ $(function () {
     function drawItems(tracks, options) {
         options = $.extend({}, options);
         var markup = '';
-        var counter = 0; // eslint-disable-line
+        var counter = 0;
         var duration;
         if (tracks.length) {
             tracks.forEach(function (track) {
@@ -131,11 +132,9 @@ $(function () {
                         track.artwork_url.replace(/https:\/\/i1.sndcdn.com/g, 'assets/images/mockup');
                     }
                 }
-                //&mdash;
                 markup += '<div class="list__item' + (!track.artwork_url ? ' list__item--no-artwork' : '') + '">';
                 markup += '<span class="list__thumbnail" style="' + (track.artwork_url ? 'background-image: url(' + track.artwork_url + ')' : '') + '">';
                 markup += '<i class="list__icon"></i>';
-                // markup += '<span class="list__playing-animation-wrapper"><i class="list__playing-animation loader2"></i><span class="sr-only">Loading...</span></span>';
                 if (track.genre) {
                     markup += '<span class="list__tag" title="' + track.genre + '">#' + track.genre + '</span>';
                 }
@@ -145,15 +144,14 @@ $(function () {
                 markup += '<li class="list__track-title" title="' + track.custom.title + '">' + track.custom.title + '</li>';
                 markup += '<li class="list__track-meta">';
                 markup += '<small class="list__track-author" title="' + track.user.username + '">' + track.user.username + '</small>';
-                // markup += '&nbsp;&ndash;&nbsp;';
                 duration = msToHMS(track.duration);
                 markup += '<small class="list__track-duration" title="' + duration + '">' + duration + '</small>';
                 // markup += '<small class="list__track-views">views: ' + track.playback_count + '</small>';
                 markup += '</li>';
                 markup += '</div>';
             });
-            // console.info('total tracks:', tracks.length);
-            // console.info('total art-covers:', counter);
+            console.info('total tracks:', tracks.length);
+            console.info('total art-covers:', counter);
         } else {
             markup = '<div class="list__item">Your search - <b>' + cache.searchQuery + '</b> - did not match any tracks.</div>';
             cache.$body.removeClass('body--show-grid-view');
@@ -272,7 +270,7 @@ $(function () {
     function init() {
 
         console.info('app version:', cache.version);
-
+        
         cache.$audio[0].controls = false;
         cache.$body.removeClass('body--show-loader');
 
@@ -427,7 +425,7 @@ $(function () {
             cache.$search.val(cache.testKeyword).keyup();
 
             setTimeout(function () {
-                // reset search to debug placeholder
+                // reset search
                 cache.$search.val('');
             }, cache.keyupDebounceDelay);
 

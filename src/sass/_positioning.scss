@@ -2,6 +2,7 @@
 
 #mask,
 #overlay,
+#title-bar,
 .nav--main,
 header,
 main {
@@ -18,10 +19,8 @@ header {
     z-index: 3;
 }
 
-.nav--main {
-    z-index: 2;
-}
-
+#title-bar,
+.nav--main,
 main {
     z-index: 2;
 }
