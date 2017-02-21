@@ -1,28 +1,32 @@
 /* scss-lint:disable Compass::PropertyWithMixin */
 /* scss-lint:disable ColorVariable */
 /* scss-lint:disable ColorKeyword */
+/* scss-lint:disable HexNotation */
 
 // layout
 
 header {
-    background-color: whitesmoke;
-    border-bottom: 2px solid lightgray;
+    //
 }
 
 main {
-    // background-color: #fff;
+    //
 }
 
-.overlay {
+#overlay {
     background-color: whitesmoke;
 }
 
-.mask {
-    background-color: whitesmoke;
-    background-blend-mode: color;
+#mask {
+    background-color: #fff;
 }
 
 // components
+
+#search {
+    background-color: #000;
+    color: #fff;
+}
 
 #player {
     progress {
@@ -42,42 +46,39 @@ main {
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: lightslategrey;
+    background-color: #ddd;
 }
 
-.btn--nav {
-    background-color: transparent;
-    border-width: 0;
-
+.btn--nav,
+.btn--player {
     &:hover {
         color: plum;
     }
-}
-
-.loader2 {
-    border-top-color: plum;
 }
 
 .list {
     &:not(:empty):not(.no-results) {
         .list__item {
             &:hover {
-                color: lightslategrey;
+                color: plum;
             }
         }
     }
 
     &__thumbnail {
         color: #fff;
-        background-color: lightslategrey;
     }
 
     &__item--visited {
-        color: #818181;
+        color: #ddd;
 
         &.list__item--no-artwork .list__thumbnail {
             background-color: plum;
         }
+    }
+
+    &__item--no-artwork .list__thumbnail {
+        background-color: #ddd;
     }
 
     &__tag {

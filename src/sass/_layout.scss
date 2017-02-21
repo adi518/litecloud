@@ -17,84 +17,70 @@ body {
     @extend %no-margin;
     @extend %no-padding;
     @extend %overflow-hidden;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-    height: inherit;
 }
 
-header {
-    @extend %full-width;
-    transition: padding .2s;
-    left: 0;
-    top: 0;
-    padding: to-rem(15) to-rem(12);
-    opacity: .985;
-
-    &.header--new-style {
-        padding: 0;
-        border-width: 0;
-
-        #player {
-            padding: to-rem(15) to-rem(35) 0;
-        }
-
-        #search {
-            border-radius: 0;
-            border-width: 0;
-        }
-    }
+body,
+input,
+optgroup,
+select,
+textarea {
+    font-family: $font-family;
 }
+
+// override normalize
+button {
+    font-family: 'Montserrat';
+}
+
+// header {
+//     @extend %full-width;
+//     transition: padding .2s;
+//     left: 0;
+//     top: 0;
+//     padding: to-rem(15) to-rem(12);
+//     opacity: .985;
+//
+//     &.header--new-style {
+//         padding: 0;
+//         border-width: 0;
+//
+//         #player {
+//             padding: to-rem(15) to-rem(35) 0;
+//         }
+//
+//         #search {
+//             border-radius: 0;
+//             border-width: 0;
+//         }
+//     }
+// }
 
 main {
     @extend %overflow-auto;
     @extend %full-height;
     width: $app-width;
-    transform: translate3d(250px, 0 , 0);
+    transform: translate3d(to-rem(300), 0 , 0);
 }
 
-.list {
-    user-select: none;
-}
+.nav {
+    &--main {
+        @extend %full-height;
+        @extend %no-user-select;
+        width: to-rem(300);
+        padding: to-rem(20);
+        padding-top: to-rem(35);
+        border-radius: 0 4px 0 0;
+        transition: transform .5s;
+        box-shadow: inset -1px 0 0 #141414;
+    }
 
-.nav--main {
-    @extend %full-height;
-    @extend %no-user-select;
-    width: 250px;
-    padding: to-rem(20);
-    border-radius: 0 4px 0 0;
-    transition: transform .5s;
-
-    .btn {
-        @extend .btn--nav;
-        white-space: nowrap;
-
-        // TODO: look for bugs
-        &:last-child:not(.hidden) {
-            border-bottom-width: 0;
-        }
+    &--player {
+        text-align: center;
     }
 }
 
-.overlay {
+#overlay {
     @extend %display-none;
     @extend %full-width;
     @include position-args(top 0 right 0 bottom 0 left 0);
 }
-
-.mask {
-    @include position-args(top 0 right 0 bottom 0 left 0);
-    background-size: cover;
-
-    &::after {
-        @extend %display-none;
-        @extend %content-empty;
-        @include position-args(top 0 right 0 bottom 0 left 0);
-        position: inherit;
-        backface-visibility: inherit;
-        transform: inherit;
-        opacity: .85;
-    }
-}
-
-// maybe use later
-// [class*='#{prefix-space(toggle-)}'],
-// [class^=toggle-] {}

@@ -5,7 +5,12 @@
 .playing {
     @extend %display-none;
     cursor: default;
-    padding-top: to-rem(10);
+    margin-top: to-rem(20);
+
+    .header {
+        font-size: to-rem(14);
+        text-transform: uppercase;
+    }
 
     &--no-artcover {
         .playing__thumbnail {
@@ -15,20 +20,24 @@
     }
 
     &__thumbnail {
-        border-radius: 50%;
-        width: to-rem($playing-thumbnail-size);
-        height: to-rem($playing-thumbnail-size);
+        margin-top: to-rem(10);
+        // border-radius: 50%;
+        border-radius: 2px;
+        width: $playing-thumbnail-size;
+        height: $playing-thumbnail-size;
         background-size: cover;
     }
 
     &__description {
-        color: #666;
+        @extend %auto-horizontal-margin;
+        text-align: center;
+        width: 70%;
     }
 
     &__artist {
         &:not(:empty) {
             padding-top: to-rem(10);
-            color: #fff;
+            font-size: to-rem(12);
         }
 
         &:empty {
@@ -40,7 +49,8 @@
 
     &__title {
         &:not(:empty) {
-            padding-top: to-rem(5);
+            font-size: to-rem(13);
+            padding-top: to-rem(10);
         }
     }
 }

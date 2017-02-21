@@ -51,7 +51,7 @@ module.exports = function(grunt) {
         pug: {
             compile: {
                 options: {
-                    pretty: true,
+                    // pretty: true,
                     // debug: true
                 },
                 files: {

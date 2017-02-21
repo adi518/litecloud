@@ -1,18 +1,21 @@
-/* scss-lint:disable Compass::PropertyWithMixin */
-/* scss-lint:disable ColorVariable */
-/* scss-lint:disable ColorKeyword */
-/* scss-lint:disable Indentation */
+// scss-lint:disable Compass::PropertyWithMixin
+// scss-lint:disable ColorVariable
+// scss-lint:disable ColorKeyword
+// scss-lint:disable Indentation
+//
+
+$init-loader-color: #84bd00;
 //
 @mixin theme-spotify {
      @include theme-dark;
 
     .btn--nav {
         &.btn--selected {
-            color: lime;
+            color: #84bd00;
         }
 
         &:hover {
-            color: lime;
+            color: #84bd00;
         }
     }
 
@@ -21,21 +24,15 @@
             .dot,
             .dot:after,
             .dot:before {
-                background-color: lime;
+                background-color: #84bd00;
             }
         }
     }
 
     // components
 
-    .loader--global-wave {
-        .sk-rect {
-            background-color: lime;
-        }
-    }
-
     .loader2 {
-        border-top-color: lime;
+        border-top-color: #84bd00;
         //
         @at-root {
             .list__item--no-artwork {
@@ -50,23 +47,23 @@
     .btn {
         &.btn--player {
             &:hover {
-                color: lime;
+                color: #84bd00;
             }
         }
 
         &.btn--style-1 {
             &.btn--selected {
-                color: lime;
+                color: #84bd00;
 
                 &:hover {
-                    color: lime;
+                    color: #84bd00;
                 }
             }
         }
 
         &.btn--player-icon {
             &:hover {
-                color: lime;
+                color: #84bd00;
             }
         }
     }
@@ -78,7 +75,7 @@
             }
 
             &::-webkit-progress-value {
-                background-color: lime;
+                background-color: #84bd00;
             }
         }
     }
@@ -86,7 +83,7 @@
     .list {
         &:not(:empty):not(.no-results) .list__item:hover {
             .list__track-title {
-                color: lime;
+                color: #84bd00;
             }
         }
 
@@ -94,7 +91,7 @@
             &.list__item--no-artwork {
                 &:hover {
                     .list__thumbnail {
-                        background-color: limegreen;
+                        background-color: #84bd00;
                     }
                 }
             }
@@ -102,7 +99,7 @@
 
         &__item--selected {
             &.list__item--no-artwork .list__thumbnail {
-                background-color: limegreen;
+                background-color: #84bd00;
             }
         }
     }

@@ -1,24 +1,27 @@
-/* scss-lint:disable Compass::PropertyWithMixin */
-/* scss-lint:disable ColorVariable */
-/* scss-lint:disable ColorKeyword */
+// scss-lint:disable Compass::PropertyWithMixin
+// scss-lint:disable ColorVariable
+// scss-lint:disable ColorKeyword
+// scss-lint:disable Indentation
+//
+
+$init-loader-color: $orange;
 //
 @mixin theme-dark {
     //
     // layout
-
     background-color: #111;
-    color: whitesmoke;
 
-    header {
-        background-color: #111;
-        border-bottom-color: #444;
+    .nav--main {
+        border-right: 1px solid #010101;
     }
 
-    .mask {
-        // background-color: rgba(17, 17, 17, .9); // #111
+    #main {
+        background-color: #131313;
+    }
+
+    #mask {
         background-color: #111;
         background-blend-mode: multiply;
-        // background-blend-mode: hard-light;
 
         &::after {
             background-color: #000;
@@ -26,7 +29,6 @@
     }
 
     // components
-
     .btn--nav {
         color: #555;
 
@@ -39,45 +41,28 @@
         }
     }
 
+    #logo {
+        background-blend-mode: multiply;
+    }
+
     #search {
         background-color: #090909;
-        // box-shadow: inset 0 2px 6px #191919;
-        color: #555;
-        font-size: to-rem(16);
+        box-shadow: inset 0 -1px 1px #222;
+        // color: #555;
     }
 
     ::-webkit-input-placeholder {
-        color: #666;
+        color: #555;
     }
 
-    #menu {
-        &:hover {
-            .dot,
-            .dot:after,
-            .dot:before {
-                background-color: $orange;
-            }
-        }
-    }
-
-    .loader--global-wave {
-        .sk-rect {
-            background-color: $orange;
-        }
-    }
-
-    .overlay {
+    #overlay {
         background-color: #222;
-    }
-
-    .loader2 {
-        border-top-color: darksalmon;
     }
 
     #player {
         progress {
             &::-webkit-progress-bar {
-                background-color: darksalmon;
+                //
             }
 
             &::-webkit-progress-value {
@@ -90,48 +75,40 @@
         background-color: #191919;
     }
 
-    .btn {
-        &.btn--player {
-            color: #555;
+    .btn--player {
+        color: #555;
 
-            &:hover {
-                color: $orange;
-            }
-        }
-
-        &.btn--style-1 {
-            color: darkgray;
-
-            &.btn--selected {
-                color: $orange;
-
-                &:hover {
-                    color: $orange;
-                }
-            }
-
-            &:hover {
-                color: #666;
-            }
-        }
-
-        &.btn--player-icon {
-            color: #555;
-
-            &:hover {
-                color: $orange;
-            }
-        }
-
-        &.btn--nav {
-            border-bottom-color: #191919;
+        &:hover {
+            color: $orange;
         }
     }
 
-    .dot,
-    .dot:after,
-    .dot:before {
-        background-color: #000;
+    .btn--style-1 {
+        color: darkgray;
+
+        &.btn--selected {
+            color: $orange;
+
+            &:hover {
+                color: $orange;
+            }
+        }
+
+        &:hover {
+            color: #666;
+        }
+    }
+
+    .btn--player-icon {
+        color: #555;
+
+        &:hover {
+            color: $orange;
+        }
+    }
+
+    .btn--nav {
+        //
     }
 
     .list {
@@ -147,7 +124,7 @@
             }
 
             .list__thumbnail {
-                background-color: #141414;
+                background-color: #111;
             }
 
             &.list__item--no-artwork {
@@ -187,6 +164,20 @@
 
     .list__track-title {
         color: #818181;
+    }
+
+    .playing {
+        .header {
+            color: #555;
+        }
+
+        &__title {
+            color: #fff;
+        }
+
+        &__artist {
+            color: #555;
+        }
     }
 }
 

@@ -3,15 +3,15 @@
 /* scss-lint:disable ColorKeyword */
 //
 body {
-    &.body--animate-mask {
-        .mask {
+    &.body--animate-#mask {
+        #mask {
             transition: background-image .8s;
         }
     }
 
     &.body--show {
         &-mask {
-            .mask {
+            #mask {
                 /* scss-lint:disable VendorPrefix */
                 -webkit-filter: blur(50px);
                 /* scss-lint:enable VendorPrefix */
@@ -45,7 +45,7 @@ body {
                 @extend %display-block;
             }
 
-            .overlay {
+            #overlay {
                 @extend %display-block;
             }
         }
@@ -174,7 +174,7 @@ body {
                 @extend %display-inline-block;
 
                 &:after {
-                    @extend %content-empty;
+                    @extend %no-content;
                 }
             }
 

@@ -1,11 +1,10 @@
 /* scss-lint:disable Compass::PropertyWithMixin */
 
+#mask,
+#overlay,
 .nav--main,
-.overlay,
-.mask,
 header,
-main,
-progress {
+main {
     @extend %position-fixed;
     // pass rendering to a gpu thread, important for fps performance
     // ref: https://benfrain.com/improving-css-performance-fixed-position-elements/
@@ -27,7 +26,7 @@ main {
     z-index: 2;
 }
 
-.mask {
+#mask {
     z-index: 0;
 
     &:after {
@@ -35,6 +34,6 @@ main {
     }
 }
 
-.overlay {
+#overlay {
     z-index: 9;
 }

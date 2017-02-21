@@ -37,7 +37,7 @@ function createWindow() {
     // Create the browser window.
 
     var options = {
-        width: 1280,
+        width: 1580,
         height: 1024,
         icon: 'favicon.ico',
     }
@@ -45,7 +45,7 @@ function createWindow() {
     if (isdev) {
         //
     } else {
-        options.minWidth = 1280;
+        options.minWidth = 1580;
         options.minHeight = 1024;
         // options.frame = false; // removes the entire interface, relevant once implementing proprietary interface
     }

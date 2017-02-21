@@ -12,7 +12,7 @@ $(function () {
 
     cache = {
         version: '0.1',
-        testKeyword: 'coldplay',
+        testKeyword: 'milky chance',
         test: true,
         isdev: window.location.hash.substring(1) === 'dev',
         keyupDebounceDelay: 500,
@@ -74,11 +74,10 @@ $(function () {
     function togglePlayPause() {
         var node = cache.$player_playPause[0];
         if (cache.player.paused || cache.player.isPlaying()) {
-            changeButtonType(node, '&#9654;&nbsp;play');
-            // changeButtonType(node, '&#x025B8;&nbsp;play');
+            changeButtonType(node, 'play_arrow');
             cache.player.pause();
         } else {
-            changeButtonType(node, '&#10073;&#10073;&nbsp;pause');
+            changeButtonType(node, 'pause');
             cache.player.play();
         }
     }
@@ -136,7 +135,7 @@ $(function () {
                 markup += '<div class="list__item' + (!track.artwork_url ? ' list__item--no-artwork' : '') + '">';
                 markup += '<span class="list__thumbnail" style="' + (track.artwork_url ? 'background-image: url(' + track.artwork_url + ')' : '') + '">';
                 markup += '<i class="list__icon"></i>';
-                markup += '<span class="list__playing-animation-wrapper"><i class="list__playing-animation loader2"></i><span class="sr-only">Loading...</span></span>';
+                // markup += '<span class="list__playing-animation-wrapper"><i class="list__playing-animation loader2"></i><span class="sr-only">Loading...</span></span>';
                 if (track.genre) {
                     markup += '<span class="list__tag" title="' + track.genre + '">#' + track.genre + '</span>';
                 }
@@ -262,15 +261,11 @@ $(function () {
         return Math.floor(Math.random() * (max - min)) + min;
     }
 
-    function showPlayer() {
-        cache.$player.removeClass('hidden');
-    }
-
     function splitTrackTitle(raw) {
         var tmp = raw.split('-');
         return {
-            artist: tmp[1] || '',
-            title: tmp[0] || '',
+            artist: tmp[0] || '',
+            title: tmp[1] || '',
         };
     }
 
@@ -298,19 +293,19 @@ $(function () {
             /* beautify ignore:start */
             $item.addClass('list__item--selected');
             $item.find('.list__playing-animation').addClass('spin');
-            if (typeof cache.index !== 'undefined') {
+            if ($.isNumeric(cache.index)) {
                 $(cache.$items.get(cache.index))
                                 .removeClass('list__item--selected')
                                     .addClass('list__item--visited')
                                         .find('.list__playing-animation').removeClass('spin');
             }
-            cache.$mask.css('background-image', 'url(' + (track.artwork_url || '') + ')');
-            cache.$body.toggleClass('body--show-mask', hasArtCover).toggleClass('body--animate-mask', hasArtCover);
+            // cache.$mask.css('background-image', 'url(' + (track.artwork_url || '') + ')');
+            // cache.$body.toggleClass('body--show-mask', hasArtCover).toggleClass('body--animate-mask', hasArtCover);
 
             // show what's playing
             cache.$body.addClass('body--show-playing');
             cache.$playing.toggleClass('playing--no-artcover', !hasArtCover);
-            cache.$playing_title.text(track.custom.title); // .html can cause script-tag execution
+            cache.$playing_title.text(track.custom.title);
             cache.$playing_artist.text(track.custom.artist);
             if (hasArtCover) {
                 cache.$playing_thumbnail.css('background-image', 'url(' + track.artwork_url + ')');
@@ -329,8 +324,8 @@ $(function () {
                 }
                 cache.player = player;
                 cache.player.on('created', function () {
-                    if (!cache.$player.is(':visible')) {
-                        showPlayer();
+                    if (cache.$player.is(':hidden')) {
+                        cache.$player.removeClass('hidden');
                     }
                 }).on('play-start', function () {
                     // updateProgressBar(true); // TODO: inspect necessity
@@ -341,13 +336,11 @@ $(function () {
                     updateProgressBar();
                 });
                 cache.$player_playPause.click();
-                if (cache.isdev) {
-                    console.info('playing:', track.title);
-                }
+                console.info('playing:', track.title);
             });
         });
 
-        cache.$player__buttons = $('.btn', cache.$player).click(function () {
+        cache.$player__buttons = $('i', cache.$player).click(function () {
             switch (this.id.replace(/player-/g, '')) {
             case 'playPause':
                 togglePlayPause();

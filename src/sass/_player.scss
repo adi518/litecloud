@@ -2,6 +2,7 @@
 // ref: https://css-tricks.com/html5-progress-element/
 
 #player {
+    margin-top: to-rem(16);
     //
     &:not(.hidden) {
         + #search {
@@ -9,46 +10,26 @@
         }
     }
 
-    // .logo {
-    //     @extend %float-right;
-    //     @extend %no-outline;
-    //     margin-right: 0;
-    //     color: #555;
-    //     font-size: 1.5rem;
-    //     cursor: pointer;
-    // }
-
-    .btn--player {
-        @extend %float-left;
-
-        &:not(:last-child) {
-            margin-right: to-rem(10);
-        }
-    }
-
     // progress:not([value]) {
     progress {
         @extend %display-block;
-        @extend %full-width; // has user-agent default
+        @extend %full-width; // override user-agent
         @extend %cursor-pointer;
-        // reset the default appearance
+        box-shadow: inset 0 -to-rem(1) to-rem(1) #222;
         -webkit-appearance: none;
         appearance: none;
-        height: to-rem(5);
-        transition: height .3s;
-        top: 0;
-        left: 0;
+        height: to-rem(6);
+        // transition: height .3s;
+        border-radius: to-rem(2);
 
         &::-webkit-progress-bar {
+            border-radius: to-rem(2);
             transition: width .2s;
         }
 
         &::-webkit-progress-value {
-            //
-        }
-
-        &:hover {
-            height: to-rem(10);
+            border-radius: to-rem(2);
+            background: linear-gradient(to top, rgba(0,0,0,1) 10%, rgba(132,189,0,1) 100%);
         }
     }
 
@@ -59,4 +40,8 @@
     // .mute {}
     // .unmute {}
     // .replay {}
+
+    .nav--player {
+        margin-top: to-rem(10);
+    }
 }

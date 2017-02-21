@@ -547,29 +547,29 @@ html *:after, html *:before, html *:not(head) {
 /* scss-lint:disable ColorVariable */
 /* line 4, src/sass/_placeholders.scss */
 .loader--global,
-.loader--global-wave, .list__playing-animation-wrapper, .list__tag, .playing, .hidden, .overlay, .mask::after {
+.loader--global-wave, .list__playing-animation-wrapper, .list__tag, .playing, #mask::after, .hidden, #overlay {
   display: none;
 }
 
-/* line 8, src/sass/_placeholders.scss */
+/* line 12, src/sass/_placeholders.scss */
 body.body--show-grid-view .list {
   display: flex;
 }
 
-/* line 12, src/sass/_placeholders.scss */
-iframe, .list__item--selected .list__playing-animation-wrapper, #search, .btn.btn--player i, .btn.btn--player-icon i, #menu .dot, body.body--show-mask .mask:after, body.body--show-menu .nav--footer, body.body--show-playing .playing, body.body--show-loader .loader--global,
-body.body--show-loader .loader--global-wave, body.body--show-loader .overlay, body.body--show-player-loader .loader--player, body.body--show-grid-view .list__item.list__item--no-artwork .list__thumbnail, body.body--show-grid-view .list__thumbnail, body.body--show-grid-view .list__tag, #player progress {
+/* line 16, src/sass/_placeholders.scss */
+iframe, .list__item--selected .list__playing-animation-wrapper, #logo, #search, #menu .dot, body.body--show-mask #mask:after, body.body--show-menu .nav--footer, body.body--show-playing .playing, body.body--show-loader .loader--global,
+body.body--show-loader .loader--global-wave, body.body--show-loader #overlay, body.body--show-player-loader .loader--player, body.body--show-grid-view .list__item.list__item--no-artwork .list__thumbnail, body.body--show-grid-view .list__thumbnail, body.body--show-grid-view .list__tag, #player progress {
   display: block;
 }
 
-/* line 16, src/sass/_placeholders.scss */
+/* line 20, src/sass/_placeholders.scss */
 i.btn,
 span.btn, body.body--show-grid-view small {
   display: inline-block;
 }
 
 /* line 36, src/sass/_placeholders.scss */
-.list__thumbnail, #menu, #player .btn--player {
+.list__thumbnail, #menu {
   float: left;
 }
 
@@ -594,13 +594,18 @@ body.body--show-grid-view .list__item .list__thumbnail {
 }
 
 /* line 60, src/sass/_placeholders.scss */
+#mask,
+#overlay,
 .nav--main,
-.overlay,
-.mask,
 header,
-main,
-progress {
+main {
   position: fixed;
+}
+
+/* line 72, src/sass/_placeholders.scss */
+.playing__description, #logo {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* line 77, src/sass/_placeholders.scss */
@@ -614,7 +619,7 @@ body {
 }
 
 /* line 85, src/sass/_placeholders.scss */
-#search, .btn.btn--nav, .nav--main .btn, body.body--show-grid-view .list__list li:last-child, #player progress, header, .overlay {
+#search, .btn.btn--nav, body.body--show-grid-view .list__list li:last-child, #player progress, #overlay {
   width: 100%;
 }
 
@@ -668,12 +673,12 @@ body.body--show-grid-view .list__item, .nav--main {
 }
 
 /* line 146, src/sass/_placeholders.scss */
-.dot:after, .dot:before, body.body--show-grid-view small:after, .mask::after {
+#mask::after, .dot:after, .dot:before, body.body--show-grid-view small:after {
   content: '';
 }
 
 /* line 150, src/sass/_placeholders.scss */
-#search, .btn.btn--style-1, .btn.btn--nav, .nav--main .btn, .btn.btn--player, .btn.btn--player-icon, #menu {
+#search, .btn.btn--style-1, .btn.btn--nav, .btn.btn--player, #menu {
   outline: 0;
 }
 
@@ -690,6 +695,68 @@ body.body--show-grid-view .list__item {
 /* custom */
 /* scss-lint:disable all */
 /* hamburger */
+/* scss-lint:disable ColorKeyword */
+/* scss-lint:disable Compass::PropertyWithMixin */
+/*
+	Copyright (C) 2011-2016 Hoefler & Co.
+	This software is the property of Hoefler & Co. (H&Co).
+	Your right to access and use this software is subject to the
+	applicable License Agreement, or Terms of Service, that exists
+	between you and H&Co. If no such agreement exists, you may not
+	access or use this software for any purpose.
+	This software may only be hosted at the locations specified in
+	the applicable License Agreement or Terms of Service, and only
+	for the purposes expressly set forth therein. You may not copy,
+	modify, convert, create derivative works from or distribute this
+	software in any way, or make it accessible to any third party,
+	without first obtaining the written permission of H&Co.
+	For more information, please visit us at http://typography.com.
+	157972-66914-20160714
+*/
+@font-face {
+  font-family: 'Montserrat';
+  src: url("../fonts/Montserrat/Montserrat-Regular.ttf");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Montserrat-Medium';
+  src: url("../fonts/Montserrat/Montserrat-Medium.ttf");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../../node_modules/material-design-icons/iconfont/MaterialIcons-Regular.eot");
+  /* For IE6-8 */
+  src: local("Material Icons"), local("MaterialIcons-Regular"), url("../../node_modules/material-design-icons/iconfont/MaterialIcons-Regular.woff2") format("woff2"), url("../../node_modules/material-design-icons/iconfont/MaterialIcons-Regular.woff") format("woff"), url("../../node_modules/material-design-icons/iconfont/MaterialIcons-Regular.ttf") format("truetype");
+}
+/* line 55, src/sass/_fonts.scss */
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.5rem;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
 /* scss-lint:disable Compass::PropertyWithMixin */
 /* scss-lint:disable ColorKeyword */
 /* scss-lint:disable ColorVariable */
@@ -4324,17 +4391,17 @@ body.body--show-grid-view .list__item {
 /* line 42, src/sass/_loader.scss */
 .loader--global, .loader--global-wave {
   position: fixed;
-  width: 5rem;
-  height: 5rem;
-  border-width: 0.55005501rem;
-  top: calc(50% - 2.5rem);
-  left: calc(50% - 2.5rem);
+  width: 7rem;
+  height: 7rem;
+  border-width: 0.77007701rem;
+  top: calc(50% - 3.5rem);
+  left: calc(50% - 3.5rem);
   z-index: 99;
 }
 
 /* line 63, src/sass/_loader.scss */
 .loader--global-wave {
-  height: 4rem;
+  height: 5.6rem;
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -4364,18 +4431,17 @@ body.body--show-grid-view .list__item {
 /* scss-lint:disable ColorVariable */
 /* scss-lint:disable HexNotation */
 /* scss-lint:disable MergeableSelector */
-/* line 11, src/sass/_loader2.scss */
-.loader3, .loader--global {
+/* line 10, src/sass/_init-loader.scss */
+.init-loader, .loader--global {
   position: absolute;
-  top: calc(50% - 32px);
-  left: calc(50% - 32px);
-  width: 64px;
-  height: 64px;
+  top: calc(50% - 7rem / 2);
+  left: calc(50% - 7rem / 2);
+  width: 7rem;
+  height: 7rem;
   border-radius: 50%;
-  perspective: 800px;
 }
 
-/* line 21, src/sass/_loader2.scss */
+/* line 20, src/sass/_init-loader.scss */
 .inner {
   position: absolute;
   box-sizing: border-box;
@@ -4384,28 +4450,38 @@ body.body--show-grid-view .list__item {
   border-radius: 50%;
 }
 
-/* line 29, src/sass/_loader2.scss */
+/* line 28, src/sass/_init-loader.scss */
 .inner.one {
   left: 0;
   top: 0;
-  animation: rotate-one 1s linear infinite;
-  border-bottom: 3px solid lime;
+  border-bottom: 3px solid plum;
 }
 
-/* line 36, src/sass/_loader2.scss */
+/* line 34, src/sass/_init-loader.scss */
 .inner.two {
   right: 0;
   top: 0;
-  animation: rotate-two 1s linear infinite;
-  border-right: 3px solid lime;
+  border-right: 3px solid plum;
 }
 
-/* line 43, src/sass/_loader2.scss */
+/* line 40, src/sass/_init-loader.scss */
 .inner.three {
   right: 0;
   bottom: 0;
+  border-top: 3px solid plum;
+}
+
+/* line 49, src/sass/_init-loader.scss */
+.body--show-loader .inner.one {
+  animation: rotate-one 1s linear infinite;
+}
+/* line 53, src/sass/_init-loader.scss */
+.body--show-loader .inner.two {
+  animation: rotate-two 1s linear infinite;
+}
+/* line 57, src/sass/_init-loader.scss */
+.body--show-loader .inner.three {
   animation: rotate-three 1s linear infinite;
-  border-top: 3px solid lime;
 }
 
 @keyframes rotate-one {
@@ -4565,73 +4641,103 @@ small:not(:last-child):after {
 /* line 5, src/sass/_playing.scss */
 .playing {
   cursor: default;
-  padding-top: 0.625rem;
+  margin-top: 1.25rem;
 }
-/* line 11, src/sass/_playing.scss */
+/* line 10, src/sass/_playing.scss */
+.playing .header {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+}
+/* line 16, src/sass/_playing.scss */
 .playing--no-artcover .playing__thumbnail {
   border-radius: 0;
   background-image: url("../images/ic_album_black_48px.svg");
 }
-/* line 17, src/sass/_playing.scss */
+/* line 22, src/sass/_playing.scss */
 .playing__thumbnail {
-  border-radius: 50%;
-  width: 3.125rem;
-  height: 3.125rem;
+  margin-top: 0.625rem;
+  border-radius: 2px;
+  width: 16.25rem;
+  height: 16.25rem;
   background-size: cover;
 }
-/* line 24, src/sass/_playing.scss */
+/* line 31, src/sass/_playing.scss */
 .playing__description {
-  color: #666;
+  text-align: center;
+  width: 70%;
 }
-/* line 29, src/sass/_playing.scss */
+/* line 38, src/sass/_playing.scss */
 .playing__artist:not(:empty) {
   padding-top: 0.625rem;
-  color: #fff;
+  font-size: 0.75rem;
 }
-/* line 35, src/sass/_playing.scss */
+/* line 44, src/sass/_playing.scss */
 .playing__artist:empty + .playing__title {
   padding-top: 0.625rem;
 }
-/* line 42, src/sass/_playing.scss */
+/* line 51, src/sass/_playing.scss */
 .playing__title:not(:empty) {
-  padding-top: 0.3125rem;
+  font-size: 0.8125rem;
+  padding-top: 0.625rem;
 }
 
 /* line 28, src/sass/_components.scss */
+#logo {
+  width: 3.125rem;
+  height: 3.125rem;
+  border-radius: 50%;
+  margin-bottom: 0.9375rem;
+  background-image: url("../images/logo.png");
+  background-size: cover;
+  background-color: #fff;
+  box-sizing: content-box;
+  background-blend-mode: hard-light;
+}
+
+/* line 43, src/sass/_components.scss */
 #search {
   padding-left: 0.9375rem;
   padding-right: 0.9375rem;
   border-width: 0;
-  border-radius: 30px;
-  line-height: 1.5rem;
-  margin-bottom: 20px;
+  border-radius: 1.875rem;
+  line-height: 2.125rem;
+  margin-bottom: 1.25rem;
 }
 
-/* line 57, src/sass/_components.scss */
-.btn.btn--clear, .btn.btn--style-1, .btn.btn--player, .btn.btn--player-icon, #menu {
+/* line 59, src/sass/_components.scss */
+.list {
+  user-select: none;
+}
+
+/* line 76, src/sass/_components.scss */
+.btn.btn--style-1, .btn.btn--nav, .btn.btn--clear, .btn.btn--player, #menu {
   background-color: transparent;
   border-width: 0;
 }
 
-/* line 66, src/sass/_components.scss */
+/* line 86, src/sass/_components.scss */
 .btn {
   font-style: normal;
   transition: color .2s;
 }
-/* line 90, src/sass/_components.scss */
-.btn.btn--player-icon {
-  font-size: .65rem;
-}
 /* line 100, src/sass/_components.scss */
-.btn.btn--nav, .nav--main .btn {
-  text-align: left;
+.btn.btn--player {
+  font-size: 2.8125rem;
+  vertical-align: middle;
+  text-shadow: 0 1px 1px #818181;
+}
+/* line 108, src/sass/_components.scss */
+.btn.btn--nav {
   line-height: 2rem;
-  height: calc(2rem + 1px);
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
+  text-align: left;
+}
+/* line 114, src/sass/_components.scss */
+.btn.btn--nav .icon {
+  vertical-align: top;
+  padding-right: 5px;
 }
 
-/* line 112, src/sass/_components.scss */
+/* line 122, src/sass/_components.scss */
 #menu {
   -moz-transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
@@ -4640,7 +4746,28 @@ small:not(:last-child):after {
   padding-right: 0.9375rem;
 }
 
-/* line 127, src/sass/_components.scss */
+/* line 135, src/sass/_components.scss */
+#mask {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-size: cover;
+  background-blend-mode: color;
+}
+/* line 140, src/sass/_components.scss */
+#mask::after {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: inherit;
+  backface-visibility: inherit;
+  transform: inherit;
+  opacity: .85;
+}
+
+/* line 153, src/sass/_components.scss */
 .dot,
 .dot:after,
 .dot:before {
@@ -4649,15 +4776,15 @@ small:not(:last-child):after {
   border-radius: 50%;
 }
 
-/* line 138, src/sass/_components.scss */
+/* line 164, src/sass/_components.scss */
 .dot:after, .dot:before {
   left: 0;
 }
-/* line 145, src/sass/_components.scss */
+/* line 171, src/sass/_components.scss */
 .dot:before {
   top: 0.625rem;
 }
-/* line 149, src/sass/_components.scss */
+/* line 175, src/sass/_components.scss */
 .dot:after {
   bottom: 0.625rem;
 }
@@ -4672,15 +4799,25 @@ small:not(:last-child):after {
   transition: none !important;
 }
 
+/* line 17, src/sass/_helper-classes.scss */
+.pull-left {
+  float: left;
+}
+
+/* line 21, src/sass/_helper-classes.scss */
+.pull-right {
+  float: right;
+}
+
 /* scss-lint:disable Compass::PropertyWithMixin */
 /* scss-lint:disable ColorVariable */
 /* scss-lint:disable ColorKeyword */
 /* line 7, src/sass/_states.scss */
-body.body--animate-mask .mask {
+body.body--animate-#mask #mask {
   transition: background-image .8s;
 }
 /* line 14, src/sass/_states.scss */
-body.body--show-mask .mask {
+body.body--show-mask #mask {
   /* scss-lint:disable VendorPrefix */
   -webkit-filter: blur(50px);
   /* scss-lint:enable VendorPrefix */
@@ -4796,534 +4933,499 @@ body.body--show-grid-view .list__thumbnail {
 /* scss-lint:disable Compass::PropertyWithMixin */
 /* scss-lint:disable ColorVariable */
 /* scss-lint:disable ColorKeyword */
-/* line 7, src/sass/themes/_default.scss */
-header {
-  background-color: whitesmoke;
-  border-bottom: 2px solid lightgray;
-}
-
+/* scss-lint:disable HexNotation */
 /* line 16, src/sass/themes/_default.scss */
-.overlay {
+#overlay {
   background-color: whitesmoke;
 }
 
 /* line 20, src/sass/themes/_default.scss */
-.mask {
-  background-color: whitesmoke;
-  background-blend-mode: color;
+#mask {
+  background-color: #fff;
 }
 
-/* line 29, src/sass/themes/_default.scss */
+/* line 26, src/sass/themes/_default.scss */
+#search {
+  background-color: #000;
+  color: #fff;
+}
+
+/* line 33, src/sass/themes/_default.scss */
 #player progress::-webkit-progress-bar {
   background-color: transparent;
 }
-/* line 33, src/sass/themes/_default.scss */
+/* line 37, src/sass/themes/_default.scss */
 #player progress::-webkit-progress-value {
   background-color: plum;
 }
 
-/* line 40, src/sass/themes/_default.scss */
+/* line 44, src/sass/themes/_default.scss */
 ::-webkit-input-placeholder {
   color: #000;
 }
 
-/* line 44, src/sass/themes/_default.scss */
+/* line 48, src/sass/themes/_default.scss */
 ::-webkit-scrollbar-thumb {
-  background-color: lightslategrey;
+  background-color: #ddd;
 }
 
-/* line 48, src/sass/themes/_default.scss */
-.btn--nav, .nav--main .btn {
-  background-color: transparent;
-  border-width: 0;
-}
-/* line 52, src/sass/themes/_default.scss */
-.btn--nav:hover, .nav--main .btn:hover {
+/* line 54, src/sass/themes/_default.scss */
+.btn--nav:hover,
+.btn--player:hover {
   color: plum;
 }
 
-/* line 57, src/sass/themes/_default.scss */
-.loader2 {
-  border-top-color: plum;
-}
-
-/* line 64, src/sass/themes/_default.scss */
+/* line 62, src/sass/themes/_default.scss */
 .list:not(:empty):not(.no-results) .list__item:hover {
-  color: lightslategrey;
+  color: plum;
 }
-/* line 70, src/sass/themes/_default.scss */
+/* line 68, src/sass/themes/_default.scss */
 .list__thumbnail {
   color: #fff;
-  background-color: lightslategrey;
+}
+/* line 72, src/sass/themes/_default.scss */
+.list__item--visited {
+  color: #ddd;
 }
 /* line 75, src/sass/themes/_default.scss */
-.list__item--visited {
-  color: #818181;
-}
-/* line 78, src/sass/themes/_default.scss */
 .list__item--visited.list__item--no-artwork .list__thumbnail {
   background-color: plum;
 }
-/* line 83, src/sass/themes/_default.scss */
+/* line 80, src/sass/themes/_default.scss */
+.list__item--no-artwork .list__thumbnail {
+  background-color: #ddd;
+}
+/* line 84, src/sass/themes/_default.scss */
 .list__tag {
   color: #fff;
   background-color: #000;
 }
 
-/* scss-lint:disable Compass::PropertyWithMixin */
-/* scss-lint:disable ColorVariable */
-/* scss-lint:disable ColorKeyword */
-/* line 193, src/sass/themes/_dark.scss */
+/* line 184, src/sass/themes/_dark.scss */
 .body--theme-dark {
   background-color: #111;
-  color: whitesmoke;
 }
-/* line 12, src/sass/themes/_dark.scss */
-.body--theme-dark header {
-  background-color: #111;
-  border-bottom-color: #444;
+/* line 14, src/sass/themes/_dark.scss */
+.body--theme-dark .nav--main {
+  border-right: 1px solid #010101;
 }
-/* line 17, src/sass/themes/_dark.scss */
-.body--theme-dark .mask {
+/* line 18, src/sass/themes/_dark.scss */
+.body--theme-dark #main {
+  background-color: #131313;
+}
+/* line 22, src/sass/themes/_dark.scss */
+.body--theme-dark #mask {
   background-color: #111;
   background-blend-mode: multiply;
 }
-/* line 23, src/sass/themes/_dark.scss */
-.body--theme-dark .mask::after {
+/* line 26, src/sass/themes/_dark.scss */
+.body--theme-dark #mask::after {
   background-color: #000;
 }
-/* line 30, src/sass/themes/_dark.scss */
-.body--theme-dark .btn--nav, .body--theme-dark .nav--main .btn, .nav--main .body--theme-dark .btn {
+/* line 32, src/sass/themes/_dark.scss */
+.body--theme-dark .btn--nav {
   color: #555;
 }
-/* line 33, src/sass/themes/_dark.scss */
-.body--theme-dark .btn--nav.btn--selected, .body--theme-dark .nav--main .btn--selected.btn, .nav--main .body--theme-dark .btn--selected.btn {
+/* line 35, src/sass/themes/_dark.scss */
+.body--theme-dark .btn--nav.btn--selected {
   color: #f50;
 }
-/* line 37, src/sass/themes/_dark.scss */
-.body--theme-dark .btn--nav:hover, .body--theme-dark .nav--main .btn:hover, .nav--main .body--theme-dark .btn:hover {
+/* line 39, src/sass/themes/_dark.scss */
+.body--theme-dark .btn--nav:hover {
   color: #f50;
 }
-/* line 42, src/sass/themes/_dark.scss */
+/* line 44, src/sass/themes/_dark.scss */
+.body--theme-dark #logo {
+  background-blend-mode: multiply;
+}
+/* line 48, src/sass/themes/_dark.scss */
 .body--theme-dark #search {
   background-color: #090909;
-  color: #555;
-  font-size: 1rem;
+  box-shadow: inset 0 -1px 1px #222;
 }
-/* line 49, src/sass/themes/_dark.scss */
+/* line 54, src/sass/themes/_dark.scss */
 .body--theme-dark ::-webkit-input-placeholder {
-  color: #666;
+  color: #555;
 }
-/* line 55, src/sass/themes/_dark.scss */
-.body--theme-dark #menu:hover .dot,
-.body--theme-dark #menu:hover .dot:after,
-.body--theme-dark #menu:hover .dot:before {
-  background-color: #f50;
-}
-/* line 64, src/sass/themes/_dark.scss */
-.body--theme-dark .loader--global-wave .sk-rect {
-  background-color: #f50;
-}
-/* line 69, src/sass/themes/_dark.scss */
-.body--theme-dark .overlay {
+/* line 58, src/sass/themes/_dark.scss */
+.body--theme-dark #overlay {
   background-color: #222;
 }
-/* line 73, src/sass/themes/_dark.scss */
-.body--theme-dark .loader2 {
-  border-top-color: darksalmon;
-}
-/* line 79, src/sass/themes/_dark.scss */
-.body--theme-dark #player progress::-webkit-progress-bar {
-  background-color: darksalmon;
-}
-/* line 83, src/sass/themes/_dark.scss */
+/* line 68, src/sass/themes/_dark.scss */
 .body--theme-dark #player progress::-webkit-progress-value {
   background-color: #f50;
 }
-/* line 89, src/sass/themes/_dark.scss */
+/* line 74, src/sass/themes/_dark.scss */
 .body--theme-dark ::-webkit-scrollbar-thumb {
   background-color: #191919;
 }
-/* line 94, src/sass/themes/_dark.scss */
-.body--theme-dark .btn.btn--player {
+/* line 78, src/sass/themes/_dark.scss */
+.body--theme-dark .btn--player {
   color: #555;
 }
-/* line 97, src/sass/themes/_dark.scss */
-.body--theme-dark .btn.btn--player:hover {
+/* line 81, src/sass/themes/_dark.scss */
+.body--theme-dark .btn--player:hover {
   color: #f50;
 }
-/* line 102, src/sass/themes/_dark.scss */
-.body--theme-dark .btn.btn--style-1 {
+/* line 86, src/sass/themes/_dark.scss */
+.body--theme-dark .btn--style-1 {
   color: darkgray;
 }
-/* line 105, src/sass/themes/_dark.scss */
-.body--theme-dark .btn.btn--style-1.btn--selected {
+/* line 89, src/sass/themes/_dark.scss */
+.body--theme-dark .btn--style-1.btn--selected {
   color: #f50;
 }
-/* line 108, src/sass/themes/_dark.scss */
-.body--theme-dark .btn.btn--style-1.btn--selected:hover {
+/* line 92, src/sass/themes/_dark.scss */
+.body--theme-dark .btn--style-1.btn--selected:hover {
   color: #f50;
 }
-/* line 113, src/sass/themes/_dark.scss */
-.body--theme-dark .btn.btn--style-1:hover {
+/* line 97, src/sass/themes/_dark.scss */
+.body--theme-dark .btn--style-1:hover {
   color: #666;
 }
-/* line 118, src/sass/themes/_dark.scss */
-.body--theme-dark .btn.btn--player-icon {
+/* line 102, src/sass/themes/_dark.scss */
+.body--theme-dark .btn--player-icon {
   color: #555;
 }
-/* line 121, src/sass/themes/_dark.scss */
-.body--theme-dark .btn.btn--player-icon:hover {
+/* line 105, src/sass/themes/_dark.scss */
+.body--theme-dark .btn--player-icon:hover {
   color: #f50;
 }
-/* line 126, src/sass/themes/_dark.scss */
-.body--theme-dark .btn.btn--nav, .body--theme-dark .nav--main .btn, .nav--main .body--theme-dark .btn {
-  border-bottom-color: #191919;
-}
-/* line 131, src/sass/themes/_dark.scss */
-.body--theme-dark .dot,
-.body--theme-dark .dot:after,
-.body--theme-dark .dot:before {
-  background-color: #000;
-}
-/* line 139, src/sass/themes/_dark.scss */
+/* line 116, src/sass/themes/_dark.scss */
 .body--theme-dark .list:not(:empty):not(.no-results) .list__item:hover .list__track-title {
   color: #f50;
 }
-/* line 145, src/sass/themes/_dark.scss */
+/* line 122, src/sass/themes/_dark.scss */
 .body--theme-dark .list__item:hover {
   background-color: #191919;
 }
-/* line 149, src/sass/themes/_dark.scss */
+/* line 126, src/sass/themes/_dark.scss */
 .body--theme-dark .list__item .list__thumbnail {
-  background-color: #141414;
+  background-color: #111;
 }
-/* line 155, src/sass/themes/_dark.scss */
+/* line 132, src/sass/themes/_dark.scss */
 .body--theme-dark .list__item.list__item--no-artwork:hover .list__thumbnail {
   background-color: #f50;
 }
-/* line 159, src/sass/themes/_dark.scss */
+/* line 136, src/sass/themes/_dark.scss */
 .body--theme-dark .list__item.list__item--no-artwork:hover .list__playing-animation {
   color: #fff;
 }
-/* line 166, src/sass/themes/_dark.scss */
+/* line 143, src/sass/themes/_dark.scss */
 .body--theme-dark .list__item--selected {
   background-color: #151515;
   border-bottom-color: #252525;
 }
-/* line 170, src/sass/themes/_dark.scss */
+/* line 147, src/sass/themes/_dark.scss */
 .body--theme-dark .list__item--selected .list__thumbnail {
   background-color: #666;
 }
-/* line 174, src/sass/themes/_dark.scss */
+/* line 151, src/sass/themes/_dark.scss */
 .body--theme-dark .list__item--selected.list__item--no-artwork .list__thumbnail {
   background-color: #f50;
 }
-/* line 179, src/sass/themes/_dark.scss */
+/* line 156, src/sass/themes/_dark.scss */
 .body--theme-dark .list__list {
   text-shadow: 0 1px 2px #000;
 }
-/* line 183, src/sass/themes/_dark.scss */
+/* line 160, src/sass/themes/_dark.scss */
 .body--theme-dark .list__track-meta {
   color: #444;
 }
-/* line 188, src/sass/themes/_dark.scss */
+/* line 165, src/sass/themes/_dark.scss */
 .body--theme-dark .list__track-title {
   color: #818181;
 }
+/* line 170, src/sass/themes/_dark.scss */
+.body--theme-dark .playing .header {
+  color: #555;
+}
+/* line 174, src/sass/themes/_dark.scss */
+.body--theme-dark .playing__title {
+  color: #fff;
+}
+/* line 178, src/sass/themes/_dark.scss */
+.body--theme-dark .playing__artist {
+  color: #555;
+}
 
-/* scss-lint:disable Compass::PropertyWithMixin */
-/* scss-lint:disable ColorVariable */
-/* scss-lint:disable ColorKeyword */
-/* scss-lint:disable Indentation */
-/* line 111, src/sass/themes/_spotify.scss */
+/* line 108, src/sass/themes/_spotify.scss */
 .body--theme-spotify {
   background-color: #111;
-  color: whitesmoke;
 }
-/* line 12, src/sass/themes/_dark.scss */
-.body--theme-spotify header {
-  background-color: #111;
-  border-bottom-color: #444;
+/* line 14, src/sass/themes/_dark.scss */
+.body--theme-spotify .nav--main {
+  border-right: 1px solid #010101;
 }
-/* line 17, src/sass/themes/_dark.scss */
-.body--theme-spotify .mask {
+/* line 18, src/sass/themes/_dark.scss */
+.body--theme-spotify #main {
+  background-color: #131313;
+}
+/* line 22, src/sass/themes/_dark.scss */
+.body--theme-spotify #mask {
   background-color: #111;
   background-blend-mode: multiply;
 }
-/* line 23, src/sass/themes/_dark.scss */
-.body--theme-spotify .mask::after {
+/* line 26, src/sass/themes/_dark.scss */
+.body--theme-spotify #mask::after {
   background-color: #000;
 }
-/* line 30, src/sass/themes/_dark.scss */
-.body--theme-spotify .btn--nav, .body--theme-spotify .nav--main .btn, .nav--main .body--theme-spotify .btn {
+/* line 32, src/sass/themes/_dark.scss */
+.body--theme-spotify .btn--nav {
   color: #555;
 }
-/* line 33, src/sass/themes/_dark.scss */
-.body--theme-spotify .btn--nav.btn--selected, .body--theme-spotify .nav--main .btn--selected.btn, .nav--main .body--theme-spotify .btn--selected.btn {
+/* line 35, src/sass/themes/_dark.scss */
+.body--theme-spotify .btn--nav.btn--selected {
   color: #f50;
 }
-/* line 37, src/sass/themes/_dark.scss */
-.body--theme-spotify .btn--nav:hover, .body--theme-spotify .nav--main .btn:hover, .nav--main .body--theme-spotify .btn:hover {
+/* line 39, src/sass/themes/_dark.scss */
+.body--theme-spotify .btn--nav:hover {
   color: #f50;
 }
-/* line 42, src/sass/themes/_dark.scss */
+/* line 44, src/sass/themes/_dark.scss */
+.body--theme-spotify #logo {
+  background-blend-mode: multiply;
+}
+/* line 48, src/sass/themes/_dark.scss */
 .body--theme-spotify #search {
   background-color: #090909;
-  color: #555;
-  font-size: 1rem;
+  box-shadow: inset 0 -1px 1px #222;
 }
-/* line 49, src/sass/themes/_dark.scss */
+/* line 54, src/sass/themes/_dark.scss */
 .body--theme-spotify ::-webkit-input-placeholder {
-  color: #666;
+  color: #555;
 }
-/* line 55, src/sass/themes/_dark.scss */
-.body--theme-spotify #menu:hover .dot,
-.body--theme-spotify #menu:hover .dot:after,
-.body--theme-spotify #menu:hover .dot:before {
-  background-color: #f50;
-}
-/* line 64, src/sass/themes/_dark.scss */
-.body--theme-spotify .loader--global-wave .sk-rect {
-  background-color: #f50;
-}
-/* line 69, src/sass/themes/_dark.scss */
-.body--theme-spotify .overlay {
+/* line 58, src/sass/themes/_dark.scss */
+.body--theme-spotify #overlay {
   background-color: #222;
 }
-/* line 73, src/sass/themes/_dark.scss */
-.body--theme-spotify .loader2 {
-  border-top-color: darksalmon;
-}
-/* line 79, src/sass/themes/_dark.scss */
-.body--theme-spotify #player progress::-webkit-progress-bar {
-  background-color: darksalmon;
-}
-/* line 83, src/sass/themes/_dark.scss */
+/* line 68, src/sass/themes/_dark.scss */
 .body--theme-spotify #player progress::-webkit-progress-value {
   background-color: #f50;
 }
-/* line 89, src/sass/themes/_dark.scss */
+/* line 74, src/sass/themes/_dark.scss */
 .body--theme-spotify ::-webkit-scrollbar-thumb {
   background-color: #191919;
 }
-/* line 94, src/sass/themes/_dark.scss */
-.body--theme-spotify .btn.btn--player {
+/* line 78, src/sass/themes/_dark.scss */
+.body--theme-spotify .btn--player {
   color: #555;
 }
-/* line 97, src/sass/themes/_dark.scss */
-.body--theme-spotify .btn.btn--player:hover {
+/* line 81, src/sass/themes/_dark.scss */
+.body--theme-spotify .btn--player:hover {
   color: #f50;
 }
-/* line 102, src/sass/themes/_dark.scss */
-.body--theme-spotify .btn.btn--style-1 {
+/* line 86, src/sass/themes/_dark.scss */
+.body--theme-spotify .btn--style-1 {
   color: darkgray;
 }
-/* line 105, src/sass/themes/_dark.scss */
-.body--theme-spotify .btn.btn--style-1.btn--selected {
+/* line 89, src/sass/themes/_dark.scss */
+.body--theme-spotify .btn--style-1.btn--selected {
   color: #f50;
 }
-/* line 108, src/sass/themes/_dark.scss */
-.body--theme-spotify .btn.btn--style-1.btn--selected:hover {
+/* line 92, src/sass/themes/_dark.scss */
+.body--theme-spotify .btn--style-1.btn--selected:hover {
   color: #f50;
 }
-/* line 113, src/sass/themes/_dark.scss */
-.body--theme-spotify .btn.btn--style-1:hover {
+/* line 97, src/sass/themes/_dark.scss */
+.body--theme-spotify .btn--style-1:hover {
   color: #666;
 }
-/* line 118, src/sass/themes/_dark.scss */
-.body--theme-spotify .btn.btn--player-icon {
+/* line 102, src/sass/themes/_dark.scss */
+.body--theme-spotify .btn--player-icon {
   color: #555;
 }
-/* line 121, src/sass/themes/_dark.scss */
-.body--theme-spotify .btn.btn--player-icon:hover {
+/* line 105, src/sass/themes/_dark.scss */
+.body--theme-spotify .btn--player-icon:hover {
   color: #f50;
 }
-/* line 126, src/sass/themes/_dark.scss */
-.body--theme-spotify .btn.btn--nav, .body--theme-spotify .nav--main .btn, .nav--main .body--theme-spotify .btn {
-  border-bottom-color: #191919;
-}
-/* line 131, src/sass/themes/_dark.scss */
-.body--theme-spotify .dot,
-.body--theme-spotify .dot:after,
-.body--theme-spotify .dot:before {
-  background-color: #000;
-}
-/* line 139, src/sass/themes/_dark.scss */
+/* line 116, src/sass/themes/_dark.scss */
 .body--theme-spotify .list:not(:empty):not(.no-results) .list__item:hover .list__track-title {
   color: #f50;
 }
-/* line 145, src/sass/themes/_dark.scss */
+/* line 122, src/sass/themes/_dark.scss */
 .body--theme-spotify .list__item:hover {
   background-color: #191919;
 }
-/* line 149, src/sass/themes/_dark.scss */
+/* line 126, src/sass/themes/_dark.scss */
 .body--theme-spotify .list__item .list__thumbnail {
-  background-color: #141414;
+  background-color: #111;
 }
-/* line 155, src/sass/themes/_dark.scss */
+/* line 132, src/sass/themes/_dark.scss */
 .body--theme-spotify .list__item.list__item--no-artwork:hover .list__thumbnail {
   background-color: #f50;
 }
-/* line 159, src/sass/themes/_dark.scss */
+/* line 136, src/sass/themes/_dark.scss */
 .body--theme-spotify .list__item.list__item--no-artwork:hover .list__playing-animation {
   color: #fff;
 }
-/* line 166, src/sass/themes/_dark.scss */
+/* line 143, src/sass/themes/_dark.scss */
 .body--theme-spotify .list__item--selected {
   background-color: #151515;
   border-bottom-color: #252525;
 }
-/* line 170, src/sass/themes/_dark.scss */
+/* line 147, src/sass/themes/_dark.scss */
 .body--theme-spotify .list__item--selected .list__thumbnail {
   background-color: #666;
 }
-/* line 174, src/sass/themes/_dark.scss */
+/* line 151, src/sass/themes/_dark.scss */
 .body--theme-spotify .list__item--selected.list__item--no-artwork .list__thumbnail {
   background-color: #f50;
 }
-/* line 179, src/sass/themes/_dark.scss */
+/* line 156, src/sass/themes/_dark.scss */
 .body--theme-spotify .list__list {
   text-shadow: 0 1px 2px #000;
 }
-/* line 183, src/sass/themes/_dark.scss */
+/* line 160, src/sass/themes/_dark.scss */
 .body--theme-spotify .list__track-meta {
   color: #444;
 }
-/* line 188, src/sass/themes/_dark.scss */
+/* line 165, src/sass/themes/_dark.scss */
 .body--theme-spotify .list__track-title {
   color: #818181;
 }
-/* line 10, src/sass/themes/_spotify.scss */
-.body--theme-spotify .btn--nav.btn--selected, .body--theme-spotify .nav--main .btn--selected.btn, .nav--main .body--theme-spotify .btn--selected.btn {
-  color: lime;
+/* line 170, src/sass/themes/_dark.scss */
+.body--theme-spotify .playing .header {
+  color: #555;
 }
-/* line 14, src/sass/themes/_spotify.scss */
-.body--theme-spotify .btn--nav:hover, .body--theme-spotify .nav--main .btn:hover, .nav--main .body--theme-spotify .btn:hover {
-  color: lime;
+/* line 174, src/sass/themes/_dark.scss */
+.body--theme-spotify .playing__title {
+  color: #fff;
 }
-/* line 21, src/sass/themes/_spotify.scss */
+/* line 178, src/sass/themes/_dark.scss */
+.body--theme-spotify .playing__artist {
+  color: #555;
+}
+/* line 13, src/sass/themes/_spotify.scss */
+.body--theme-spotify .btn--nav.btn--selected {
+  color: #84bd00;
+}
+/* line 17, src/sass/themes/_spotify.scss */
+.body--theme-spotify .btn--nav:hover {
+  color: #84bd00;
+}
+/* line 24, src/sass/themes/_spotify.scss */
 .body--theme-spotify #menu:hover .dot,
 .body--theme-spotify #menu:hover .dot:after,
 .body--theme-spotify #menu:hover .dot:before {
-  background-color: lime;
+  background-color: #84bd00;
 }
-/* line 32, src/sass/themes/_spotify.scss */
-.body--theme-spotify .loader--global-wave .sk-rect {
-  background-color: lime;
-}
-/* line 37, src/sass/themes/_spotify.scss */
+/* line 34, src/sass/themes/_spotify.scss */
 .body--theme-spotify .loader2 {
-  border-top-color: lime;
+  border-top-color: #84bd00;
 }
-/* line 42, src/sass/themes/_spotify.scss */
+/* line 39, src/sass/themes/_spotify.scss */
 .list__item--no-artwork .loader2 {
   border-color: rgba(255, 255, 255, 0.15);
   border-top-color: #fff;
 }
-/* line 52, src/sass/themes/_spotify.scss */
+/* line 49, src/sass/themes/_spotify.scss */
 .body--theme-spotify .btn.btn--player:hover {
-  color: lime;
+  color: #84bd00;
+}
+/* line 55, src/sass/themes/_spotify.scss */
+.body--theme-spotify .btn.btn--style-1.btn--selected {
+  color: #84bd00;
 }
 /* line 58, src/sass/themes/_spotify.scss */
-.body--theme-spotify .btn.btn--style-1.btn--selected {
-  color: lime;
-}
-/* line 61, src/sass/themes/_spotify.scss */
 .body--theme-spotify .btn.btn--style-1.btn--selected:hover {
-  color: lime;
+  color: #84bd00;
 }
-/* line 68, src/sass/themes/_spotify.scss */
+/* line 65, src/sass/themes/_spotify.scss */
 .body--theme-spotify .btn.btn--player-icon:hover {
-  color: lime;
+  color: #84bd00;
 }
-/* line 76, src/sass/themes/_spotify.scss */
+/* line 73, src/sass/themes/_spotify.scss */
 .body--theme-spotify #player progress::-webkit-progress-bar {
   background-color: rgba(0, 0, 0, 0.5);
 }
-/* line 80, src/sass/themes/_spotify.scss */
+/* line 77, src/sass/themes/_spotify.scss */
 .body--theme-spotify #player progress::-webkit-progress-value {
-  background-color: lime;
+  background-color: #84bd00;
 }
-/* line 88, src/sass/themes/_spotify.scss */
+/* line 85, src/sass/themes/_spotify.scss */
 .body--theme-spotify .list:not(:empty):not(.no-results) .list__item:hover .list__track-title {
-  color: lime;
+  color: #84bd00;
 }
-/* line 96, src/sass/themes/_spotify.scss */
+/* line 93, src/sass/themes/_spotify.scss */
 .body--theme-spotify .list__item.list__item--no-artwork:hover .list__thumbnail {
-  background-color: limegreen;
+  background-color: #84bd00;
 }
-/* line 104, src/sass/themes/_spotify.scss */
+/* line 101, src/sass/themes/_spotify.scss */
 .body--theme-spotify .list__item--selected.list__item--no-artwork .list__thumbnail {
-  background-color: limegreen;
+  background-color: #84bd00;
 }
 
 /* scss-lint:disable Compass::PropertyWithMixin */
 /* line 3, src/sass/_positioning.scss */
+#mask,
+#overlay,
 .nav--main,
-.overlay,
-.mask,
 header,
-main,
-progress {
+main {
   backface-visibility: hidden;
   transform: translate3d(0, 0, 0);
 }
 
-/* line 18, src/sass/_positioning.scss */
+/* line 17, src/sass/_positioning.scss */
 header {
   z-index: 3;
 }
 
-/* line 22, src/sass/_positioning.scss */
+/* line 21, src/sass/_positioning.scss */
 .nav--main {
   z-index: 2;
 }
 
-/* line 26, src/sass/_positioning.scss */
+/* line 25, src/sass/_positioning.scss */
 main {
   z-index: 2;
 }
 
-/* line 30, src/sass/_positioning.scss */
-.mask {
+/* line 29, src/sass/_positioning.scss */
+#mask {
   z-index: 0;
 }
-/* line 33, src/sass/_positioning.scss */
-.mask:after {
+/* line 32, src/sass/_positioning.scss */
+#mask:after {
   z-index: 1;
 }
 
-/* line 38, src/sass/_positioning.scss */
-.overlay {
+/* line 37, src/sass/_positioning.scss */
+#overlay {
   z-index: 9;
 }
 
 /* scss-lint:disable all */
-/* line 7, src/sass/_player.scss */
+/* line 4, src/sass/_player.scss */
+#player {
+  margin-top: 1rem;
+}
+/* line 8, src/sass/_player.scss */
 #player:not(.hidden) + #search {
   margin-top: 0.625rem;
 }
-/* line 24, src/sass/_player.scss */
-#player .btn--player:not(:last-child) {
-  margin-right: 0.625rem;
-}
-/* line 30, src/sass/_player.scss */
+/* line 14, src/sass/_player.scss */
 #player progress {
+  box-shadow: inset 0 -to-rem(1) 0.0625rem #222;
   -webkit-appearance: none;
   appearance: none;
-  height: 0.3125rem;
-  transition: height .3s;
-  top: 0;
-  left: 0;
+  height: 0.375rem;
+  border-radius: 0.125rem;
 }
-/* line 42, src/sass/_player.scss */
+/* line 25, src/sass/_player.scss */
 #player progress::-webkit-progress-bar {
+  border-radius: 0.125rem;
   transition: width .2s;
 }
-/* line 50, src/sass/_player.scss */
-#player progress:hover {
-  height: 0.625rem;
+/* line 30, src/sass/_player.scss */
+#player progress::-webkit-progress-value {
+  border-radius: 0.125rem;
+  background: linear-gradient(to top, #000000 10%, #84bd00 100%);
+}
+/* line 44, src/sass/_player.scss */
+#player .nav--player {
+  margin-top: 0.625rem;
 }
 
 /* scss-lint:disable Compass::PropertyWithMixin */
@@ -5341,86 +5443,44 @@ html {
   }
 }
 
-/* line 16, src/sass/_layout.scss */
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-  height: inherit;
+/* line 22, src/sass/_layout.scss */
+body,
+input,
+optgroup,
+select,
+textarea {
+  font-family: "Montserrat", BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
-/* line 24, src/sass/_layout.scss */
-header {
-  transition: padding .2s;
-  left: 0;
-  top: 0;
-  padding: 0.9375rem 0.75rem;
-  opacity: .985;
-}
-/* line 32, src/sass/_layout.scss */
-header.header--new-style {
-  padding: 0;
-  border-width: 0;
-}
-/* line 36, src/sass/_layout.scss */
-header.header--new-style #player {
-  padding: 0.9375rem 2.1875rem 0;
-}
-/* line 40, src/sass/_layout.scss */
-header.header--new-style #search {
-  border-radius: 0;
-  border-width: 0;
-}
-
-/* line 47, src/sass/_layout.scss */
-main {
-  width: calc(100% - 250px);
-  transform: translate3d(250px, 0, 0);
-}
-
-/* line 54, src/sass/_layout.scss */
-.list {
-  user-select: none;
+/* line 31, src/sass/_layout.scss */
+button {
+  font-family: 'Montserrat';
 }
 
 /* line 58, src/sass/_layout.scss */
+main {
+  width: calc(100% - 18.75rem);
+  transform: translate3d(18.75rem, 0, 0);
+}
+
+/* line 66, src/sass/_layout.scss */
 .nav--main {
-  width: 250px;
+  width: 18.75rem;
   padding: 1.25rem;
+  padding-top: 2.1875rem;
   border-radius: 0 4px 0 0;
   transition: transform .5s;
+  box-shadow: inset -1px 0 0 #141414;
 }
-/* line 66, src/sass/_layout.scss */
-.nav--main .btn {
-  white-space: nowrap;
-}
-/* line 71, src/sass/_layout.scss */
-.nav--main .btn:last-child:not(.hidden) {
-  border-bottom-width: 0;
-}
-
 /* line 77, src/sass/_layout.scss */
-.overlay {
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+.nav--player {
+  text-align: center;
 }
 
-/* line 83, src/sass/_layout.scss */
-.mask {
+/* line 82, src/sass/_layout.scss */
+#overlay {
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  background-size: cover;
-}
-/* line 87, src/sass/_layout.scss */
-.mask::after {
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  position: inherit;
-  backface-visibility: inherit;
-  transform: inherit;
-  opacity: .85;
 }

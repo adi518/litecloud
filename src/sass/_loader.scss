@@ -57,7 +57,7 @@
 
 .loader--global {
     @extend %loader--global;
-    @extend .loader3; // roll our own, duh
+    @extend .init-loader; // roll our own, duh
 }
 
 .loader--global-wave {
