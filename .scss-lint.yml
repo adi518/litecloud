@@ -52,3 +52,6 @@ linters:
     SelectorFormat:
         enabled: true
         convention: hyphenated_BEM
+
+    DeclarationOrder:
+        enabled: false

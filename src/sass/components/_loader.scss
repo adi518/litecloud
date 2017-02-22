@@ -50,22 +50,13 @@
     z-index: 99;
 }
 
-.loader--global,
-.loader--global-wave {
+.loader--global {
     @extend %display-none;
 }
 
 .loader--global {
     @extend %loader--global;
     @extend .init-loader; // roll our own, duh
-}
-
-.loader--global-wave {
-    @extend %loader--global;
-    @extend .sk-wave;
-    height: $global-loader-size / 1.25;
-    margin-top: 0;
-    margin-bottom: 0;
 }
 
 //

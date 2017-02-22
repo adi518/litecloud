@@ -19,10 +19,10 @@
     height: $value;
 }
 @mixin hide {
-    @extend %display-none;
+     @extend %display-none;
 }
 @mixin show {
-    @extend %display-block;
+     @extend %display-block;
 }
 @mixin position($position, $args) {
      @include position-args($args);
@@ -46,9 +46,12 @@
 @mixin vertical-align($position: null) {
     @if $position == 'top' {
         transform: translateY(-100%);
-    } @else if $position == 'bottom' {
+    }
+
+    @else if $position == 'bottom' {
         transform: translateY(0%);
-    } @else {
+    }
+    @else {
         transform: translateY(-50%);
     }
     position: relative;
@@ -103,4 +106,113 @@
         border-radius: to-rem($U5);
         box-shadow: inset 0 0 0 to-rem($U32), to-rem($U20) 0 0 0;
     }
+}
+// https://codepen.io/ndeniche/pen/ljbDL
+@mixin close($width, $height, $color, $hover-color) {
+    // .close {
+        position: relative;
+        display: inline-block;
+        width: $width;
+        height: $height;
+        overflow: hidden;
+        outline: 0;
+
+        &:hover {
+            &::after,
+            &::before {
+                background-color: $hover-color;
+            }
+        }
+
+        &::after,
+        &::before {
+            content: '';
+            position: absolute;
+            height: 2px;
+            width: 100%;
+            top: 50%;
+            left: 0;
+            margin-top: -1px;
+            background: $color;
+        }
+
+        &::before {
+            @include transform(rotate(45deg));
+        }
+
+        &::after {
+            @include transform(rotate(-45deg));
+        }
+
+        &.big {
+            @include transform(scale(3));
+        }
+
+        &.hairline {
+            &::after,
+            &::before {
+                height: 1px;
+            }
+        }
+
+        &.thick {
+            &::after,
+            &::before {
+                height: 4px;
+                margin-top: -2px;
+            }
+        }
+
+        &.black {
+            &::after,
+            &::before {
+                height: 8px;
+                margin-top: -4px;
+            }
+        }
+
+        &.heavy {
+            &::after,
+            &::before {
+                height: 12px;
+                margin-top: -6px;
+            }
+        }
+
+        &.pointy {
+            &::after,
+            &::before {
+                width: 200%;
+                left: -50%;
+            }
+        }
+
+        &.rounded {
+            &::after,
+            &::before {
+                border-radius: 5px;
+            }
+        }
+
+        &.blades {
+            &::after,
+            &::before {
+                border-radius: 5px 0;
+            }
+        }
+
+        &.warp {
+            &::after,
+            &::before {
+                border-radius: 120% 0;
+            }
+        }
+
+        &.fat {
+            &::after,
+            &::before {
+                border-radius: 100%;
+            }
+        }
+    // }
 }

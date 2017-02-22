@@ -1,29 +1,35 @@
-/* scss-lint:disable Compass::PropertyWithMixin */
-@import 'normalize';
-
-// bof: normalize
-@include normalize;
-// eof: normalize
-
-* {
-    margin: 0;
-    padding: 0;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-}
+// scss-lint:disable Compass::PropertyWithMixin
 
 html {
     box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 
-    * {
-        &:after,
-        &:before,
-        &:not(head) {
-            box-sizing: inherit;
-        }
+    *,
+    &::after,
+    &::before {
+        box-sizing: inherit;
+        -webkit-font-smoothing: inherit;
+        text-rendering: inherit;
     }
 }
 
-iframe {
-    @extend %display-block;
+body,
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: $font-family;
+}
+
+b,
+strong {
+    font-weight: 400;
+    font-family: $font-family-bold;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
 }

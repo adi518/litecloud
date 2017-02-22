@@ -1,0 +1,27 @@
+/* scss-lint:disable Compass::PropertyWithMixin */
+/* scss-lint:disable ColorKeyword */
+/* scss-lint:disable ColorVariable */
+
+.no-results {
+    .list__item {
+        text-align: center;
+
+        &:hover {
+            background-color: transparent;
+        }
+    }
+}
+
+.list {
+    @extend %no-user-select;
+    padding-top: to-rem(35);
+    padding-bottom: to-rem(35);
+    margin-left: to-rem(20);
+    margin-right: to-rem(20);
+
+    &:not(.no-results) {
+        .list__item {
+            @extend %cursor-pointer;
+        }
+    }
+}

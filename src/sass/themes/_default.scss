@@ -5,14 +5,6 @@
 
 // layout
 
-header {
-    //
-}
-
-main {
-    //
-}
-
 #overlay {
     background-color: whitesmoke;
 }
@@ -64,7 +56,9 @@ main {
             }
         }
     }
+}
 
+.item {
     &__thumbnail {
         color: #fff;
     }
@@ -86,6 +80,3 @@ main {
         background-color: #000;
     }
 }
-
-// states
-//

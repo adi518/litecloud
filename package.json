@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/adi518/litecloud#readme",
   "dependencies": {
+    "bemify": "^0.1.2",
     "debug-menu": "^0.4.0",
     "electron": "^1.4.15",
     "electron-context-menu": "^0.8.0",
@@ -35,6 +36,7 @@
     "jscroll": "^2.3.7",
     "lodash": "^4.17.4",
     "material-design-icons": "^3.0.1",
+    "normalize.css": "^5.0.0",
     "pug": "^2.0.0-beta11",
     "slash": "^1.0.0",
     "spinkit": "^1.2.5",

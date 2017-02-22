@@ -3,12 +3,6 @@
 
 #player {
     margin-top: to-rem(16);
-    //
-    &:not(.hidden) {
-        + #search {
-            margin-top: to-rem(10);
-        }
-    }
 
     // progress:not([value]) {
     progress {

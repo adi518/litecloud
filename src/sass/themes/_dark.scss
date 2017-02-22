@@ -2,21 +2,21 @@
 // scss-lint:disable ColorVariable
 // scss-lint:disable ColorKeyword
 // scss-lint:disable Indentation
-//
+// scss-lint:disable MergeableSelector
 
-$init-loader-color: $orange;
+$init-loader-color: $spotify-green;
 //
-@mixin theme-dark {
-    //
-    // layout
-    background-color: #111;
-
+.theme-dark {
     .nav--main {
         border-right: 1px solid #010101;
     }
 
     #main {
         background-color: #131313;
+    }
+
+    #overlay {
+        background-color: #222;
     }
 
     #mask {
@@ -29,15 +29,9 @@ $init-loader-color: $orange;
     }
 
     // components
-    .btn--nav {
-        color: #555;
-
-        &.btn--selected {
-            color: $orange;
-        }
-
-        &:hover {
-            color: $orange;
+    .component {
+        &__header {
+            color: #555;
         }
     }
 
@@ -47,55 +41,43 @@ $init-loader-color: $orange;
 
     #search {
         background-color: #090909;
+        color: #fff;
         box-shadow: inset 0 -1px 1px #222;
-        // color: #555;
     }
 
     ::-webkit-input-placeholder {
         color: #555;
     }
 
-    #overlay {
-        background-color: #222;
+    progress::-webkit-progress-value {
+        background-color: $spotify-green;
     }
 
-    #player {
-        progress {
-            &::-webkit-progress-bar {
-                //
-            }
-
-            &::-webkit-progress-value {
-                background-color: $orange;
-            }
-        }
+    progress::-webkit-progress-bar {
+        background-color: rgba(0, 0, 0, .5);
     }
 
     ::-webkit-scrollbar-thumb {
         background-color: #191919;
     }
 
+    .btn--nav {
+        color: #555;
+
+        &:hover {
+            color: $spotify-green;
+        }
+    }
+
+    .btn--selected {
+        color: $spotify-green;
+    }
+
     .btn--player {
         color: #555;
 
         &:hover {
-            color: $orange;
-        }
-    }
-
-    .btn--style-1 {
-        color: darkgray;
-
-        &.btn--selected {
-            color: $orange;
-
-            &:hover {
-                color: $orange;
-            }
-        }
-
-        &:hover {
-            color: #666;
+            color: $spotify-green;
         }
     }
 
@@ -103,78 +85,76 @@ $init-loader-color: $orange;
         color: #555;
 
         &:hover {
-            color: $orange;
+            color: $spotify-green;
         }
-    }
-
-    .btn--nav {
-        //
     }
 
     .list {
         &.no-results {
             color: #555;
+            background-color: transparent;
         }
+    }
 
-        &:not(.no-results) .list__item:hover {
-            &:hover {
-                background-color: #191919;
-            }
+    .item {
+        &:hover {
+            background-color: #191919;
 
-            .list__track-title {
-                color: $orange;
-            }
-        }
-
-        &__item {
-            .list__thumbnail {
-                background-color: #111;
-            }
-
-            &.list__item--no-artwork {
-                &:hover {
-                    .list__thumbnail {
-                        background-color: $orange;
-                    }
-
-                    .list__playing-animation {
-                        color: #fff;
-                    }
-                }
+            .item__title {
+                color: $spotify-green;
             }
         }
+    }
 
-        &__item--selected {
-            background-color: #151515;
-            border-bottom-color: #252525;
-
-            .list__thumbnail {
-                background-color: #666;
-            }
-
-            &.list__item--no-artwork .list__thumbnail {
-                background-color: $orange;
-            }
+    // item elements
+    .item {
+        &__thumbnail {
+            background-color: #111;
         }
 
-        &__list {
+        &__data {
             text-shadow: 0 1px 2px #000;
         }
 
-        &__track-meta {
+        &__meta {
             color: #444;
+        }
+
+        &__title {
+            color: #818181;
+        }
+
+        &__tag {
+            color: #fff;
+            background-color: #000;
         }
     }
 
-    .list__track-title {
-        color: #818181;
+    // item modifiers
+    .item--no-artwork {
+        &:hover {
+            .item__thumbnail {
+                background-color: $spotify-green;
+            }
+        }
+    }
+
+    .item--selected {
+        background-color: #151515;
+        border-bottom-color: #252525;
+
+        .item__thumbnail {
+            background-color: #666;
+        }
+
+        &.item--no-artwork {
+            .item__thumbnail {
+                background-color: $spotify-green;
+            }
+        }
     }
 
     .playing {
-        .header {
-            color: #555;
-        }
-
         &__title {
             color: #fff;
         }
@@ -183,8 +163,4 @@ $init-loader-color: $orange;
             color: #555;
         }
     }
-}
-
-.body--theme-dark {
-    @include theme-dark;
 }

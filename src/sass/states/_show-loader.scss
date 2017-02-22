@@ -1,0 +1,13 @@
+.show-loader {
+    @extend %overflow-hidden; // disable scroll
+
+    @include block ('loader') {
+        @include modifier ('global') {
+            @extend %display-block;
+        }
+    }
+
+    #overlay {
+        @extend %display-block;
+    }
+}

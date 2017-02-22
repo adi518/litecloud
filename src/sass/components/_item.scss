@@ -1,0 +1,107 @@
+/* scss-lint:disable Compass::PropertyWithMixin */
+/* scss-lint:disable ColorKeyword */
+/* scss-lint:disable ColorVariable */
+
+@include block ('item') {
+    @extend %clearfix;
+    @extend %uppercase;
+    padding-right: to-rem(35);
+    transition: padding .2s;
+
+    &:hover {
+        .item__data {
+            margin-top: to-rem(10);
+        }
+    }
+
+    &:not(:first-child) {
+        margin-top: to-rem(35);
+    }
+
+    @include modifier('no-artwork') {
+        //
+        &:hover {
+            .item__icon {
+                opacity: .5;
+            }
+        }
+
+        .item__icon {
+            @include vertical-align;
+            $dim: to-rem(70);
+            @include dim($dim);
+            background-size: $dim $dim;
+            background-image: url($thumbnail-no-artwork-image);
+            display: block;
+            margin: 0 auto;
+            opacity: .45;
+        }
+
+        .item__thumbnail {
+            image-rendering: auto;
+        }
+    }
+
+    @include modifier('selected') {
+        padding-top: to-rem(10);
+        padding-bottom: to-rem(10);
+        padding-left: to-rem(10);
+        border-bottom-width: to-rem(1); // experimental
+        border-bottom-style: solid; // experimental
+
+        &:hover {
+            .item__data {
+                margin-top: 0;
+            }
+        }
+
+        &.item--no-artwork .item__icon {
+            display: none; // do not use @extend here
+        }
+
+        .item__thumbnail {
+            @extend %position-relative;
+            background-blend-mode: multiply;
+        }
+
+        .item__data {
+            margin-top: 0;
+        }
+    }
+}
+
+@include block ('item') {
+    &__thumbnail {
+        @extend %float-left;
+        @include dim($thumbnail-size);
+        margin-right: to-rem(20);
+        text-decoration: none;
+        background-size: cover;
+        transition: background-color .2s, background-blend-mode .2s;
+        image-rendering: -webkit-optimize-contrast;
+    }
+
+    &__data {
+        @extend %overflow-hidden; // prevents content wrap-around
+        list-style-type: none;
+        transition: margin-top, .1s;
+    }
+
+    &__truncated {
+        font-size: 0;
+    }
+
+    &__tag {
+        @extend %display-none;
+        @extend %white-space-nowrap;
+        @extend %overflow-hidden;
+        @extend %text-overflow-ellipsis;
+        position: absolute;
+        right: 0;
+        top: to-rem(7);
+        padding-left: to-rem(5);
+        padding-right: to-rem(5);
+        border-radius: to-rem(2) 0 0 to-rem(2);
+        max-width: 70%;
+    }
+}

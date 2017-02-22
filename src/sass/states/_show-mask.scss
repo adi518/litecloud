@@ -1,0 +1,11 @@
+// scss-lint:disable VendorPrefix
+
+.show-mask {
+    #mask {
+        -webkit-filter: blur(to-rem(50));
+        //
+        &:after {
+            @extend %display-block;
+        }
+    }
+}

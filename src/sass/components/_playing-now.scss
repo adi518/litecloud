@@ -3,14 +3,8 @@
 /* scss-lint:disable ColorVariable */
 
 .playing {
-    @extend %display-none;
+    @extend %hidden;
     cursor: default;
-    margin-top: to-rem(20);
-
-    .header {
-        font-size: to-rem(14);
-        text-transform: uppercase;
-    }
 
     &--no-artcover {
         .playing__thumbnail {
@@ -21,8 +15,7 @@
 
     &__thumbnail {
         margin-top: to-rem(10);
-        // border-radius: 50%;
-        border-radius: 2px;
+        border-radius: to-rem(2);
         width: $playing-thumbnail-size;
         height: $playing-thumbnail-size;
         background-size: cover;

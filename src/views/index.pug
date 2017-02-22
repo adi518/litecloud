@@ -3,18 +3,15 @@ html(lang="en")
     head
         title= "Litecloud"
         meta(charset="utf-8")
-        meta(http-equiv="x-ua-compatible" content="ie=edge")
-        meta(name="viewport" content="width=device-width, initial-scale=1")
         link(rel="stylesheet" href="assets/css/styles.css")
-        link(rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700")
-    body(id="body" class="body--show-loader body--theme-spotify")
+    body(id="body" class="body show-loader theme-dark")
         nav(id="title-bar")
             div(id="logo" src="assets/images/logo.png")
             div#title Litecloud
             div#title-bar-btns
-                button#minimize(class="btn btn--title-bar")
-                button#maximize(class="btn btn--title-bar")
-                button#terminate(class="btn btn--title-bar close rounded")
+                button(id="minimize" class="btn btn--title-bar")
+                button(id="maximize" class="btn btn--title-bar")
+                button(id="terminate" class="btn btn--title-bar close rounded")
         nav(id="nav" class="nav nav--main")
             input(id="search" name="search" type="text" placeholder="...")
             button(class="btn btn--nav" data-action="repeat")
@@ -23,38 +20,35 @@ html(lang="en")
             button(class="btn btn--nav" data-action="shuffle")
                 i(class="icon material-icons") shuffle
                 span &nbsp;shuffle
-            button(class="btn btn--nav" data-modifier="body--show-grid-view" data-toggle="body--show-grid-view" data-dismiss="true")
+            button(class="btn btn--nav" data-modifier="show-grid-view" data-toggle="show-grid-view" data-dismiss="true")
                 i(class="icon material-icons") view_module
                 span &nbsp;grid view
-            button(class="btn btn--nav hidden" data-modifier="body--show-grid-view" data-toggle="body--show-grid-view" data-dismiss="true")
+            button(class="btn btn--nav hidden" data-modifier="show-grid-view" data-toggle="show-grid-view" data-dismiss="true")
                 i(class="icon material-icons") view_headline
                 span &nbsp;list view
             button(class="btn btn--nav" data-action="autoplay")
                 i(class="icon material-icons") autorenew
                 span &nbsp;autoplay
-            //- button(class="btn hidden" data-modifier="body--dark-theme" data-toggle="body--dark-theme")&#9763;&nbsp;dark-theme
-            //- button(class="btn" data-modifier="body--dark-theme" data-toggle="body--dark-theme")&#9728;&nbsp;light-theme
             div(id="playing" class="playing")
-                h2(class="header") playing now
+                h2(class="component__header") playing now
                 div(id="playing-thumbnail" class="playing__thumbnail")
-                div(class="playing__description")
+                div(id="playing-description" class="playing__description")
                     div(id="playing-title" class="playing__title")
                     div(id="playing-artist" class="playing__artist")
-            #player(class="hidden")
-                audio#audio(type='audio/mpeg' controls='')
-                #media-controls
-                    progress#progress-bar(min='0', max='100')
-                    nav.nav.nav--player
-                        i#player-previous(class="btn btn--player material-icons") skip_previous
-                        i#player-playPause(class="btn btn--player material-icons") play_circle_outline
-                        i#player-next(class="btn btn--player material-icons") skip_next
+            div(id="player" class="hidden")
+                audio(id="audio" type='audio/mpeg' controls='')
+                progress(id="progress" min='0', max='100')
+                nav(class="nav nav--player")
+                    i(id="player-previous" class="btn btn--player material-icons") skip_previous
+                    i(id="player-playPause" class="btn btn--player material-icons") play_arrow
+                    i(id="player-next" class="btn btn--player material-icons") skip_next
         main(id="main")
             section(id="list" class="list")
         div(class="init-loader loader--global")
             div(class="inner one")
             div(class="inner two")
             div(class="inner three")
-        div(class="overlay")
+        div(id="overlay")
         div(id="mask")
         script(src="assets/js/script.js")
         script(src="assets/js/vendor/jquery.$$.min.js")

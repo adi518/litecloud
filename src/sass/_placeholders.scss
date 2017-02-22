@@ -123,10 +123,10 @@
 }
 
 %no-user-select {
-    /* scss-lint:disable VendorPrefix */
+    // scss-lint:disable VendorPrefix
     -webkit-user-select: none;
     user-select: none;
-    /* scss-lint:disable VendorPrefix */
+    // scss-lint:disable VendorPrefix
 }
 
 %clearfix {

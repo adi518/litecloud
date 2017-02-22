@@ -2,12 +2,9 @@
     @extend %clearfix;
 }
 
+.hide,
 .hidden {
     @extend %display-none;
-
-    &--important {
-        display: none !important;
-    }
 }
 
 .preload * {
@@ -20,10 +17,4 @@
 
 .pull-right {
     float: right;
-}
-
-b,
-strong {
-    font-weight: 400;
-    font-family: $font-family-bold;
 }

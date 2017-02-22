@@ -1,0 +1,17 @@
+// scss-lint:disable Compass::PropertyWithMixin
+
+#mask {
+    @include position-args(top 0 right 0 bottom 0 left 0);
+    background-size: cover;
+    background-blend-mode: color;
+
+    &::after {
+        @extend %display-none;
+        @extend %no-content;
+        @include position-args(top 0 right 0 bottom 0 left 0);
+        position: inherit;
+        backface-visibility: inherit;
+        transform: inherit;
+        opacity: .85;
+    }
+}

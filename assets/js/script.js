@@ -3,8 +3,10 @@
 /*global $, $$, mockup, SC:true */
 
 window.$ = window.jQuery = require('jquery');
-const {BrowserWindow} = require('electron').remote
-const drag = require('electron-drag');
+const {
+    BrowserWindow
+} = require('electron').remote
+var drag = require('electron-drag');
 
 'use strict';
 
@@ -18,8 +20,7 @@ $(function () {
         test: true,
         isdev: window.location.hash.substring(1) === 'dev',
         keyupDebounceDelay: 500,
-        devLoaderDelay: 500,
-        devPlayerLoaderDelay: 0,
+        devLoaderDelay: 0,
         init: {
             grid: true
         },
@@ -34,28 +35,24 @@ $(function () {
 
     var selectors = [
         '#body',
-        '#title-bar',
         '#minimize',
         '#maximize',
         '#terminate',
-        '#main-container',
         '#main',
         '#mask',
         '#header',
         '#audio',
         '#player-playPause',
-        '#player-stop',
-        '#player-replay',
         '#player-next',
         '#player-previous',
-        '#progress-bar',
+        '#player-replay',
+        '#progress',
         '#playing',
         '#playing-thumbnail',
         '#playing-title',
         '#playing-artist',
         '#nav',
         '#search',
-        '#menu',
         '#list',
         '#player',
         '.toggle-grid-view',
@@ -137,21 +134,21 @@ $(function () {
                         track.artwork_url.replace(/https:\/\/i1.sndcdn.com/g, 'assets/images/mockup');
                     }
                 }
-                markup += '<div class="list__item' + (!track.artwork_url ? ' list__item--no-artwork' : '') + '">';
-                markup += '<span class="list__thumbnail" style="' + (track.artwork_url ? 'background-image: url(' + track.artwork_url + ')' : '') + '">';
-                markup += '<i class="list__icon"></i>';
+                markup += '<div class="list__item item' + (!track.artwork_url ? ' item--no-artwork' : '') + '">';
+                markup += '<span class="item__thumbnail" style="' + (track.artwork_url ? 'background-image: url(' + track.artwork_url + ')' : '') + '">';
+                markup += '<i class="item__icon"></i>';
                 if (track.genre) {
-                    markup += '<span class="list__tag" title="' + track.genre + '">#' + track.genre + '</span>';
+                    markup += '<span class="item__tag" title="' + track.genre + '">#' + track.genre + '</span>';
                 }
-                // markup += '<span class="list__truncated">' + track.title.substring(0, cache.truncatedTitleLength) + '</span>';
+                // markup += '<span class="item__truncated">' + track.title.substring(0, cache.truncatedTitleLength) + '</span>';
                 markup += '</span>';
-                markup += '<ul class="list__list">';
-                markup += '<li class="list__track-title" title="' + track.custom.title + '">' + track.custom.title + '</li>';
-                markup += '<li class="list__track-meta">';
-                markup += '<small class="list__track-author" title="' + track.user.username + '">' + track.user.username + '</small>';
+                markup += '<ul class="item__data">';
+                markup += '<li class="item__title" title="' + track.custom.title + '">' + track.custom.title + '</li>';
+                markup += '<li class="item__meta">';
+                markup += '<small class="item__author" title="' + track.user.username + '">' + track.user.username + '</small>';
                 duration = msToHMS(track.duration);
-                markup += '<small class="list__track-duration" title="' + duration + '">' + duration + '</small>';
-                // markup += '<small class="list__track-views">views: ' + track.playback_count + '</small>';
+                markup += '<small class="item__duration" title="' + duration + '">' + duration + '</small>';
+                // markup += '<small class="item__views">views: ' + track.playback_count + '</small>';
                 markup += '</li>';
                 markup += '</div>';
             });
@@ -159,7 +156,7 @@ $(function () {
             console.info('total art-covers:', counter);
         } else {
             markup = '<div class="list__item">Your search - <b>' + cache.searchQuery + '</b> - did not match any tracks.</div>';
-            cache.$body.removeClass('body--show-grid-view');
+            cache.$body.removeClass('show-grid-view');
         }
         cache.$items = cache.$list.toggleClass('no-results', !tracks.length)[options.append ? 'append' : 'html'](markup);
         cache.$items = cache.$items.children();
@@ -169,7 +166,7 @@ $(function () {
         if (!cache.player.streamInfo) {
             reset = true;
         }
-        var el = cache.$progress_bar[0],
+        var el = cache.$progress[0],
             percentage = reset ? 0 : Math.ceil((100 / cache.player.streamInfo.duration) * cache.player.currentTime());
         el.value = percentage;
         // Update the progress bar's text (for browsers that don't support the progress element)
@@ -276,10 +273,14 @@ $(function () {
 
         console.info('app version:', cache.version);
 
-        drag('#title-bar');
+        drag('#titlebar');
+
+        if (!drag.supported) {
+            document.querySelector('#title-bar').style['-webkit-app-region'] = 'drag';
+        }
 
         cache.$audio[0].controls = false;
-        cache.$body.removeClass('body--show-loader');
+        cache.$body.removeClass('show-loader');
 
         /* bind events */
 
@@ -296,19 +297,15 @@ $(function () {
                 return;
             }
             /* beautify ignore:start */
-            $item.addClass('list__item--selected');
-            $item.find('.list__playing-animation').addClass('spin');
+            $item.addClass('item--selected');
             if ($.isNumeric(cache.index)) {
-                $(cache.$items.get(cache.index))
-                                .removeClass('list__item--selected')
-                                    .addClass('list__item--visited')
-                                        .find('.list__playing-animation').removeClass('spin');
+                $(cache.$items.get(cache.index)).removeClass('item--selected').addClass('item--visited');
             }
             // cache.$mask.css('background-image', 'url(' + (track.artwork_url || '') + ')');
-            // cache.$body.toggleClass('body--show-mask', hasArtCover).toggleClass('body--animate-mask', hasArtCover);
+            // cache.$body.toggleClass('show-mask', hasArtCover).toggleClass('animate-mask', hasArtCover);
 
             // show what's playing
-            cache.$body.addClass('body--show-playing');
+            cache.$body.addClass('show-playing-now');
             cache.$playing.toggleClass('playing--no-artcover', !hasArtCover);
             cache.$playing_title.text(track.custom.title);
             cache.$playing_artist.text(track.custom.artist);
@@ -366,14 +363,10 @@ $(function () {
             var $btn = $(this);
             var action = $btn.data('action');
             var toggle = $btn.data('toggle');
-            var dismiss = $btn.data('dismiss');
             if (toggle) {
                 $btn.addClass('hidden');
                 cache.$nav__buttons.filter('[data-modifier = ' + toggle + ']').not(this).removeClass('hidden');
                 cache.$body.toggleClass(toggle);
-                if (dismiss) {
-                    cache.$menu.click();
-                }
                 return;
             }
             switch (action) {
@@ -387,10 +380,10 @@ $(function () {
             $btn.addClass('btn--selected');
         });
 
-        cache.$progress_bar.click(function (e) {
+        cache.$progress.click(function (e) {
             var posX = e.pageX - $(this).position().left;
             if (cache.player.isPlaying()) {
-                cache.player.seek(posX / cache.$progress_bar.width() * cache.tracks[cache.index].duration);
+                cache.player.seek(posX / cache.$progress.width() * cache.tracks[cache.index].duration);
             }
         });
 
@@ -413,7 +406,7 @@ $(function () {
             }
         });
 
-        cache.$search.keyup($.debounce(cache.keyupDebounceDelay, function() {
+        cache.$search.keyup($.debounce(cache.keyupDebounceDelay, function () {
             if (this.value === '') {
                 return;
             }
@@ -422,10 +415,6 @@ $(function () {
                 new: true,
             });
         }));
-
-        cache.$menu.click(() => {
-            cache.$body.toggleClass('body--show-menu');
-        });
 
         // Minimize task
         cache.$minimize.click((event) => { // eslint-disable-line
@@ -459,8 +448,7 @@ $(function () {
             }, cache.keyupDebounceDelay);
 
             if (cache.init.grid) {
-                cache.$menu.click();
-                $('[data-toggle = body--show-grid-view]').not('.hidden').click();
+                $('[data-toggle = show-grid-view]').not('.hidden').click();
             }
         }
     }

@@ -1,0 +1,73 @@
+// scss-lint:disable Compass::PropertyWithMixin
+// scss-lint:disable ColorKeyword
+// scss-lint:disable ColorVariable
+
+#logo {
+    @extend %display-inline-block;
+    @extend %cursor-default;
+    margin-left: to-rem(10);
+    width: to-rem(20);
+    height: to-rem(20);
+    border-radius: 50%;
+    background-image: url('../images/logo.png');
+    background-size: cover;
+    background-color: #fff; // serves as a placeholder while logo loads
+    // background-color: #090909; // serves as a placeholder while logo loads
+    box-sizing: content-box;
+    background-blend-mode: hard-light;
+    vertical-align: top;
+}
+
+#title {
+    @extend %display-inline-block;
+    @extend %cursor-default;
+    font-family: 'Montserrat-MediumItalic';
+    padding-left: to-rem(10);
+    font-size: to-rem(12);
+    color: #555;
+}
+
+#minimize {
+    @include dim(to-rem(20));
+    position: relative;
+    overflow: hidden;
+    outline: 0;
+
+    &::before {
+        content: '';
+        position: absolute;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        margin-bottom: 3px;
+        border-radius: 5px;
+        background-color: #555;
+        width: calc(100% - #{to-rem(2)});
+    }
+
+    &:hover {
+        &::before {
+            background-color: $hover-color;
+        }
+    }
+}
+
+#maximize {
+    @include dim(to-rem(16));
+    border: 2px solid #555;
+    border-radius: 50%;
+    margin-top: 2px;
+
+    &:hover {
+        border-color: $hover-color;
+    }
+}
+
+#terminate {
+    @include close(to-rem(20), to-rem(20), #555, $hover-color);
+}
+
+#title-bar-btns {
+    @extend %float-right;
+    margin-right: to-rem(10);
+}
