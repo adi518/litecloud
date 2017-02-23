@@ -18,5 +18,3 @@ Please [open an issue](https://github.com/adi518/litecloud/issues) for support.
 
 ## Preview
 ![Alt](preview.png)
-
-![Alt](preview-list.png)
