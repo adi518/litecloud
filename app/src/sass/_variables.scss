@@ -13,15 +13,18 @@ $color-emperor: #555;
 $color-dove-gray: #666;
 $color-gray: #818181;
 $color-white: #fff;
-// lighten($color-black, .5%) = #010101
-// darken($color-cod-gray, 4.9%) = #090909'
-// darken($color-cod-gray, 1.5%) = #111
-// darken($color-cod-gray, .9%) = #131313
-// darken($color-cod-gray, .5%) = #141414
-// lighten($color-cod-gray, 1%) = #181818;
-// lighten($color-cod-gray, 1.5%) = #191919;
-// darken($color-mine-shaft, 1.75%) = #222
-// lighten($color-mine-shaft, 5.5%) = #333
+
+// MID-RANGE COLORS
+
+$color-010: lighten($color-black, .5%); // #010101
+$color-090: darken($color-cod-gray, 4.9%); // #090909
+$color-111: darken($color-cod-gray, 1.5%); // #111
+$color-131: darken($color-cod-gray, .9%); // #131313
+$color-141: darken($color-cod-gray, .5%); // #141414
+$color-181: lighten($color-cod-gray, 1%); // #181818;
+$color-191: lighten($color-cod-gray, 1.5%); // #191919;
+$color-222: darken($color-mine-shaft, 1.75%); // #222
+$color-333: lighten($color-mine-shaft, 5.5%); // #333
 
 .color-tester {
     // color: ;

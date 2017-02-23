@@ -1,8 +1,8 @@
 /* scss-lint:disable Compass::PropertyWithMixin */
 /* scss-lint:disable ColorVariable */
 /* scss-lint:disable ColorKeyword */
-@import '../../node_modules/normalize.css/normalize';
-@import '../../node_modules/bemify/sass/bemify';
+@import '../../../node_modules/normalize.css/normalize';
+@import '../../../node_modules/bemify/sass/bemify';
 @import 'functions';
 @import 'settings';
 @import 'variables';

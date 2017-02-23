@@ -37,14 +37,14 @@ module.exports = function(grunt) {
         },
         watch: {
             sass: {
-                files: 'src/sass/**/*',
+                files: 'app/src/sass/**/*',
                 tasks: 'compass:dev',
                 options: {
                     spawn: false,
                 }
             },
             pug: {
-                files: 'src/views/**/*',
+                files: 'app/src/views/**/*',
                 tasks: 'pug'
             }
         },
@@ -55,7 +55,7 @@ module.exports = function(grunt) {
                     // debug: true
                 },
                 files: {
-                    'index.html': 'src/views/*'
+                    'app/index.html': 'app/src/views/*'
                 }
             }
         }
