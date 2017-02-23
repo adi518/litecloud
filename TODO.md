@@ -2,7 +2,7 @@
 - [x] Wrap in Electron
 - [ ] Implement React
 - [ ] Feature - Track time elapsed
-- [ ] Feature - Volume/Mute
+- [ ] Feature - Volume/Mutecl
 - [ ] Feature - Login
 - [ ] Feature - Attach media keys
 - [ ] Feature - Watch on Youtube
