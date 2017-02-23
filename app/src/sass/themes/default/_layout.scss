@@ -1,10 +1,10 @@
 // scss-lint:disable Compass::PropertyWithMixin
 
 #main {
-    background-color: darken($color-cod-gray, .9%);
+    background-color: $color-131;
 }
 
 #nav {
-    border-right-color: lighten($color-black, .5%);
-    box-shadow: inset -#{to-rem(1)} 0 0 darken($color-cod-gray, .5%);
+    border-right-color: $color-010;
+    box-shadow: inset -#{to-rem(1)} 0 0 $color-141;
 }

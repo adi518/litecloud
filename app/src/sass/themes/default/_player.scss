@@ -1,7 +1,7 @@
 // scss-lint:disable Compass::PropertyWithMixin
 
 progress {
-    box-shadow: inset 0 -#{to-rem(1)} #{to-rem(1)} lighten($color-mine-shaft, 5.5%);
+    box-shadow: inset 0 -#{to-rem(1)} #{to-rem(1)} $color-333;
 
     &::-webkit-progress-value {
         background: linear-gradient(to top, $color-black 10%, $color-pistachio 100%);

@@ -5,7 +5,7 @@
 
 .item {
     &:hover {
-        background-color: lighten($color-cod-gray, 1.5%);
+        background-color: $color-191;
 
         .item__title {
             color: $color-pistachio;
@@ -17,7 +17,7 @@
 
 .item {
     &__thumbnail {
-        background-color: darken($color-cod-gray, 1.5%);
+        background-color: $color-111;
     }
 
     &__data {

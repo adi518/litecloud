@@ -1,5 +1,5 @@
 #mask {
-    background-color: darken($color-cod-gray, 1.5%);
+    background-color: $color-111;
     background-blend-mode: multiply;
 
     &::after {
