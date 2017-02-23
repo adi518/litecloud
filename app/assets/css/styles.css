@@ -1,6 +1,219 @@
 /* scss-lint:disable Compass::PropertyWithMixin */
 /* scss-lint:disable ColorVariable */
 /* scss-lint:disable ColorKeyword */
+/* scss-lint:disable ElsePlacement */
+/* scss-lint:disable Indentation */
+/* scss-lint:disable EmptyLineBetweenBlocks */
+/* scss-lint:disable Compass::PropertyWithMixin */
+/* scss-lint:disable ColorVariable */
+/* scss-lint:disable EmptyLineBetweenBlocks */
+/* scss-lint:disable SpaceBeforeBrace */
+/* scss-lint:disable Indentation */
+/* scss-lint:disable ElsePlacement */
+/* scss-lint:disable DebugStatement */
+/* scss-lint:disable Compass::PropertyWithMixin */
+/* scss-lint:disable ColorVariable */
+@import url(../../../node_modules/material-design-icons/iconfont/material-icons.css);
+/* line 4, ../../src/sass/_placeholders.scss */
+.hidden, #loader, .item__tag, .playing, #overlay, #mask::after {
+  display: none;
+}
+
+/* line 12, ../../src/sass/_placeholders.scss */
+.show-grid-view .list {
+  display: flex;
+}
+
+/* line 16, ../../src/sass/_placeholders.scss */
+.show-mask #mask:after, .show-loader #overlay,
+.show-loader #loader, .show-playing-now .playing, #search, #player progress, .show-grid-view .item--no-artwork .item__thumbnail, .show-grid-view .item__thumbnail, .show-grid-view .item__tag {
+  display: block;
+}
+
+/* line 20, ../../src/sass/_placeholders.scss */
+i.btn, i.btn--player,
+span.btn,
+span.btn--player, #logo, #title, .show-grid-view .item small {
+  display: inline-block;
+}
+
+/* line 36, ../../src/sass/_placeholders.scss */
+.item__thumbnail {
+  float: left;
+}
+
+/* line 40, ../../src/sass/_placeholders.scss */
+#titlebar-btns, .show-grid-view .item__duration {
+  float: right;
+}
+
+/* line 44, ../../src/sass/_placeholders.scss */
+.show-grid-view .item__thumbnail {
+  float: none;
+}
+
+/* line 52, ../../src/sass/_placeholders.scss */
+.item--selected .item__thumbnail, .show-grid-view .item__thumbnail, .show-grid-view .item__data {
+  position: relative;
+}
+
+/* line 56, ../../src/sass/_placeholders.scss */
+.item__tag, .show-grid-view .item__data li:last-child {
+  position: absolute;
+}
+
+/* line 60, ../../src/sass/_placeholders.scss */
+#titlebar,
+#nav,
+#overlay,
+#mask,
+main, #loader {
+  position: fixed;
+}
+
+/* line 72, ../../src/sass/_placeholders.scss */
+.playing__description {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* line 77, ../../src/sass/_placeholders.scss */
+body {
+  margin: 0;
+}
+
+/* line 81, ../../src/sass/_placeholders.scss */
+body {
+  padding: 0;
+}
+
+/* line 85, ../../src/sass/_placeholders.scss */
+.btn--nav, #titlebar, #search, #player progress, #overlay, .show-grid-view .item__data li:last-child {
+  width: 100%;
+}
+
+/* line 89, ../../src/sass/_placeholders.scss */
+html, #nav, main {
+  height: 100%;
+}
+
+/* line 93, ../../src/sass/_placeholders.scss */
+.show-loader, .clearfix:after, .item:after, .clearfix:before, .item:before, .item__data, .item__tag, body, .show-grid-view .item__title {
+  overflow: hidden;
+}
+
+/* line 101, ../../src/sass/_placeholders.scss */
+main {
+  overflow: auto;
+}
+
+/* line 105, ../../src/sass/_placeholders.scss */
+.item__tag, .show-grid-view .item__author {
+  white-space: nowrap;
+}
+
+/* line 109, ../../src/sass/_placeholders.scss */
+.item__tag, .show-grid-view .item__title, .show-grid-view .item__author {
+  text-overflow: ellipsis;
+}
+
+/* line 117, ../../src/sass/_placeholders.scss */
+#logo, #title, .playing {
+  cursor: default;
+}
+
+/* line 121, ../../src/sass/_placeholders.scss */
+.btn, .btn--player, #player progress, .list:not(.no-results) .list__item {
+  cursor: pointer;
+}
+
+/* line 125, ../../src/sass/_placeholders.scss */
+#titlebar, .list, #nav, .show-grid-view .item {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* line 134, ../../src/sass/_placeholders.scss */
+.clearfix:after, .item:after, .clearfix:before, .item:before {
+  display: block;
+  content: '\0020';
+  height: 0;
+}
+/* line 142, ../../src/sass/_placeholders.scss */
+.clearfix:after, .item:after {
+  clear: both;
+}
+
+/* line 147, ../../src/sass/_placeholders.scss */
+#minimize::before, #mask::after, .show-grid-view .item small:after {
+  content: '';
+}
+
+/* line 151, ../../src/sass/_placeholders.scss */
+.btn, .btn--player, #search {
+  outline: 0;
+}
+
+/* line 159, ../../src/sass/_placeholders.scss */
+.show-grid-view .item {
+  text-transform: lowercase;
+}
+
+/* line 163, ../../src/sass/_placeholders.scss */
+.btn--nav, .item, .component__header, .playing__header {
+  text-transform: uppercase;
+}
+
+/* line 167, ../../src/sass/_placeholders.scss */
+.item__data {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 172, ../../src/sass/_placeholders.scss */
+#titlebar,
+#nav,
+#overlay,
+#mask,
+main {
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+}
+
+/* line 1, ../../src/sass/_utils.scss */
+.preload * {
+  transition: none !important;
+}
+
+/* line 13, ../../src/sass/_utils.scss */
+.pull-left {
+  float: left;
+}
+
+/* line 17, ../../src/sass/_utils.scss */
+.pull-right {
+  float: right;
+}
+
+/* scss-lint:disable Compass::PropertyWithMixin */
+@font-face {
+  font-family: 'Montserrat';
+  src: url("../fonts/Montserrat/Montserrat-Regular.ttf");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Montserrat-Medium';
+  src: url("../fonts/Montserrat/Montserrat-Medium.ttf");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Montserrat-MediumItalic';
+  src: url("../fonts/Montserrat/Montserrat-Mediumitalic.ttf");
+  font-weight: 300;
+  font-style: normal;
+}
 /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Change the default font family in all browsers (opinionated).
@@ -10,7 +223,6 @@
  */
 /* Document
    ========================================================================== */
-@import url(../../../node_modules/material-design-icons/iconfont/material-icons.css);
 /* line 13, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
 html {
   font-family: sans-serif;
@@ -494,234 +706,21 @@ template {
   display: none;
 }
 
-/* scss-lint:disable ElsePlacement */
-/* scss-lint:disable Indentation */
-/* scss-lint:disable EmptyLineBetweenBlocks */
-/* scss-lint:disable all */
-/* hamburger */
-/* scss-lint:disable Compass::PropertyWithMixin */
-/* scss-lint:disable ColorVariable */
-/* scss-lint:disable EmptyLineBetweenBlocks */
-/* scss-lint:disable SpaceBeforeBrace */
-/* scss-lint:disable Indentation */
-/* scss-lint:disable ElsePlacement */
-/* scss-lint:disable DebugStatement */
-/* scss-lint:disable Compass::PropertyWithMixin */
-/* scss-lint:disable ColorVariable */
-/* line 4, ../../src/sass/_placeholders.scss */
-.hidden, #loader, .item__tag, .playing, #overlay, #mask::after {
-  display: none;
-}
-
-/* line 12, ../../src/sass/_placeholders.scss */
-.show-grid-view .list {
-  display: flex;
-}
-
-/* line 16, ../../src/sass/_placeholders.scss */
-.show-mask #mask:after, .show-loader #overlay,
-.show-loader #loader, .show-playing-now .playing, #search, #player progress, .show-grid-view .item--no-artwork .item__thumbnail, .show-grid-view .item__thumbnail, .show-grid-view .item__tag {
-  display: block;
-}
-
-/* line 20, ../../src/sass/_placeholders.scss */
-i.btn, i.btn--player,
-span.btn,
-span.btn--player, #logo, #title, .show-grid-view .item small {
-  display: inline-block;
-}
-
-/* line 36, ../../src/sass/_placeholders.scss */
-.item__thumbnail {
-  float: left;
-}
-
-/* line 40, ../../src/sass/_placeholders.scss */
-#titlebar-btns, .show-grid-view .item__duration {
-  float: right;
-}
-
-/* line 44, ../../src/sass/_placeholders.scss */
-.show-grid-view .item__thumbnail {
-  float: none;
-}
-
-/* line 52, ../../src/sass/_placeholders.scss */
-.item--selected .item__thumbnail, .show-grid-view .item__thumbnail, .show-grid-view .item__data {
-  position: relative;
-}
-
-/* line 56, ../../src/sass/_placeholders.scss */
-.item__tag, .show-grid-view .item__data li:last-child {
-  position: absolute;
-}
-
-/* line 60, ../../src/sass/_placeholders.scss */
-#titlebar,
-#nav,
-#overlay,
-#mask,
-main, #loader {
-  position: fixed;
-}
-
-/* line 72, ../../src/sass/_placeholders.scss */
-.playing__description {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* line 77, ../../src/sass/_placeholders.scss */
-body {
-  margin: 0;
-}
-
-/* line 81, ../../src/sass/_placeholders.scss */
-body {
-  padding: 0;
-}
-
-/* line 85, ../../src/sass/_placeholders.scss */
-.btn--nav, #titlebar, #search, #player progress, #overlay, .show-grid-view .item__data li:last-child {
-  width: 100%;
-}
-
-/* line 89, ../../src/sass/_placeholders.scss */
-html, #nav, main {
-  height: 100%;
-}
-
-/* line 93, ../../src/sass/_placeholders.scss */
-.show-loader, .clearfix:after, .item:after, .clearfix:before, .item:before, .item__data, .item__tag, body, .show-grid-view .item__title {
-  overflow: hidden;
-}
-
-/* line 101, ../../src/sass/_placeholders.scss */
-main {
-  overflow: auto;
-}
-
-/* line 105, ../../src/sass/_placeholders.scss */
-.item__tag, .show-grid-view .item__author {
-  white-space: nowrap;
-}
-
-/* line 109, ../../src/sass/_placeholders.scss */
-.item__tag, .show-grid-view .item__title, .show-grid-view .item__author {
-  text-overflow: ellipsis;
-}
-
-/* line 117, ../../src/sass/_placeholders.scss */
-#logo, #title, .playing {
-  cursor: default;
-}
-
-/* line 121, ../../src/sass/_placeholders.scss */
-.btn, .btn--player, #player progress, .list:not(.no-results) .list__item {
-  cursor: pointer;
-}
-
-/* line 125, ../../src/sass/_placeholders.scss */
-#titlebar, .list, #nav, .show-grid-view .item {
-  -webkit-user-select: none;
-  user-select: none;
-}
-
-/* line 134, ../../src/sass/_placeholders.scss */
-.clearfix:after, .item:after, .clearfix:before, .item:before {
-  display: block;
-  content: '\0020';
-  height: 0;
-}
-/* line 142, ../../src/sass/_placeholders.scss */
-.clearfix:after, .item:after {
-  clear: both;
-}
-
-/* line 147, ../../src/sass/_placeholders.scss */
-#minimize::before, #mask::after, .show-grid-view .item small:after {
-  content: '';
-}
-
-/* line 151, ../../src/sass/_placeholders.scss */
-.btn, .btn--player, #search {
-  outline: 0;
-}
-
-/* line 159, ../../src/sass/_placeholders.scss */
-.show-grid-view .item {
-  text-transform: lowercase;
-}
-
-/* line 163, ../../src/sass/_placeholders.scss */
-.btn--nav, .item, .component__header, .playing__header {
-  text-transform: uppercase;
-}
-
-/* line 167, ../../src/sass/_placeholders.scss */
-.item__data {
-  margin: 0;
-  padding: 0;
-}
-
-/* line 172, ../../src/sass/_placeholders.scss */
-#titlebar,
-#nav,
-#overlay,
-#mask,
-main {
-  backface-visibility: hidden;
-  transform: translate3d(0, 0, 0);
-}
-
-/* line 1, ../../src/sass/_utils.scss */
-.preload * {
-  transition: none !important;
-}
-
-/* line 13, ../../src/sass/_utils.scss */
-.pull-left {
-  float: left;
-}
-
-/* line 17, ../../src/sass/_utils.scss */
-.pull-right {
-  float: right;
-}
-
-/* scss-lint:disable Compass::PropertyWithMixin */
-@font-face {
-  font-family: 'Montserrat';
-  src: url("../fonts/Montserrat/Montserrat-Regular.ttf");
-  font-weight: 300;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Montserrat-Medium';
-  src: url("../fonts/Montserrat/Montserrat-Medium.ttf");
-  font-weight: 300;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Montserrat-MediumItalic';
-  src: url("../fonts/Montserrat/Montserrat-Mediumitalic.ttf");
-  font-weight: 300;
-  font-style: normal;
-}
-/* line 3, ../../src/sass/_reset.scss */
+/* line 4, ../../src/sass/_reset.scss */
 html {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
-/* line 8, ../../src/sass/_reset.scss */
-html *, html::after, html::before {
+/* line 9, ../../src/sass/_reset.scss */
+html::after, html::before,
+html * {
   box-sizing: inherit;
   -webkit-font-smoothing: inherit;
   text-rendering: inherit;
 }
 
-/* line 17, ../../src/sass/_reset.scss */
+/* line 18, ../../src/sass/_reset.scss */
 body,
 button,
 input,
@@ -731,7 +730,7 @@ textarea {
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
-/* line 26, ../../src/sass/_reset.scss */
+/* line 27, ../../src/sass/_reset.scss */
 b,
 strong {
   font-weight: 400;
@@ -1340,11 +1339,11 @@ main {
   overflow: hidden;
   outline: 0;
 }
-/* line 97, ../../src/sass/_mixins.scss */
+/* line 98, ../../src/sass/_mixins.scss */
 #terminate:hover::after, #terminate:hover::before {
   background-color: #84bd00;
 }
-/* line 103, ../../src/sass/_mixins.scss */
+/* line 104, ../../src/sass/_mixins.scss */
 #terminate::after, #terminate::before {
   content: '';
   position: absolute;
@@ -1355,64 +1354,64 @@ main {
   margin-top: -1px;
   background: #555;
 }
-/* line 115, ../../src/sass/_mixins.scss */
+/* line 116, ../../src/sass/_mixins.scss */
 #terminate::before {
   -moz-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-/* line 119, ../../src/sass/_mixins.scss */
+/* line 120, ../../src/sass/_mixins.scss */
 #terminate::after {
   -moz-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
-/* line 123, ../../src/sass/_mixins.scss */
+/* line 124, ../../src/sass/_mixins.scss */
 #terminate.big {
   -moz-transform: scale(3);
   -ms-transform: scale(3);
   -webkit-transform: scale(3);
   transform: scale(3);
 }
-/* line 128, ../../src/sass/_mixins.scss */
+/* line 129, ../../src/sass/_mixins.scss */
 #terminate.hairline::after, #terminate.hairline::before {
   height: 1px;
 }
-/* line 135, ../../src/sass/_mixins.scss */
+/* line 136, ../../src/sass/_mixins.scss */
 #terminate.thick::after, #terminate.thick::before {
   height: 4px;
   margin-top: -2px;
 }
-/* line 143, ../../src/sass/_mixins.scss */
+/* line 144, ../../src/sass/_mixins.scss */
 #terminate.black::after, #terminate.black::before {
   height: 8px;
   margin-top: -4px;
 }
-/* line 151, ../../src/sass/_mixins.scss */
+/* line 152, ../../src/sass/_mixins.scss */
 #terminate.heavy::after, #terminate.heavy::before {
   height: 12px;
   margin-top: -6px;
 }
-/* line 159, ../../src/sass/_mixins.scss */
+/* line 160, ../../src/sass/_mixins.scss */
 #terminate.pointy::after, #terminate.pointy::before {
   width: 200%;
   left: -50%;
 }
-/* line 167, ../../src/sass/_mixins.scss */
+/* line 168, ../../src/sass/_mixins.scss */
 #terminate.rounded::after, #terminate.rounded::before {
   border-radius: 5px;
 }
-/* line 174, ../../src/sass/_mixins.scss */
+/* line 175, ../../src/sass/_mixins.scss */
 #terminate.blades::after, #terminate.blades::before {
   border-radius: 5px 0;
 }
-/* line 181, ../../src/sass/_mixins.scss */
+/* line 182, ../../src/sass/_mixins.scss */
 #terminate.warp::after, #terminate.warp::before {
   border-radius: 120% 0;
 }
-/* line 188, ../../src/sass/_mixins.scss */
+/* line 189, ../../src/sass/_mixins.scss */
 #terminate.fat::after, #terminate.fat::before {
   border-radius: 100%;
 }

@@ -3,14 +3,13 @@
 
 'use strict';
 
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
     grunt.option('stack', true);
 
     grunt.loadNpmTasks('grunt-contrib-compass');
     grunt.loadNpmTasks('grunt-contrib-pug');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-contrib-htmlmin');
     grunt.loadNpmTasks('grunt-postcss');
 
     grunt.initConfig({
@@ -30,7 +29,6 @@ module.exports = function(grunt) {
             },
             dev: {
                 options: {
-                    // debugInfo: true,
                     trace: true,
                 }
             }
@@ -50,27 +48,11 @@ module.exports = function(grunt) {
         },
         pug: {
             compile: {
-                options: {
-                    // pretty: true,
-                    // debug: true
-                },
                 files: {
                     'app/index.html': 'app/src/views/*'
                 }
             }
         }
-        // htmlmin: {
-        //     dist: {
-        //         options: {
-        //             removeComments: true,
-        //             collapseWhitespace: true
-        //         },
-        //         files: {
-        //             'public/carStart.html': 'public/carStart.html',
-        //             // 'public/start.html': 'public/start.html',
-        //         }
-        //     },
-        // },
     });
 
     grunt.registerTask('default', [

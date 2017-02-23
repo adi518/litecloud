@@ -1,13 +1,14 @@
 // scss-lint:disable Compass::PropertyWithMixin
+@import '../../../node_modules/normalize.css/normalize';
 
 html {
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
 
-    *,
     &::after,
-    &::before {
+    &::before,
+    * {
         box-sizing: inherit;
         -webkit-font-smoothing: inherit;
         text-rendering: inherit;
