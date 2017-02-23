@@ -1,1 +1,1 @@
-cmd /c "bundler & npm install"
+cmd /c "bundler & npm i"

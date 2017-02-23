@@ -1,48 +1,46 @@
 {
-  "name": "litecloud",
-  "version": "1.0.0",
-  "description": "Soundcloud wrapper",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron ."
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/adi518/litecloud.git"
-  },
-  "author": "Adi Sahar",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/adi518/litecloud/issues"
-  },
-  "homepage": "https://github.com/adi518/litecloud#readme",
-  "dependencies": {
-    "bemify": "^0.1.2",
-    "debug-menu": "^0.4.0",
-    "electron": "^1.4.15",
-    "electron-context-menu": "^0.8.0",
-    "electron-debug": "^1.1.0",
-    "electron-drag": "^1.2.0",
-    "electron-packager": "^8.5.2",
-    "eslint": "^3.15.0",
-    "eslint-plugin-react": "^6.10.0",
-    "grunt": "^1.0.1",
-    "grunt-contrib-compass": "^1.1.1",
-    "grunt-contrib-htmlmin": "^2.2.0",
-    "grunt-contrib-pug": "^1.0.0",
-    "grunt-contrib-watch": "^1.0.0",
-    "grunt-postcss": "^0.8.0",
-    "jquery": "^3.1.1",
-    "jscroll": "^2.3.7",
-    "lodash": "^4.17.4",
-    "material-design-icons": "^3.0.1",
-    "normalize.css": "^5.0.0",
-    "pug": "^2.0.0-beta11",
-    "slash": "^1.0.0",
-    "spinkit": "^1.2.5",
-    "webpack": "^2.2.1"
-  },
-  "devDependencies": {
-    "electron-rebuild": "^1.5.7"
-  }
+    "name": "litecloud",
+    "version": "1.0.0",
+    "description": "Soundcloud wrapper",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "electron ."
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/adi518/litecloud.git"
+    },
+    "author": "Adi Sahar",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/adi518/litecloud/issues"
+    },
+    "homepage": "https://github.com/adi518/litecloud#readme",
+    "dependencies": {
+        "electron": "^1.4.15"
+    },
+    "devDependencies": {
+        "jquery": "^3.1.1",
+        "lodash": "^4.17.4",
+        "slash": "^1.0.0",
+        "material-design-icons": "^3.0.1",
+        "webpack": "^2.2.1",
+        "normalize.css": "^5.0.0",
+        "pug": "^2.0.0-beta11",
+        "bemify": "^0.1.2",
+        "debug-menu": "^0.4.0",
+        "electron-rebuild": "^1.5.7",
+        "electron-packager": "^8.5.2",
+        "electron-context-menu": "^0.8.0",
+        "electron-drag": "^1.2.0",
+        "electron-debug": "^1.1.0",
+        "eslint": "^3.15.0",
+        "eslint-plugin-react": "^6.10.0",
+        "grunt": "^1.0.1",
+        "grunt-contrib-compass": "^1.1.1",
+        "grunt-contrib-htmlmin": "^2.2.0",
+        "grunt-contrib-pug": "^1.0.0",
+        "grunt-contrib-watch": "^1.0.0",
+        "grunt-postcss": "^0.8.0"
+    }
 }
