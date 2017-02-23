@@ -1251,87 +1251,87 @@ main {
   font-size: 0.75rem;
 }
 
-/* line 3, ../../src/sass/themes/default/_layout.scss */
+/* line 3, ../../src/sass/themes/default-theme/_layout.scss */
 #main {
   background-color: #131313;
 }
 
-/* line 7, ../../src/sass/themes/default/_layout.scss */
+/* line 7, ../../src/sass/themes/default-theme/_layout.scss */
 #nav {
   border-right-color: #010101;
   box-shadow: inset -0.0625rem 0 0 #141414;
 }
 
-/* line 2, ../../src/sass/themes/default/_component.scss */
+/* line 2, ../../src/sass/themes/default-theme/_component.scss */
 .component__header, .playing__header {
   color: #555;
 }
 
-/* line 1, ../../src/sass/themes/default/_scrollbar.scss */
+/* line 1, ../../src/sass/themes/default-theme/_scrollbar.scss */
 ::-webkit-scrollbar-thumb {
   background-color: #191919;
 }
 
-/* line 3, ../../src/sass/themes/default/_buttons.scss */
+/* line 3, ../../src/sass/themes/default-theme/_buttons.scss */
 .btn--nav {
   color: #555;
 }
-/* line 6, ../../src/sass/themes/default/_buttons.scss */
+/* line 6, ../../src/sass/themes/default-theme/_buttons.scss */
 .btn--nav:hover {
   color: #84bd00;
 }
 
-/* line 11, ../../src/sass/themes/default/_buttons.scss */
+/* line 11, ../../src/sass/themes/default-theme/_buttons.scss */
 .btn--selected {
   color: #84bd00;
 }
 
-/* line 15, ../../src/sass/themes/default/_buttons.scss */
+/* line 15, ../../src/sass/themes/default-theme/_buttons.scss */
 .btn--player {
   color: #555;
   text-shadow: 0 0.0625rem 0.0625rem #818181;
 }
-/* line 19, ../../src/sass/themes/default/_buttons.scss */
+/* line 19, ../../src/sass/themes/default-theme/_buttons.scss */
 .btn--player:hover {
   color: #84bd00;
 }
 
-/* line 3, ../../src/sass/themes/default/_titlebar.scss */
+/* line 3, ../../src/sass/themes/default-theme/_titlebar.scss */
 #titlebar {
   box-shadow: inset 0 -1px 0 #090909;
   background-color: #151515;
 }
 
-/* line 8, ../../src/sass/themes/default/_titlebar.scss */
+/* line 8, ../../src/sass/themes/default-theme/_titlebar.scss */
 #logo {
   background-blend-mode: multiply;
   background-color: #fff;
 }
 
-/* line 14, ../../src/sass/themes/default/_titlebar.scss */
+/* line 14, ../../src/sass/themes/default-theme/_titlebar.scss */
 #title {
   color: #555;
 }
 
-/* line 19, ../../src/sass/themes/default/_titlebar.scss */
+/* line 19, ../../src/sass/themes/default-theme/_titlebar.scss */
 #minimize::before {
   background-color: #555;
 }
-/* line 24, ../../src/sass/themes/default/_titlebar.scss */
+/* line 24, ../../src/sass/themes/default-theme/_titlebar.scss */
 #minimize:hover::before {
   background-color: #84bd00;
 }
 
-/* line 30, ../../src/sass/themes/default/_titlebar.scss */
+/* line 30, ../../src/sass/themes/default-theme/_titlebar.scss */
 #maximize {
   border-color: #555;
 }
-/* line 33, ../../src/sass/themes/default/_titlebar.scss */
+/* line 33, ../../src/sass/themes/default-theme/_titlebar.scss */
 #maximize:hover {
   border-color: #84bd00;
 }
 
-/* line 38, ../../src/sass/themes/default/_titlebar.scss */
+/* line 38, ../../src/sass/themes/default-theme/_titlebar.scss */
 #terminate {
   position: relative;
   display: inline-block;
@@ -1417,112 +1417,112 @@ main {
   border-radius: 100%;
 }
 
-/* line 1, ../../src/sass/themes/default/_loader.scss */
+/* line 1, ../../src/sass/themes/default-theme/_loader.scss */
 #loader {
   border-color: rgba(255, 255, 255, 0.05);
   border-top-color: #84bd00;
 }
 
-/* line 3, ../../src/sass/themes/default/_search.scss */
+/* line 3, ../../src/sass/themes/default-theme/_search.scss */
 #search {
   background-color: #090909;
   color: #fff;
   box-shadow: inset 0 -0.0625rem 0.0625rem #212121;
 }
-/* line 8, ../../src/sass/themes/default/_search.scss */
+/* line 8, ../../src/sass/themes/default-theme/_search.scss */
 #search ::-webkit-input-placeholder {
   color: #555;
 }
 
-/* line 3, ../../src/sass/themes/default/_player.scss */
+/* line 3, ../../src/sass/themes/default-theme/_player.scss */
 progress {
   box-shadow: inset 0 -0.0625rem 0.0625rem #333333;
 }
-/* line 6, ../../src/sass/themes/default/_player.scss */
+/* line 6, ../../src/sass/themes/default-theme/_player.scss */
 progress::-webkit-progress-value {
   background: linear-gradient(to top, #000000 10%, #84bd00 100%);
 }
-/* line 10, ../../src/sass/themes/default/_player.scss */
+/* line 10, ../../src/sass/themes/default-theme/_player.scss */
 progress::-webkit-progress-bar {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-/* line 2, ../../src/sass/themes/default/_list.scss */
+/* line 2, ../../src/sass/themes/default-theme/_list.scss */
 .list.no-results {
   color: #555;
   background-color: transparent;
 }
 
-/* line 7, ../../src/sass/themes/default/_item.scss */
+/* line 7, ../../src/sass/themes/default-theme/_item.scss */
 .item:hover {
   background-color: #191919;
 }
-/* line 10, ../../src/sass/themes/default/_item.scss */
+/* line 10, ../../src/sass/themes/default-theme/_item.scss */
 .item:hover .item__title {
   color: #84bd00;
 }
 
-/* line 19, ../../src/sass/themes/default/_item.scss */
+/* line 19, ../../src/sass/themes/default-theme/_item.scss */
 .item__thumbnail {
   background-color: #111111;
 }
-/* line 23, ../../src/sass/themes/default/_item.scss */
+/* line 23, ../../src/sass/themes/default-theme/_item.scss */
 .item__data {
   text-shadow: 0 0.0625rem 0.125rem #000;
 }
-/* line 27, ../../src/sass/themes/default/_item.scss */
+/* line 27, ../../src/sass/themes/default-theme/_item.scss */
 .item__meta {
   color: #444;
 }
-/* line 31, ../../src/sass/themes/default/_item.scss */
+/* line 31, ../../src/sass/themes/default-theme/_item.scss */
 .item__title {
   color: #818181;
 }
-/* line 35, ../../src/sass/themes/default/_item.scss */
+/* line 35, ../../src/sass/themes/default-theme/_item.scss */
 .item__tag {
   color: #fff;
   background-color: #000;
 }
 
-/* line 43, ../../src/sass/themes/default/_item.scss */
+/* line 43, ../../src/sass/themes/default-theme/_item.scss */
 .item--selected {
   background-color: #151515;
   border-bottom-color: #252525;
 }
-/* line 47, ../../src/sass/themes/default/_item.scss */
+/* line 47, ../../src/sass/themes/default-theme/_item.scss */
 .item--selected .item__thumbnail {
   background-color: #666;
 }
-/* line 52, ../../src/sass/themes/default/_item.scss */
+/* line 52, ../../src/sass/themes/default-theme/_item.scss */
 .item--selected.item--no-artwork .item__thumbnail {
   background-color: #84bd00;
 }
 
-/* line 60, ../../src/sass/themes/default/_item.scss */
+/* line 60, ../../src/sass/themes/default-theme/_item.scss */
 .item--no-artwork:hover .item__thumbnail {
   background-color: #84bd00;
 }
 
-/* line 2, ../../src/sass/themes/default/_playing-now.scss */
+/* line 2, ../../src/sass/themes/default-theme/_playing-now.scss */
 .playing__title {
   color: #fff;
 }
-/* line 6, ../../src/sass/themes/default/_playing-now.scss */
+/* line 6, ../../src/sass/themes/default-theme/_playing-now.scss */
 .playing__artist {
   color: #555;
 }
 
-/* line 1, ../../src/sass/themes/default/_overlay.scss */
+/* line 1, ../../src/sass/themes/default-theme/_overlay.scss */
 #overlay {
   background-color: #181818;
 }
 
-/* line 1, ../../src/sass/themes/default/_mask.scss */
+/* line 1, ../../src/sass/themes/default-theme/_mask.scss */
 #mask {
   background-color: #111111;
   background-blend-mode: multiply;
 }
-/* line 5, ../../src/sass/themes/default/_mask.scss */
+/* line 5, ../../src/sass/themes/default-theme/_mask.scss */
 #mask::after {
   background-color: #000;
 }
