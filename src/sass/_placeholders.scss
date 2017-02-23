@@ -1,27 +1,27 @@
 /* scss-lint:disable Compass::PropertyWithMixin */
 /* scss-lint:disable ColorVariable */
 
-%display-none {
+%hidden {
     display: none;
 }
 
-%hidden {
-    @extend %display-none;
+%show {
+    @extend %block;
 }
 
-%display-flex {
+%flex {
     display: flex;
 }
 
-%display-block {
+%block {
     display: block;
 }
 
-%display-inline-block {
+%inline-block {
     display: inline-block;
 }
 
-%display-inline {
+%inline {
     display: inline-block;
 }
 
@@ -41,7 +41,7 @@
     float: right;
 }
 
-%float-none {
+%no-float {
     float: none;
 }
 
@@ -49,19 +49,19 @@
     clear: both;
 }
 
-%position-relative {
+%relative {
     position: relative;
 }
 
-%position-absolute {
+%absolute {
     position: absolute;
 }
 
-%position-fixed {
+%fixed {
     position: fixed;
 }
 
-%position-static {
+%static {
     position: static;
 }
 
@@ -69,7 +69,7 @@
     margin: auto;
 }
 
-%auto-horizontal-margin {
+%center {
     margin-left: auto;
     margin-right: auto;
 }
@@ -94,6 +94,10 @@
     overflow: hidden;
 }
 
+%disable-scroll {
+    @extend %overflow-hidden;
+}
+
 %overflow-auto {
     overflow: auto;
 }
@@ -106,11 +110,7 @@
     text-overflow: ellipsis;
 }
 
-%font-family-gotham {
-    font-family: 'Gotham SSm A', 'Gotham SSm B', Interstate, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Garuda, Verdana, Tahoma, sans-serif;
-}
-
-%half-border-radius {
+%border-radius-50p {
     border-radius: 50%;
 }
 
@@ -130,6 +130,7 @@
 }
 
 %clearfix {
+    // https://www.rachelandrew.co.uk/archives/2017/01/24/the-end-of-the-clearfix-hack/
     &:after,
     &:before {
         @extend %overflow-hidden;
@@ -151,11 +152,7 @@
     outline: 0;
 }
 
-%animation-fill-mode-forwards {
-    animation-fill-mode: forwards;
-}
-
-%custom-vertical-align {
+%vertical-align {
     @include vertical-align;
 }
 
@@ -167,25 +164,17 @@
     text-transform: uppercase;
 }
 
-/* custom */
+%unstyled-list {
+    margin: 0;
+    padding: 0;
+}
 
-%icono {
-    display: inline-block;
-    vertical-align: middle;
-    position: relative;
-    font-style: normal;
-    color: #ddd;
-    text-align: left;
-    text-indent: -9999px;
-    direction: ltr;
-
-    &:after,
-    &:before {
-        content: '';
-        pointer-events: none;
-    }
-
-    * {
-        box-sizing: border-box;
-    }
+%translate3d-hack {
+    @extend %fixed;
+    // pass rendering to a gpu thread (boosts fps)
+    // https://benfrain.com/improving-css-performance-fixed-position-elements/
+    // http://stackoverflow.com/questions/12969228/chrome-slow-scrolling-with-fixed-position-elements
+    // http://stackoverflow.com/questions/17410287/position-fixed-has-a-very-bad-performance-on-mobile-tablet-devices-when-scrol
+    backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
 }

@@ -6,6 +6,8 @@
 /* scss-lint:disable ElsePlacement */
 /* scss-lint:disable DebugStatement */
 @import 'compass/css3';
+//
+//
 @mixin position-args($args) {
      @each $o in top right bottom left{
         $i: index($args, $o);
@@ -14,35 +16,43 @@
         }
     }
 }
+//
+//
 @mixin dim($value) {
     width: $value;
     height: $value;
 }
-@mixin hide {
-     @extend %display-none;
-}
-@mixin show {
-     @extend %display-block;
-}
+//
+//
 @mixin position($position, $args) {
      @include position-args($args);
     position: $position;
 }
+//
+//
 @mixin absolute($args) {
      @include position(absolute, $args);
 }
+//
+//
 @mixin fixed($args) {
      @include position(fixed, $args);
 }
+//
+//
 @mixin relative($args) {
      @include position(relative, $args);
 }
+//
+//
 @mixin x-rem($property, $value) {
      @if ($old-browsers-support){
         #{$property}: $value + px;
     }
     #{$property}: to-rem($value);
 }
+//
+//
 @mixin vertical-align($position: null) {
     @if $position == 'top' {
         transform: translateY(-100%);
@@ -57,6 +67,8 @@
     position: relative;
     top: 50%;
 }
+//
+//
 @mixin ellipsis($line-clamp) {
      @extend %text-overflow-ellipsis;
     @extend %overflow-hidden;
@@ -69,44 +81,8 @@
     }
     -webkit-box-orient: vertical;
 }
-@mixin scaled-icono-headphone($multiplier) {
-    /* scss-lint:disable NameFormat */
-    $default-size: 32px;
-    $size: $default-size * $multiplier;
-    // debug
-    // $U1: to-px(ceil($size / $default-size));
-    // $U4: to-px(ceil($size / 8));
-    // $U5: to-px(ceil($size / 7));
-    // $U12: to-px(ceil($size / 2.7));
-    // $U16: to-px(ceil($size / 2));
-    // $U20: to-px(ceil($size / 1.6));
-    // $U27: to-px(ceil($size / 1.2));
-    // $U30: to-px(ceil($size / 1.1));
-    // $U32: to-px(ceil($size));
-    $U1: ceil($size / $default-size);
-    $U4: ceil($size / 8);
-    $U5: ceil($size / 7);
-    $U12: ceil($size / 2.7);
-    $U16: ceil($size / 2);
-    $U20: ceil($size / 1.6);
-    $U27: ceil($size / 1.2);
-    $U30: ceil($size / 1.1);
-    $U32: ceil($size);
-    width: to-rem($U30);
-    height: to-rem($U27);
-    border-radius: to-rem($U32) #{'/'} to-rem($U32) to-rem($U32) to-rem($U16) to-rem($U16);
-
-    &:before {
-        @debug to-rem(floor($U4 * .3333 * 2 - 1));
-        @debug round(to-rem(floor($U4 * .3333 * 2 - 1)) * 100) / 100;
-        left: round(to-rem(floor($U4 * .3333 * 2 - 1)) * 100) / 100;
-        bottom: to-rem(-1 * strip-unit(to-number($U4)));
-        width: to-rem($U4);
-        height: to-rem($U12);
-        border-radius: to-rem($U5);
-        box-shadow: inset 0 0 0 to-rem($U32), to-rem($U20) 0 0 0;
-    }
-}
+//
+//
 // https://codepen.io/ndeniche/pen/ljbDL
 @mixin close($width, $height, $color, $hover-color) {
     // .close {

@@ -5,7 +5,7 @@
         -webkit-filter: blur(to-rem(50));
         //
         &:after {
-            @extend %display-block;
+            @extend %show;
         }
     }
 }

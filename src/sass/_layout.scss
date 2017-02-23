@@ -2,17 +2,10 @@
 /* scss-lint:disable ColorVariable */
 /* scss-lint:disable ColorKeyword */
 
-@import 'positioning';
-
 html {
     @extend %full-height;
     font-size: unquote($root-font-scale + '%');
-    // vertical-rhythm, ref: http://webtypography.net/2.2.2
-    line-height: 1.5em;
-    //
-    // @media screen and (max-width: 600px) {
-    //     font-size: unquote($root-font-scale - 17 + '%');
-    // }
+    line-height: 1.5em; // vertical-rhythm; http://webtypography.net/2.2.2
 }
 
 body {
@@ -21,35 +14,49 @@ body {
     @extend %overflow-hidden;
 }
 
-#title-bar {
-    @extend %full-width;
+#nav,
+main {
+    height: calc(100% - #{$title-bar-height});
+}
+
+#nav {
+    @extend %full-height;
     @extend %no-user-select;
-    // -webkit-app-region: drag;
-    height: $title-bar-height;
-    box-shadow: inset 0 -1px 0 #090909;
-    background: #151515;
-    padding-top: to-rem(10);
+    width: $sidebar-width;
+    padding: to-rem(35) to-rem(20) to-rem(20);
+    transform: translate3d(0, $title-bar-height, 0);
+    border-right: 1px solid;
 }
 
 main {
     @extend %overflow-auto;
     @extend %full-height;
-    width: $app-width;
+    width: $main-width;
     transform: translate3d($sidebar-width, $title-bar-height, 0);
 }
 
-.nav {
-    &--main {
-        @extend %full-height;
-        @extend %no-user-select;
-        width: $sidebar-width;
-        height: calc(100% - #{$title-bar-height});
-        padding: to-rem(35) to-rem(20) to-rem(20);
-        box-shadow: inset -1px 0 0 #141414;
-        transform: translate3d(0, $title-bar-height, 0);
-    }
+#titlebar,
+#nav,
+#overlay,
+#mask,
+main {
+    @extend %translate3d-hack;
+}
 
-    &--player {
-        text-align: center;
+#titlebar,
+#nav,
+main {
+    z-index: 2;
+}
+
+#overlay {
+    z-index: 9;
+}
+
+#mask {
+    z-index: 0;
+
+    &:after {
+        z-index: 1;
     }
 }

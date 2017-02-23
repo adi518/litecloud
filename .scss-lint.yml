@@ -9,7 +9,7 @@ linters:
         enabled: false
 
     DuplicateProperty:
-        enabled: false
+        enabled: true
 
     Indentation:
         allow_non_nested_indentation: true

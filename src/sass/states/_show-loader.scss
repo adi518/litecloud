@@ -1,13 +1,12 @@
 .show-loader {
-    @extend %overflow-hidden; // disable scroll
+    @extend %disable-scroll;
 
-    @include block ('loader') {
-        @include modifier ('global') {
-            @extend %display-block;
-        }
+    #overlay,
+    #loader {
+        @extend %show;
     }
 
-    #overlay {
-        @extend %display-block;
+    #loader {
+        @extend #loader.spin;
     }
 }

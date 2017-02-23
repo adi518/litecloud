@@ -41,5 +41,8 @@
     "slash": "^1.0.0",
     "spinkit": "^1.2.5",
     "webpack": "^2.2.1"
+  },
+  "devDependencies": {
+    "electron-rebuild": "^1.5.7"
   }
 }

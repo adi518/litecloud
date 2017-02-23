@@ -1,20 +1,17 @@
-/* scss-lint:disable all */
-// ref: https://css-tricks.com/html5-progress-element/
+// https://css-tricks.com/html5-progress-element/
+// scss-lint:disable Compass::PropertyWithMixin
 
 #player {
     margin-top: to-rem(16);
 
-    // progress:not([value]) {
     progress {
-        @extend %display-block;
+        @extend %block;
         @extend %full-width; // override user-agent
         @extend %cursor-pointer;
-        box-shadow: inset 0 -#{to-rem(1)} #{to-rem(1)} #333;
+        border-radius: to-rem(2);
+        height: to-rem(6);
         -webkit-appearance: none;
         appearance: none;
-        height: to-rem(6);
-        // transition: height .3s;
-        border-radius: to-rem(2);
 
         &::-webkit-progress-bar {
             border-radius: to-rem(2);
@@ -23,19 +20,19 @@
 
         &::-webkit-progress-value {
             border-radius: to-rem(2);
-            background: linear-gradient(to top, rgba(0,0,0,1) 10%, rgba(132,189,0,1) 100%);
         }
     }
+}
 
-    // .pause {}
-    // .stop {}
-    // .volume-plus {}
-    // .volume-minus {}
-    // .mute {}
-    // .unmute {}
-    // .replay {}
+.nav--player {
+    text-align: center;
+    margin-top: to-rem(10);
+}
 
-    .nav--player {
-        margin-top: to-rem(10);
-    }
+.btn--player {
+    @extend .btn;
+    @extend %clear-btn;
+    @extend %no-outline;
+    font-size: to-rem(45);
+    vertical-align: middle;
 }

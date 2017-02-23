@@ -1,16 +1,10 @@
 // scss-lint:disable Compass::PropertyWithMixin
-// scss-lint:disable ColorKeyword
-// scss-lint:disable ColorVariable
-button {
-    &:not(.btn) {
-        @extend %cursor-pointer;
-    }
-}
 
+// normalize
 i,
 span {
     &.btn {
-        @extend %display-inline-block;
+        @extend %inline-block;
     }
 }
 
@@ -21,39 +15,24 @@ span {
 
 .btn {
     @extend %cursor-pointer;
-    @extend %uppercase;
     @extend %no-outline;
     font-style: normal;
     transition: color .2s;
 
-    &--clear {
-        @extend %clear-btn;
+    .icon {
+        font-size: to-rem(24);
     }
+}
 
-    &--title-bar {
-        background-color: transparent;
-        border-width: 0;
+.btn--nav {
+    @extend %clear-btn;
+    @extend %full-width;
+    @extend %uppercase;
+    line-height: to-rem(32);
+    text-align: left;
+
+    .icon {
         vertical-align: top;
-        margin-left: 5px;
-    }
-
-    &--player {
-        @extend %clear-btn;
-        @extend %no-outline;
-        font-size: to-rem(45);
-        vertical-align: middle;
-        text-shadow: 0 1px 1px #818181;
-    }
-
-    &--nav {
-        @extend %clear-btn;
-        @extend %full-width;
-        line-height: 2rem;
-        text-align: left;
-
-        .icon {
-            vertical-align: top;
-            padding-right: 5px;
-        }
+        padding-right: to-rem(5);
     }
 }

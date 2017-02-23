@@ -1,0 +1,19 @@
+.preload * {
+    transition: none !important;
+}
+
+.clearfix {
+    @extend %clearfix;
+}
+
+.hidden {
+    @extend %hidden;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}

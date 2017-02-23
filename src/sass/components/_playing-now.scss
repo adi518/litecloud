@@ -1,36 +1,37 @@
 /* scss-lint:disable Compass::PropertyWithMixin */
-/* scss-lint:disable ColorKeyword */
-/* scss-lint:disable ColorVariable */
+/* scss-lint:disable MergeableSelector */
 
+// block
 .playing {
     @extend %hidden;
-    cursor: default;
+    @extend %cursor-default;
+    margin-top: to-rem(10);
+}
 
-    &--no-artcover {
-        .playing__thumbnail {
-            border-radius: 0;
-            background-image: url('../images/ic_album_black_48px.svg');
-        }
+// elements
+.playing {
+    //
+    &__header {
+        @extend .component__header;
     }
 
     &__thumbnail {
-        margin-top: to-rem(10);
+        @include dim($playing-thumbnail-size);
         border-radius: to-rem(2);
-        width: $playing-thumbnail-size;
-        height: $playing-thumbnail-size;
         background-size: cover;
     }
 
     &__description {
-        @extend %auto-horizontal-margin;
+        @extend %center;
         text-align: center;
         width: 70%;
     }
 
     &__artist {
+        font-size: to-rem(12);
+
         &:not(:empty) {
             padding-top: to-rem(10);
-            font-size: to-rem(12);
         }
 
         &:empty {
@@ -41,9 +42,20 @@
     }
 
     &__title {
+        font-size: to-rem(13);
+
         &:not(:empty) {
-            font-size: to-rem(13);
             padding-top: to-rem(10);
+        }
+    }
+}
+
+// modifiers
+.playing {
+    &--no-artcover {
+        .playing__thumbnail {
+            border-radius: 0;
+            background-image: url($thumbnail-no-artwork-path);
         }
     }
 }

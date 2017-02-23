@@ -1,0 +1,6 @@
+#loader {
+    // scss-lint:disable ColorVariable
+    border-color: rgba(255, 255, 255, .05);
+    border-top-color: $color-pistachio;
+    // scss-lint:enable ColorVariable
+}

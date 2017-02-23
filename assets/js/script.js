@@ -20,7 +20,8 @@ $(function () {
         test: true,
         isdev: window.location.hash.substring(1) === 'dev',
         keyupDebounceDelay: 500,
-        devLoaderDelay: 0,
+        loaderDelay: 2000,
+        devLoaderDelay: 2000,
         init: {
             grid: true
         },
@@ -34,27 +35,26 @@ $(function () {
     };
 
     var selectors = [
-        '#body',
+        'body',
         '#minimize',
         '#maximize',
         '#terminate',
+        '#nav',
         '#main',
-        '#mask',
-        '#header',
+        '#list',
+        '#search',
         '#audio',
+        '#player',
+        '#progress',
         '#player-playPause',
         '#player-next',
         '#player-previous',
         '#player-replay',
-        '#progress',
         '#playing',
         '#playing-thumbnail',
         '#playing-title',
         '#playing-artist',
-        '#nav',
-        '#search',
-        '#list',
-        '#player',
+        '#mask',
         '.toggle-grid-view',
         '.toggle-repeat',
         '.toggle-shuffle',
@@ -276,7 +276,7 @@ $(function () {
         drag('#titlebar');
 
         if (!drag.supported) {
-            document.querySelector('#title-bar').style['-webkit-app-region'] = 'drag';
+            document.querySelector('#titlebar').style['-webkit-app-region'] = 'drag';
         }
 
         cache.$audio[0].controls = false;
@@ -465,5 +465,5 @@ $(function () {
         });
     }
 
-    setTimeout(init, cache.isdev ? cache.devLoaderDelay : 0);
+    setTimeout(init, cache.loaderDelay || 0);
 });

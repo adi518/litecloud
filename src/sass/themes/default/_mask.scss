@@ -1,0 +1,8 @@
+#mask {
+    background-color: darken($color-cod-gray, 1.5%);
+    background-blend-mode: multiply;
+
+    &::after {
+        background-color: $color-black;
+    }
+}

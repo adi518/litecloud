@@ -4,7 +4,6 @@
 @import 'components/scrollbar';
 @import 'components/buttons';
 @import 'components/titlebar';
-@import 'components/init-loader';
 @import 'components/loader';
 @import 'components/search';
 @import 'components/player';
@@ -16,7 +15,9 @@
 
 @include block ('component') {
     @include element ('header') {
+        @extend %uppercase;
+        margin-top: 0;
+        margin-bottom: to-rem(10);
         font-size: to-rem(14);
-        text-transform: uppercase;
     }
 }

@@ -1,82 +1,16 @@
-/* scss-lint:disable Compass::PropertyWithMixin */
-/* scss-lint:disable ColorVariable */
-/* scss-lint:disable ColorKeyword */
-/* scss-lint:disable HexNotation */
-
-// layout
-
-#overlay {
-    background-color: whitesmoke;
-}
-
-#mask {
-    background-color: #fff;
-}
-
-// components
-
-#search {
-    background-color: #000;
-    color: #fff;
-}
-
-#player {
-    progress {
-        &::-webkit-progress-bar {
-            background-color: transparent;
-        }
-
-        &::-webkit-progress-value {
-            background-color: plum;
-            // background-color: rgba(0, 0, 0, .45);
-        }
-    }
-}
-
-::-webkit-input-placeholder {
-    color: #000;
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: #ddd;
-}
-
-.btn--nav,
-.btn--player {
-    &:hover {
-        color: plum;
-    }
-}
-
-.list {
-    &:not(:empty):not(.no-results) {
-        .list__item {
-            &:hover {
-                color: plum;
-            }
-        }
-    }
-}
-
-.item {
-    &__thumbnail {
-        color: #fff;
-    }
-
-    &__item--visited {
-        color: #ddd;
-
-        &.list__item--no-artwork .list__thumbnail {
-            background-color: plum;
-        }
-    }
-
-    &__item--no-artwork .list__thumbnail {
-        background-color: #ddd;
-    }
-
-    &__tag {
-        color: #fff;
-        background-color: #000;
-    }
-}
+// scss-lint:disable Compass::PropertyWithMixin
+// scss-lint:disable Indentation
+// scss-lint:disable MergeableSelector
+@import 'default/layout';
+@import 'default/component';
+@import 'default/scrollbar';
+@import 'default/buttons';
+@import 'default/titlebar';
+@import 'default/loader';
+@import 'default/search';
+@import 'default/player';
+@import 'default/list';
+@import 'default/item';
+@import 'default/playing-now';
+@import 'default/overlay';
+@import 'default/mask';

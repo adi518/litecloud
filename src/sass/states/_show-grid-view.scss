@@ -2,7 +2,7 @@
 /* scss-lint:disable Compass::PropertyWithMixin */
 .show-grid-view {
     @include block ('list') {
-        @extend %display-flex;
+        @extend %flex;
         padding-top: 0;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -22,7 +22,7 @@
         padding-right: 0;
 
         small {
-            @extend %display-inline-block;
+            @extend %inline-block;
 
             &:after {
                 @extend %no-content;
@@ -66,7 +66,7 @@
 
         @include modifier ('no-artwork') {
             .item__thumbnail {
-                @extend %display-block;
+                @extend %block;
                 width: inherit;
                 height: $large-thumbnail-size;
             }
@@ -82,9 +82,9 @@
     // item elements
     @include block ('item') {
         @include element ('thumbnail') {
-            @extend %position-relative;
-            @extend %float-none;
-            @extend %display-block;
+            @extend %relative;
+            @extend %no-float;
+            @extend %block;
             height: $large-thumbnail-size;
             width: inherit;
             margin-right: 0;
@@ -92,13 +92,13 @@
         }
 
         @include element ('data') {
-            @extend %position-relative;
+            @extend %relative;
             overflow: visible;
             height: to-rem(90);
             padding-top: to-rem(10);
 
             li:last-child {
-                @extend %position-absolute;
+                @extend %absolute;
                 @extend %full-width;
                 bottom: 0;
                 line-height: to-rem(9);
@@ -122,7 +122,7 @@
         }
 
         @include element ('tag') {
-            @extend %display-block;
+            @extend %block;
         }
     }
 }

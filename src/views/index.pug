@@ -4,15 +4,15 @@ html(lang="en")
         title= "Litecloud"
         meta(charset="utf-8")
         link(rel="stylesheet" href="assets/css/styles.css")
-    body(id="body" class="body show-loader theme-dark")
-        nav(id="title-bar")
+    body(class="body show-loader")
+        nav(id="titlebar")
             div(id="logo" src="assets/images/logo.png")
             div#title Litecloud
-            div#title-bar-btns
-                button(id="minimize" class="btn btn--title-bar")
-                button(id="maximize" class="btn btn--title-bar")
-                button(id="terminate" class="btn btn--title-bar close rounded")
-        nav(id="nav" class="nav nav--main")
+            div#titlebar-btns
+                button(id="minimize" class="btn btn--titlebar")
+                button(id="maximize" class="btn btn--titlebar")
+                button(id="terminate" class="btn btn--titlebar close rounded")
+        nav(id="nav")
             input(id="search" name="search" type="text" placeholder="...")
             button(class="btn btn--nav" data-action="repeat")
                 i(class="icon material-icons") repeat
@@ -30,7 +30,7 @@ html(lang="en")
                 i(class="icon material-icons") autorenew
                 span &nbsp;autoplay
             div(id="playing" class="playing")
-                h2(class="component__header") playing now
+                h2(class="playing__header") playing now
                 div(id="playing-thumbnail" class="playing__thumbnail")
                 div(id="playing-description" class="playing__description")
                     div(id="playing-title" class="playing__title")
@@ -44,10 +44,7 @@ html(lang="en")
                     i(id="player-next" class="btn btn--player material-icons") skip_next
         main(id="main")
             section(id="list" class="list")
-        div(class="init-loader loader--global")
-            div(class="inner one")
-            div(class="inner two")
-            div(class="inner three")
+        div(id="loader")
         div(id="overlay")
         div(id="mask")
         script(src="assets/js/script.js")

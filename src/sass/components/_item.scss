@@ -1,7 +1,7 @@
-/* scss-lint:disable Compass::PropertyWithMixin */
-/* scss-lint:disable ColorKeyword */
-/* scss-lint:disable ColorVariable */
-
+// scss-lint:disable Compass::PropertyWithMixin
+//
+//
+// block
 @include block ('item') {
     @extend %clearfix;
     @extend %uppercase;
@@ -17,8 +17,58 @@
     &:not(:first-child) {
         margin-top: to-rem(35);
     }
-
-    @include modifier('no-artwork') {
+}
+//
+//
+// elements
+@include block ('item') {
+    //
+    //
+    @include element ('thumbnail') {
+        @extend %float-left;
+        @include dim($thumbnail-size);
+        margin-right: to-rem(20);
+        text-decoration: none;
+        background-size: cover;
+        transition: background-color .2s, background-blend-mode .2s;
+        image-rendering: -webkit-optimize-contrast;
+    }
+    //
+    //
+    @include element ('data') {
+        @extend %unstyled-list;
+        @extend %overflow-hidden; // prevents content wrap-around
+        list-style-type: none;
+        transition: margin-top, .1s;
+    }
+    //
+    //
+    @include element ('truncated') {
+        font-size: 0;
+    }
+    //
+    //
+    @include element ('tag') {
+        @extend %hidden;
+        @extend %white-space-nowrap;
+        @extend %overflow-hidden;
+        @extend %text-overflow-ellipsis;
+        @extend %absolute;
+        right: 0;
+        top: to-rem(7);
+        padding-left: to-rem(5);
+        padding-right: to-rem(5);
+        border-radius: to-rem(2) 0 0 to-rem(2);
+        max-width: 70%;
+    }
+}
+//
+//
+// modifiers
+@include block ('item') {
+    //
+    //
+    @include modifier ('no-artwork') {
         //
         &:hover {
             .item__icon {
@@ -31,7 +81,7 @@
             $dim: to-rem(70);
             @include dim($dim);
             background-size: $dim $dim;
-            background-image: url($thumbnail-no-artwork-image);
+            background-image: url($thumbnail-no-artwork-path);
             display: block;
             margin: 0 auto;
             opacity: .45;
@@ -41,8 +91,9 @@
             image-rendering: auto;
         }
     }
-
-    @include modifier('selected') {
+    //
+    //
+    @include modifier ('selected') {
         padding-top: to-rem(10);
         padding-bottom: to-rem(10);
         padding-left: to-rem(10);
@@ -60,48 +111,12 @@
         }
 
         .item__thumbnail {
-            @extend %position-relative;
+            @extend %relative;
             background-blend-mode: multiply;
         }
 
         .item__data {
             margin-top: 0;
         }
-    }
-}
-
-@include block ('item') {
-    &__thumbnail {
-        @extend %float-left;
-        @include dim($thumbnail-size);
-        margin-right: to-rem(20);
-        text-decoration: none;
-        background-size: cover;
-        transition: background-color .2s, background-blend-mode .2s;
-        image-rendering: -webkit-optimize-contrast;
-    }
-
-    &__data {
-        @extend %overflow-hidden; // prevents content wrap-around
-        list-style-type: none;
-        transition: margin-top, .1s;
-    }
-
-    &__truncated {
-        font-size: 0;
-    }
-
-    &__tag {
-        @extend %display-none;
-        @extend %white-space-nowrap;
-        @extend %overflow-hidden;
-        @extend %text-overflow-ellipsis;
-        position: absolute;
-        right: 0;
-        top: to-rem(7);
-        padding-left: to-rem(5);
-        padding-right: to-rem(5);
-        border-radius: to-rem(2) 0 0 to-rem(2);
-        max-width: 70%;
     }
 }

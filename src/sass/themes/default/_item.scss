@@ -1,0 +1,64 @@
+// scss-lint:disable Compass::PropertyWithMixin
+// scss-lint:disable MergeableSelector
+
+// BLOCK
+
+.item {
+    &:hover {
+        background-color: lighten($color-cod-gray, 1.5%);
+
+        .item__title {
+            color: $color-pistachio;
+        }
+    }
+}
+
+// ELEMENTS
+
+.item {
+    &__thumbnail {
+        background-color: darken($color-cod-gray, 1.5%);
+    }
+
+    &__data {
+        text-shadow: 0 #{to-rem(1)} #{to-rem(2)} $color-black;
+    }
+
+    &__meta {
+        color: $color-tundora;
+    }
+
+    &__title {
+        color: $color-gray;
+    }
+
+    &__tag {
+        color: $color-white;
+        background-color: $color-black;
+    }
+}
+
+// MODIFIERS
+
+.item--selected {
+    background-color: $color-cod-gray;
+    border-bottom-color: $color-mine-shaft;
+
+    .item__thumbnail {
+        background-color: $color-dove-gray;
+    }
+
+    &.item--no-artwork {
+        .item__thumbnail {
+            background-color: $color-pistachio;
+        }
+    }
+}
+
+.item--no-artwork {
+    &:hover {
+        .item__thumbnail {
+            background-color: $color-pistachio;
+        }
+    }
+}

@@ -2,14 +2,14 @@
 
 #search {
     @extend %full-width;
-    @extend %display-block;
+    @extend %block;
     @extend %no-outline;
+    line-height: $search-line-height;
     padding-left: to-rem(15);
     padding-right: to-rem(15);
+    margin-bottom: to-rem(20);
     border-width: 0;
     border-radius: to-rem(30);
-    line-height: $search-line-height;
-    margin-bottom: to-rem(20);
 }
 
 ::-webkit-input-placeholder {

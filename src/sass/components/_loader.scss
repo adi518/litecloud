@@ -1,25 +1,35 @@
-// inspiration: https://connoratherton.com/loaders
-// ref: http://projects.lukehaas.me/css-loaders/ ;)
+// https://connoratherton.com/loaders
+// http://projects.lukehaas.me/css-loaders/
 // scss-lint:disable Compass::PropertyWithMixin
-// scss-lint:disable ColorVariable
-// scss-lint:disable ColorKeyword
 // scss-lint:disable MergeableSelector
 // scss-lint:disable Indentation
 
-.loader {
-    font-size: 10px;
-    position: relative;
-    text-indent: -9999rem;
-    border-top: 1.1rem solid rgba(255, 85, 0, .2);
-    border-right: 1.1rem solid rgba(255, 85, 0, .2);
-    border-bottom: 1.1rem solid rgba(255, 85, 0, .2);
-    border-left: 1.1rem solid $orange;
-    transform: translateZ(0);
-    animation: load8 1.1s infinite linear;
+%loader-layout {
+    @extend %hidden;
+    @extend %fixed;
+    @include dim($global-loader-size);
+    $calc-value: unquote("50% - #{$global-loader-size / 2}");
+    top: calc(#{$calc-value});
+    left: calc(#{$calc-value});
+    z-index: 99;
+}
 
-    // beautify ignore:start
+#loader {
+    @extend %loader-layout;
+}
+
+#loader {
+    border-radius: 50%;
+    border-width: to-rem(2);
+    border-style: solid;
+    border-top: 2px solid;
+
+    &.spin {
+        animation: spin 1.5s infinite linear;
+    }
+    //
     @at-root {
-         @keyframes load8{
+         @keyframes spin{
             0% {
                 transform: rotate(0deg);
             }
@@ -28,55 +38,5 @@
                 transform: rotate(360deg);
             }
         }
-    }
-    // beautify ignore:end
-}
-
-.loader,
-.loader:after {
-    border-radius: 50%;
-    width: 10rem;
-    height: 10rem;
-}
-
-%loader--global {
-    position: fixed;
-    width: $global-loader-size;
-    height: $global-loader-size;
-    border-width: $global-loader-size / 9.09;
-    $calc-value: unquote("50% - #{$global-loader-size / 2}");
-    top: calc(#{$calc-value});
-    left: calc(#{$calc-value});
-    z-index: 99;
-}
-
-.loader--global {
-    @extend %display-none;
-}
-
-.loader--global {
-    @extend %loader--global;
-    @extend .init-loader; // roll our own, duh
-}
-
-//
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-.loader2 {
-    border-radius: 50%;
-    border-width: to-rem(2);
-    border-style: solid;
-    border-color: rgba(255, 255, 255, .05);
-
-    &.spin {
-        animation: spin 1.5s infinite linear;
     }
 }
