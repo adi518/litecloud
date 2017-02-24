@@ -1,32 +1,32 @@
 doctype html
 html(lang="en")
     head
-        title= "Litecloud"
+        title="Litecloud"
         meta(charset="utf-8")
         link(rel="stylesheet" href="assets/css/styles.css")
     body(class="body show-loader")
         nav(id="titlebar")
-            div(id="logo" src="assets/images/logo.png")
-            div#title Litecloud
-            div#titlebar-btns
+            div(id="logo")
+            div(id="title") Litecloud
+            div(id="titlebar-btns")
                 button(id="minimize" class="btn btn--titlebar")
                 button(id="maximize" class="btn btn--titlebar")
                 button(id="terminate" class="btn btn--titlebar close rounded")
         nav(id="nav")
             input(id="search" name="search" type="text" placeholder="...")
-            button(class="btn btn--nav" data-action="repeat")
+            button(class="btn btn--nav" type="repeat")
                 i(class="icon material-icons") repeat
                 span &nbsp;repeat
-            button(class="btn btn--nav" data-action="shuffle")
+            button(class="btn btn--nav" type="shuffle")
                 i(class="icon material-icons") shuffle
                 span &nbsp;shuffle
             button(class="btn btn--nav" data-modifier="show-grid-view" data-toggle="show-grid-view" data-dismiss="true")
                 i(class="icon material-icons") view_module
                 span &nbsp;grid view
-            button(class="btn btn--nav hidden" data-modifier="show-grid-view" data-toggle="show-grid-view" data-dismiss="true")
+            button(class="btn btn--nav" style="display: none" data-modifier="show-grid-view" data-toggle="show-grid-view" data-dismiss="true")
                 i(class="icon material-icons") view_headline
                 span &nbsp;list view
-            button(class="btn btn--nav" data-action="autoplay")
+            button(class="btn btn--nav" type="autoplay")
                 i(class="icon material-icons") autorenew
                 span &nbsp;autoplay
             div(id="playing" class="playing")
@@ -35,9 +35,9 @@ html(lang="en")
                 div(id="playing-description" class="playing__description")
                     div(id="playing-title" class="playing__title")
                     div(id="playing-artist" class="playing__artist")
-            div(id="player" class="hidden")
-                audio(id="audio" type='audio/mpeg' controls='')
-                progress(id="progress" min='0', max='100')
+            div(id="player")
+                audio(type="audio/mpeg")
+                progress(id="progress" min="0", max="100")
                 nav(class="nav nav--player")
                     i(id="player-previous" class="btn btn--player material-icons") skip_previous
                     i(id="player-playPause" class="btn btn--player material-icons") play_arrow
@@ -47,11 +47,7 @@ html(lang="en")
         div(id="loader")
         div(id="overlay")
         div(id="mask")
-        script(src="assets/js/script.js")
+        script(src="assets/js/renderer.js")
         script(src="assets/js/vendor/jquery.$$.min.js")
         script(src="assets/js/vendor/jquery.ba-throttle-debounce.min.js")
-        script(src="assets/js/vendor/soundcloud/sdk-3.1.2.js")
-        script(src="assets/js/jquery-extensions.js")
         script(src="assets/js/mockup.js")
-        script.
-            require('./assets/js/renderer.js')

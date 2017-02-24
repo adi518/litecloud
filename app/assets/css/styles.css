@@ -15,7 +15,11 @@
 /* scss-lint:disable ColorVariable */
 @import url(../../../node_modules/material-design-icons/iconfont/material-icons.css);
 /* line 4, ../../src/sass/_placeholders.scss */
-.hidden, #loader, .item__tag, .playing, #overlay, #mask::after {
+.hidden, .item__tag, #loader,
+#player,
+#playing,
+#overlay,
+#mask::after {
   display: none;
 }
 
@@ -26,7 +30,7 @@
 
 /* line 16, ../../src/sass/_placeholders.scss */
 .show-mask #mask:after, .show-loader #overlay,
-.show-loader #loader, .show-playing-now .playing, #search, #player progress, .show-grid-view .item--no-artwork .item__thumbnail, .show-grid-view .item__thumbnail, .show-grid-view .item__tag {
+.show-loader #loader, .show-player #player, .show-playing #playing, #search, #player progress, .show-grid-view .item--no-artwork .item__thumbnail, .show-grid-view .item__thumbnail, .show-grid-view .item__tag {
   display: block;
 }
 
@@ -58,7 +62,7 @@ span.btn--player, #logo, #title, .show-grid-view .item small {
 }
 
 /* line 56, ../../src/sass/_placeholders.scss */
-.item__tag, .show-grid-view .item__data li:last-child {
+.item__tag, .show-grid-view .item__meta {
   position: absolute;
 }
 
@@ -88,7 +92,7 @@ body {
 }
 
 /* line 85, ../../src/sass/_placeholders.scss */
-.btn--nav, #titlebar, #search, #player progress, #overlay, .show-grid-view .item__data li:last-child {
+.btn--nav, #titlebar, #search, #player progress, #overlay, .show-grid-view .item__meta {
   width: 100%;
 }
 
@@ -851,14 +855,14 @@ strong {
   z-index: 99;
 }
 
-/* line 21, ../../src/sass/components/_loader.scss */
+/* line 20, ../../src/sass/components/_loader.scss */
 #loader {
   border-radius: 50%;
   border-width: 0.125rem;
   border-style: solid;
   border-top: 2px solid;
 }
-/* line 27, ../../src/sass/components/_loader.scss */
+/* line 26, ../../src/sass/components/_loader.scss */
 #loader.spin, .show-loader #loader {
   animation: spin 1.5s infinite linear;
 }
@@ -1022,45 +1026,45 @@ strong {
 
 /* scss-lint:disable Compass::PropertyWithMixin */
 /* scss-lint:disable MergeableSelector */
-/* line 5, ../../src/sass/components/_playing-now.scss */
+/* line 5, ../../src/sass/components/_playing.scss */
 .playing {
   margin-top: 0.625rem;
 }
 
-/* line 18, ../../src/sass/components/_playing-now.scss */
+/* line 17, ../../src/sass/components/_playing.scss */
 .playing__thumbnail {
   width: 16.25rem;
   height: 16.25rem;
   border-radius: 0.125rem;
   background-size: cover;
 }
-/* line 24, ../../src/sass/components/_playing-now.scss */
+/* line 23, ../../src/sass/components/_playing.scss */
 .playing__description {
   text-align: center;
   width: 70%;
 }
-/* line 30, ../../src/sass/components/_playing-now.scss */
+/* line 29, ../../src/sass/components/_playing.scss */
 .playing__artist {
   font-size: 0.75rem;
 }
-/* line 33, ../../src/sass/components/_playing-now.scss */
+/* line 32, ../../src/sass/components/_playing.scss */
 .playing__artist:not(:empty) {
   padding-top: 0.625rem;
 }
-/* line 38, ../../src/sass/components/_playing-now.scss */
+/* line 37, ../../src/sass/components/_playing.scss */
 .playing__artist:empty + .playing__title {
   padding-top: 0.625rem;
 }
-/* line 44, ../../src/sass/components/_playing-now.scss */
+/* line 43, ../../src/sass/components/_playing.scss */
 .playing__title {
   font-size: 0.8125rem;
 }
-/* line 47, ../../src/sass/components/_playing-now.scss */
+/* line 46, ../../src/sass/components/_playing.scss */
 .playing__title:not(:empty) {
   padding-top: 0.625rem;
 }
 
-/* line 56, ../../src/sass/components/_playing-now.scss */
+/* line 55, ../../src/sass/components/_playing.scss */
 .playing--no-artcover .playing__thumbnail {
   border-radius: 0;
   background-image: url("../images/ic_album_black_48px.svg");
@@ -1181,15 +1185,15 @@ main {
   padding-left: 0;
   padding-right: 0;
 }
-/* line 32, ../../src/sass/states/_show-grid-view.scss */
+/* line 35, ../../src/sass/states/_show-grid-view.scss */
 .show-grid-view .item:hover {
   background-color: transparent;
 }
-/* line 35, ../../src/sass/states/_show-grid-view.scss */
+/* line 38, ../../src/sass/states/_show-grid-view.scss */
 .show-grid-view .item:hover .item__data {
   margin-top: 0;
 }
-/* line 39, ../../src/sass/states/_show-grid-view.scss */
+/* line 42, ../../src/sass/states/_show-grid-view.scss */
 .show-grid-view .item:hover .item__thumbnail {
   background-blend-mode: screen;
 }
@@ -1200,21 +1204,21 @@ main {
   border-bottom-width: 0;
   background-color: transparent;
 }
-/* line 54, ../../src/sass/states/_show-grid-view.scss */
+/* line 58, ../../src/sass/states/_show-grid-view.scss */
 .show-grid-view .item--selected:hover .item__thumbnail {
   background-blend-mode: multiply;
 }
-/* line 60, ../../src/sass/states/_show-grid-view.scss */
+/* line 64, ../../src/sass/states/_show-grid-view.scss */
 .show-grid-view .item--selected .item__thumbnail:after {
   line-height: 12.1875rem;
   font-size: 1rem;
 }
-/* line 68, ../../src/sass/states/_show-grid-view.scss */
+/* line 72, ../../src/sass/states/_show-grid-view.scss */
 .show-grid-view .item--no-artwork .item__thumbnail {
   width: inherit;
   height: 12.1875rem;
 }
-/* line 74, ../../src/sass/states/_show-grid-view.scss */
+/* line 78, ../../src/sass/states/_show-grid-view.scss */
 .show-grid-view .item--no-artwork .item__icon {
   width: 6.25rem;
   height: 6.25rem;
@@ -1233,11 +1237,6 @@ main {
   height: 5.625rem;
   padding-top: 0.625rem;
 }
-/* line 100, ../../src/sass/states/_show-grid-view.scss */
-.show-grid-view .item__data li:last-child {
-  bottom: 0;
-  line-height: 0.5625rem;
-}
 /* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
 .show-grid-view .item__title {
   display: -webkit-box;
@@ -1248,6 +1247,10 @@ main {
 .show-grid-view .item__author {
   width: 6.25rem;
   font-size: 0.75rem;
+}
+/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
+.show-grid-view .item__meta {
+  bottom: 0;
 }
 
 /* line 3, ../../src/sass/themes/default-theme/_layout.scss */
@@ -1502,11 +1505,11 @@ progress::-webkit-progress-bar {
   background-color: #84bd00;
 }
 
-/* line 2, ../../src/sass/themes/default-theme/_playing-now.scss */
+/* line 2, ../../src/sass/themes/default-theme/_playing.scss */
 .playing__title {
   color: #fff;
 }
-/* line 6, ../../src/sass/themes/default-theme/_playing-now.scss */
+/* line 6, ../../src/sass/themes/default-theme/_playing.scss */
 .playing__artist {
   color: #555;
 }

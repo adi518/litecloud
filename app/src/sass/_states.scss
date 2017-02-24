@@ -2,4 +2,13 @@
 @import 'states/show-mask';
 @import 'states/show-loader';
 @import 'states/show-grid-view';
-@import 'states/show-playing-now';
+@import 'states/show-player';
+@import 'states/show-playing';
+
+#loader,
+#player,
+#playing,
+#overlay,
+#mask::after {
+    @extend %hidden;
+}

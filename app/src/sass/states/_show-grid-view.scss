@@ -1,6 +1,8 @@
 /* scss-lint:disable DeclarationOrder */
 /* scss-lint:disable Compass::PropertyWithMixin */
 .show-grid-view {
+    //
+    //
     @include block ('list') {
         @extend %flex;
         padding-top: 0;
@@ -8,7 +10,8 @@
         justify-content: space-between;
     }
 
-    // item own style
+    // ITEM BLOCK
+
     @include block ('item') {
         @extend %no-user-select;
         @extend %lowercase;
@@ -42,7 +45,8 @@
         }
     }
 
-    // item modifiers
+    // ITEM MODIFIERS
+
     @include block ('item') {
         @include modifier ('selected') {
             padding-top: 0;
@@ -79,7 +83,8 @@
         }
     }
 
-    // item elements
+    // ITEM ELEMENTS
+
     @include block ('item') {
         @include element ('thumbnail') {
             @extend %relative;
@@ -96,14 +101,6 @@
             overflow: visible;
             height: to-rem(90);
             padding-top: to-rem(10);
-
-            li:last-child {
-                @extend %absolute;
-                @extend %full-width;
-                bottom: 0;
-                line-height: to-rem(9);
-                // line-height: .58rem;
-            }
         }
 
         @include element ('title') {
@@ -119,6 +116,12 @@
 
         @include element ('duration') {
             @extend %float-right;
+        }
+
+        @include element ('meta') {
+            @extend %absolute;
+            @extend %full-width;
+            bottom: 0;
         }
 
         @include element ('tag') {

@@ -1,1 +1,1 @@
-set NODE_ENV=dev&&npm start
+rebuild-electron && set NODE_ENV=dev&&npm start

@@ -1,10 +1,10 @@
 /* jslint browser: true */
 /* jslint jquery: true */
-/* global $ */
+/* global $, mockup */
 
 'use strict';
 
-var mockup = {
+module.exports.mockup = {
     player: {
         on: function (eventName, handler) {
             switch (eventName) {
@@ -26,10 +26,10 @@ var mockup = {
         isPlaying: function () {
             return mockup.player.paused;
         },
+        seek: function () {},
         options: {
             protocols: ['http']
         },
-        seek: function () {},
         paused: true
     },
     SC: {
@@ -52,12 +52,12 @@ var mockup = {
     }
 };
 
-var player = mockup.player;
-
-$('#player-playPause').click(function () {
-    if (player.paused) {
-        player.play();
-    } else {
-        player.pause();
-    }
-});
+// var player = mockup.player;
+//
+// $('#player-playPause').click(function () {
+//     if (player.paused) {
+//         player.play();
+//     } else {
+//         player.pause();
+//     }
+// });

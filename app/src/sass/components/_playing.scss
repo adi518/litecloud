@@ -3,7 +3,6 @@
 
 // block
 .playing {
-    @extend %hidden;
     @extend %cursor-default;
     margin-top: to-rem(10);
 }

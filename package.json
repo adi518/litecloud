@@ -18,28 +18,30 @@
   "homepage": "https://github.com/adi518/litecloud#readme",
   "dependencies": {
     "electron": "^1.4.15",
-    "node-sass": "^4.5.0"
+    "soundcloud": "^3.1.2"
   },
   "devDependencies": {
-    "jquery": "^3.1.1",
-    "lodash": "^4.17.4",
-    "slash": "^1.0.0",
-    "material-design-icons": "^3.0.1",
-    "webpack": "^2.2.1",
-    "normalize.css": "^5.0.0",
-    "pug": "^2.0.0-beta11",
     "bemify": "^0.1.2",
     "debug-menu": "^0.4.0",
-    "electron-rebuild": "^1.5.7",
-    "electron-packager": "^8.5.2",
     "electron-context-menu": "^0.8.0",
-    "electron-drag": "^1.2.0",
     "electron-debug": "^1.1.0",
+    "electron-drag": "^1.2.0",
+    "electron-packager": "^8.5.2",
+    "electron-rebuild": "^1.5.7",
     "eslint": "^3.15.0",
     "eslint-plugin-react": "^6.10.0",
     "grunt": "^1.0.1",
     "grunt-contrib-compass": "^1.1.1",
     "grunt-contrib-pug": "^1.0.0",
-    "grunt-contrib-watch": "^1.0.0"
+    "grunt-contrib-watch": "^1.0.0",
+    "jquery": "^3.1.1",
+    "lodash": "^4.17.4",
+    "material-design-icons": "^3.0.1",
+    "node-sass": "^4.5.0",
+    "node-soundcloud": "0.0.6",
+    "normalize.css": "^5.0.0",
+    "pug": "^2.0.0-beta11",
+    "slash": "^1.0.0",
+    "webpack": "^2.2.1"
   }
 }
