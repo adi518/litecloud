@@ -4,7 +4,7 @@
 
 'use strict';
 
-const mockup = {
+const mock = {
     player: {
         on: function (eventName, handler) {
             switch (eventName) {
@@ -18,13 +18,13 @@ const mockup = {
             options.callback();
         },
         play: function () {
-            mockup.player.paused = false;
+            mock.player.paused = false;
         },
         pause: function () {
-            mockup.player.paused = true;
+            mock.player.paused = true;
         },
         isPlaying: function () {
-            return mockup.player.paused;
+            return mock.player.paused;
         },
         seek: function () {},
         options: {
@@ -34,7 +34,7 @@ const mockup = {
     },
     SC: {
         get: function () {
-            return $.getJSON('assets/json/mockup.json');
+            return $.getJSON('assets/json/tracks.json');
         },
         Widget: {
             Events: {
@@ -45,16 +45,16 @@ const mockup = {
         stream: function () {
             return {
                 then: function (callback) {
-                    callback(mockup.player);
+                    callback(mock.player);
                 }
             };
         }
     }
 };
 
-module.exports = mockup;
+module.exports = mock;
 
-// var player = mockup.player;
+// var player = mock.player;
 //
 // $('#player-playPause').click(function () {
 //     if (player.paused) {

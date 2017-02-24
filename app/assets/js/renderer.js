@@ -11,21 +11,28 @@ const remote = require('electron').remote;
 const {BrowserWindow, globalShortcut} = remote;
 /* beautify ignore:end */
 remote.getCurrentWindow().removeAllListeners();
-// we use `let` because SC is set to `mockup` on development-mode
-let SC = require('soundcloud');
 const drag = require('electron-drag');
 window.$ = window.jQuery = require('jquery');
 require('./assets/js/vendor/jquery.$$.min.js');
 const debounce = require('debounce');
-const mockup = require('./assets/js/dev/mockup.js');
+const isdev = window.location.hash.substring(1) === 'dev';
+let cache = {};
+// we use `let` because SC is set to `mock.SC` on development-mode
+let SC = require('soundcloud');
+
+if (isdev) {
+    const mock = require('./assets/js/dev/mock.js');
+    SC = mock.SC;
+    cache.player = mock.player;
+}
 
 'use strict';
 
-var cache = {
+cache = $.extend({}, cache, {
     version: '0.1',
     testKeyword: 'milky chance',
     test: true,
-    isdev: window.location.hash.substring(1) === 'dev',
+    isdev: isdev,
     keyupDebounceDelay: 500,
     loaderDelay: 2000,
     devLoaderDelay: 2000,
@@ -40,12 +47,15 @@ var cache = {
         limit: 50,
     },
     $window: $(window)
-};
+});
 
 $(function () {
 
     var selectors = [
         '#body',
+        '.toggle-grid-view',
+        '.toggle-repeat',
+        '.toggle-shuffle',
         // components
         '#minimize',
         '#maximize',
@@ -57,9 +67,6 @@ $(function () {
         '#player',
         '#progress',
         '#mask',
-        '.toggle-grid-view',
-        '.toggle-repeat',
-        '.toggle-shuffle',
         // player
         '#player-playPause',
         '#player-next',
@@ -483,8 +490,6 @@ $(function () {
 
     if (cache.isdev) {
         console.warn('initialized development-mode, loaded mockup data...');
-        cache.player = mockup.player;
-        SC = mockup.SC;
     } else {
         SC.initialize({
             client_id: cache.clientId
