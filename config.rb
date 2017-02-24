@@ -1,6 +1,11 @@
 Sass::Script::Number.precision = 8;
 require 'compass/import-once/activate'
 require 'sass-css-importer'
+# sass-globbing
+# Syntax: @import '<dir>/*';
+# Windows syntax: @import '<dir>/*.*';
+# https://github.com/chriseppstein/sass-globbing/issues/3
+require 'sass-globbing'
 sass_path = 'app/src/sass'
 css_path = 'app/assets/css'
 relative_assets = true
