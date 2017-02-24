@@ -1,4 +1,5 @@
 // scss-lint:disable Compass::PropertyWithMixin
+// scss-lint:disable MergeableSelector
 //
 // NORMALIZE
 //
@@ -18,7 +19,7 @@ i.btn {
 //
 
 %clear-btn {
-    background-color: transparent;
+    @extend %background-transparent;
     border-width: 0;
 }
 
@@ -41,6 +42,20 @@ i.btn {
 
     .icon {
         vertical-align: top;
-        padding-right: to-rem(5);
+        // line-height: inherit;
+
+        ~ span {
+            padding-left: to-rem(8);
+        }
+    }
+}
+
+.btn--nav.btn--solo-icon {
+    width: auto;
+    padding-left: 0;
+    padding-right: 0;
+
+    .icon {
+        @extend %block;
     }
 }

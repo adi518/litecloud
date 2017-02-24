@@ -5,27 +5,46 @@
 html {
     @extend %full-height;
     font-size: unquote($root-font-scale + '%');
-    line-height: 1.5em; // vertical-rhythm; http://webtypography.net/2.2.2
+    line-height: $root-line-height; // vertical-rhythm - http://webtypography.net/2.2.2
 }
 
 body {
-    @extend %no-user-select;
-    @extend %no-margin;
-    @extend %no-padding;
     @extend %overflow-hidden;
+    @extend %no-user-select;
+    @extend %no-padding;
+    @extend %no-margin;
 }
 
 #nav,
+#nav-right,
 main {
     height: calc(100% - #{$titlebar-height});
 }
 
 #nav {
-    @extend %full-height;
     width: $nav-width;
     padding: to-rem(35) to-rem(20) to-rem(20);
     transform: translate3d(0, $titlebar-height, 0);
-    border-right: 1px solid;
+    border-right: to-rem(1) solid;
+}
+
+#nav-right {
+    width: $nav-right-width;
+    padding: to-rem(35) to-rem(20) to-rem(20);
+    transform: translateY($titlebar-height);
+    right: 0;
+
+    .btn--solo-icon {
+        @include pseudo ('before') {
+            @extend %no-content;
+            @extend %block;
+            height: to-rem(1);
+            background-color: $color-181;
+            margin-bottom: to-rem(20);
+        }
+        //
+        margin-bottom: to-rem(15);
+    }
 }
 
 main {
@@ -38,10 +57,11 @@ main {
 //
 // POSITIONING
 //
-#titlebar,
-#nav,
-#overlay,
 #mask,
+#nav,
+#nav-right,
+#overlay,
+#titlebar,
 main {
     @extend %translate3d-hack;
 }
@@ -54,16 +74,17 @@ main {
     }
 }
 
-#titlebar,
 #nav,
+#nav-right,
+#titlebar,
 main {
     z-index: 2;
 }
 
-#loader {
-    z-index: 10;
+#overlay {
+    z-index: 3;
 }
 
-#overlay {
-    z-index: 9;
+#loader {
+    z-index: 4;
 }

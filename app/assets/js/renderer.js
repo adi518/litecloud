@@ -1,16 +1,20 @@
 // This file is required by the index.html file and will
 // be executed in the renderer process for that window.
 // All of the Node.js APIs are available in this process.
+// https://www.w3.org/2010/05/video/mediaevents.html
+// Soundcloud Player (methods & events)
+// https://developers.soundcloud.com/docs/api/sdks#player
 
 // jslint browser: true
 // jslint jquery: true
 /*global $, $$ */
 
+const pjson = require('../package.json');
 const remote = require('electron').remote;
 /* beautify ignore:start */
 const {BrowserWindow, globalShortcut} = remote;
 /* beautify ignore:end */
-remote.getCurrentWindow().removeAllListeners();
+// remote.getCurrentWindow().removeAllListeners();
 const drag = require('electron-drag');
 window.$ = window.jQuery = require('jquery');
 require('./assets/js/vendor/jquery.$$.min.js');
@@ -29,13 +33,11 @@ if (isdev) {
 'use strict';
 
 cache = $.extend({}, cache, {
-    version: '0.1',
-    testKeyword: 'milky chance',
+    version: pjson.version,
     test: true,
-    isdev: isdev,
+    testKeyword: 'tove styrke',
     keyupDebounceDelay: 500,
-    loaderDelay: 2000,
-    devLoaderDelay: 2000,
+    // loaderDelay: 2000,
     init: {
         grid: true
     },
@@ -60,7 +62,9 @@ $(function () {
         '#minimize',
         '#maximize',
         '#terminate',
-        '#nav',
+        'nav',
+        '#mute',
+        '#audio',
         '#main',
         '#list',
         '#search',
@@ -110,6 +114,10 @@ $(function () {
         btn.innerHTML = value;
     }
 
+    function changeIconButtonType(btn, value) {
+        $(btn).find('i').html(value);
+    }
+
     function msToHMS(ms) {
         var seconds = ms / 1000;
         var hours = parseInt(seconds / 3600, 10);
@@ -151,7 +159,7 @@ $(function () {
                 if (track.artwork_url) {
                     counter++;
                     track.artwork_url = track.artwork_url.replace(/large/g, 't300x300');
-                    if (cache.isdev) {
+                    if (isdev) {
                         track.artwork_url.replace(/https:\/\/i1.sndcdn.com/g, 'assets/images/mockup');
                     }
                 }
@@ -227,7 +235,6 @@ $(function () {
         }
     }
 
-    // TODO: re-factor semantics
     function getTracks(query, offset, options) {
         options = $.extend({}, options);
         var fetch;
@@ -242,7 +249,6 @@ $(function () {
             cache.query.push(queryURI);
             fetch = SC.get(queryURI);
         }
-        // handle response
         fetch.then(function (response) {
             cache.response = response;
             // new search?
@@ -253,7 +259,8 @@ $(function () {
             }
             if (response.collection.length) {
                 cache.tracks = cache.tracks.concat(response.collection);
-                // is partitioned response? https://developers.soundcloud.com/blog/offset-pagination-deprecated
+                // is partitioned response?
+                // https://developers.soundcloud.com/blog/offset-pagination-deprecated
                 if (response.next_href) {
                     cache.query.push(response.next_href);
                 }
@@ -378,15 +385,29 @@ $(function () {
 
         cache.$nav__buttons = $('.btn', cache.$nav).click(function () {
             var $btn = $(this);
-            var type = $btn.prop('type');
-            var toggle = $btn.data('toggle');
-            if (toggle) {
-                $btn.hide();
-                cache.$nav__buttons.filter('[data-modifier = ' + toggle + ']').not(this).show();
-                cache.$body.toggleClass(toggle);
-                return;
-            }
-            switch (type) {
+            var id = $btn.prop('id');
+            switch (id) {
+            case 'toggleGrid':
+                cache.$body.toggleClass('show-grid');
+                if (cache.$body.hasClass('show-grid')) {
+                    changeIconButtonType(this, 'view_module');
+                } else {
+                    changeIconButtonType(this, 'view_headline');
+                }
+                break;
+            case 'toggleMute':
+                if (!cache.player) {
+                    return;
+                }
+                if (cache.player.getVolume() > 0) {
+                    cache.volume = cache.volume;
+                    cache.player.setVolume(0);
+                    changeIconButtonType(this, 'volume_off');
+                } else {
+                    cache.player.setVolume(cache.volume);
+                    changeIconButtonType(this, 'volume_up');
+                }
+                break;
             case 'shuffle':
                 cache.shuffle = cache.shuffle ? false : true;
                 break;
@@ -394,7 +415,7 @@ $(function () {
                 cache.repeat = cache.repeat ? false : true;
                 break;
             }
-            $btn.addClass('btn--selected');
+            $btn.toggleClass('btn--selected');
         });
 
         cache.$progress.click(function (e) {
@@ -403,6 +424,20 @@ $(function () {
                 cache.player.seek(posX / cache.$progress.width() * cache.tracks[cache.index].duration);
             }
         });
+
+        // cache.$mute.click(function () {
+        //     if (!cache.player) {
+        //         return;
+        //     }
+        //     if (cache.player.getVolume() > 0) {
+        //         cache.volume = cache.volume;
+        //         cache.player.setVolume(0);
+        //         changeIconButtonType(this, 'volume_off');
+        //     } else {
+        //         cache.player.setVolume(cache.volume);
+        //         changeIconButtonType(this, 'volume_up');
+        //     }
+        // });
 
         // http://stackoverflow.com/questions/6271237/detecting-when-user-scrolls-to-bottom-of-div-with-jquery
         cache.$main.scroll(function () {
@@ -415,7 +450,7 @@ $(function () {
                 parseInt($this.css('border-bottom-width'), 10);
             if (scrollPosition == totalHeight) {
                 if (cache.query[cache.offset + 1]) {
-                    if (cache.isdev) {
+                    if (isdev) {
                         getTracks(cache.query[cache.offset], true);
                     } else {
                         getTracks(cache.query[++cache.offset], true);
@@ -488,7 +523,7 @@ $(function () {
 
     // beam me up scotty!
 
-    if (cache.isdev) {
+    if (isdev) {
         console.warn('initialized development-mode, loaded mockup data...');
     } else {
         SC.initialize({

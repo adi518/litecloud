@@ -125,6 +125,10 @@
     cursor: pointer;
 }
 
+%background-transparent {
+    background-color: transparent;
+}
+
 %no-user-select {
     // scss-lint:disable VendorPrefix
     -webkit-user-select: none;

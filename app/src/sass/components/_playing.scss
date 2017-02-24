@@ -1,13 +1,15 @@
 // scss-lint:disable Compass::PropertyWithMixin
 // scss-lint:disable MergeableSelector
-
-// block
+//
+// BLOCK
+//
 .playing {
     @extend %cursor-default;
     margin-top: to-rem(10);
 }
-
-// elements
+//
+// ELEMENTS
+//
 .playing {
     //
     &__header {
@@ -48,13 +50,14 @@
         }
     }
 }
-
-// modifiers
+//
+// MODIFIERS
+//
 .playing {
     &--no-artcover {
         .playing__thumbnail {
             border-radius: 0;
-            background-image: url($thumbnail-no-artwork-path);
+            background-image: url($no-artwork-path);
         }
     }
 }

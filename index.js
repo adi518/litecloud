@@ -1,4 +1,5 @@
 // http://stackoverflow.com/questions/10694571/verify-if-my-node-js-instance-is-dev-or-production
+// https://github.com/sindresorhus/electron-is-dev
 // https://discuss.atom.io/t/does-electron-support-es6/19366/18
 const isdev = process.env.NODE_ENV === 'dev'
 const electron = require('electron')
@@ -38,7 +39,7 @@ function createWindow() {
     // Create the browser window.
 
     var options = {
-        width: 1580,
+        width: 1600,
         height: 1024,
         icon: 'favicon.ico',
         frame: false,

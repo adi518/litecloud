@@ -81,7 +81,7 @@
             $dim: to-rem(70);
             @include dim($dim);
             background-size: $dim $dim;
-            background-image: url($thumbnail-no-artwork-path);
+            background-image: url($no-artwork-path);
             display: block;
             margin: 0 auto;
             opacity: .45;

@@ -9,7 +9,7 @@
 %loader-layout {
     @extend %fixed;
     @include dim($loader-dim);
-    $calc: unquote("calc(50% - #{$loader-dim / 2})");
+    $calc: unquote('calc(50% - #{$loader-dim / 2})');
     top: $calc;
     left: $calc;
 }
@@ -25,7 +25,7 @@
     border-top: 2px solid;
 
     &.spin {
-        animation: spin 1.5s infinite linear;
+        animation: spin $loader-animation-duration infinite linear;
     }
     //
     @at-root {

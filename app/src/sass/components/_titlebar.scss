@@ -22,14 +22,14 @@
 #title {
     @extend %inline-block;
     @extend %cursor-default;
-    font-family: 'Montserrat-MediumItalic';
+    font-family: $font-family-bold-italic;
     padding-left: to-rem(10);
     font-size: to-rem(12);
 }
 
 #minimize {
-    @include dim(to-rem(20));
     @extend %overflow-hidden;
+    @include dim(to-rem(20));
     position: relative;
     outline: 0;
 
@@ -62,7 +62,7 @@
 }
 
 .btn--titlebar {
-    background-color: transparent;
+    @extend %background-transparent;
     border-width: 0;
     vertical-align: top;
     margin-left: 5px;

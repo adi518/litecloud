@@ -8,6 +8,13 @@
 @import '../../../node_modules/bemify/sass/bemify';
 //
 //
+@mixin pseudo($type) {
+    &::#{$type} {
+        @content;
+    }
+}
+//
+//
 @mixin position-args($args) {
      @each $o in top right bottom left{
         $i: index($args, $o);
@@ -86,109 +93,109 @@
 // https://codepen.io/ndeniche/pen/ljbDL
 @mixin close($width, $height, $color, $hover-color) {
     // .close {
-        position: relative;
-        display: inline-block;
-        width: $width;
-        height: $height;
-        overflow: hidden;
-        outline: 0;
+    position: relative;
+    display: inline-block;
+    width: $width;
+    height: $height;
+    overflow: hidden;
+    outline: 0;
 
-        &:hover {
-            &::after,
-            &::before {
-                background-color: $hover-color;
-            }
-        }
-
+    &:hover {
         &::after,
         &::before {
-            content: '';
-            position: absolute;
-            height: 2px;
-            width: 100%;
-            top: 50%;
-            left: 0;
-            margin-top: -1px;
-            background: $color;
+            background-color: $hover-color;
         }
+    }
 
+    &::after,
+    &::before {
+        content: '';
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        top: 50%;
+        left: 0;
+        margin-top: -1px;
+        background: $color;
+    }
+
+    &::before {
+        @include transform(rotate(45deg));
+    }
+
+    &::after {
+        @include transform(rotate(-45deg));
+    }
+
+    &.big {
+        @include transform(scale(3));
+    }
+
+    &.hairline {
+        &::after,
         &::before {
-            @include transform(rotate(45deg));
+            height: 1px;
         }
+    }
 
-        &::after {
-            @include transform(rotate(-45deg));
+    &.thick {
+        &::after,
+        &::before {
+            height: 4px;
+            margin-top: -2px;
         }
+    }
 
-        &.big {
-            @include transform(scale(3));
+    &.black {
+        &::after,
+        &::before {
+            height: 8px;
+            margin-top: -4px;
         }
+    }
 
-        &.hairline {
-            &::after,
-            &::before {
-                height: 1px;
-            }
+    &.heavy {
+        &::after,
+        &::before {
+            height: 12px;
+            margin-top: -6px;
         }
+    }
 
-        &.thick {
-            &::after,
-            &::before {
-                height: 4px;
-                margin-top: -2px;
-            }
+    &.pointy {
+        &::after,
+        &::before {
+            width: 200%;
+            left: -50%;
         }
+    }
 
-        &.black {
-            &::after,
-            &::before {
-                height: 8px;
-                margin-top: -4px;
-            }
+    &.rounded {
+        &::after,
+        &::before {
+            border-radius: 5px;
         }
+    }
 
-        &.heavy {
-            &::after,
-            &::before {
-                height: 12px;
-                margin-top: -6px;
-            }
+    &.blades {
+        &::after,
+        &::before {
+            border-radius: 5px 0;
         }
+    }
 
-        &.pointy {
-            &::after,
-            &::before {
-                width: 200%;
-                left: -50%;
-            }
+    &.warp {
+        &::after,
+        &::before {
+            border-radius: 120% 0;
         }
+    }
 
-        &.rounded {
-            &::after,
-            &::before {
-                border-radius: 5px;
-            }
+    &.fat {
+        &::after,
+        &::before {
+            border-radius: 100%;
         }
-
-        &.blades {
-            &::after,
-            &::before {
-                border-radius: 5px 0;
-            }
-        }
-
-        &.warp {
-            &::after,
-            &::before {
-                border-radius: 120% 0;
-            }
-        }
-
-        &.fat {
-            &::after,
-            &::before {
-                border-radius: 100%;
-            }
-        }
+    }
     // }
 }

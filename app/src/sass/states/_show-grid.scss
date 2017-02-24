@@ -1,6 +1,6 @@
 // scss-lint:disable DeclarationOrder
 // scss-lint:disable Compass::PropertyWithMixin
-.show-grid-view {
+.show-grid {
     //
     //
     @include block ('list') {
@@ -32,7 +32,7 @@
         }
 
         &:hover {
-            background-color: transparent;
+            @extend %background-transparent;
 
             .item__data {
                 margin-top: 0;
@@ -48,10 +48,10 @@
 
     @include block ('item') {
         @include modifier ('selected') {
+            @extend %background-transparent;
             padding-top: 0;
             padding-bottom: 0;
             border-bottom-width: 0;
-            background-color: transparent;
 
             &:hover {
                 .item__thumbnail {

@@ -1,7 +1,7 @@
 {
   "name": "litecloud",
   "version": "1.0.0",
-  "description": "Soundcloud wrapper",
+  "description": "Soundcloud container",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron ."
@@ -17,7 +17,8 @@
   },
   "homepage": "https://github.com/adi518/litecloud#readme",
   "dependencies": {
-    "electron": "^1.4.15"
+    "electron": "^1.4.15",
+    "electron-is-dev": "^0.1.2"
   },
   "devDependencies": {
     "bemify": "^0.1.2",

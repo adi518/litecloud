@@ -3,8 +3,8 @@
 
 html {
     box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased; // https://developer.mozilla.org/en-US/docs/Web/CSS/font-smooth
+    text-rendering: optimizeLegibility; // https://developer.mozilla.org/en-US/docs/Web/CSS/text-rendering
 
     &::after,
     &::before,
@@ -26,6 +26,6 @@ textarea {
 
 b,
 strong {
-    font-weight: 400;
     font-family: $font-family-bold;
+    font-weight: 400;
 }
