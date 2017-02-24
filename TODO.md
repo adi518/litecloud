@@ -1,8 +1,8 @@
-- [x] Basic functionality
+- [x] Basic features
 - [x] Wrap in Electron
 - [ ] Implement React
-- [ ] Feature - Track time elapsed
-- [ ] Feature - Volume/Mutecl
+- [ ] Feature - Elapsed track time
+- [ ] Feature - Volume/Mute
 - [ ] Feature - Login
 - [ ] Feature - Attach media keys
 - [ ] Feature - Watch on Youtube
