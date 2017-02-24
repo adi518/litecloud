@@ -1,18 +1,28 @@
-/* scss-lint:disable ElsePlacement */
-/* scss-lint:disable Indentation */
-/* scss-lint:disable EmptyLineBetweenBlocks */
+// scss-lint:disable Indentation
+// scss-lint:disable ElsePlacement
+// scss-lint:disable EmptyLineBetweenBlocks
+//
+//
 @function prefix-space($name) {
-     @return ' ' + $name;
+     @return' ' + $name;
 }
+//
+//
 @function to-rem($n) {
      @return to-number((strip-unit($n) / $root-font-size) + rem);
 }
+//
+//
 @function to-px($n) {
      @return strip-unit($n) + px;
 }
+//
+//
 @function extend($obj, $ext-obj) {
      @return map-merge($obj, $ext-obj);
 }
+//
+//
 @function strip-unit($n) {
     @if type-of($n) == 'number' and not unitless($n) {
         @return $n / ($n * 0 + 1);
@@ -20,8 +30,8 @@
     @return $n;
 }
 
-// ref: http://hugogiraudel.com/2014/01/15/sass-string-to-number/
-// ref: http://www.sassmeister.com/gist/9fa19d254864f33d4a80
+// http://hugogiraudel.com/2014/01/15/sass-string-to-number/
+// http://www.sassmeister.com/gist/9fa19d254864f33d4a80
 ////
 /// String to number converter
 /// @author Hugo Giraudel
@@ -67,7 +77,6 @@
     }
     @return if($minus, -$result, $result);
 }
-
 ///
 /// Add `$unit` to `$value`
 ///

@@ -1,5 +1,5 @@
-/* scss-lint:disable DeclarationOrder */
-/* scss-lint:disable Compass::PropertyWithMixin */
+// scss-lint:disable DeclarationOrder
+// scss-lint:disable Compass::PropertyWithMixin
 .show-grid-view {
     //
     //
@@ -13,7 +13,6 @@
     // ITEM BLOCK
 
     @include block ('item') {
-        @extend %no-user-select;
         @extend %lowercase;
         width: $large-thumbnail-size;
         font-size: to-rem(14);

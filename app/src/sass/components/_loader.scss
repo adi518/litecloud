@@ -1,16 +1,17 @@
-// https://connoratherton.com/loaders
-// http://projects.lukehaas.me/css-loaders/
 // scss-lint:disable Compass::PropertyWithMixin
 // scss-lint:disable MergeableSelector
 // scss-lint:disable Indentation
+// http://projects.lukehaas.me/css-loaders/
+// https://connoratherton.com/loaders
+// https://codepen.io/junglelin/pen/epGNxJ
+// https://codepen.io/collection/HtAne/28/
 
 %loader-layout {
     @extend %fixed;
-    @include dim($global-loader-size);
-    $calc-value: unquote("50% - #{$global-loader-size / 2}");
-    top: calc(#{$calc-value});
-    left: calc(#{$calc-value});
-    z-index: 99;
+    @include dim($loader-dim);
+    $calc: unquote("calc(50% - #{$loader-dim / 2})");
+    top: $calc;
+    left: $calc;
 }
 
 #loader {

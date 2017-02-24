@@ -1,25 +1,19 @@
-/* scss-lint:disable Compass::PropertyWithMixin */
-
-.no-results {
-    .list__item {
-        text-align: center;
-
-        &:hover {
-            background-color: transparent;
-        }
-    }
-}
+// scss-lint:disable Compass::PropertyWithMixin
 
 .list {
-    @extend %no-user-select;
     padding-top: to-rem(35);
     padding-bottom: to-rem(35);
     margin-left: to-rem(20);
     margin-right: to-rem(20);
+}
 
-    &:not(.no-results) {
-        .list__item {
-            @extend %cursor-pointer;
+.no-results {
+    .item {
+        @extend %cursor-default;
+        @extend %talign-center;
+
+        &:hover {
+            background-color: transparent;
         }
     }
 }

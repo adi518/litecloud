@@ -1,7 +1,15 @@
-/* scss-lint:disable Compass::PropertyWithMixin */
-// material design icons
+// scss-lint:disable Compass::PropertyWithMixin
+// http://htmlarrows.com/
+// http://graphicdesign.stackexchange.com/questions/30072/what-is-the-font-used-in-the-new-spotify-interface-looking-for-an-alternative-f
+// https://fonts.google.com/specimen/Montserrat?selection.family=Montserrat
+// https://dev.w3.org/html5/html-author/charref
+//
+// MATERIAL DESIGN ICONS
+//
 @import '../../../node_modules/material-design-icons/iconfont/material-icons.css';
-// Montserrat
+//
+// MONTSERRAT
+//
 @font-face {
     font-family: 'Montserrat';
     src: url('../fonts/Montserrat/Montserrat-Regular.ttf');

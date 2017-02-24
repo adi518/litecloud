@@ -1,3 +1,5 @@
+// http://stackoverflow.com/questions/10694571/verify-if-my-node-js-instance-is-dev-or-production
+// https://discuss.atom.io/t/does-electron-support-es6/19366/18
 const isdev = process.env.NODE_ENV === 'dev'
 const electron = require('electron')
 const {app, globalShortcut} = electron
@@ -13,18 +15,17 @@ require('electron-context-menu')({
     }]
 });
 
+// Add debug tools (not part of the quick-start boilerplate)
 const electronDebug = require('electron-debug')
+let electronDebugOptions = {
+    enabled: true,
+};
 
 if (isdev) {
-    // Add debug tools (not part of the quick-start boilerplate)
-    electronDebug({
-        showDevTools: true
-    });
-} else {
-    electronDebug({
-        enabled: true,
-    })
+    electronDebugOptions.showDevTools = true;
 }
+
+electronDebug(electronDebugOptions);
 
 const path = require('path')
 const url = require('url')
@@ -40,7 +41,7 @@ function createWindow() {
         width: 1580,
         height: 1024,
         icon: 'favicon.ico',
-        frame: false, // removes the entire interface, relevant once implementing proprietary interface
+        frame: false,
     }
 
     if (isdev) {
@@ -55,7 +56,6 @@ function createWindow() {
     if (isdev) {
         // Open the DevTools.
         mainWindow.webContents.openDevTools()
-        // mainWindow.maximize();
     } else {
         mainWindow.setMenu(null);
     }

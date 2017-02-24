@@ -4,7 +4,7 @@ html(lang="en")
         title="Litecloud"
         meta(charset="utf-8")
         link(rel="stylesheet" href="assets/css/styles.css")
-    body(class="body show-loader")
+    body(id="body" class="body show-loader")
         nav(id="titlebar")
             div(id="logo")
             div(id="title") Litecloud
@@ -37,7 +37,8 @@ html(lang="en")
                     div(id="playing-artist" class="playing__artist")
             div(id="player")
                 audio(type="audio/mpeg")
-                progress(id="progress" min="0", max="100")
+                // https://developer.mozilla.org/en/docs/Web/HTML/Element/progress
+                progress(id="progress" max="100")
                 nav(class="nav nav--player")
                     i(id="player-previous" class="btn btn--player material-icons") skip_previous
                     i(id="player-playPause" class="btn btn--player material-icons") play_arrow
@@ -48,6 +49,3 @@ html(lang="en")
         div(id="overlay")
         div(id="mask")
         script(src="assets/js/renderer.js")
-        script(src="assets/js/vendor/jquery.$$.min.js")
-        script(src="assets/js/vendor/jquery.ba-throttle-debounce.min.js")
-        script(src="assets/js/mockup.js")

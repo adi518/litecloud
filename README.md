@@ -10,7 +10,7 @@ This project currently serves as a learning curve for various technologies, some
 ## Install
 Hit `install.bat`.
 
-## Run
+## Development
 Hit `start.bat` or `start-dev.bat` to launch in development mode.
 
 ## Support

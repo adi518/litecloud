@@ -2,8 +2,7 @@
 
 #titlebar {
     @extend %full-width;
-    @extend %no-user-select;
-    height: $title-bar-height;
+    height: $titlebar-height;
     padding-top: to-rem(10);
 }
 
@@ -30,8 +29,8 @@
 
 #minimize {
     @include dim(to-rem(20));
+    @extend %overflow-hidden;
     position: relative;
-    overflow: hidden;
     outline: 0;
 
     &::before {

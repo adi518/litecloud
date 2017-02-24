@@ -1,7 +1,7 @@
-/* scss-lint:disable Compass::PropertyWithMixin */
-/* scss-lint:disable ColorVariable */
-/* scss-lint:disable ColorKeyword */
-
+// scss-lint:disable Compass::PropertyWithMixin
+//
+// MAIN COMPONENTS
+//
 html {
     @extend %full-height;
     font-size: unquote($root-font-scale + '%');
@@ -9,6 +9,7 @@ html {
 }
 
 body {
+    @extend %no-user-select;
     @extend %no-margin;
     @extend %no-padding;
     @extend %overflow-hidden;
@@ -16,15 +17,14 @@ body {
 
 #nav,
 main {
-    height: calc(100% - #{$title-bar-height});
+    height: calc(100% - #{$titlebar-height});
 }
 
 #nav {
     @extend %full-height;
-    @extend %no-user-select;
-    width: $sidebar-width;
+    width: $nav-width;
     padding: to-rem(35) to-rem(20) to-rem(20);
-    transform: translate3d(0, $title-bar-height, 0);
+    transform: translate3d(0, $titlebar-height, 0);
     border-right: 1px solid;
 }
 
@@ -32,9 +32,12 @@ main {
     @extend %overflow-auto;
     @extend %full-height;
     width: $main-width;
-    transform: translate3d($sidebar-width, $title-bar-height, 0);
+    transform: translate3d($nav-width, $titlebar-height, 0);
 }
 
+//
+// POSITIONING
+//
 #titlebar,
 #nav,
 #overlay,
@@ -43,20 +46,24 @@ main {
     @extend %translate3d-hack;
 }
 
-#titlebar,
-#nav,
-main {
-    z-index: 2;
-}
-
-#overlay {
-    z-index: 9;
-}
-
 #mask {
     z-index: 0;
 
     &:after {
         z-index: 1;
     }
+}
+
+#titlebar,
+#nav,
+main {
+    z-index: 2;
+}
+
+#loader {
+    z-index: 10;
+}
+
+#overlay {
+    z-index: 9;
 }

@@ -1,8 +1,9 @@
 // scss-lint:disable Compass::PropertyWithMixin
 //
+// BLOCK
 //
-// block
 @include block ('item') {
+    @extend %cursor-pointer;
     @extend %clearfix;
     @extend %uppercase;
     padding-right: to-rem(35);
@@ -19,8 +20,8 @@
     }
 }
 //
+// ELEMENTS
 //
-// elements
 @include block ('item') {
     //
     //
@@ -49,7 +50,6 @@
     //
     //
     @include element ('tag') {
-        @extend %hidden;
         @extend %white-space-nowrap;
         @extend %overflow-hidden;
         @extend %text-overflow-ellipsis;
@@ -63,8 +63,8 @@
     }
 }
 //
+// MODIFIERS
 //
-// modifiers
 @include block ('item') {
     //
     //
@@ -97,8 +97,7 @@
         padding-top: to-rem(10);
         padding-bottom: to-rem(10);
         padding-left: to-rem(10);
-        border-bottom-width: to-rem(1); // experimental
-        border-bottom-style: solid; // experimental
+        border-bottom: to-rem(1) solid;
 
         &:hover {
             .item__data {

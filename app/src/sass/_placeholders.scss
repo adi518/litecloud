@@ -1,7 +1,6 @@
-/* scss-lint:disable Compass::PropertyWithMixin */
-/* scss-lint:disable ColorVariable */
+// scss-lint:disable Compass::PropertyWithMixin
 
-%hidden {
+%hide {
     display: none;
 }
 
@@ -108,6 +107,10 @@
 
 %text-overflow-ellipsis {
     text-overflow: ellipsis;
+}
+
+%talign-center {
+    text-align: center;
 }
 
 %border-radius-50p {

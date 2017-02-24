@@ -1,8 +1,8 @@
 // scss-lint:disable Compass::PropertyWithMixin
 // scss-lint:disable MergeableSelector
-
+//
 // BLOCK
-
+//
 .item {
     &:hover {
         background-color: $color-191;
@@ -12,9 +12,9 @@
         }
     }
 }
-
+//
 // ELEMENTS
-
+//
 .item {
     &__thumbnail {
         background-color: $color-111;
@@ -37,9 +37,9 @@
         background-color: $color-black;
     }
 }
-
+//
 // MODIFIERS
-
+//
 .item--selected {
     background-color: $color-cod-gray;
     border-bottom-color: $color-mine-shaft;

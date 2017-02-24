@@ -2,8 +2,8 @@
 // be executed in the renderer process for that window.
 // All of the Node.js APIs are available in this process.
 
-/* jslint browser: true */
-/* jslint jquery: true */
+// jslint browser: true
+// jslint jquery: true
 /*global $, $$ */
 
 const remote = require('electron').remote;
@@ -11,42 +11,42 @@ const remote = require('electron').remote;
 const {BrowserWindow, globalShortcut} = remote;
 /* beautify ignore:end */
 remote.getCurrentWindow().removeAllListeners();
-// using `let` because we set SC to mockup on development-mode
+// we use `let` because SC is set to `mockup` on development-mode
 let SC = require('soundcloud');
-let drag = require('electron-drag');
+const drag = require('electron-drag');
 window.$ = window.jQuery = require('jquery');
-// const $$ = require('./vendor/jquery.$$.min.js');
-// const mockup = require('./vendor/mockup.js');
+require('./assets/js/vendor/jquery.$$.min.js');
+const debounce = require('debounce');
+const mockup = require('./assets/js/dev/mockup.js');
 
 'use strict';
 
-var cache = {};
+var cache = {
+    version: '0.1',
+    testKeyword: 'milky chance',
+    test: true,
+    isdev: window.location.hash.substring(1) === 'dev',
+    keyupDebounceDelay: 500,
+    loaderDelay: 2000,
+    devLoaderDelay: 2000,
+    init: {
+        grid: true
+    },
+    grid: true,
+    clientId: 'd3cc13db45cba4f1ff6846dc46b0ef8a',
+    truncatedTitleLength: 20,
+    played: [],
+    queryOptions: {
+        limit: 50,
+    },
+    $window: $(window)
+};
 
 $(function () {
 
-    cache = {
-        version: '0.1',
-        testKeyword: 'milky chance',
-        test: true,
-        isdev: window.location.hash.substring(1) === 'dev',
-        keyupDebounceDelay: 500,
-        loaderDelay: 2000,
-        devLoaderDelay: 2000,
-        init: {
-            grid: true
-        },
-        grid: true,
-        clientId: 'd3cc13db45cba4f1ff6846dc46b0ef8a',
-        truncatedTitleLength: 20,
-        played: [],
-        queryOptions: {
-            limit: 50,
-        },
-        $window: $(window)
-    };
-
     var selectors = [
-        'body',
+        '#body',
+        // components
         '#minimize',
         '#maximize',
         '#terminate',
@@ -56,18 +56,20 @@ $(function () {
         '#search',
         '#player',
         '#progress',
-        '#player-playPause',
-        '#player-next',
-        '#player-previous',
-        '#player-replay',
-        '#playing',
-        '#playing-thumbnail',
-        '#playing-title',
-        '#playing-artist',
         '#mask',
         '.toggle-grid-view',
         '.toggle-repeat',
         '.toggle-shuffle',
+        // player
+        '#player-playPause',
+        '#player-next',
+        '#player-previous',
+        '#player-replay',
+        // playing-now
+        '#playing',
+        '#playing-thumbnail',
+        '#playing-title',
+        '#playing-artist',
     ];
 
     selectors.forEach(function (selector) {
@@ -146,7 +148,7 @@ $(function () {
                         track.artwork_url.replace(/https:\/\/i1.sndcdn.com/g, 'assets/images/mockup');
                     }
                 }
-                markup += '<div class="list__item item' + (!track.artwork_url ? ' item--no-artwork' : '') + '">';
+                markup += '<div class="item' + (!track.artwork_url ? ' item--no-artwork' : '') + '">';
                 markup += '<span class="item__thumbnail" style="' + (track.artwork_url ? 'background-image: url(' + track.artwork_url + ')' : '') + '">';
                 markup += '<i class="item__icon"></i>';
                 if (track.genre) {
@@ -167,7 +169,7 @@ $(function () {
             console.info('total tracks:', tracks.length);
             console.info('total art-covers:', counter);
         } else {
-            markup = '<div class="list__item">Your search - <b>' + cache.searchQuery + '</b> - did not match any tracks.</div>';
+            markup = '<div class="item">Your search - <b>' + cache.searchQuery + '</b> - did not match any tracks.</div>';
             cache.$body.removeClass('show-grid-view');
         }
         cache.$items = cache.$list.toggleClass('no-results', !tracks.length)[options.append ? 'append' : 'html'](markup);
@@ -193,7 +195,7 @@ $(function () {
 
     function previousTrack() {
         var previousIndex = cache.index - 1;
-        var $items = $('.list__item', cache.$list);
+        var $items = $('.item', cache.$list);
         var $previousItem = $items.get(previousIndex);
         if (cache.tracks[previousIndex] && $previousItem) {
             $previousItem.click();
@@ -204,7 +206,7 @@ $(function () {
 
     function nextTrack() {
         var nextIndex = cache.index + 1;
-        var $items = $('.list__item', cache.$list);
+        var $items = $('.item', cache.$list);
         var $nextItem = $items.get(nextIndex);
         if (cache.shuffle) {
             var randomIndex = getRandomTrackIndex();
@@ -295,7 +297,7 @@ $(function () {
 
         /* bind events */
 
-        cache.$list.on('click', '.list__item', function () {
+        cache.$list.on('click', '.item', function () {
             // detect no-results
             if (!cache.tracks.length) {
                 return;
@@ -303,18 +305,16 @@ $(function () {
             var $item = $(this);
             var track = cache.tracks[$item.index()];
             var hasArtCover = track.artwork_url ? true : false;
-            // abort if user hit an already playing track
+            // abort if user hit a playing track
             if (cache.index === $item.index()) {
                 return;
             }
-            /* beautify ignore:start */
             $item.addClass('item--selected');
             if ($.isNumeric(cache.index)) {
                 $(cache.$items.get(cache.index)).toggleClass('item--selected item--visited');
             }
             // cache.$mask.css('background-image', 'url(' + (track.artwork_url || '') + ')');
             // cache.$body.toggleClass('show-mask', hasArtCover).toggleClass('animate-mask', hasArtCover);
-
             // show what's playing
             cache.$body.addClass('show-playing');
             cache.$playing.toggleClass('playing--no-artcover', !hasArtCover);
@@ -326,7 +326,6 @@ $(function () {
                 cache.$playing_thumbnail.css('background-image', '');
             }
             cache.index = $item.index();
-            /* beautify ignore:end */
             SC.stream('/tracks/' + track.id).then(function (player) {
                 // avoid triggering flash, as per: https://github.com/soundcloud/soundcloud-javascript/issues/39
                 if (player.options.protocols[0] === 'rtmp') {
@@ -338,7 +337,7 @@ $(function () {
                 cache.player = player;
                 cache.player.on('created', function () {
                     if (cache.$player.is(':hidden')) {
-                        cache.$player.show();
+                        cache.$body.addClass('show-player');
                     }
                 }).on('play-start', function () {
                     // updateProgressBar(true); // TODO: inspect necessity
@@ -398,6 +397,7 @@ $(function () {
             }
         });
 
+        // http://stackoverflow.com/questions/6271237/detecting-when-user-scrolls-to-bottom-of-div-with-jquery
         cache.$main.scroll(function () {
             var $this = $(this);
             var scrollPosition = $this.scrollTop() + $this.outerHeight();
@@ -417,7 +417,7 @@ $(function () {
             }
         });
 
-        cache.$search.keyup($.debounce(cache.keyupDebounceDelay, function () {
+        cache.$search.keyup(debounce(function () {
             if (this.value === '') {
                 return;
             }
@@ -425,16 +425,16 @@ $(function () {
             getTracks(this.value, null, {
                 new: true,
             });
-        }));
+        }, cache.keyupDebounceDelay));
 
-        // Minimize task
-        cache.$minimize.click((event) => { // eslint-disable-line
+        // Minimize
+        cache.$minimize.click(() => {
             var window = BrowserWindow.getFocusedWindow();
             window.minimize();
         });
 
-        // Maximize window
-        cache.$maximize.click((event) => { // eslint-disable-line
+        // Maximize
+        cache.$maximize.click(() => {
             var window = BrowserWindow.getFocusedWindow();
             if (window.isMaximized()) {
                 window.unmaximize();
@@ -443,15 +443,25 @@ $(function () {
             }
         });
 
-        // Close app
-        cache.$terminate.click((event) => { // eslint-disable-line
+        // Terminate
+        cache.$terminate.click(() => {
             var window = BrowserWindow.getFocusedWindow();
             window.close();
         });
 
-        // Bind Media-key 'playPause'
-        globalShortcut.register('MediaPlayPause', () => {
+        // Bind Media-keys
+        // Namespaces: MediaPlayPause, MediaStop, MediaNextTrack,
+        // MediaPreviousTrack, VolumeUp, VolumeDown, VolumeMute,
+        globalShortcut.register('MediaPlayPause', function () {
             cache.$player_playPause.click();
+        })
+
+        globalShortcut.register('MediaNextTrack', function () {
+            cache.$player_next.click();
+        })
+
+        globalShortcut.register('MediaPreviousTrack', function () {
+            cache.$player_previous.click();
         })
 
         // now test it ;)

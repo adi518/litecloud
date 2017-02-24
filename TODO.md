@@ -8,6 +8,7 @@
 - [ ] Feature - Watch on Youtube
 - [ ] Feature - Favorites/Liked
 - [ ] Feature - Playlists
+- [ ] Feature - Trending
 - [ ] Feature - Discover
 - [ ] Feature - Top 100
 - [ ] Mobile version

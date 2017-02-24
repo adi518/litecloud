@@ -118,7 +118,9 @@ main {
 }
 
 /* line 124, ../../src/sass/_placeholders.scss */
-.btn, .btn--player, #player progress, .item {
+i.btn, i.btn--player,
+span.btn,
+span.btn--player, #player progress {
   cursor: pointer;
 }
 
@@ -741,18 +743,18 @@ strong {
   border-radius: 1.5625rem;
 }
 
-/* line 12, ../../src/sass/components/_buttons.scss */
+/* line 13, ../../src/sass/components/_buttons.scss */
 i.btn, i.btn--player {
   font-style: normal;
 }
 
-/* line 20, ../../src/sass/components/_buttons.scss */
+/* line 21, ../../src/sass/components/_buttons.scss */
 .btn--nav, .btn--player {
   background-color: transparent;
   border-width: 0;
 }
 
-/* line 25, ../../src/sass/components/_buttons.scss */
+/* line 26, ../../src/sass/components/_buttons.scss */
 .btn, .btn--player {
   transition: color .2s;
 }
@@ -924,11 +926,11 @@ i.btn, i.btn--player {
   padding-right: 2.1875rem;
   transition: padding .2s;
 }
-/* line 13, ../../src/sass/components/_item.scss */
+/* line 12, ../../src/sass/components/_item.scss */
 .item:hover .item__data {
   margin-top: 0.625rem;
 }
-/* line 18, ../../src/sass/components/_item.scss */
+/* line 17, ../../src/sass/components/_item.scss */
 .item:not(:first-child) {
   margin-top: 2.1875rem;
 }
@@ -962,11 +964,11 @@ i.btn, i.btn--player {
   max-width: 70%;
 }
 
-/* line 74, ../../src/sass/components/_item.scss */
+/* line 73, ../../src/sass/components/_item.scss */
 .item--no-artwork:hover .item__icon {
   opacity: .5;
 }
-/* line 79, ../../src/sass/components/_item.scss */
+/* line 78, ../../src/sass/components/_item.scss */
 .item--no-artwork .item__icon {
   transform: translateY(-50%);
   position: relative;
@@ -979,7 +981,7 @@ i.btn, i.btn--player {
   margin: 0 auto;
   opacity: .45;
 }
-/* line 90, ../../src/sass/components/_item.scss */
+/* line 89, ../../src/sass/components/_item.scss */
 .item--no-artwork .item__thumbnail {
   image-rendering: auto;
 }
@@ -990,19 +992,19 @@ i.btn, i.btn--player {
   padding-left: 0.625rem;
   border-bottom: 0.0625rem solid;
 }
-/* line 103, ../../src/sass/components/_item.scss */
+/* line 102, ../../src/sass/components/_item.scss */
 .item--selected:hover .item__data {
   margin-top: 0;
 }
-/* line 108, ../../src/sass/components/_item.scss */
+/* line 107, ../../src/sass/components/_item.scss */
 .item--selected.item--no-artwork .item__icon {
   display: none;
 }
-/* line 112, ../../src/sass/components/_item.scss */
+/* line 111, ../../src/sass/components/_item.scss */
 .item--selected .item__thumbnail {
   background-blend-mode: multiply;
 }
-/* line 117, ../../src/sass/components/_item.scss */
+/* line 116, ../../src/sass/components/_item.scss */
 .item--selected .item__data {
   margin-top: 0;
 }

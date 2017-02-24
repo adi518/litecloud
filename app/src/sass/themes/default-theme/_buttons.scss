@@ -11,12 +11,3 @@
 .btn--selected {
     color: $color-pistachio;
 }
-
-.btn--player {
-    color: $color-emperor;
-    text-shadow: 0 #{to-rem(1)} #{to-rem(1)} $color-gray;
-
-    &:hover {
-        color: $color-pistachio;
-    }
-}

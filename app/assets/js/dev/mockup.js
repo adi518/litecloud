@@ -1,10 +1,10 @@
 /* jslint browser: true */
 /* jslint jquery: true */
-/* global $, mockup */
+/* global $ */
 
 'use strict';
 
-module.exports.mockup = {
+const mockup = {
     player: {
         on: function (eventName, handler) {
             switch (eventName) {
@@ -51,6 +51,8 @@ module.exports.mockup = {
         }
     }
 };
+
+module.exports = mockup;
 
 // var player = mockup.player;
 //

@@ -9,6 +9,7 @@
 #player,
 #playing,
 #overlay,
-#mask::after {
-    @extend %hidden;
+#mask::after,
+.item__tag {
+    @extend %hide;
 }

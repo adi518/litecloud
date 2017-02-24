@@ -1,6 +1,7 @@
 // scss-lint:disable Compass::PropertyWithMixin
-
-// normalize
+//
+// NORMALIZE
+//
 i,
 span {
     &.btn {
@@ -8,15 +9,22 @@ span {
     }
 }
 
+i.btn {
+    font-style: normal;
+}
+
+//
+// STYLES
+//
+
 %clear-btn {
     background-color: transparent;
     border-width: 0;
 }
 
 .btn {
-    @extend %cursor-pointer;
     @extend %no-outline;
-    font-style: normal;
+    @extend %cursor-pointer;
     transition: color .2s;
 
     .icon {

@@ -25,7 +25,7 @@
 }
 
 .nav--player {
-    text-align: center;
+    @extend %talign-center;
     margin-top: to-rem(10);
 }
 
