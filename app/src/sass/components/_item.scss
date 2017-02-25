@@ -105,10 +105,6 @@
             }
         }
 
-        &.item--no-artwork .item__icon {
-            display: none; // do not use @extend here
-        }
-
         .item__thumbnail {
             @extend %relative;
             background-blend-mode: multiply;

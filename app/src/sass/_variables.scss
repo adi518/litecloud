@@ -24,13 +24,15 @@ $color-090: darken($color-cod-gray, 4.9%); // #090909
 $color-111: darken($color-cod-gray, 1.5%); // #111111
 $color-131: darken($color-cod-gray, .9%); // #131313
 $color-141: darken($color-cod-gray, .5%); // #141414
+$color-161: lighten($color-cod-gray, .5%); // #161616
+$color-171: lighten($color-cod-gray, .6%); // #171717
 $color-181: lighten($color-cod-gray, 1%); // #181818;
 $color-191: lighten($color-cod-gray, 1.5%); // #191919;
 $color-222: darken($color-mine-shaft, 1.75%); // #222222
 $color-333: lighten($color-mine-shaft, 5.5%); // #333333
 //
 // TESTER (uncomment for testing)
-// @debug 'color-output:' + <$color->;
+// @debug 'color-output: ' + <$color->;
 //
 //
 // APP

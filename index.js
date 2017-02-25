@@ -57,8 +57,6 @@ function createWindow() {
     if (isdev) {
         // Open the DevTools.
         mainWindow.webContents.openDevTools()
-    } else {
-        mainWindow.setMenu(null);
     }
 
     // and load the index.html of the app.

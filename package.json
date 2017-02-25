@@ -21,6 +21,14 @@
     "electron-is-dev": "^0.1.2"
   },
   "devDependencies": {
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "redux": "^3.6.0",
+    "react-redux": "^5.0.3",
+    "eslint": "^3.15.0",
+    "eslint-plugin-react": "^6.10.0",
+    "babel-cli": "^6.23.0",
+    "babel-preset-env": "^1.1.10",
     "bemify": "^0.1.2",
     "debounce": "^1.0.0",
     "debug-menu": "^0.4.0",
@@ -29,8 +37,6 @@
     "electron-drag": "^1.2.0",
     "electron-packager": "^8.5.2",
     "electron-rebuild": "^1.5.7",
-    "eslint": "^3.15.0",
-    "eslint-plugin-react": "^6.10.0",
     "grunt": "^1.0.1",
     "grunt-contrib-compass": "^1.1.1",
     "grunt-contrib-pug": "^1.0.0",

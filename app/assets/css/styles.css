@@ -1011,14 +1011,10 @@ i.btn, i.btn--player {
   margin-top: 0;
 }
 /* line 108, ../../src/sass/components/_item.scss */
-.item--selected.item--no-artwork .item__icon {
-  display: none;
-}
-/* line 112, ../../src/sass/components/_item.scss */
 .item--selected .item__thumbnail {
   background-blend-mode: multiply;
 }
-/* line 117, ../../src/sass/components/_item.scss */
+/* line 113, ../../src/sass/components/_item.scss */
 .item--selected .item__data {
   margin-top: 0;
 }
@@ -1507,12 +1503,16 @@ progress::-webkit-progress-bar {
 }
 /* line 52, ../../src/sass/themes/default-theme/_item.scss */
 .item--selected.item--no-artwork .item__thumbnail {
-  background-color: #84bd00;
+  background-color: #151515;
+}
+/* line 57, ../../src/sass/themes/default-theme/_item.scss */
+.show-grid .item--selected.item--no-artwork .item__thumbnail {
+  background-color: #161616;
 }
 
-/* line 60, ../../src/sass/themes/default-theme/_item.scss */
+/* line 68, ../../src/sass/themes/default-theme/_item.scss */
 .item--no-artwork:hover .item__thumbnail {
-  background-color: #84bd00;
+  background-color: #171717;
 }
 
 /* line 2, ../../src/sass/themes/default-theme/_playing.scss */
