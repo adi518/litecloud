@@ -37,7 +37,7 @@ cache = $.extend({}, cache, {
     test: true,
     testKeyword: 'tove styrke',
     keyupDebounceDelay: 500,
-    // loaderDelay: 2000,
+    loaderDelay: 1500,
     init: {
         grid: true
     },

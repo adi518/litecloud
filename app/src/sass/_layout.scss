@@ -49,7 +49,6 @@ main {
 
 main {
     @extend %overflow-auto;
-    @extend %full-height;
     width: $main-width;
     transform: translate3d($nav-width, $titlebar-height, 0);
 }
