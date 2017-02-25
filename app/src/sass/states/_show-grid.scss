@@ -1,4 +1,3 @@
-// scss-lint:disable DeclarationOrder
 // scss-lint:disable Compass::PropertyWithMixin
 .show-grid {
     //
@@ -41,44 +40,6 @@
 
             .item__thumbnail {
                 background-blend-mode: screen;
-            }
-        }
-    }
-    //
-    // ITEM MODIFIERS
-    //
-    @include block ('item') {
-        @include modifier ('selected') {
-            @extend %background-transparent;
-            padding-top: 0;
-            padding-bottom: 0;
-            border-bottom-width: 0;
-
-            &:hover {
-                .item__thumbnail {
-                    background-blend-mode: multiply;
-                }
-            }
-
-            .item__thumbnail {
-                @include pseudo ('after') {
-                    line-height: $large-thumbnail-size;
-                    font-size: to-rem(16);
-                }
-            }
-        }
-
-        @include modifier ('no-artwork') {
-            .item__thumbnail {
-                @extend %block;
-                width: inherit;
-                height: $large-thumbnail-size;
-            }
-
-            .item__icon {
-                $dim: to-rem(100);
-                @include dim($dim);
-                background-size: #{$dim $dim};
             }
         }
     }
@@ -126,6 +87,44 @@
 
         @include element ('tag') {
             @extend %block;
+        }
+    }
+    //
+    // ITEM MODIFIERS
+    //
+    @include block ('item') {
+        @include modifier ('selected') {
+            @extend %background-transparent;
+            padding-top: 0;
+            padding-bottom: 0;
+            border-bottom-width: 0;
+
+            &:hover {
+                .item__thumbnail {
+                    background-blend-mode: multiply;
+                }
+            }
+
+            .item__thumbnail {
+                @include pseudo ('after') {
+                    line-height: $large-thumbnail-size;
+                    font-size: to-rem(16);
+                }
+            }
+        }
+
+        @include modifier ('no-artwork') {
+            .item__thumbnail {
+                @extend %block;
+                width: inherit;
+                height: $large-thumbnail-size;
+            }
+
+            .item__icon {
+                $dim: to-rem(100);
+                @include dim($dim);
+                background-size: #{$dim $dim};
+            }
         }
     }
 }

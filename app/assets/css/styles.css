@@ -16,7 +16,7 @@
 
 /* line 15, ../../src/sass/_placeholders.scss */
 .show-mask #mask::after, .show-loader #overlay,
-.show-loader #loader, .show-player #player, .show-playing #playing, .block, .btn--nav.btn--solo-icon .icon, #search, #player progress, #nav-right .btn--solo-icon::before, .show-grid .item--no-artwork .item__thumbnail, .show-grid .item__thumbnail, .show-grid .item__tag {
+.show-loader #loader, .show-player #player, .show-playing #playing, .block, .btn--nav.btn--solo-icon .icon, #search, #player progress, #nav-right .btn--solo-icon::before, .show-grid .item__thumbnail, .show-grid .item__tag, .show-grid .item--no-artwork .item__thumbnail {
   display: block;
 }
 
@@ -1201,39 +1201,13 @@ main {
   padding-left: 0;
   padding-right: 0;
 }
-/* line 38, ../../src/sass/states/_show-grid.scss */
+/* line 37, ../../src/sass/states/_show-grid.scss */
 .show-grid .item:hover .item__data {
   margin-top: 0;
 }
-/* line 42, ../../src/sass/states/_show-grid.scss */
+/* line 41, ../../src/sass/states/_show-grid.scss */
 .show-grid .item:hover .item__thumbnail {
   background-blend-mode: screen;
-}
-/* line 52, ../../../node_modules/bemify/sass/_bemify.scss */
-.show-grid .item--selected {
-  padding-top: 0;
-  padding-bottom: 0;
-  border-bottom-width: 0;
-}
-/* line 58, ../../src/sass/states/_show-grid.scss */
-.show-grid .item--selected:hover .item__thumbnail {
-  background-blend-mode: multiply;
-}
-/* line 12, ../../src/sass/_mixins.scss */
-.show-grid .item--selected .item__thumbnail::after {
-  line-height: 12.1875rem;
-  font-size: 1rem;
-}
-/* line 72, ../../src/sass/states/_show-grid.scss */
-.show-grid .item--no-artwork .item__thumbnail {
-  width: inherit;
-  height: 12.1875rem;
-}
-/* line 78, ../../src/sass/states/_show-grid.scss */
-.show-grid .item--no-artwork .item__icon {
-  width: 6.25rem;
-  height: 6.25rem;
-  background-size: 6.25rem 6.25rem;
 }
 /* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
 .show-grid .item__thumbnail {
@@ -1262,6 +1236,32 @@ main {
 /* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
 .show-grid .item__meta {
   bottom: 0;
+}
+/* line 52, ../../../node_modules/bemify/sass/_bemify.scss */
+.show-grid .item--selected {
+  padding-top: 0;
+  padding-bottom: 0;
+  border-bottom-width: 0;
+}
+/* line 103, ../../src/sass/states/_show-grid.scss */
+.show-grid .item--selected:hover .item__thumbnail {
+  background-blend-mode: multiply;
+}
+/* line 12, ../../src/sass/_mixins.scss */
+.show-grid .item--selected .item__thumbnail::after {
+  line-height: 12.1875rem;
+  font-size: 1rem;
+}
+/* line 117, ../../src/sass/states/_show-grid.scss */
+.show-grid .item--no-artwork .item__thumbnail {
+  width: inherit;
+  height: 12.1875rem;
+}
+/* line 123, ../../src/sass/states/_show-grid.scss */
+.show-grid .item--no-artwork .item__icon {
+  width: 6.25rem;
+  height: 6.25rem;
+  background-size: 6.25rem 6.25rem;
 }
 
 /* line 3, ../../src/sass/themes/default-theme/_layout.scss */
