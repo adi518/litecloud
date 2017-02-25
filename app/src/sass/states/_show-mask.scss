@@ -4,7 +4,7 @@
     #mask {
         -webkit-filter: blur(to-rem(50));
         //
-        &:after {
+        @include pseudo ('after') {
             @extend %show;
         }
     }

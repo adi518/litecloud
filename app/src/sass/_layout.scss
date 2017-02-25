@@ -68,7 +68,7 @@ main {
 #mask {
     z-index: 0;
 
-    &:after {
+    @include pseudo ('after') {
         z-index: 1;
     }
 }

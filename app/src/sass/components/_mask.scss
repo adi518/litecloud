@@ -5,7 +5,7 @@
     background-size: cover;
     background-blend-mode: color;
 
-    &::after {
+    @include pseudo ('after') {
         @extend %no-content;
         @include position-args(top 0 right 0 bottom 0 left 0);
         position: inherit;

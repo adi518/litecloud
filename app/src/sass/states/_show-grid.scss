@@ -2,6 +2,7 @@
 // scss-lint:disable Compass::PropertyWithMixin
 .show-grid {
     //
+    // LIST BLOCK
     //
     @include block ('list') {
         @extend %flex;
@@ -9,9 +10,9 @@
         flex-wrap: wrap;
         justify-content: space-between;
     }
-
+    //
     // ITEM BLOCK
-
+    //
     @include block ('item') {
         @extend %lowercase;
         width: $large-thumbnail-size;
@@ -26,7 +27,7 @@
         small {
             @extend %inline-block;
 
-            &:after {
+            @include pseudo ('after') {
                 @extend %no-content;
             }
         }
@@ -43,9 +44,9 @@
             }
         }
     }
-
+    //
     // ITEM MODIFIERS
-
+    //
     @include block ('item') {
         @include modifier ('selected') {
             @extend %background-transparent;
@@ -60,7 +61,7 @@
             }
 
             .item__thumbnail {
-                &:after {
+                @include pseudo ('after') {
                     line-height: $large-thumbnail-size;
                     font-size: to-rem(16);
                 }
@@ -81,9 +82,9 @@
             }
         }
     }
-
+    //
     // ITEM ELEMENTS
-
+    //
     @include block ('item') {
         @include element ('thumbnail') {
             @extend %relative;

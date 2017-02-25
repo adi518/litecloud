@@ -15,7 +15,7 @@
 }
 
 /* line 15, ../../src/sass/_placeholders.scss */
-.show-mask #mask:after, .show-loader #overlay,
+.show-mask #mask::after, .show-loader #overlay,
 .show-loader #loader, .show-player #player, .show-playing #playing, .block, .btn--nav.btn--solo-icon .icon, #search, #player progress, #nav-right .btn--solo-icon::before, .show-grid .item--no-artwork .item__thumbnail, .show-grid .item__thumbnail, .show-grid .item__tag {
   display: block;
 }
@@ -89,7 +89,7 @@ html {
 }
 
 /* line 92, ../../src/sass/_placeholders.scss */
-.show-loader, .clearfix:after, .item:after, .clearfix:before, .item:before, #minimize, .item__data, .item__tag, body, .show-grid .item__title {
+.show-loader, .clearfix::after, .item::after, .clearfix::before, .item::before, #minimize, .item__data, .item__tag, body, .show-grid .item__title {
   overflow: hidden;
 }
 
@@ -135,18 +135,18 @@ body {
 }
 
 /* line 141, ../../src/sass/_placeholders.scss */
-.clearfix:after, .item:after, .clearfix:before, .item:before {
+.clearfix::after, .item::after, .clearfix::before, .item::before {
   display: block;
   content: '\0020';
   height: 0;
 }
 /* line 149, ../../src/sass/_placeholders.scss */
-.clearfix:after, .item:after {
+.clearfix::after, .item::after {
   clear: both;
 }
 
 /* line 154, ../../src/sass/_placeholders.scss */
-#minimize::before, #mask::after, #nav-right .btn--solo-icon::before, .show-grid .item small:after {
+#minimize::before, #mask::after, #nav-right .btn--solo-icon::before, .show-grid .item small::after {
   content: '';
 }
 
@@ -1083,7 +1083,7 @@ i.btn, i.btn--player {
   background-size: cover;
   background-blend-mode: color;
 }
-/* line 8, ../../src/sass/components/_mask.scss */
+/* line 12, ../../src/sass/_mixins.scss */
 #mask::after {
   top: 0;
   right: 0;
@@ -1151,8 +1151,8 @@ main {
 #mask {
   z-index: 0;
 }
-/* line 71, ../../src/sass/_layout.scss */
-#mask:after {
+/* line 12, ../../src/sass/_mixins.scss */
+#mask::after {
   z-index: 1;
 }
 
@@ -1201,11 +1201,11 @@ main {
   padding-left: 0;
   padding-right: 0;
 }
-/* line 37, ../../src/sass/states/_show-grid.scss */
+/* line 38, ../../src/sass/states/_show-grid.scss */
 .show-grid .item:hover .item__data {
   margin-top: 0;
 }
-/* line 41, ../../src/sass/states/_show-grid.scss */
+/* line 42, ../../src/sass/states/_show-grid.scss */
 .show-grid .item:hover .item__thumbnail {
   background-blend-mode: screen;
 }
@@ -1215,21 +1215,21 @@ main {
   padding-bottom: 0;
   border-bottom-width: 0;
 }
-/* line 57, ../../src/sass/states/_show-grid.scss */
+/* line 58, ../../src/sass/states/_show-grid.scss */
 .show-grid .item--selected:hover .item__thumbnail {
   background-blend-mode: multiply;
 }
-/* line 63, ../../src/sass/states/_show-grid.scss */
-.show-grid .item--selected .item__thumbnail:after {
+/* line 12, ../../src/sass/_mixins.scss */
+.show-grid .item--selected .item__thumbnail::after {
   line-height: 12.1875rem;
   font-size: 1rem;
 }
-/* line 71, ../../src/sass/states/_show-grid.scss */
+/* line 72, ../../src/sass/states/_show-grid.scss */
 .show-grid .item--no-artwork .item__thumbnail {
   width: inherit;
   height: 12.1875rem;
 }
-/* line 77, ../../src/sass/states/_show-grid.scss */
+/* line 78, ../../src/sass/states/_show-grid.scss */
 .show-grid .item--no-artwork .item__icon {
   width: 6.25rem;
   height: 6.25rem;
@@ -1534,7 +1534,7 @@ progress::-webkit-progress-bar {
   background-color: #111111;
   background-blend-mode: multiply;
 }
-/* line 5, ../../src/sass/themes/default-theme/_mask.scss */
+/* line 12, ../../src/sass/_mixins.scss */
 #mask::after {
   background-color: #000;
 }

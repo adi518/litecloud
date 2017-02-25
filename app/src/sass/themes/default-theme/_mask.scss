@@ -2,7 +2,7 @@
     background-color: $color-111;
     background-blend-mode: multiply;
 
-    &::after {
+    @include pseudo ('after') {
         background-color: $color-black;
     }
 }
