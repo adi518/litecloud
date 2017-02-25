@@ -160,7 +160,7 @@ $(function () {
                     counter++;
                     track.artwork_url = track.artwork_url.replace(/large/g, 't300x300');
                     if (isdev) {
-                        track.artwork_url.replace(/https:\/\/i1.sndcdn.com/g, 'assets/images/mockup');
+                        track.artwork_url.replace(/https:\/\/i1.sndcdn.com/g, 'assets/images/mock');
                     }
                 }
                 markup += '<div class="item' + (!track.artwork_url ? ' item--no-artwork' : '') + '">';
