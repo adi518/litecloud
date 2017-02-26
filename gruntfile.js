@@ -5,12 +5,9 @@
 
 module.exports = function (grunt) {
 
-    grunt.option('stack', true);
-
     grunt.loadNpmTasks('grunt-contrib-compass');
     grunt.loadNpmTasks('grunt-contrib-pug');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-postcss');
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -21,10 +18,9 @@ module.exports = function (grunt) {
             },
             dist: {
                 options: {
-                    force: true,
                     sourcemap: true,
                     outputStyle: 'compressed',
-                    environment: 'production',
+                    environment: 'dist',
                 }
             },
             dev: {
@@ -39,6 +35,7 @@ module.exports = function (grunt) {
                 tasks: 'compass:dev',
                 options: {
                     spawn: false,
+                    interrupt: true,
                 }
             },
             pug: {

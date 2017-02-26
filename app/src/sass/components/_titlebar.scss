@@ -9,11 +9,11 @@
 #logo {
     @extend %inline-block;
     @extend %cursor-default;
+    @extend %half-border-radius;
     background-image: url($logo-path);
     margin-left: to-rem(10);
     width: to-rem(20);
     height: to-rem(20);
-    border-radius: 50%;
     background-size: cover;
     box-sizing: content-box;
     vertical-align: top;
@@ -33,7 +33,7 @@
     position: relative;
     outline: 0;
 
-    &::before {
+    @include pseudo ('before') {
         @extend %no-content;
         position: absolute;
         width: calc(100% - #{to-rem(2)});

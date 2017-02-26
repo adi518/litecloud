@@ -38,35 +38,36 @@
     }
 }
 //
-// MODIFIERS
+// SCOPES
 //
-.item--selected {
-    background-color: $color-cod-gray;
-    border-bottom-color: $color-mine-shaft;
-
-    .item__thumbnail {
-        background-color: $color-dove-gray;
-    }
-
-    &.item--no-artwork {
-        .item__thumbnail {
-            background-color: $color-cod-gray;
-            //
-            @at-root {
-                .show-grid {
-                    .item--selected.item--no-artwork .item__thumbnail {
-                        background-color: $color-161;
-                    }
-                }
-            }
+.item--no-artwork:hover {
+    //
+    @include block ('item') {
+        //
+        @include element ('thumbnail') {
+            background-color: $color-171;
         }
     }
 }
 
-.item--no-artwork {
-    &:hover {
-        .item__thumbnail {
-            background-color: $color-171;
+.item.is-active {
+    background-color: $color-cod-gray;
+    border-bottom-color: $color-mine-shaft;
+
+    @include block ('item') {
+        //
+        @include element ('thumbnail') {
+            background-color: $color-dove-gray;
+        }
+    }
+}
+
+.item.is-active.item--no-artwork {
+    //
+    @include block ('item') {
+        //
+        @include element ('thumbnail') {
+            background-color: $color-cod-gray;
         }
     }
 }

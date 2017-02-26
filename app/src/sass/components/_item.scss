@@ -93,7 +93,7 @@
     }
     //
     //
-    @include modifier ('selected') {
+    @include state ('active') {
         padding-top: to-rem(10);
         padding-bottom: to-rem(10);
         padding-left: to-rem(10);
@@ -115,3 +115,6 @@
         }
     }
 }
+//
+// SCOPES
+//

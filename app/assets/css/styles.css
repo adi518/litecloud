@@ -16,7 +16,7 @@
 
 /* line 15, ../../src/sass/_placeholders.scss */
 .show-mask #mask::after, .show-loader #overlay,
-.show-loader #loader, .show-player #player, .show-playing #playing, .block, .btn--nav.btn--solo-icon .icon, #search, #player progress, #nav-right .btn--solo-icon::before, .show-grid .item__thumbnail, .show-grid .item__tag, .show-grid .item--no-artwork .item__thumbnail {
+.show-loader #loader, .show-grid .item__tag, .show-player #player, .show-playing #playing, .block, .btn--nav.btn--solo-icon .icon, #search, #player progress, #nav-right .btn--solo-icon::before, .show-grid .item__thumbnail, .show-grid .item--no-artwork .item__thumbnail {
   display: block;
 }
 
@@ -43,7 +43,7 @@ span.btn--player, #logo, #title, .show-grid .item small {
 }
 
 /* line 51, ../../src/sass/_placeholders.scss */
-.item--selected .item__thumbnail, .show-grid .item__thumbnail, .show-grid .item__data {
+.item.is-active .item__thumbnail, .show-grid .item__thumbnail, .show-grid .item__data {
   position: relative;
 }
 
@@ -113,6 +113,11 @@ main {
   text-align: center;
 }
 
+/* line 116, ../../src/sass/_placeholders.scss */
+#logo {
+  border-radius: 50%;
+}
+
 /* line 120, ../../src/sass/_placeholders.scss */
 #logo, #title, .no-results .item, .playing {
   cursor: default;
@@ -124,7 +129,7 @@ main {
 }
 
 /* line 128, ../../src/sass/_placeholders.scss */
-.btn--nav, .btn--player, .btn--titlebar, .no-results .item:hover, .show-grid .item:hover, .show-grid .item--selected, .list.no-results {
+.btn--nav, .btn--player, .btn--titlebar, .no-results .item:hover, .show-grid .item:hover, .show-grid .item.is-active, .list.no-results {
   background-color: transparent;
 }
 
@@ -806,7 +811,6 @@ i.btn, i.btn--player {
   margin-left: 0.625rem;
   width: 1.25rem;
   height: 1.25rem;
-  border-radius: 50%;
   background-size: cover;
   box-sizing: content-box;
   vertical-align: top;
@@ -826,7 +830,7 @@ i.btn, i.btn--player {
   position: relative;
   outline: 0;
 }
-/* line 36, ../../src/sass/components/_titlebar.scss */
+/* line 13, ../../src/sass/_mixins.scss */
 #minimize::before {
   position: absolute;
   width: calc(100% - 0.125rem);
@@ -929,7 +933,7 @@ i.btn, i.btn--player {
 
 /* line 3, ../../src/sass/components/_list.scss */
 .list {
-  margin-left: 1.25rem;
+  margin-left: 1.5625rem;
   margin-right: 1.25rem;
   padding-top: 2.1875rem;
   padding-bottom: 2.1875rem;
@@ -999,23 +1003,23 @@ i.btn, i.btn--player {
 .item--no-artwork .item__thumbnail {
   image-rendering: auto;
 }
-/* line 52, ../../../node_modules/bemify/sass/_bemify.scss */
-.item--selected {
+/* line 62, ../../../node_modules/bemify/sass/_bemify.scss */
+.item.is-active {
   padding-top: 0.625rem;
   padding-bottom: 0.625rem;
   padding-left: 0.625rem;
   border-bottom: 0.0625rem solid;
 }
 /* line 103, ../../src/sass/components/_item.scss */
-.item--selected:hover .item__data {
+.item.is-active:hover .item__data {
   margin-top: 0;
 }
 /* line 108, ../../src/sass/components/_item.scss */
-.item--selected .item__thumbnail {
+.item.is-active .item__thumbnail {
   background-blend-mode: multiply;
 }
 /* line 113, ../../src/sass/components/_item.scss */
-.item--selected .item__data {
+.item.is-active .item__data {
   margin-top: 0;
 }
 
@@ -1079,7 +1083,7 @@ i.btn, i.btn--player {
   background-size: cover;
   background-blend-mode: color;
 }
-/* line 12, ../../src/sass/_mixins.scss */
+/* line 13, ../../src/sass/_mixins.scss */
 #mask::after {
   top: 0;
   right: 0;
@@ -1130,7 +1134,7 @@ main {
 #nav-right .btn--solo-icon {
   margin-bottom: 0.9375rem;
 }
-/* line 12, ../../src/sass/_mixins.scss */
+/* line 13, ../../src/sass/_mixins.scss */
 #nav-right .btn--solo-icon::before {
   height: 0.0625rem;
   background-color: #181818;
@@ -1147,7 +1151,7 @@ main {
 #mask {
   z-index: 0;
 }
-/* line 12, ../../src/sass/_mixins.scss */
+/* line 13, ../../src/sass/_mixins.scss */
 #mask::after {
   z-index: 1;
 }
@@ -1185,6 +1189,7 @@ main {
   padding-top: 0;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin-left: 1.25rem;
 }
 /* line 35, ../../../node_modules/bemify/sass/_bemify.scss */
 .show-grid .item {
@@ -1197,11 +1202,11 @@ main {
   padding-left: 0;
   padding-right: 0;
 }
-/* line 37, ../../src/sass/states/_show-grid.scss */
+/* line 39, ../../src/sass/states/_show-grid.scss */
 .show-grid .item:hover .item__data {
   margin-top: 0;
 }
-/* line 41, ../../src/sass/states/_show-grid.scss */
+/* line 43, ../../src/sass/states/_show-grid.scss */
 .show-grid .item:hover .item__thumbnail {
   background-blend-mode: screen;
 }
@@ -1233,27 +1238,27 @@ main {
 .show-grid .item__meta {
   bottom: 0;
 }
-/* line 52, ../../../node_modules/bemify/sass/_bemify.scss */
-.show-grid .item--selected {
+/* line 62, ../../../node_modules/bemify/sass/_bemify.scss */
+.show-grid .item.is-active {
   padding-top: 0;
   padding-bottom: 0;
   border-bottom-width: 0;
 }
-/* line 103, ../../src/sass/states/_show-grid.scss */
-.show-grid .item--selected:hover .item__thumbnail {
+/* line 109, ../../src/sass/states/_show-grid.scss */
+.show-grid .item.is-active:hover .item__thumbnail {
   background-blend-mode: multiply;
 }
-/* line 12, ../../src/sass/_mixins.scss */
-.show-grid .item--selected .item__thumbnail::after {
+/* line 13, ../../src/sass/_mixins.scss */
+.show-grid .item.is-active .item__thumbnail::after {
   line-height: 12.1875rem;
   font-size: 1rem;
 }
-/* line 117, ../../src/sass/states/_show-grid.scss */
+/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
 .show-grid .item--no-artwork .item__thumbnail {
   width: inherit;
   height: 12.1875rem;
 }
-/* line 123, ../../src/sass/states/_show-grid.scss */
+/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
 .show-grid .item--no-artwork .item__icon {
   width: 6.25rem;
   height: 6.25rem;
@@ -1297,7 +1302,7 @@ main {
 
 /* line 3, ../../src/sass/themes/default-theme/_titlebar.scss */
 #titlebar {
-  box-shadow: inset 0 -1px 0 #090909;
+  box-shadow: inset 0 -0.0625rem 0 #090909;
   background-color: #151515;
 }
 
@@ -1307,30 +1312,30 @@ main {
   background-color: #fff;
 }
 
-/* line 14, ../../src/sass/themes/default-theme/_titlebar.scss */
+/* line 13, ../../src/sass/themes/default-theme/_titlebar.scss */
 #title {
   color: #555;
 }
 
-/* line 19, ../../src/sass/themes/default-theme/_titlebar.scss */
+/* line 13, ../../src/sass/_mixins.scss */
 #minimize::before {
   background-color: #555;
 }
-/* line 24, ../../src/sass/themes/default-theme/_titlebar.scss */
+/* line 13, ../../src/sass/_mixins.scss */
 #minimize:hover::before {
   background-color: #84bd00;
 }
 
-/* line 30, ../../src/sass/themes/default-theme/_titlebar.scss */
+/* line 29, ../../src/sass/themes/default-theme/_titlebar.scss */
 #maximize {
   border-color: #555;
 }
-/* line 33, ../../src/sass/themes/default-theme/_titlebar.scss */
+/* line 32, ../../src/sass/themes/default-theme/_titlebar.scss */
 #maximize:hover {
   border-color: #84bd00;
 }
 
-/* line 38, ../../src/sass/themes/default-theme/_titlebar.scss */
+/* line 37, ../../src/sass/themes/default-theme/_titlebar.scss */
 #terminate {
   position: relative;
   display: inline-block;
@@ -1339,11 +1344,11 @@ main {
   overflow: hidden;
   outline: 0;
 }
-/* line 104, ../../src/sass/_mixins.scss */
+/* line 105, ../../src/sass/_mixins.scss */
 #terminate:hover::after, #terminate:hover::before {
   background-color: #84bd00;
 }
-/* line 110, ../../src/sass/_mixins.scss */
+/* line 111, ../../src/sass/_mixins.scss */
 #terminate::after, #terminate::before {
   content: '';
   position: absolute;
@@ -1354,64 +1359,64 @@ main {
   margin-top: -1px;
   background: #555;
 }
-/* line 122, ../../src/sass/_mixins.scss */
+/* line 123, ../../src/sass/_mixins.scss */
 #terminate::before {
   -moz-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-/* line 126, ../../src/sass/_mixins.scss */
+/* line 127, ../../src/sass/_mixins.scss */
 #terminate::after {
   -moz-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
-/* line 130, ../../src/sass/_mixins.scss */
+/* line 131, ../../src/sass/_mixins.scss */
 #terminate.big {
   -moz-transform: scale(3);
   -ms-transform: scale(3);
   -webkit-transform: scale(3);
   transform: scale(3);
 }
-/* line 135, ../../src/sass/_mixins.scss */
+/* line 136, ../../src/sass/_mixins.scss */
 #terminate.hairline::after, #terminate.hairline::before {
   height: 1px;
 }
-/* line 142, ../../src/sass/_mixins.scss */
+/* line 143, ../../src/sass/_mixins.scss */
 #terminate.thick::after, #terminate.thick::before {
   height: 4px;
   margin-top: -2px;
 }
-/* line 150, ../../src/sass/_mixins.scss */
+/* line 151, ../../src/sass/_mixins.scss */
 #terminate.black::after, #terminate.black::before {
   height: 8px;
   margin-top: -4px;
 }
-/* line 158, ../../src/sass/_mixins.scss */
+/* line 159, ../../src/sass/_mixins.scss */
 #terminate.heavy::after, #terminate.heavy::before {
   height: 12px;
   margin-top: -6px;
 }
-/* line 166, ../../src/sass/_mixins.scss */
+/* line 167, ../../src/sass/_mixins.scss */
 #terminate.pointy::after, #terminate.pointy::before {
   width: 200%;
   left: -50%;
 }
-/* line 174, ../../src/sass/_mixins.scss */
+/* line 175, ../../src/sass/_mixins.scss */
 #terminate.rounded::after, #terminate.rounded::before {
   border-radius: 5px;
 }
-/* line 181, ../../src/sass/_mixins.scss */
+/* line 182, ../../src/sass/_mixins.scss */
 #terminate.blades::after, #terminate.blades::before {
   border-radius: 5px 0;
 }
-/* line 188, ../../src/sass/_mixins.scss */
+/* line 189, ../../src/sass/_mixins.scss */
 #terminate.warp::after, #terminate.warp::before {
   border-radius: 120% 0;
 }
-/* line 195, ../../src/sass/_mixins.scss */
+/* line 196, ../../src/sass/_mixins.scss */
 #terminate.fat::after, #terminate.fat::before {
   border-radius: 100%;
 }
@@ -1492,27 +1497,24 @@ progress::-webkit-progress-bar {
   background-color: #000;
 }
 
-/* line 43, ../../src/sass/themes/default-theme/_item.scss */
-.item--selected {
+/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
+.item--no-artwork:hover .item__thumbnail {
+  background-color: #171717;
+}
+
+/* line 53, ../../src/sass/themes/default-theme/_item.scss */
+.item.is-active {
   background-color: #151515;
   border-bottom-color: #252525;
 }
-/* line 47, ../../src/sass/themes/default-theme/_item.scss */
-.item--selected .item__thumbnail {
+/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
+.item.is-active .item__thumbnail {
   background-color: #666;
 }
-/* line 52, ../../src/sass/themes/default-theme/_item.scss */
-.item--selected.item--no-artwork .item__thumbnail {
-  background-color: #151515;
-}
-/* line 57, ../../src/sass/themes/default-theme/_item.scss */
-.show-grid .item--selected.item--no-artwork .item__thumbnail {
-  background-color: #161616;
-}
 
-/* line 68, ../../src/sass/themes/default-theme/_item.scss */
-.item--no-artwork:hover .item__thumbnail {
-  background-color: #171717;
+/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
+.item.is-active.item--no-artwork .item__thumbnail {
+  background-color: #151515;
 }
 
 /* line 2, ../../src/sass/themes/default-theme/_playing.scss */
@@ -1534,7 +1536,12 @@ progress::-webkit-progress-bar {
   background-color: #111111;
   background-blend-mode: multiply;
 }
-/* line 12, ../../src/sass/_mixins.scss */
+/* line 13, ../../src/sass/_mixins.scss */
 #mask::after {
   background-color: #000;
+}
+
+/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
+.item.is-active.item--no-artwork__thumbnail {
+  background-color: #161616;
 }

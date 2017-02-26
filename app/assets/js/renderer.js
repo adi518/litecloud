@@ -323,9 +323,9 @@ $(function () {
             if (cache.index === $item.index()) {
                 return;
             }
-            $item.addClass('item--selected');
+            $item.addClass('is-active');
             if ($.isNumeric(cache.index)) {
-                $(cache.$items.get(cache.index)).toggleClass('item--selected item--visited');
+                $(cache.$items.get(cache.index)).toggleClass('is-active item--visited');
             }
             // cache.$mask.css('background-image', 'url(' + (track.artwork_url || '') + ')');
             // cache.$body.toggleClass('show-mask', hasArtCover).toggleClass('animate-mask', hasArtCover);
