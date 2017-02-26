@@ -20,11 +20,9 @@
 
 #loader {
     border-radius: 50%;
-    border-width: to-rem(2);
-    border-style: solid;
-    border-top: 2px solid;
+    border: to-rem(2) solid;
 
-    &.spin {
+    &.is-active {
         animation: spin $loader-animation-duration infinite linear;
     }
     //

@@ -873,12 +873,10 @@ i.btn, i.btn--player {
 /* line 21, ../../src/sass/components/_loader.scss */
 #loader {
   border-radius: 50%;
-  border-width: 0.125rem;
-  border-style: solid;
-  border-top: 2px solid;
+  border: 0.125rem solid;
 }
-/* line 27, ../../src/sass/components/_loader.scss */
-#loader.spin, .show-loader #loader {
+/* line 25, ../../src/sass/components/_loader.scss */
+#loader.is-active, .show-loader #loader {
   animation: spin 1.5s infinite linear;
 }
 @keyframes spin {
