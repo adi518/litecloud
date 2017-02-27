@@ -1,6 +1,4 @@
-.list {
-    &.no-results {
-        @extend %background-transparent;
-        color: $color-emperor;
-    }
+.list.no-results {
+    @extend %background-transparent;
+    color: $color-emperor;
 }

@@ -3,22 +3,25 @@
 
 #player {
     margin-top: to-rem(16);
+}
 
-    progress {
-        @extend %block;
-        @extend %full-width; // override user-agent
-        @extend %cursor-pointer;
-        border-radius: to-rem(2);
-        height: to-rem(6);
-        -webkit-appearance: none;
-        appearance: none;
+progress {
+    @extend %block;
+    @extend %full-width; // override user-agent
+    @extend %cursor-pointer;
+    border-radius: to-rem(2);
+    height: to-rem(6);
+    -webkit-appearance: none;
+    appearance: none;
 
-        &::-webkit-progress-bar {
+    &::-webkit-progress {
+        //
+        &-bar {
             border-radius: to-rem(2);
             transition: width .2s;
         }
 
-        &::-webkit-progress-value {
+        &-value {
             border-radius: to-rem(2);
         }
     }
@@ -30,9 +33,6 @@
 }
 
 .btn--player {
-    @extend .btn;
-    @extend %clear-btn;
-    @extend %no-outline;
+    @extend %btn--clear;
     font-size: to-rem(45);
-    vertical-align: middle;
 }

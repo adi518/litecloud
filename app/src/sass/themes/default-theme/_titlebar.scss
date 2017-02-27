@@ -19,7 +19,7 @@
         background-color: $color-emperor;
     }
 
-    &:hover {
+    @include pseudo('hover') {
         @include pseudo ('before') {
             background-color: $hover-color;
         }
@@ -29,7 +29,7 @@
 #maximize {
     border-color: $color-emperor;
 
-    &:hover {
+    @include pseudo('hover') {
         border-color: $hover-color;
     }
 }

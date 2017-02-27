@@ -10,20 +10,19 @@
 }
 
 /* line 11, ../../src/sass/_placeholders.scss */
-.show-grid .list {
+.show-grid .list.has-results {
   display: flex;
 }
 
 /* line 15, ../../src/sass/_placeholders.scss */
-.show-mask #mask::after, .show-loader #overlay,
-.show-loader #loader, .show-grid .item__tag, .show-player #player, .show-playing #playing, .block, .btn--nav.btn--solo-icon .icon, #search, #player progress, #nav-right .btn--solo-icon::before, .show-grid .item__thumbnail, .show-grid .item--no-artwork .item__thumbnail {
+.show-mask #mask:after, .show-loader #overlay,
+.show-loader #loader, .show-grid .item__tag, .show-player #player, .show-playing #playing, .block, .btn--nav.btn--solo-icon .icon, progress, .item--no-artwork .item__icon, #nav-right .btn--solo-icon:before, .show-grid .item--no-artwork .item__thumbnail, .show-grid .item__thumbnail {
   display: block;
 }
 
 /* line 19, ../../src/sass/_placeholders.scss */
-i.btn, i.btn--player,
-span.btn,
-span.btn--player, #logo, #title, .show-grid .item small {
+i.btn,
+span.btn, #logo, #title, .show-grid .item small {
   display: inline-block;
 }
 
@@ -43,12 +42,12 @@ span.btn--player, #logo, #title, .show-grid .item small {
 }
 
 /* line 51, ../../src/sass/_placeholders.scss */
-.item.is-active .item__thumbnail, .show-grid .item__thumbnail, .show-grid .item__data {
+.item.is-active .item__thumbnail, .show-grid .item__thumbnail, .show-grid .item__meta {
   position: relative;
 }
 
 /* line 55, ../../src/sass/_placeholders.scss */
-.item__tag, .show-grid .item__meta {
+.item__tag, .show-grid .item__creator {
   position: absolute;
 }
 
@@ -63,7 +62,7 @@ main, #loader {
 }
 
 /* line 71, ../../src/sass/_placeholders.scss */
-.playing__description {
+.item--no-artwork .item__icon, .playing__description {
   margin-left: auto;
   margin-right: auto;
 }
@@ -79,7 +78,7 @@ body {
 }
 
 /* line 84, ../../src/sass/_placeholders.scss */
-.btn--nav, #titlebar, #search, #player progress, #overlay, .show-grid .item__meta {
+.btn--nav, #titlebar, #search, progress, #overlay, .show-grid .item__creator {
   width: 100%;
 }
 
@@ -89,7 +88,7 @@ html {
 }
 
 /* line 92, ../../src/sass/_placeholders.scss */
-.show-loader, .clearfix::after, .item::after, .clearfix::before, .item::before, #minimize, .item__data, .item__tag, body, .show-grid .item__title {
+.show-loader, .clearfix::after, .item::after, .clearfix::before, .item::before, #minimize, .item__meta, .item__tag, body, .show-grid .item__title {
   overflow: hidden;
 }
 
@@ -109,7 +108,7 @@ main {
 }
 
 /* line 112, ../../src/sass/_placeholders.scss */
-.nav--player, .no-results .item, .playing__description {
+.nav--player, .list.no-results, .playing__description {
   text-align: center;
 }
 
@@ -119,17 +118,17 @@ main {
 }
 
 /* line 120, ../../src/sass/_placeholders.scss */
-#logo, #title, .no-results .item, .playing {
+#logo, #title, .list.no-results, .playing {
   cursor: default;
 }
 
 /* line 124, ../../src/sass/_placeholders.scss */
-.btn, .btn--player, #player progress, .item {
+.btn, progress, .item {
   cursor: pointer;
 }
 
 /* line 128, ../../src/sass/_placeholders.scss */
-.btn--nav, .btn--player, .btn--titlebar, .no-results .item:hover, .show-grid .item:hover, .show-grid .item.is-active, .list.no-results {
+.btn--nav, .btn--player, .btn--titlebar, .show-grid .item:hover, .show-grid .item.is-active, .list.no-results {
   background-color: transparent;
 }
 
@@ -151,12 +150,12 @@ body {
 }
 
 /* line 154, ../../src/sass/_placeholders.scss */
-#minimize::before, #mask::after, #nav-right .btn--solo-icon::before, .show-grid .item small::after {
+#minimize:before, #mask:after, #nav-right .btn--solo-icon:before, .show-grid .item small:after {
   content: '';
 }
 
 /* line 158, ../../src/sass/_placeholders.scss */
-.btn, .btn--player, #search {
+.btn, #search {
   outline: 0;
 }
 
@@ -166,12 +165,12 @@ body {
 }
 
 /* line 170, ../../src/sass/_placeholders.scss */
-.btn--nav, .item, .component__header, .playing__header {
+.btn--nav, .list.no-results, .item, .component__header, .playing__header {
   text-transform: uppercase;
 }
 
 /* line 174, ../../src/sass/_placeholders.scss */
-.item__data {
+.item__meta {
   margin: 0;
   padding: 0;
 }
@@ -753,46 +752,45 @@ strong {
 ::-webkit-scrollbar {
   width: 0.4375rem;
 }
-
-/* line 7, ../../src/sass/components/_scrollbar.scss */
+/* line 6, ../../src/sass/components/_scrollbar.scss */
 ::-webkit-scrollbar-thumb {
   border-radius: 1.5625rem;
 }
 
 /* line 13, ../../src/sass/components/_buttons.scss */
-i.btn, i.btn--player {
+i.btn {
   font-style: normal;
 }
 
-/* line 21, ../../src/sass/components/_buttons.scss */
+/* line 19, ../../src/sass/components/_buttons.scss */
 .btn--nav, .btn--player {
   border-width: 0;
 }
 
-/* line 26, ../../src/sass/components/_buttons.scss */
-.btn, .btn--player {
+/* line 35, ../../../node_modules/bemify/sass/_bemify.scss */
+.btn {
   transition: color .2s;
 }
-/* line 31, ../../src/sass/components/_buttons.scss */
-.btn .icon, .btn--player .icon {
+
+/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
+.btn__icon {
   font-size: 1.5rem;
 }
 
-/* line 36, ../../src/sass/components/_buttons.scss */
+/* line 52, ../../../node_modules/bemify/sass/_bemify.scss */
 .btn--nav {
   line-height: 2rem;
   text-align: left;
 }
-/* line 43, ../../src/sass/components/_buttons.scss */
+/* line 54, ../../src/sass/components/_buttons.scss */
 .btn--nav .icon {
   vertical-align: top;
 }
-/* line 47, ../../src/sass/components/_buttons.scss */
+/* line 57, ../../src/sass/components/_buttons.scss */
 .btn--nav .icon ~ span {
   padding-left: 0.5rem;
 }
-
-/* line 53, ../../src/sass/components/_buttons.scss */
+/* line 14, ../../src/sass/_mixins.scss */
 .btn--nav.btn--solo-icon {
   width: auto;
   padding-left: 0;
@@ -830,8 +828,8 @@ i.btn, i.btn--player {
   position: relative;
   outline: 0;
 }
-/* line 13, ../../src/sass/_mixins.scss */
-#minimize::before {
+/* line 30, ../../src/sass/_mixins.scss */
+#minimize:before {
   position: absolute;
   width: calc(100% - 0.125rem);
   height: 0.125rem;
@@ -901,40 +899,44 @@ i.btn, i.btn--player {
 #player {
   margin-top: 1rem;
 }
-/* line 7, ../../src/sass/components/_player.scss */
-#player progress {
+
+/* line 8, ../../src/sass/components/_player.scss */
+progress {
   border-radius: 0.125rem;
   height: 0.375rem;
   -webkit-appearance: none;
   appearance: none;
 }
-/* line 16, ../../src/sass/components/_player.scss */
-#player progress::-webkit-progress-bar {
+/* line 19, ../../src/sass/components/_player.scss */
+progress::-webkit-progress-bar {
   border-radius: 0.125rem;
   transition: width .2s;
 }
-/* line 21, ../../src/sass/components/_player.scss */
-#player progress::-webkit-progress-value {
+/* line 24, ../../src/sass/components/_player.scss */
+progress::-webkit-progress-value {
   border-radius: 0.125rem;
 }
 
-/* line 27, ../../src/sass/components/_player.scss */
+/* line 30, ../../src/sass/components/_player.scss */
 .nav--player {
   margin-top: 0.625rem;
 }
 
-/* line 32, ../../src/sass/components/_player.scss */
+/* line 35, ../../src/sass/components/_player.scss */
 .btn--player {
   font-size: 2.8125rem;
-  vertical-align: middle;
 }
 
-/* line 3, ../../src/sass/components/_list.scss */
+/* line 35, ../../../node_modules/bemify/sass/_bemify.scss */
 .list {
   margin-left: 1.5625rem;
   margin-right: 1.25rem;
   padding-top: 2.1875rem;
   padding-bottom: 2.1875rem;
+}
+/* line 62, ../../../node_modules/bemify/sass/_bemify.scss */
+.list.no-results {
+  margin-right: 1.5625rem;
 }
 
 /* line 35, ../../../node_modules/bemify/sass/_bemify.scss */
@@ -942,13 +944,51 @@ i.btn, i.btn--player {
   padding-right: 2.1875rem;
   transition: padding .2s;
 }
-/* line 13, ../../src/sass/components/_item.scss */
-.item:hover .item__data {
-  margin-top: 0.625rem;
-}
-/* line 18, ../../src/sass/components/_item.scss */
+/* line 12, ../../src/sass/components/_item.scss */
 .item:not(:first-child) {
   margin-top: 2.1875rem;
+}
+/* line 17, ../../src/sass/components/_item.scss */
+.item:hover .item__meta {
+  margin-top: 0.625rem;
+}
+/* line 25, ../../src/sass/components/_item.scss */
+.item--no-artwork:hover .item__icon {
+  opacity: .5;
+}
+/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
+.item--no-artwork .item__thumbnail {
+  image-rendering: auto;
+}
+/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
+.item--no-artwork .item__icon {
+  transform: translateY(-50%);
+  position: relative;
+  top: 50%;
+  width: 4.375rem;
+  height: 4.375rem;
+  background-size: 4.375rem 4.375rem;
+  background-image: url("../images/ic_album_black_48px.svg");
+  opacity: .45;
+}
+/* line 62, ../../../node_modules/bemify/sass/_bemify.scss */
+.item.is-active {
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+  padding-left: 0.625rem;
+  border-bottom: 0.0625rem solid;
+}
+/* line 59, ../../src/sass/components/_item.scss */
+.item.is-active:hover .item__meta {
+  margin-top: 0;
+}
+/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
+.item.is-active .item__thumbnail {
+  background-blend-mode: multiply;
+}
+/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
+.item.is-active .item__meta {
+  margin-top: 0;
 }
 
 /* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
@@ -962,7 +1002,7 @@ i.btn, i.btn--player {
   image-rendering: -webkit-optimize-contrast;
 }
 /* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
-.item__data {
+.item__meta {
   list-style-type: none;
   transition: margin-top, .1s;
 }
@@ -980,88 +1020,43 @@ i.btn, i.btn--player {
   max-width: 70%;
 }
 
-/* line 74, ../../src/sass/components/_item.scss */
-.item--no-artwork:hover .item__icon {
-  opacity: .5;
-}
-/* line 79, ../../src/sass/components/_item.scss */
-.item--no-artwork .item__icon {
-  transform: translateY(-50%);
-  position: relative;
-  top: 50%;
-  width: 4.375rem;
-  height: 4.375rem;
-  background-size: 4.375rem 4.375rem;
-  background-image: url("../images/ic_album_black_48px.svg");
-  display: block;
-  margin: 0 auto;
-  opacity: .45;
-}
-/* line 90, ../../src/sass/components/_item.scss */
-.item--no-artwork .item__thumbnail {
-  image-rendering: auto;
-}
-/* line 62, ../../../node_modules/bemify/sass/_bemify.scss */
-.item.is-active {
-  padding-top: 0.625rem;
-  padding-bottom: 0.625rem;
-  padding-left: 0.625rem;
-  border-bottom: 0.0625rem solid;
-}
-/* line 103, ../../src/sass/components/_item.scss */
-.item.is-active:hover .item__data {
-  margin-top: 0;
-}
-/* line 108, ../../src/sass/components/_item.scss */
-.item.is-active .item__thumbnail {
-  background-blend-mode: multiply;
-}
-/* line 113, ../../src/sass/components/_item.scss */
-.item.is-active .item__data {
-  margin-top: 0;
-}
-
-/* line 6, ../../src/sass/components/_playing.scss */
+/* line 35, ../../../node_modules/bemify/sass/_bemify.scss */
 .playing {
   margin-top: 0.625rem;
 }
 
-/* line 19, ../../src/sass/components/_playing.scss */
+/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
 .playing__thumbnail {
   width: 16.25rem;
   height: 16.25rem;
   border-radius: 0.125rem;
   background-size: cover;
 }
-/* line 25, ../../src/sass/components/_playing.scss */
+/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
 .playing__description {
   width: 70%;
 }
-/* line 31, ../../src/sass/components/_playing.scss */
-.playing__artist {
-  font-size: 0.75rem;
-}
-/* line 34, ../../src/sass/components/_playing.scss */
-.playing__artist:not(:empty) {
-  padding-top: 0.625rem;
-}
-/* line 39, ../../src/sass/components/_playing.scss */
-.playing__artist:empty + .playing__title {
-  padding-top: 0.625rem;
-}
-/* line 45, ../../src/sass/components/_playing.scss */
+/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
 .playing__title {
   font-size: 0.8125rem;
 }
-/* line 48, ../../src/sass/components/_playing.scss */
+/* line 33, ../../src/sass/components/_playing.scss */
 .playing__title:not(:empty) {
   padding-top: 0.625rem;
 }
+/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
+.playing__artist {
+  font-size: 0.75rem;
+}
+/* line 41, ../../src/sass/components/_playing.scss */
+.playing__artist:not(:empty) {
+  padding-top: 0.625rem;
+}
 
-/* line 58, ../../src/sass/components/_playing.scss */
+/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
 .playing--no-artcover .playing__thumbnail {
-  border-radius: 0;
   background-image: url("../images/ic_album_black_48px.svg");
+  border-radius: 0;
 }
 
 /* line 1, ../../src/sass/components/_overlay.scss */
@@ -1081,8 +1076,8 @@ i.btn, i.btn--player {
   background-size: cover;
   background-blend-mode: color;
 }
-/* line 13, ../../src/sass/_mixins.scss */
-#mask::after {
+/* line 30, ../../src/sass/_mixins.scss */
+#mask:after {
   top: 0;
   right: 0;
   bottom: 0;
@@ -1132,8 +1127,8 @@ main {
 #nav-right .btn--solo-icon {
   margin-bottom: 0.9375rem;
 }
-/* line 13, ../../src/sass/_mixins.scss */
-#nav-right .btn--solo-icon::before {
+/* line 30, ../../src/sass/_mixins.scss */
+#nav-right .btn--solo-icon:before {
   height: 0.0625rem;
   background-color: #181818;
   margin-bottom: 1.25rem;
@@ -1149,8 +1144,8 @@ main {
 #mask {
   z-index: 0;
 }
-/* line 13, ../../src/sass/_mixins.scss */
-#mask::after {
+/* line 30, ../../src/sass/_mixins.scss */
+#mask:after {
   z-index: 1;
 }
 
@@ -1182,8 +1177,8 @@ main {
   -webkit-filter: blur(3.125rem);
 }
 
-/* line 35, ../../../node_modules/bemify/sass/_bemify.scss */
-.show-grid .list {
+/* line 62, ../../../node_modules/bemify/sass/_bemify.scss */
+.show-grid .list.has-results {
   padding-top: 0;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -1200,13 +1195,39 @@ main {
   padding-left: 0;
   padding-right: 0;
 }
-/* line 39, ../../src/sass/states/_show-grid.scss */
-.show-grid .item:hover .item__data {
-  margin-top: 0;
-}
-/* line 43, ../../src/sass/states/_show-grid.scss */
+/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
 .show-grid .item:hover .item__thumbnail {
   background-blend-mode: screen;
+}
+/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
+.show-grid .item:hover .item__meta {
+  margin-top: 0;
+}
+/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
+.show-grid .item--no-artwork .item__thumbnail {
+  width: inherit;
+  height: 12.1875rem;
+}
+/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
+.show-grid .item--no-artwork .item__icon {
+  width: 6.25rem;
+  height: 6.25rem;
+  background-size: 6.25rem 6.25rem;
+}
+/* line 62, ../../../node_modules/bemify/sass/_bemify.scss */
+.show-grid .item.is-active {
+  padding-top: 0;
+  padding-bottom: 0;
+  border-bottom-width: 0;
+}
+/* line 87, ../../src/sass/states/_show-grid.scss */
+.show-grid .item.is-active .item__thumbnail {
+  background-blend-mode: multiply;
+}
+/* line 30, ../../src/sass/_mixins.scss */
+.show-grid .item.is-active .item__thumbnail:after {
+  line-height: 12.1875rem;
+  font-size: 1rem;
 }
 /* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
 .show-grid .item__thumbnail {
@@ -1216,7 +1237,7 @@ main {
   border-radius: 0.125rem;
 }
 /* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
-.show-grid .item__data {
+.show-grid .item__meta {
   overflow: visible;
   height: 5.625rem;
   padding-top: 0.625rem;
@@ -1233,34 +1254,8 @@ main {
   font-size: 0.75rem;
 }
 /* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
-.show-grid .item__meta {
+.show-grid .item__creator {
   bottom: 0;
-}
-/* line 62, ../../../node_modules/bemify/sass/_bemify.scss */
-.show-grid .item.is-active {
-  padding-top: 0;
-  padding-bottom: 0;
-  border-bottom-width: 0;
-}
-/* line 109, ../../src/sass/states/_show-grid.scss */
-.show-grid .item.is-active:hover .item__thumbnail {
-  background-blend-mode: multiply;
-}
-/* line 13, ../../src/sass/_mixins.scss */
-.show-grid .item.is-active .item__thumbnail::after {
-  line-height: 12.1875rem;
-  font-size: 1rem;
-}
-/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
-.show-grid .item--no-artwork .item__thumbnail {
-  width: inherit;
-  height: 12.1875rem;
-}
-/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
-.show-grid .item--no-artwork .item__icon {
-  width: 6.25rem;
-  height: 6.25rem;
-  background-size: 6.25rem 6.25rem;
 }
 
 /* line 3, ../../src/sass/themes/default-theme/_layout.scss */
@@ -1284,17 +1279,16 @@ main {
   background-color: #191919;
 }
 
-/* line 3, ../../src/sass/themes/default-theme/_buttons.scss */
+/* line 52, ../../../node_modules/bemify/sass/_bemify.scss */
 .btn--nav {
   color: #555;
 }
-/* line 6, ../../src/sass/themes/default-theme/_buttons.scss */
+/* line 30, ../../src/sass/_mixins.scss */
 .btn--nav:hover {
   color: #84bd00;
 }
-
-/* line 11, ../../src/sass/themes/default-theme/_buttons.scss */
-.btn--selected {
+/* line 62, ../../../node_modules/bemify/sass/_bemify.scss */
+.btn.is-active {
   color: #84bd00;
 }
 
@@ -1315,12 +1309,12 @@ main {
   color: #555;
 }
 
-/* line 13, ../../src/sass/_mixins.scss */
-#minimize::before {
+/* line 30, ../../src/sass/_mixins.scss */
+#minimize:before {
   background-color: #555;
 }
-/* line 13, ../../src/sass/_mixins.scss */
-#minimize:hover::before {
+/* line 30, ../../src/sass/_mixins.scss */
+#minimize:hover:before {
   background-color: #84bd00;
 }
 
@@ -1328,7 +1322,7 @@ main {
 #maximize {
   border-color: #555;
 }
-/* line 32, ../../src/sass/themes/default-theme/_titlebar.scss */
+/* line 30, ../../src/sass/_mixins.scss */
 #maximize:hover {
   border-color: #84bd00;
 }
@@ -1342,11 +1336,11 @@ main {
   overflow: hidden;
   outline: 0;
 }
-/* line 105, ../../src/sass/_mixins.scss */
+/* line 122, ../../src/sass/_mixins.scss */
 #terminate:hover::after, #terminate:hover::before {
   background-color: #84bd00;
 }
-/* line 111, ../../src/sass/_mixins.scss */
+/* line 128, ../../src/sass/_mixins.scss */
 #terminate::after, #terminate::before {
   content: '';
   position: absolute;
@@ -1357,64 +1351,64 @@ main {
   margin-top: -1px;
   background: #555;
 }
-/* line 123, ../../src/sass/_mixins.scss */
+/* line 140, ../../src/sass/_mixins.scss */
 #terminate::before {
   -moz-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-/* line 127, ../../src/sass/_mixins.scss */
+/* line 144, ../../src/sass/_mixins.scss */
 #terminate::after {
   -moz-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
-/* line 131, ../../src/sass/_mixins.scss */
+/* line 148, ../../src/sass/_mixins.scss */
 #terminate.big {
   -moz-transform: scale(3);
   -ms-transform: scale(3);
   -webkit-transform: scale(3);
   transform: scale(3);
 }
-/* line 136, ../../src/sass/_mixins.scss */
+/* line 153, ../../src/sass/_mixins.scss */
 #terminate.hairline::after, #terminate.hairline::before {
   height: 1px;
 }
-/* line 143, ../../src/sass/_mixins.scss */
+/* line 160, ../../src/sass/_mixins.scss */
 #terminate.thick::after, #terminate.thick::before {
   height: 4px;
   margin-top: -2px;
 }
-/* line 151, ../../src/sass/_mixins.scss */
+/* line 168, ../../src/sass/_mixins.scss */
 #terminate.black::after, #terminate.black::before {
   height: 8px;
   margin-top: -4px;
 }
-/* line 159, ../../src/sass/_mixins.scss */
+/* line 176, ../../src/sass/_mixins.scss */
 #terminate.heavy::after, #terminate.heavy::before {
   height: 12px;
   margin-top: -6px;
 }
-/* line 167, ../../src/sass/_mixins.scss */
+/* line 184, ../../src/sass/_mixins.scss */
 #terminate.pointy::after, #terminate.pointy::before {
   width: 200%;
   left: -50%;
 }
-/* line 175, ../../src/sass/_mixins.scss */
+/* line 192, ../../src/sass/_mixins.scss */
 #terminate.rounded::after, #terminate.rounded::before {
   border-radius: 5px;
 }
-/* line 182, ../../src/sass/_mixins.scss */
+/* line 199, ../../src/sass/_mixins.scss */
 #terminate.blades::after, #terminate.blades::before {
   border-radius: 5px 0;
 }
-/* line 189, ../../src/sass/_mixins.scss */
+/* line 206, ../../src/sass/_mixins.scss */
 #terminate.warp::after, #terminate.warp::before {
   border-radius: 120% 0;
 }
-/* line 196, ../../src/sass/_mixins.scss */
+/* line 213, ../../src/sass/_mixins.scss */
 #terminate.fat::after, #terminate.fat::before {
   border-radius: 100%;
 }
@@ -1440,67 +1434,43 @@ main {
 progress {
   box-shadow: inset 0 -0.0625rem 0.0625rem #333333;
 }
-/* line 6, ../../src/sass/themes/default-theme/_player.scss */
+/* line 7, ../../src/sass/themes/default-theme/_player.scss */
 progress::-webkit-progress-value {
   background: linear-gradient(to top, #000000 10%, #84bd00 100%);
 }
-/* line 10, ../../src/sass/themes/default-theme/_player.scss */
+/* line 11, ../../src/sass/themes/default-theme/_player.scss */
 progress::-webkit-progress-bar {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-/* line 17, ../../src/sass/themes/default-theme/_player.scss */
+/* line 19, ../../src/sass/themes/default-theme/_player.scss */
 .btn--player {
   color: #555;
   text-shadow: 0 0.0625rem 0.0625rem #818181;
 }
-/* line 21, ../../src/sass/themes/default-theme/_player.scss */
+/* line 30, ../../src/sass/_mixins.scss */
 .btn--player:hover {
   color: #84bd00;
 }
 
-/* line 2, ../../src/sass/themes/default-theme/_list.scss */
+/* line 1, ../../src/sass/themes/default-theme/_list.scss */
 .list.no-results {
   color: #555;
 }
 
-/* line 7, ../../src/sass/themes/default-theme/_item.scss */
+/* line 30, ../../src/sass/_mixins.scss */
 .item:hover {
   background-color: #191919;
 }
-/* line 10, ../../src/sass/themes/default-theme/_item.scss */
+/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
 .item:hover .item__title {
   color: #84bd00;
 }
-
-/* line 19, ../../src/sass/themes/default-theme/_item.scss */
-.item__thumbnail {
-  background-color: #111111;
-}
-/* line 23, ../../src/sass/themes/default-theme/_item.scss */
-.item__data {
-  text-shadow: 0 0.0625rem 0.125rem #000;
-}
-/* line 27, ../../src/sass/themes/default-theme/_item.scss */
-.item__meta {
-  color: #444;
-}
-/* line 31, ../../src/sass/themes/default-theme/_item.scss */
-.item__title {
-  color: #818181;
-}
-/* line 35, ../../src/sass/themes/default-theme/_item.scss */
-.item__tag {
-  color: #fff;
-  background-color: #000;
-}
-
 /* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
 .item--no-artwork:hover .item__thumbnail {
   background-color: #171717;
 }
-
-/* line 53, ../../src/sass/themes/default-theme/_item.scss */
+/* line 14, ../../src/sass/_mixins.scss */
 .item.is-active {
   background-color: #151515;
   border-bottom-color: #252525;
@@ -1509,10 +1479,27 @@ progress::-webkit-progress-bar {
 .item.is-active .item__thumbnail {
   background-color: #666;
 }
-
 /* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
 .item.is-active.item--no-artwork .item__thumbnail {
   background-color: #151515;
+}
+
+/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
+.item__thumbnail {
+  background-color: #111111;
+}
+/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
+.item__creator {
+  color: #444;
+}
+/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
+.item__title {
+  color: #818181;
+}
+/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
+.item__tag {
+  background-color: #000;
+  color: #fff;
 }
 
 /* line 2, ../../src/sass/themes/default-theme/_playing.scss */
@@ -1534,12 +1521,12 @@ progress::-webkit-progress-bar {
   background-color: #111111;
   background-blend-mode: multiply;
 }
-/* line 13, ../../src/sass/_mixins.scss */
-#mask::after {
+/* line 30, ../../src/sass/_mixins.scss */
+#mask:after {
   background-color: #000;
 }
 
-/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
-.item.is-active.item--no-artwork__thumbnail {
+/* line 3, ../../src/sass/themes/default-theme/states/_show-grid.scss */
+.show-grid .item.is-active.item--no-artwork .item__thumbnail {
   background-color: #161616;
 }

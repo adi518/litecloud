@@ -1,73 +1,79 @@
 // scss-lint:disable Compass::PropertyWithMixin
 // scss-lint:disable MergeableSelector
 //
-// BLOCK
+// COMPONENT
 //
-.item {
-    &:hover {
+@include component ('item') {
+    //
+    @include pseudo ('hover') {
         background-color: $color-191;
+    }
 
-        .item__title {
-            color: $color-pistachio;
+    @include scope ('.item:hover') {
+        @include component ('item') {
+            //
+            @include element ('title') {
+                color: $color-pistachio;
+            }
+        }
+    }
+
+    @include scope ('.item--no-artwork:hover') {
+        //
+        @include component ('item') {
+            //
+            @include element ('thumbnail') {
+                background-color: $color-171;
+            }
+        }
+    }
+
+    @include scope ('.item.is-active') {
+        //
+        background-color: $color-cod-gray;
+        border-bottom-color: $color-mine-shaft;
+
+        @include component ('item') {
+            //
+            @include element ('thumbnail') {
+                background-color: $color-dove-gray;
+            }
+        }
+    }
+
+    @include scope ('.item.is-active.item--no-artwork') {
+        //
+        @include component ('item') {
+            //
+            @include element ('thumbnail') {
+                background-color: $color-cod-gray;
+            }
         }
     }
 }
 //
 // ELEMENTS
 //
-.item {
-    &__thumbnail {
+@include component ('item') {
+    //
+    @include element ('thumbnail') {
         background-color: $color-111;
     }
-
-    &__data {
-        text-shadow: 0 #{to-rem(1)} #{to-rem(2)} $color-black;
+    //
+    @include element ('meta') {
+        //
     }
-
-    &__meta {
+    //
+    @include element ('creator') {
         color: $color-tundora;
     }
-
-    &__title {
+    //
+    @include element ('title') {
         color: $color-gray;
     }
-
-    &__tag {
-        color: $color-white;
+    //
+    @include element ('tag') {
         background-color: $color-black;
-    }
-}
-//
-// SCOPES
-//
-.item--no-artwork:hover {
-    //
-    @include block ('item') {
-        //
-        @include element ('thumbnail') {
-            background-color: $color-171;
-        }
-    }
-}
-
-.item.is-active {
-    background-color: $color-cod-gray;
-    border-bottom-color: $color-mine-shaft;
-
-    @include block ('item') {
-        //
-        @include element ('thumbnail') {
-            background-color: $color-dove-gray;
-        }
-    }
-}
-
-.item.is-active.item--no-artwork {
-    //
-    @include block ('item') {
-        //
-        @include element ('thumbnail') {
-            background-color: $color-cod-gray;
-        }
+        color: $color-white;
     }
 }

@@ -35,7 +35,7 @@ if (isdev) {
 cache = $.extend({}, cache, {
     version: pjson.version,
     test: true,
-    testKeyword: 'tove styrke',
+    testKeyword: 'strange love',
     keyupDebounceDelay: 500,
     loaderDelay: 1500,
     init: {
@@ -46,7 +46,7 @@ cache = $.extend({}, cache, {
     truncatedTitleLength: 20,
     played: [],
     queryOptions: {
-        limit: 50,
+        limit: 50
     },
     $window: $(window)
 });
@@ -54,10 +54,7 @@ cache = $.extend({}, cache, {
 $(function () {
 
     var selectors = [
-        '#body',
-        '.toggle-grid-view',
-        '.toggle-repeat',
-        '.toggle-shuffle',
+        '#body', '.toggle-grid-view', '.toggle-repeat', '.toggle-shuffle',
         // components
         '#minimize',
         '#maximize',
@@ -80,16 +77,14 @@ $(function () {
         '#playing',
         '#playing-thumbnail',
         '#playing-title',
-        '#playing-artist',
+        '#playing-artist'
     ];
 
     selectors.forEach(function (selector) {
         try {
             /* beautify ignore:start */
             var _selector = selector;
-            _selector = _selector.replace(/[#]/g, '')
-                                    .replace(/\./g, '')
-                                        .replace(/[-]/g, '_');
+            _selector = _selector.replace(/[#]/g, '').replace(/\./g, '').replace(/[-]/g, '_');
             /* beautify ignore:end */
             cache['$' + _selector] = $$(selector);
         } catch (e) {
@@ -126,16 +121,21 @@ $(function () {
         seconds = seconds % 3600;
         var minutes = parseInt(seconds / 60, 10);
         if (minutes) {
-            if (minutes < 9)
+            if (minutes < 9) {
                 padWithZero(minutes);
-        } else
+            }
+        } else {
             minutes = '00';
+        }
         seconds = Math.floor(seconds % 60);
-        if (seconds < 10)
+        if (seconds < 10) {
             seconds = padWithZero(seconds);
-        else if (seconds < 1)
+        } else if (seconds < 1) {
             seconds = '00';
-        return (hours ? (hours + ':') : '') + minutes + ':' + seconds;
+        }
+        return (hours ?
+            (hours + ':') :
+            '') + minutes + ':' + seconds;
     }
 
     function padWithZero(val) {
@@ -163,17 +163,21 @@ $(function () {
                         track.artwork_url.replace(/https:\/\/i1.sndcdn.com/g, 'assets/images/mock');
                     }
                 }
-                markup += '<div class="item' + (!track.artwork_url ? ' item--no-artwork' : '') + '">';
-                markup += '<span class="item__thumbnail" style="' + (track.artwork_url ? 'background-image: url(' + track.artwork_url + ')' : '') + '">';
+                markup += '<div class="item' + (!track.artwork_url ?
+                    ' item--no-artwork' :
+                    '') + '">';
+                markup += '<span class="item__thumbnail" style="' + (track.artwork_url ?
+                    'background-image: url(' + track.artwork_url + ')' :
+                    '') + '">';
                 markup += '<i class="item__icon"></i>';
                 if (track.genre) {
                     markup += '<span class="item__tag" title="' + track.genre + '">#' + track.genre + '</span>';
                 }
                 // markup += '<span class="item__truncated">' + track.title.substring(0, cache.truncatedTitleLength) + '</span>';
                 markup += '</span>';
-                markup += '<ul class="item__data">';
+                markup += '<ul class="item__meta">';
                 markup += '<li class="item__title" title="' + track.custom.title + '">' + track.custom.title + '</li>';
-                markup += '<li class="item__meta">';
+                markup += '<li class="item__creator">';
                 markup += '<small class="item__author" title="' + track.user.username + '">' + track.user.username + '</small>';
                 duration = msToHMS(track.duration);
                 markup += '<small class="item__duration" title="' + duration + '">' + duration + '</small>';
@@ -184,10 +188,17 @@ $(function () {
             console.info('total tracks:', tracks.length);
             console.info('total art-covers:', counter);
         } else {
-            markup = '<div class="item">Your search - <b>' + cache.searchQuery + '</b> - did not match any tracks.</div>';
+            markup = 'Your search - <b>' + cache.searchQuery + '</b> - did not match any tracks.';
             cache.$body.removeClass('show-grid-view');
         }
-        cache.$items = cache.$list.toggleClass('no-results', !tracks.length)[options.append ? 'append' : 'html'](markup);
+        if (tracks.length) {
+            cache.$list.addClass('has-results').removeClass('no-results');
+        } else {
+            cache.$list.removeClass('has-results').addClass('no-results');
+        }
+        cache.$items = cache.$list[options.append ?
+            'append' :
+            'html'](markup);
         cache.$items = cache.$items.children();
     }
 
@@ -196,7 +207,9 @@ $(function () {
             reset = true;
         }
         var el = cache.$progress[0],
-            percentage = reset ? 0 : Math.ceil((100 / cache.player.streamInfo.duration) * cache.player.currentTime());
+            percentage = reset ?
+            0 :
+            Math.ceil((100 / cache.player.streamInfo.duration) * cache.player.currentTime());
         el.value = percentage;
         // Update the progress bar's text (for browsers that don't support the progress element)
         el.innerHTML = percentage + '% played';
@@ -293,7 +306,7 @@ $(function () {
         var tmp = raw.split('-');
         return {
             artist: tmp[0] || '',
-            title: tmp[1] || '',
+            title: tmp[1] || ''
         };
     }
 
@@ -318,7 +331,9 @@ $(function () {
             }
             var $item = $(this);
             var track = cache.tracks[$item.index()];
-            var hasArtCover = track.artwork_url ? true : false;
+            var hasArtCover = track.artwork_url ?
+                true :
+                false;
             // abort if user hit a playing track
             if (cache.index === $item.index()) {
                 return;
@@ -383,7 +398,7 @@ $(function () {
             }
         });
 
-        cache.$nav__buttons = $('.btn', cache.$nav).click(function () {
+        cache.$nav__buttons = $('.btn--nav', cache.$nav).click(function () {
             var $btn = $(this);
             var id = $btn.prop('id');
             switch (id) {
@@ -409,13 +424,17 @@ $(function () {
                 }
                 break;
             case 'shuffle':
-                cache.shuffle = cache.shuffle ? false : true;
+                cache.shuffle = cache.shuffle ?
+                    false :
+                    true;
                 break;
             case 'repeat':
-                cache.repeat = cache.repeat ? false : true;
+                cache.repeat = cache.repeat ?
+                    false :
+                    true;
                 break;
             }
-            $btn.toggleClass('btn--selected');
+            $btn.toggleClass('is-active');
         });
 
         cache.$progress.click(function (e) {
@@ -425,29 +444,11 @@ $(function () {
             }
         });
 
-        // cache.$mute.click(function () {
-        //     if (!cache.player) {
-        //         return;
-        //     }
-        //     if (cache.player.getVolume() > 0) {
-        //         cache.volume = cache.volume;
-        //         cache.player.setVolume(0);
-        //         changeIconButtonType(this, 'volume_off');
-        //     } else {
-        //         cache.player.setVolume(cache.volume);
-        //         changeIconButtonType(this, 'volume_up');
-        //     }
-        // });
-
         // http://stackoverflow.com/questions/6271237/detecting-when-user-scrolls-to-bottom-of-div-with-jquery
         cache.$main.scroll(function () {
             var $this = $(this);
             var scrollPosition = $this.scrollTop() + $this.outerHeight();
-            var totalHeight = this.scrollHeight +
-                parseInt($this.css('padding-top'), 10) +
-                parseInt($this.css('padding-bottom'), 10) +
-                parseInt($this.css('border-top-width'), 10) +
-                parseInt($this.css('border-bottom-width'), 10);
+            var totalHeight = this.scrollHeight + parseInt($this.css('padding-top'), 10) + parseInt($this.css('padding-bottom'), 10) + parseInt($this.css('border-top-width'), 10) + parseInt($this.css('border-bottom-width'), 10);
             if (scrollPosition == totalHeight) {
                 if (cache.query[cache.offset + 1]) {
                     if (isdev) {
@@ -465,7 +466,7 @@ $(function () {
             }
             cache.searchQuery = this.value;
             getTracks(this.value, null, {
-                new: true,
+                new: true
             });
         }, cache.keyupDebounceDelay));
 

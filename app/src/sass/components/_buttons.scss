@@ -13,49 +13,61 @@ span {
 i.btn {
     font-style: normal;
 }
-
 //
-// STYLES
+// PRESETS
 //
-
-%clear-btn {
+%btn--clear {
     @extend %background-transparent;
     border-width: 0;
 }
-
-.btn {
+//
+// COMPONENT
+//
+@include component ('btn') {
+    //
     @extend %no-outline;
     @extend %cursor-pointer;
     transition: color .2s;
-
-    .icon {
+}
+//
+// ELEMENTS
+//
+@include component ('btn') {
+    //
+    @include element ('icon') {
         font-size: to-rem(24);
     }
 }
+//
+// MODIFIERS
+//
+@include component ('btn') {
+    //
+    @include modifier ('nav') {
+        @extend %btn--clear;
+        @extend %full-width;
+        @extend %uppercase;
+        line-height: to-rem(32);
+        text-align: left;
 
-.btn--nav {
-    @extend %clear-btn;
-    @extend %full-width;
-    @extend %uppercase;
-    line-height: to-rem(32);
-    text-align: left;
+        @include scope ('.btn--nav') {
+            .icon {
+                vertical-align: top;
 
-    .icon {
-        vertical-align: top;
-        // line-height: inherit;
-
-        ~ span {
-            padding-left: to-rem(8);
+                ~ span {
+                    padding-left: to-rem(8);
+                }
+            }
         }
-    }
-}
 
-.btn--nav.btn--solo-icon {
-    width: auto;
-    padding-left: 0;
-    padding-right: 0;
+        @include scope ('.btn--nav.btn--solo-icon') {
+            width: auto;
+            padding-left: 0;
+            padding-right: 0;
 
-    .icon {
-        @extend %block;
+            .icon {
+                @extend %block;
+            }
+        }
     }
 }

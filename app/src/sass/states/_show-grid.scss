@@ -1,20 +1,25 @@
 // scss-lint:disable Compass::PropertyWithMixin
+// scss-lint:disable Indentation
 
 .show-grid {
     //
-    // LIST BLOCK
+    // LIST COMPONENT
     //
-    @include block ('list') {
-        @extend %flex;
-        padding-top: 0;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        margin-left: to-rem(20);
+    @include component ('list') {
+        //
+        @include state(results, has) {
+             @extend %flex;
+            padding-top: 0;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-left: to-rem(20);
+        }
     }
     //
-    // ITEM BLOCK
+    // ITEM COMPONENT
     //
-    @include block ('item') {
+    @include component ('item') {
+        //
         @extend %lowercase;
         width: $large-thumbnail-size;
         font-size: to-rem(14);
@@ -25,6 +30,7 @@
         padding-left: 0;
         padding-right: 0;
 
+        // TODO: bemify
         small {
             @extend %inline-block;
 
@@ -33,23 +39,66 @@
             }
         }
 
-        &:hover {
+        @include pseudo ('hover') {
             @extend %background-transparent;
+        }
 
-            .item__data {
-                margin-top: 0;
+        @include scope ('.show-grid .item:hover') {
+            //
+            @include component ('item') {
+                //
+                @include element ('thumbnail') {
+                    background-blend-mode: screen;
+                }
+
+                @include element ('meta') {
+                    margin-top: 0;
+                }
             }
+        }
 
+        @include scope ('.show-grid .item--no-artwork') {
+            //
+            @include component ('item') {
+                //
+                @include element ('thumbnail') {
+                    @extend %block;
+                    width: inherit;
+                    height: $large-thumbnail-size;
+                }
+
+                @include element ('icon') {
+                    $dim: to-rem(100);
+                    @include dim($dim);
+                    background-size: #{$dim $dim};
+                }
+            }
+        }
+
+        @include state ('active') {
+            @extend %background-transparent;
+            padding-top: 0;
+            padding-bottom: 0;
+            border-bottom-width: 0;
+        }
+
+        @include scope ('.show-grid .item.is-active') {
+            //
             .item__thumbnail {
-                background-blend-mode: screen;
+                //
+                background-blend-mode: multiply;
+
+                @include pseudo ('after') {
+                    line-height: $large-thumbnail-size;
+                    font-size: to-rem(16);
+                }
             }
         }
     }
     //
     // ITEM ELEMENTS
     //
-    @include block ('item') {
-        //
+    @include component ('item') {
         //
         @include element ('thumbnail') {
             @extend %relative;
@@ -61,7 +110,7 @@
             border-radius: to-rem(2);
         }
 
-        @include element ('data') {
+        @include element ('meta') {
             @extend %relative;
             overflow: visible;
             height: to-rem(90);
@@ -83,7 +132,7 @@
             @extend %float-right;
         }
 
-        @include element ('meta') {
+        @include element ('creator') {
             @extend %absolute;
             @extend %full-width;
             bottom: 0;
@@ -91,58 +140,6 @@
 
         @include element ('tag') {
             @extend %show;
-        }
-    }
-    //
-    // ITEM MODIFIERS
-    //
-    @include block ('item') {
-        //
-        //
-        @include state ('active') {
-            @extend %background-transparent;
-            padding-top: 0;
-            padding-bottom: 0;
-            border-bottom-width: 0;
-
-            &:hover {
-                .item__thumbnail {
-                    background-blend-mode: multiply;
-                }
-            }
-
-            .item__thumbnail {
-                //
-                @include pseudo ('after') {
-                    line-height: $large-thumbnail-size;
-                    font-size: to-rem(16);
-                }
-            }
-        }
-    }
-    //
-    // ITEM SCOPES
-    //
-    //
-    //
-    //
-    .item--no-artwork {
-        //
-        //
-        @include block ('item') {
-            //
-            //
-            @include element ('thumbnail') {
-                @extend %block;
-                width: inherit;
-                height: $large-thumbnail-size;
-            }
-
-            @include element ('icon') {
-                $dim: to-rem(100);
-                @include dim($dim);
-                background-size: #{$dim $dim};
-            }
         }
     }
 }

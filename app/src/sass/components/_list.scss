@@ -1,19 +1,18 @@
 // scss-lint:disable Compass::PropertyWithMixin
-
-.list {
+// scss-lint:disable Indentation
+//
+// COMPONENT
+//
+@include component ('list') {
     margin-left: to-rem(25);
     margin-right: to-rem(20);
     padding-top: to-rem(35);
     padding-bottom: to-rem(35);
-}
-
-.no-results {
-    .item {
-        @extend %cursor-default;
+    //
+    @include state(results, no) {
+         @extend %cursor-default;
         @extend %talign-center;
-
-        &:hover {
-            @extend %background-transparent;
-        }
+        @extend %uppercase;
+        margin-right: to-rem(25);
     }
 }

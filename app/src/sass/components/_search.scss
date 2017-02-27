@@ -1,7 +1,6 @@
 // scss-lint:disable Compass::PropertyWithMixin
 
 #search {
-    @extend %block;
     @extend %full-width;
     @extend %no-outline;
     line-height: $search-line-height;

@@ -1,29 +1,83 @@
 // scss-lint:disable Compass::PropertyWithMixin
 //
-// BLOCK
+// COMPONENT
 //
-@include block ('item') {
+@include component ('item') {
     @extend %cursor-pointer;
     @extend %clearfix;
     @extend %uppercase;
     padding-right: to-rem(35);
     transition: padding .2s;
 
-    &:hover {
-        .item__data {
+    &:not(:first-child) {
+        margin-top: to-rem(35);
+    }
+
+    @include scope ('.item:hover') {
+        .item__meta {
             margin-top: to-rem(10);
         }
     }
 
-    &:not(:first-child) {
-        margin-top: to-rem(35);
+    @include scope ('.item--no-artwork') {
+        //
+        @include pseudo ('hover') {
+            .item__icon {
+                opacity: .5;
+            }
+        }
+
+        @include component ('item') {
+            //
+            @include element ('thumbnail') {
+                image-rendering: auto;
+            }
+
+            @include element ('icon') {
+                @extend %block;
+                @extend %center;
+                @include vertical-align;
+                $dim: to-rem(70);
+                @include dim($dim);
+                background-size: $dim $dim;
+                background-image: url($no-artwork-path);
+                opacity: .45;
+            }
+        }
+    }
+
+    @include state ('active') {
+        padding-top: to-rem(10);
+        padding-bottom: to-rem(10);
+        padding-left: to-rem(10);
+        border-bottom: to-rem(1) solid;
+    }
+
+    @include scope ('.item.is-active') {
+        //
+        @include pseudo ('hover') {
+            .item__meta {
+                margin-top: 0;
+            }
+        }
+
+        @include component ('item') {
+            //
+            @include element ('thumbnail') {
+                @extend %relative;
+                background-blend-mode: multiply;
+            }
+
+            @include element ('meta') {
+                margin-top: 0;
+            }
+        }
     }
 }
 //
 // ELEMENTS
 //
-@include block ('item') {
-    //
+@include component ('item') {
     //
     @include element ('thumbnail') {
         @extend %float-left;
@@ -34,21 +88,18 @@
         transition: background-color .2s, background-blend-mode .2s;
         image-rendering: -webkit-optimize-contrast;
     }
-    //
-    //
-    @include element ('data') {
+
+    @include element ('meta') {
         @extend %unstyled-list;
         @extend %overflow-hidden; // prevents content wrap-around
         list-style-type: none;
         transition: margin-top, .1s;
     }
-    //
-    //
+
     @include element ('truncated') {
         font-size: 0;
     }
-    //
-    //
+
     @include element ('tag') {
         @extend %white-space-nowrap;
         @extend %overflow-hidden;
@@ -62,59 +113,3 @@
         max-width: 70%;
     }
 }
-//
-// MODIFIERS
-//
-@include block ('item') {
-    //
-    //
-    @include modifier ('no-artwork') {
-        //
-        &:hover {
-            .item__icon {
-                opacity: .5;
-            }
-        }
-
-        .item__icon {
-            @include vertical-align;
-            $dim: to-rem(70);
-            @include dim($dim);
-            background-size: $dim $dim;
-            background-image: url($no-artwork-path);
-            display: block;
-            margin: 0 auto;
-            opacity: .45;
-        }
-
-        .item__thumbnail {
-            image-rendering: auto;
-        }
-    }
-    //
-    //
-    @include state ('active') {
-        padding-top: to-rem(10);
-        padding-bottom: to-rem(10);
-        padding-left: to-rem(10);
-        border-bottom: to-rem(1) solid;
-
-        &:hover {
-            .item__data {
-                margin-top: 0;
-            }
-        }
-
-        .item__thumbnail {
-            @extend %relative;
-            background-blend-mode: multiply;
-        }
-
-        .item__data {
-            margin-top: 0;
-        }
-    }
-}
-//
-// SCOPES
-//

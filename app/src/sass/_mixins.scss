@@ -9,8 +9,25 @@
 @import '../../../node_modules/bemify/sass/bemify';
 //
 //
+@mixin scope($rule) {
+     @at-root{
+        #{$rule} {
+            @content;
+        }
+    }
+}
+//
+//
 @mixin pseudo($type) {
-    &::#{$type} {
+    $concatenator: null;
+    @if index($type, ('before' 'after')) {
+        $concatenator: '::';
+    }
+    @else {
+        $concatenator: ':';
+    }
+
+    &#{$concatenator + $type} {
         @content;
     }
 }

@@ -1,5 +1,7 @@
-.item.is-active.item--no-artwork {
-    @include element('thumbnail') {
-        background-color: $color-161;
+.show-grid {
+    .item.is-active.item--no-artwork {
+        .item__thumbnail {
+            background-color: $color-161;
+        }
     }
 }
