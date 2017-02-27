@@ -5,9 +5,7 @@
 
 module.exports = function (grunt) {
 
-    grunt.loadNpmTasks('grunt-contrib-compass');
-    grunt.loadNpmTasks('grunt-contrib-pug');
-    grunt.loadNpmTasks('grunt-contrib-watch');
+    require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -45,9 +43,16 @@ module.exports = function (grunt) {
         },
         pug: {
             compile: {
-                files: {
-                    'app/index.html': 'app/src/views/*'
-                }
+                options: {
+                    pretty: true,
+                },
+                files: [{
+                    cwd: 'app/src/views',
+                    src: '**/*.pug',
+                    dest: 'app/',
+                    expand: true,
+                    ext: '.html',
+                }]
             }
         }
     });
