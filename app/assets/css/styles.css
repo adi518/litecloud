@@ -1016,6 +1016,8 @@ progress::-webkit-progress-value {
   top: 0.4375rem;
   padding-left: 0.3125rem;
   padding-right: 0.3125rem;
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
   border-radius: 0.125rem 0 0 0.125rem;
   max-width: 70%;
 }
