@@ -9,9 +9,7 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.jsx?/,
-        // include: path.resolve(__dirname, 'app/src/'),
-        exclude: /node_modules/,
+        test: /\.jsx?/,  
         loader: 'babel-loader'
       }
     ]
