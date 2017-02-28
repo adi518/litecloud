@@ -1,18 +1,15 @@
 {
   "parser": "babel-eslint",
-  "extends": "eslint-config-airbnb",
+  # "extends": "eslint-config-airbnb",
   "env": {
     "browser": false,
     "node": true,
-    "jasmine": false,
     "es6": true
   },
   "ecmaFeatures": {
     "modules": false
   },
   "rules": {
-    "import/no-extraneous-dependencies": [2, {  }],
-    "linebreak-style": 0,
     "strict": 0,
     no-undef: 2,
     "max-len": [2, 200, 4],
@@ -30,7 +27,14 @@
     "id-length": 0, // not sure why airbnb turned this on. gross!
     "no-underscore-dangle": 0,
     "no-console": 0,
-    "no-alert": 0
+    "no-alert": 0,
+    # additions
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "object-curly-spacing": 0,
+    "react/jsx-space-before-closing": 0,
+    "react/jsx-tag-spacing": 0,
+    "import/no-extraneous-dependencies": [0, {  }],
+    "linebreak-style": 0,
   },
   "plugins": [
     "react"
