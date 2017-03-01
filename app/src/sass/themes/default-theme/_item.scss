@@ -10,6 +10,7 @@
     }
 
     @include scope ('.item:hover') {
+        //
         @include component ('item') {
             //
             @include element ('title') {

@@ -5,6 +5,14 @@
 @include component ('playing') {
     @extend %cursor-default;
     margin-top: to-rem(10);
+
+    @include scope('.playing--no-artwork') {
+        //
+        .playing__thumbnail {
+            background-image: url($no-artwork-path);
+            border-radius: 0;
+        }
+    }
 }
 //
 // ELEMENTS
@@ -40,19 +48,6 @@
 
         &:not(:empty) {
             padding-top: to-rem(10);
-        }
-    }
-}
-//
-// SCOPES
-//
-.playing--no-artcover {
-    //
-    @include component ('playing') {
-        //
-        @include element ('thumbnail') {
-            background-image: url($no-artwork-path);
-            border-radius: 0;
         }
     }
 }

@@ -43,6 +43,7 @@ function createWindow() {
         height: 1024,
         icon: 'favicon.ico',
         frame: false,
+        thickFrame: false,
     }
 
     if (isdev) {

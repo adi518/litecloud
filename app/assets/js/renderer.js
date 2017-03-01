@@ -1,3 +1,4 @@
+/* eslint-disable */
 // This file is required by the index.html file and will
 // be executed in the renderer process for that window.
 // All of the Node.js APIs are available in this process.
@@ -35,7 +36,7 @@ if (isdev) {
 cache = $.extend({}, cache, {
     version: pjson.version,
     test: true,
-    testKeyword: 'strange love',
+    testKeyword: 'lana del rey',
     keyupDebounceDelay: 500,
     loaderDelay: 1500,
     init: {
@@ -166,15 +167,15 @@ $(function () {
                 markup += '<div class="item' + (!track.artwork_url ?
                     ' item--no-artwork' :
                     '') + '">';
-                markup += '<span class="item__thumbnail" style="' + (track.artwork_url ?
+                markup += '<div class="item__thumbnail" style="' + (track.artwork_url ?
                     'background-image: url(' + track.artwork_url + ')' :
                     '') + '">';
                 markup += '<i class="item__icon"></i>';
                 if (track.genre) {
-                    markup += '<span class="item__tag" title="' + track.genre + '">#' + track.genre + '</span>';
+                    markup += '<div class="item__tag" title="' + track.genre + '">#' + track.genre + '</div>';
                 }
                 // markup += '<span class="item__truncated">' + track.title.substring(0, cache.truncatedTitleLength) + '</span>';
-                markup += '</span>';
+                markup += '</div>';
                 markup += '<ul class="item__meta">';
                 markup += '<li class="item__title" title="' + track.custom.title + '">' + track.custom.title + '</li>';
                 markup += '<li class="item__creator">';
@@ -331,7 +332,7 @@ $(function () {
             }
             var $item = $(this);
             var track = cache.tracks[$item.index()];
-            var hasArtCover = track.artwork_url ?
+            var hasArtwork = track.artwork_url ?
                 true :
                 false;
             // abort if user hit a playing track
@@ -343,13 +344,13 @@ $(function () {
                 $(cache.$items.get(cache.index)).toggleClass('is-active item--visited');
             }
             // cache.$mask.css('background-image', 'url(' + (track.artwork_url || '') + ')');
-            // cache.$body.toggleClass('show-mask', hasArtCover).toggleClass('animate-mask', hasArtCover);
+            // cache.$body.toggleClass('show-mask', hasArtwork).toggleClass('animate-mask', hasArtwork);
             // show what's playing
             cache.$body.addClass('show-playing');
-            cache.$playing.toggleClass('playing--no-artcover', !hasArtCover);
+            cache.$playing.toggleClass('playing--no-artwork', !hasArtwork);
             cache.$playing_title.text(track.custom.title);
             cache.$playing_artist.text(track.custom.artist);
-            if (hasArtCover) {
+            if (hasArtwork) {
                 cache.$playing_thumbnail.css('background-image', 'url(' + track.artwork_url + ')');
             } else {
                 cache.$playing_thumbnail.css('background-image', '');

@@ -24,7 +24,6 @@ i.btn {
 // COMPONENT
 //
 @include component ('btn') {
-    //
     @extend %no-outline;
     @extend %cursor-pointer;
     transition: color .2s;
@@ -51,6 +50,7 @@ i.btn {
         text-align: left;
 
         @include scope ('.btn--nav') {
+            //
             .icon {
                 vertical-align: top;
 
@@ -61,6 +61,7 @@ i.btn {
         }
 
         @include scope ('.btn--nav.btn--solo-icon') {
+            //
             width: auto;
             padding-left: 0;
             padding-right: 0;

@@ -10,7 +10,7 @@ export default class List extends Component {
   }
 
   fill() {
-    return this.state.items.map((item, index) => <li key={index}>{item}</li>);
+    return this.state.items.map((item, index) => <Item key={index}/>);
   }
 
   render() {

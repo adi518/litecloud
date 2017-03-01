@@ -16,7 +16,7 @@
 
 /* line 15, ../../src/sass/_placeholders.scss */
 .show-mask #mask:after, .show-loader #overlay,
-.show-loader #loader, .show-grid .item__tag, .show-player #player, .show-playing #playing, .block, .btn--nav.btn--solo-icon .icon, progress, .item--no-artwork .item__icon, #nav-right .btn--solo-icon:before, .show-grid .item--no-artwork .item__thumbnail, .show-grid .item__thumbnail {
+.show-loader #loader, .show-grid .item__tag, .show-player #player, .show-playing #playing, .block, .btn--nav.btn--solo-icon .icon, progress, .item--no-artwork .item__icon, #nav-right .btn--solo-icon:before, .show-grid .item__thumbnail {
   display: block;
 }
 
@@ -42,12 +42,12 @@ span.btn, #logo, #title, .show-grid .item small {
 }
 
 /* line 51, ../../src/sass/_placeholders.scss */
-.item.is-active .item__thumbnail, .show-grid .item__thumbnail, .show-grid .item__meta {
+#minimize, .item.is-active .item__thumbnail, .show-grid .item__thumbnail, .show-grid .item__meta {
   position: relative;
 }
 
 /* line 55, ../../src/sass/_placeholders.scss */
-.item__tag, .show-grid .item__creator {
+#minimize:before, .item__tag, .show-grid .item__creator {
   position: absolute;
 }
 
@@ -155,13 +155,8 @@ body {
 }
 
 /* line 158, ../../src/sass/_placeholders.scss */
-.btn, #search {
+.btn, #minimize, #search {
   outline: 0;
-}
-
-/* line 166, ../../src/sass/_placeholders.scss */
-.show-grid .item {
-  text-transform: lowercase;
 }
 
 /* line 170, ../../src/sass/_placeholders.scss */
@@ -807,57 +802,53 @@ i.btn {
 #logo {
   background-image: url("../images/logo.png");
   margin-left: 0.625rem;
-  width: 1.25rem;
-  height: 1.25rem;
   background-size: cover;
-  box-sizing: content-box;
   vertical-align: top;
+  height: 1.25rem;
+  width: 1.25rem;
 }
 
-/* line 22, ../../src/sass/components/_titlebar.scss */
+/* line 21, ../../src/sass/components/_titlebar.scss */
 #title {
   font-family: "Montserrat-MediumItalic";
   padding-left: 0.625rem;
   font-size: 0.75rem;
 }
 
-/* line 30, ../../src/sass/components/_titlebar.scss */
+/* line 29, ../../src/sass/components/_titlebar.scss */
 #minimize {
   width: 1.25rem;
   height: 1.25rem;
-  position: relative;
-  outline: 0;
 }
 /* line 30, ../../src/sass/_mixins.scss */
 #minimize:before {
-  position: absolute;
   width: calc(100% - 0.125rem);
+  margin-bottom: 0.1875rem;
+  border-radius: 0.3125rem;
   height: 0.125rem;
   bottom: 0;
   left: 0;
-  margin-bottom: 0.1875rem;
-  border-radius: 0.3125rem;
 }
 
-/* line 48, ../../src/sass/components/_titlebar.scss */
+/* line 47, ../../src/sass/components/_titlebar.scss */
 #maximize {
   width: 1rem;
   height: 1rem;
   border: 0.125rem solid;
-  border-radius: 50%;
   margin-top: 0.125rem;
+  border-radius: 50%;
 }
 
-/* line 59, ../../src/sass/components/_titlebar.scss */
+/* line 58, ../../src/sass/components/_titlebar.scss */
 #titlebar-btns {
   margin-right: 0.625rem;
 }
 
-/* line 64, ../../src/sass/components/_titlebar.scss */
+/* line 63, ../../src/sass/components/_titlebar.scss */
 .btn--titlebar {
-  border-width: 0;
   vertical-align: top;
   margin-left: 5px;
+  border-width: 0;
 }
 
 /* line 9, ../../src/sass/components/_loader.scss */
@@ -948,11 +939,11 @@ progress::-webkit-progress-value {
 .item:not(:first-child) {
   margin-top: 2.1875rem;
 }
-/* line 17, ../../src/sass/components/_item.scss */
+/* line 18, ../../src/sass/components/_item.scss */
 .item:hover .item__meta {
   margin-top: 0.625rem;
 }
-/* line 25, ../../src/sass/components/_item.scss */
+/* line 26, ../../src/sass/components/_item.scss */
 .item--no-artwork:hover .item__icon {
   opacity: .5;
 }
@@ -978,7 +969,7 @@ progress::-webkit-progress-value {
   padding-left: 0.625rem;
   border-bottom: 0.0625rem solid;
 }
-/* line 59, ../../src/sass/components/_item.scss */
+/* line 60, ../../src/sass/components/_item.scss */
 .item.is-active:hover .item__meta {
   margin-top: 0;
 }
@@ -1026,6 +1017,11 @@ progress::-webkit-progress-value {
 .playing {
   margin-top: 0.625rem;
 }
+/* line 11, ../../src/sass/components/_playing.scss */
+.playing--no-artwork .playing__thumbnail {
+  background-image: url("../images/ic_album_black_48px.svg");
+  border-radius: 0;
+}
 
 /* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
 .playing__thumbnail {
@@ -1042,7 +1038,7 @@ progress::-webkit-progress-value {
 .playing__title {
   font-size: 0.8125rem;
 }
-/* line 33, ../../src/sass/components/_playing.scss */
+/* line 41, ../../src/sass/components/_playing.scss */
 .playing__title:not(:empty) {
   padding-top: 0.625rem;
 }
@@ -1050,15 +1046,9 @@ progress::-webkit-progress-value {
 .playing__artist {
   font-size: 0.75rem;
 }
-/* line 41, ../../src/sass/components/_playing.scss */
+/* line 49, ../../src/sass/components/_playing.scss */
 .playing__artist:not(:empty) {
   padding-top: 0.625rem;
-}
-
-/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
-.playing--no-artcover .playing__thumbnail {
-  background-image: url("../images/ic_album_black_48px.svg");
-  border-radius: 0;
 }
 
 /* line 1, ../../src/sass/components/_overlay.scss */
@@ -1188,14 +1178,15 @@ main {
 }
 /* line 35, ../../../node_modules/bemify/sass/_bemify.scss */
 .show-grid .item {
+  text-transform: capitalize;
   width: 12.1875rem;
-  font-size: 0.875rem;
-  margin-top: 2.1875rem;
-  margin-left: 0.9375rem;
-  margin-right: 0.9375rem;
   line-height: 1rem;
-  padding-left: 0;
+  margin-top: 2.1875rem;
+  margin-right: 0.9375rem;
+  margin-left: 0.9375rem;
+  font-size: 0.875rem;
   padding-right: 0;
+  padding-left: 0;
 }
 /* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
 .show-grid .item:hover .item__thumbnail {
@@ -1222,7 +1213,7 @@ main {
   padding-bottom: 0;
   border-bottom-width: 0;
 }
-/* line 87, ../../src/sass/states/_show-grid.scss */
+/* line 86, ../../src/sass/states/_show-grid.scss */
 .show-grid .item.is-active .item__thumbnail {
   background-blend-mode: multiply;
 }
@@ -1242,7 +1233,7 @@ main {
 .show-grid .item__meta {
   overflow: visible;
   height: 5.625rem;
-  padding-top: 0.625rem;
+  padding-top: 0.9375rem;
 }
 /* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
 .show-grid .item__title {
@@ -1281,12 +1272,17 @@ main {
   background-color: #191919;
 }
 
+/* line 30, ../../src/sass/_mixins.scss */
+.btn:disabled {
+  color: #333333;
+}
+
 /* line 52, ../../../node_modules/bemify/sass/_bemify.scss */
 .btn--nav {
   color: #555;
 }
 /* line 30, ../../src/sass/_mixins.scss */
-.btn--nav:hover {
+.btn--nav:hover:enabled {
   color: #84bd00;
 }
 /* line 62, ../../../node_modules/bemify/sass/_bemify.scss */
