@@ -462,6 +462,7 @@ $(function () {
         });
 
         cache.$search.keyup(debounce(function () {
+            console.log('debounced');
             if (this.value === '') {
                 return;
             }
