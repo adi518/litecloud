@@ -1,13 +1,13 @@
 // scss-lint:disable Compass::PropertyWithMixin
 
 #titlebar {
+    @extend %flex;
     @extend %full-width;
     height: $titlebar-height;
     padding-top: to-rem(10);
 }
 
 #logo {
-    @extend %inline-block;
     @extend %cursor-default;
     @extend %half-border-radius;
     background-image: url($logo-path);
@@ -19,7 +19,6 @@
 }
 
 #title {
-    @extend %inline-block;
     @extend %cursor-default;
     font-family: $font-family-bold-italic;
     padding-left: to-rem(10);
@@ -56,7 +55,7 @@
 }
 
 #titlebar-btns {
-    @extend %float-right;
+    margin-left: auto;
     margin-right: to-rem(10);
 }
 

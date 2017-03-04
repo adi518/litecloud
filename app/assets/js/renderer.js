@@ -11,7 +11,8 @@
 /*global $, $$ */
 
 const pjson = require('../package.json');
-const remote = require('electron').remote;
+const electron = require('electron')
+const remote = electron.remote;
 /* beautify ignore:start */
 const {BrowserWindow, globalShortcut} = remote;
 /* beautify ignore:end */
@@ -217,6 +218,9 @@ $(function () {
     }
 
     function replayTrack() {
+        if (!cache.player) {
+            return;
+        }
         updateProgressBar(true);
         cache.player.seek(0);
         cache.player.play();
@@ -393,9 +397,6 @@ $(function () {
             case 'previous':
                 previousTrack();
                 break;
-            case 'replay':
-                replayTrack();
-                break;
             }
         });
 
@@ -434,8 +435,13 @@ $(function () {
                     false :
                     true;
                 break;
+            case 'replay':
+                replayTrack();
+                break;
             }
-            $btn.toggleClass('is-active');
+            if (!$btn.data().hasOwnProperty('stateless')) {
+                $btn.toggleClass('is-active');
+            }
         });
 
         cache.$progress.click(function (e) {
@@ -462,7 +468,6 @@ $(function () {
         });
 
         cache.$search.keyup(debounce(function () {
-            console.log('debounced');
             if (this.value === '') {
                 return;
             }

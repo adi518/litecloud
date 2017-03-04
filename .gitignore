@@ -3,3 +3,4 @@ Gemfile.lock
 .sass-cache
 dump
 *.log
+electron-thesbros
