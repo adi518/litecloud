@@ -259,7 +259,11 @@ $(function () {
         if (offset) {
             fetch = $.get(query);
         } else {
-            var queryURI = '/tracks?' + $.param($.extend({}, cache.queryOptions, {
+            // geo filtering
+            // US 37.0902° N, 95.7129° W
+            // EU 54.5260° N, 15.2551° W
+            // https://developers.soundcloud.com/docs/api/reference#tracks
+            var queryURI = '/tracks?tag_list=geo:lat=54.5260%20geo:lon=15.2551&' + $.param($.extend({}, cache.queryOptions, {
                 q: query,
                 linked_partitioning: true
             }));
