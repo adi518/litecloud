@@ -52,12 +52,12 @@ span.btn, .show-grid .item small {
 }
 
 /* line 59, ../../src/sass/_placeholders.scss */
-#mask,
+#loader, #mask,
 #nav,
 #nav-right,
 #overlay,
 #titlebar,
-main, #loader {
+main {
   position: fixed;
 }
 
@@ -1126,7 +1126,7 @@ main {
   transform: translate3d(18.75rem, 2.5rem, 0);
 }
 
-/* line 68, ../../src/sass/_layout.scss */
+/* line 69, ../../src/sass/_layout.scss */
 #mask {
   z-index: 0;
 }
@@ -1135,7 +1135,7 @@ main {
   z-index: 1;
 }
 
-/* line 76, ../../src/sass/_layout.scss */
+/* line 77, ../../src/sass/_layout.scss */
 #nav,
 #nav-right,
 #titlebar,
@@ -1143,12 +1143,12 @@ main {
   z-index: 2;
 }
 
-/* line 83, ../../src/sass/_layout.scss */
+/* line 84, ../../src/sass/_layout.scss */
 #overlay {
   z-index: 3;
 }
 
-/* line 87, ../../src/sass/_layout.scss */
+/* line 88, ../../src/sass/_layout.scss */
 #loader {
   z-index: 4;
 }

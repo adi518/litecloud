@@ -62,6 +62,7 @@ main {
 #overlay,
 #titlebar,
 main {
+    @extend %fixed;
     @extend %translate3d-hack;
 }
 
