@@ -37,7 +37,7 @@ if (isdev) {
 cache = $.extend({}, cache, {
     version: pjson.version,
     test: true,
-    testKeyword: 'lana del rey',
+    testKeyword: 'chill music',
     keyupDebounceDelay: 500,
     loaderDelay: 1500,
     init: {
