@@ -1124,9 +1124,10 @@ main {
 main {
   width: calc(100% - 23.75rem);
   transform: translate3d(18.75rem, 2.5rem, 0);
+  overflow-x: hidden;
 }
 
-/* line 69, ../../src/sass/_layout.scss */
+/* line 70, ../../src/sass/_layout.scss */
 #mask {
   z-index: 0;
 }
@@ -1135,7 +1136,7 @@ main {
   z-index: 1;
 }
 
-/* line 77, ../../src/sass/_layout.scss */
+/* line 78, ../../src/sass/_layout.scss */
 #nav,
 #nav-right,
 #titlebar,
@@ -1143,12 +1144,12 @@ main {
   z-index: 2;
 }
 
-/* line 84, ../../src/sass/_layout.scss */
+/* line 85, ../../src/sass/_layout.scss */
 #overlay {
   z-index: 3;
 }
 
-/* line 88, ../../src/sass/_layout.scss */
+/* line 89, ../../src/sass/_layout.scss */
 #loader {
   z-index: 4;
 }
