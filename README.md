@@ -11,7 +11,8 @@ This project currently serves as a learning curve for various technologies, some
 `npm run install`
 
 ## Development
-`npm start` or `npm run start-offline` to start in offline mode (no requests will be made to Soundcloud API).
+* `npm start` or `npm run start-offline` (no requests will be made to Soundcloud API).
+* `npm run watch`
 
 ## Support
 Please [open an issue](https://github.com/adi518/litecloud/issues) for support.
