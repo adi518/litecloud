@@ -4,7 +4,7 @@
   "description": "Soundcloud container",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "install": "install.bat",
+    "install-deps": "install.bat",
     "start": "electron .",
     "start-offline": "start-offline.bat",
     "watch": "watch.bat"

@@ -8,7 +8,7 @@ This project currently serves as a learning curve for various technologies, some
 `git clone https://github.com/adi518/litecloud.git`
 
 ## Install
-`npm run install`
+`npm run install-deps`
 
 ## Development
 * `npm start` or `npm run start-offline` (no requests will be made to Soundcloud API).
