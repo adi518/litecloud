@@ -1,4 +1,3 @@
-@import url(../../../node_modules/material-design-icons/iconfont/material-icons.css);
 /* line 3, ../../src/sass/_placeholders.scss */
 #loader,
 #player,
@@ -689,13 +688,13 @@ template {
   display: none;
 }
 
-/* line 4, ../../src/sass/_reset.scss */
+/* line 6, ../../src/sass/_reset.scss */
 html {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
-/* line 9, ../../src/sass/_reset.scss */
+/* line 11, ../../src/sass/_reset.scss */
 html::after, html::before,
 html * {
   box-sizing: inherit;
@@ -711,17 +710,17 @@ i.btn {
   border-width: 0;
 }
 
-/* line 35, ../../../node_modules/bemify/sass/_bemify.scss */
+/* line 35, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
 .btn {
   transition: color .2s;
 }
 
-/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
 .btn__icon {
   font-size: 1.5rem;
 }
 
-/* line 52, ../../../node_modules/bemify/sass/_bemify.scss */
+/* line 52, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
 .btn--nav {
   line-height: 2rem;
   text-align: left;
@@ -741,7 +740,7 @@ i.btn {
   padding-right: 0;
 }
 
-/* line 35, ../../../node_modules/bemify/sass/_bemify.scss */
+/* line 35, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
 .item {
   padding-right: 2.1875rem;
   transition: padding .2s;
@@ -758,11 +757,11 @@ i.btn {
 .item--no-artwork:hover .item__icon {
   opacity: .5;
 }
-/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
 .item--no-artwork .item__thumbnail {
   image-rendering: auto;
 }
-/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
 .item--no-artwork .item__icon {
   transform: translateY(-50%);
   position: relative;
@@ -773,7 +772,7 @@ i.btn {
   background-image: url("../images/ic_album_black_48px.svg");
   opacity: .45;
 }
-/* line 62, ../../../node_modules/bemify/sass/_bemify.scss */
+/* line 62, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
 .item.is-active {
   padding-top: 0.625rem;
   padding-bottom: 0.625rem;
@@ -784,16 +783,16 @@ i.btn {
 .item.is-active:hover .item__meta {
   margin-top: 0;
 }
-/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
 .item.is-active .item__thumbnail {
   background-blend-mode: multiply;
 }
-/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
 .item.is-active .item__meta {
   margin-top: 0;
 }
 
-/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
 .item__thumbnail {
   width: 8.4375rem;
   height: 8.4375rem;
@@ -803,16 +802,16 @@ i.btn {
   transition: background-color .2s, background-blend-mode .2s;
   image-rendering: -webkit-optimize-contrast;
 }
-/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
 .item__meta {
   list-style-type: none;
   transition: margin-top, .1s;
 }
-/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
 .item__truncated {
   font-size: 0;
 }
-/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
 .item__tag {
   right: 0;
   top: 0.4375rem;
@@ -824,14 +823,14 @@ i.btn {
   max-width: 70%;
 }
 
-/* line 35, ../../../node_modules/bemify/sass/_bemify.scss */
+/* line 35, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
 .list {
   margin-left: 1.5625rem;
   margin-right: 1.25rem;
   padding-top: 2.1875rem;
   padding-bottom: 2.1875rem;
 }
-/* line 62, ../../../node_modules/bemify/sass/_bemify.scss */
+/* line 62, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
 .list.no-results {
   margin-right: 1.5625rem;
 }
@@ -922,7 +921,7 @@ progress::-webkit-progress-value {
   font-size: 2.8125rem;
 }
 
-/* line 35, ../../../node_modules/bemify/sass/_bemify.scss */
+/* line 35, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
 .playing {
   margin-top: 0.625rem;
 }
@@ -932,18 +931,18 @@ progress::-webkit-progress-value {
   border-radius: 0;
 }
 
-/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
 .playing__thumbnail {
   width: 16.25rem;
   height: 16.25rem;
   border-radius: 0.125rem;
   background-size: cover;
 }
-/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
 .playing__description {
   width: 70%;
 }
-/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
 .playing__title {
   font-size: 0.8125rem;
 }
@@ -951,7 +950,7 @@ progress::-webkit-progress-value {
 .playing__title:not(:empty) {
   padding-top: 0.625rem;
 }
-/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
 .playing__artist {
   font-size: 0.75rem;
 }
@@ -1039,7 +1038,7 @@ progress::-webkit-progress-value {
   border-width: 0;
 }
 
-/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
 .component__header, .playing__header {
   margin-top: 0;
   margin-bottom: 0.625rem;
@@ -1124,14 +1123,14 @@ main {
   transition: background-image .8s;
 }
 
-/* line 62, ../../../node_modules/bemify/sass/_bemify.scss */
+/* line 62, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
 .show-grid .list.has-results {
   padding-top: 0;
   flex-wrap: wrap;
   justify-content: space-between;
   margin-left: 1.25rem;
 }
-/* line 35, ../../../node_modules/bemify/sass/_bemify.scss */
+/* line 35, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
 .show-grid .item {
   text-transform: capitalize;
   width: 12.1875rem;
@@ -1143,26 +1142,26 @@ main {
   padding-right: 0;
   padding-left: 0;
 }
-/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
 .show-grid .item:hover .item__thumbnail {
   background-blend-mode: screen;
 }
-/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
 .show-grid .item:hover .item__meta {
   margin-top: 0;
 }
-/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
 .show-grid .item--no-artwork .item__thumbnail {
   width: inherit;
   height: 12.1875rem;
 }
-/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
 .show-grid .item--no-artwork .item__icon {
   width: 6.25rem;
   height: 6.25rem;
   background-size: 6.25rem 6.25rem;
 }
-/* line 62, ../../../node_modules/bemify/sass/_bemify.scss */
+/* line 62, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
 .show-grid .item.is-active {
   padding-top: 0;
   padding-bottom: 0;
@@ -1177,31 +1176,31 @@ main {
   line-height: 12.1875rem;
   font-size: 1rem;
 }
-/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
 .show-grid .item__thumbnail {
   height: 12.1875rem;
   width: inherit;
   margin-right: 0;
   border-radius: 0.125rem;
 }
-/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
 .show-grid .item__meta {
   overflow: visible;
   height: 5.625rem;
   padding-top: 0.9375rem;
 }
-/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
 .show-grid .item__title {
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
-/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
 .show-grid .item__author {
   width: 6.25rem;
   font-size: 0.75rem;
 }
-/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
 .show-grid .item__creator {
   bottom: 0;
 }
@@ -1209,6 +1208,38 @@ main {
 /* line 4, ../../src/sass/states/_show-mask.scss */
 .show-mask #mask {
   -webkit-filter: blur(3.125rem);
+}
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(MaterialIcons-Regular.eot);
+  /* For IE6-8 */
+  src: local("Material Icons"), local("MaterialIcons-Regular"), url(MaterialIcons-Regular.woff2) format("woff2"), url(MaterialIcons-Regular.woff) format("woff"), url(MaterialIcons-Regular.ttf) format("truetype");
+}
+/* line 13, C:/projects/litecloud/node_modules/material-design-icons/iconfont/material-icons.css */
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: 'liga';
 }
 
 @font-face {
@@ -1272,7 +1303,7 @@ main {
   color: #333333;
 }
 
-/* line 52, ../../../node_modules/bemify/sass/_bemify.scss */
+/* line 52, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
 .btn--nav {
   color: #555;
 }
@@ -1280,7 +1311,7 @@ main {
 .btn--nav:hover:enabled {
   color: #84bd00;
 }
-/* line 62, ../../../node_modules/bemify/sass/_bemify.scss */
+/* line 62, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
 .btn.is-active {
   color: #84bd00;
 }
@@ -1455,11 +1486,11 @@ progress::-webkit-progress-bar {
 .item:hover {
   background-color: #191919;
 }
-/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
 .item:hover .item__title {
   color: #84bd00;
 }
-/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
 .item--no-artwork:hover .item__thumbnail {
   background-color: #171717;
 }
@@ -1468,28 +1499,28 @@ progress::-webkit-progress-bar {
   background-color: #151515;
   border-bottom-color: #252525;
 }
-/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
 .item.is-active .item__thumbnail {
   background-color: #666;
 }
-/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
 .item.is-active.item--no-artwork .item__thumbnail {
   background-color: #151515;
 }
 
-/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
 .item__thumbnail {
   background-color: #111111;
 }
-/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
 .item__creator {
   color: #444;
 }
-/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
 .item__title {
   color: #818181;
 }
-/* line 43, ../../../node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
 .item__tag {
   background-color: #000;
   color: #fff;

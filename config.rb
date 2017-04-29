@@ -6,6 +6,8 @@ require 'sass-css-importer'
 # Windows syntax: @import '<dir>/*.*';
 # https://github.com/chriseppstein/sass-globbing/issues/3
 require 'sass-globbing'
+add_import_path 'node_modules'
+add_import_path Sass::CssImporter::Importer.new('node_modules')
 sass_path = 'app/src/sass'
 css_path = 'app/assets/css'
 relative_assets = true
