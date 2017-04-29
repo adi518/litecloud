@@ -28,3 +28,18 @@
     font-weight: 300;
     font-style: normal;
 }
+
+body,
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: $font-family;
+}
+
+b,
+strong {
+    font-family: $font-family-bold;
+    font-weight: 400;
+}

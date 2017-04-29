@@ -8,10 +8,10 @@ This project currently serves as a learning curve for various technologies, some
 `git clone https://github.com/adi518/litecloud.git`
 
 ## Install
-Hit `install.bat`.
+`npm run install`
 
 ## Development
-Hit `start.bat` or `start-dev.bat` to launch in development mode.
+`npm start` or `npm run start-dev` to start in offline mode.
 
 ## Support
 Please [open an issue](https://github.com/adi518/litecloud/issues) for support.

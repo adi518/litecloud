@@ -4,7 +4,10 @@
   "description": "Soundcloud container",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron ."
+    "install": "install.bat",
+    "start": "electron .",
+    "dev": "start-dev.bat",
+    "watch": "watch.bat"
   },
   "repository": {
     "type": "git",

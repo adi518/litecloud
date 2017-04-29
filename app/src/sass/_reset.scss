@@ -12,18 +12,3 @@ html {
         box-sizing: inherit;
     }
 }
-
-body,
-button,
-input,
-optgroup,
-select,
-textarea {
-    font-family: $font-family;
-}
-
-b,
-strong {
-    font-family: $font-family-bold;
-    font-weight: 400;
-}
