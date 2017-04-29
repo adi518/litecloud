@@ -6,7 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "install": "install.bat",
     "start": "electron .",
-    "dev": "start-dev.bat",
+    "start-offline": "start-offline.bat",
     "watch": "watch.bat"
   },
   "repository": {

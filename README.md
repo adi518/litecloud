@@ -11,7 +11,7 @@ This project currently serves as a learning curve for various technologies, some
 `npm run install`
 
 ## Development
-`npm start` or `npm run start-dev` to start in offline mode.
+`npm start` or `npm run start-offline` to start in offline mode.
 
 ## Support
 Please [open an issue](https://github.com/adi518/litecloud/issues) for support.
