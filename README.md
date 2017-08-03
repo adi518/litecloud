@@ -8,10 +8,11 @@ This project currently serves as a learning curve for various technologies, some
 `git clone https://github.com/adi518/litecloud.git`
 
 ## Install
-Hit `install.bat`.
+`npm run install-deps`
 
 ## Development
-Hit `start.bat` or `start-dev.bat` to launch in development mode.
+* `npm start` or `npm run start-offline` (no requests will be made to Soundcloud API).
+* `npm run watch`
 
 ## Support
 Please [open an issue](https://github.com/adi518/litecloud/issues) for support.

@@ -1,13 +1,29 @@
 // scss-lint:disable Compass::PropertyWithMixin
-
-.btn--nav {
-    color: $color-emperor;
-
-    &:hover {
-        color: $color-pistachio;
+//
+// COMPONENT
+//
+@include component('btn') {
+    //
+    @include pseudo('disabled') {
+        color: $color-333;
     }
 }
+//
+// MODIFIERS
+//
+@include component ('btn') {
+    //
+    @include modifier ('nav') {
+        color: $color-emperor;
 
-.btn--selected {
-    color: $color-pistachio;
+        @include pseudo ('hover') {
+            @include pseudo('enabled') {
+                color: $color-pistachio;
+            }
+        }
+    }
+
+    @include state ('active') {
+        color: $color-pistachio;
+    }
 }

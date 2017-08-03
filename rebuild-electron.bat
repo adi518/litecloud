@@ -1,1 +1,1 @@
-.\node_modules\.bin\electron-rebuild.cmd
+.\node_modules\.bin\electron-rebuild.cmd && timeout 2

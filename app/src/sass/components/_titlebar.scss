@@ -1,55 +1,52 @@
 // scss-lint:disable Compass::PropertyWithMixin
 
 #titlebar {
+    @extend %flex;
     @extend %full-width;
     height: $titlebar-height;
     padding-top: to-rem(10);
 }
 
 #logo {
-    @extend %inline-block;
     @extend %cursor-default;
+    @extend %half-border-radius;
     background-image: url($logo-path);
     margin-left: to-rem(10);
-    width: to-rem(20);
-    height: to-rem(20);
-    border-radius: 50%;
     background-size: cover;
-    box-sizing: content-box;
     vertical-align: top;
+    height: to-rem(20);
+    width: to-rem(20);
 }
 
 #title {
-    @extend %inline-block;
     @extend %cursor-default;
-    font-family: $font-family-bold-italic;
     padding-left: to-rem(10);
     font-size: to-rem(12);
 }
 
 #minimize {
     @extend %overflow-hidden;
+    @extend %relative;
+    @extend %no-outline;
     @include dim(to-rem(20));
-    position: relative;
-    outline: 0;
 
-    &::before {
+    @include pseudo ('before') {
         @extend %no-content;
-        position: absolute;
+        @extend %absolute;
         width: calc(100% - #{to-rem(2)});
+        margin-bottom: to-rem(3);
+        border-radius: to-rem(5);
         height: to-rem(2);
         bottom: 0;
         left: 0;
-        margin-bottom: to-rem(3);
-        border-radius: to-rem(5);
     }
 }
 
 #maximize {
     @include dim(to-rem(16));
     border: to-rem(2) solid;
-    border-radius: 50%;
     margin-top: to-rem(2);
+    border-radius: 50%;
 }
 
 #terminate {
@@ -57,13 +54,13 @@
 }
 
 #titlebar-btns {
-    @extend %float-right;
+    margin-left: auto;
     margin-right: to-rem(10);
 }
 
 .btn--titlebar {
     @extend %background-transparent;
-    border-width: 0;
     vertical-align: top;
     margin-left: 5px;
+    border-width: 0;
 }

@@ -1,17 +1,7 @@
 // scss-lint:disable Compass::PropertyWithMixin
-@import 'components/scrollbar';
-@import 'components/buttons';
-@import 'components/titlebar';
-@import 'components/loader';
-@import 'components/search';
-@import 'components/player';
-@import 'components/list';
-@import 'components/item';
-@import 'components/playing';
-@import 'components/overlay';
-@import 'components/mask';
+@import 'components/*.*';
 
-@include block ('component') {
+@include component ('component') {
     @include element ('header') {
         @extend %uppercase;
         margin-top: 0;

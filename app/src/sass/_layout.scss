@@ -51,6 +51,7 @@ main {
     @extend %overflow-auto;
     width: $main-width;
     transform: translate3d($nav-width, $titlebar-height, 0);
+    overflow-x: hidden; // keep content from causing h.scroll
 }
 
 //
@@ -62,6 +63,7 @@ main {
 #overlay,
 #titlebar,
 main {
+    @extend %fixed;
     @extend %translate3d-hack;
 }
 

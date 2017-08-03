@@ -1,63 +1,53 @@
 // scss-lint:disable Compass::PropertyWithMixin
-// scss-lint:disable MergeableSelector
 //
-// BLOCK
+// COMPONENT
 //
-.playing {
+@include component ('playing') {
     @extend %cursor-default;
     margin-top: to-rem(10);
+
+    @include scope('.playing--no-artwork') {
+        //
+        .playing__thumbnail {
+            background-image: url($no-artwork-path);
+            border-radius: 0;
+        }
+    }
 }
 //
 // ELEMENTS
 //
-.playing {
+@include component ('playing') {
     //
-    &__header {
+    @include element ('header') {
         @extend .component__header;
     }
 
-    &__thumbnail {
+    @include element ('thumbnail') {
         @include dim($playing-thumbnail-size);
         border-radius: to-rem(2);
         background-size: cover;
     }
 
-    &__description {
+    @include element ('description') {
         @extend %center;
         @extend %talign-center;
         width: 70%;
     }
 
-    &__artist {
-        font-size: to-rem(12);
-
-        &:not(:empty) {
-            padding-top: to-rem(10);
-        }
-
-        &:empty {
-            + .playing__title {
-                padding-top: to-rem(10);
-            }
-        }
-    }
-
-    &__title {
+    @include element ('title') {
         font-size: to-rem(13);
 
         &:not(:empty) {
             padding-top: to-rem(10);
         }
     }
-}
-//
-// MODIFIERS
-//
-.playing {
-    &--no-artcover {
-        .playing__thumbnail {
-            border-radius: 0;
-            background-image: url($no-artwork-path);
+
+    @include element ('artist') {
+        font-size: to-rem(12);
+
+        &:not(:empty) {
+            padding-top: to-rem(10);
         }
     }
 }

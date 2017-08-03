@@ -4,12 +4,30 @@
 // scss-lint:disable Indentation
 // scss-lint:disable ElsePlacement
 // scss-lint:disable DebugStatement
+// scss-lint:disable NameFormat
 @import 'compass/css3';
-@import '../../../node_modules/bemify/sass/bemify';
+@import 'bemify/sass/bemify';
+//
+//
+@mixin scope($rule) {
+     @at-root{
+        #{$rule} {
+            @content;
+        }
+    }
+}
 //
 //
 @mixin pseudo($type) {
-    &::#{$type} {
+    $concatenator: null;
+    @if index($type, ('before' 'after')) {
+        $concatenator: '::';
+    }
+    @else {
+        $concatenator: ':';
+    }
+
+    &#{$concatenator + $type} {
         @content;
     }
 }

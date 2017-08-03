@@ -1,5 +1,7 @@
 // scss-lint:disable Compass::PropertyWithMixin
-@import '../../../node_modules/normalize.css/normalize';
+// bof: https://necolas.github.io/normalize.css/
+@import 'normalize.css/normalize';
+// eof: https://necolas.github.io/normalize.css/
 
 html {
     box-sizing: border-box;
@@ -10,22 +12,5 @@ html {
     &::before,
     * {
         box-sizing: inherit;
-        -webkit-font-smoothing: inherit;
-        text-rendering: inherit;
     }
-}
-
-body,
-button,
-input,
-optgroup,
-select,
-textarea {
-    font-family: $font-family;
-}
-
-b,
-strong {
-    font-family: $font-family-bold;
-    font-weight: 400;
 }

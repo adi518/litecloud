@@ -1,3 +1,4 @@
+/* eslint-disable */
 // This file is required by the index.html file and will
 // be executed in the renderer process for that window.
 // All of the Node.js APIs are available in this process.
@@ -10,12 +11,18 @@
 /*global $, $$ */
 
 const pjson = require('../package.json');
-const remote = require('electron').remote;
+const electron = require('electron')
+const remote = electron.remote;
 /* beautify ignore:start */
 const {BrowserWindow, globalShortcut} = remote;
 /* beautify ignore:end */
 // remote.getCurrentWindow().removeAllListeners();
-const drag = require('electron-drag');
+try {
+    const drag = require('electron-drag');
+} catch(e) {
+    console.warn('failed requiring electron-drag')
+    console.error(e)
+}
 window.$ = window.jQuery = require('jquery');
 require('./assets/js/vendor/jquery.$$.min.js');
 const debounce = require('debounce');
@@ -35,7 +42,7 @@ if (isdev) {
 cache = $.extend({}, cache, {
     version: pjson.version,
     test: true,
-    testKeyword: 'tove styrke',
+    testKeyword: 'alle farben',
     keyupDebounceDelay: 500,
     loaderDelay: 1500,
     init: {
@@ -46,7 +53,7 @@ cache = $.extend({}, cache, {
     truncatedTitleLength: 20,
     played: [],
     queryOptions: {
-        limit: 50,
+        limit: 50
     },
     $window: $(window)
 });
@@ -54,10 +61,7 @@ cache = $.extend({}, cache, {
 $(function () {
 
     var selectors = [
-        '#body',
-        '.toggle-grid-view',
-        '.toggle-repeat',
-        '.toggle-shuffle',
+        '#body', '.toggle-grid-view', '.toggle-repeat', '.toggle-shuffle',
         // components
         '#minimize',
         '#maximize',
@@ -80,16 +84,14 @@ $(function () {
         '#playing',
         '#playing-thumbnail',
         '#playing-title',
-        '#playing-artist',
+        '#playing-artist'
     ];
 
     selectors.forEach(function (selector) {
         try {
             /* beautify ignore:start */
             var _selector = selector;
-            _selector = _selector.replace(/[#]/g, '')
-                                    .replace(/\./g, '')
-                                        .replace(/[-]/g, '_');
+            _selector = _selector.replace(/[#]/g, '').replace(/\./g, '').replace(/[-]/g, '_');
             /* beautify ignore:end */
             cache['$' + _selector] = $$(selector);
         } catch (e) {
@@ -126,16 +128,21 @@ $(function () {
         seconds = seconds % 3600;
         var minutes = parseInt(seconds / 60, 10);
         if (minutes) {
-            if (minutes < 9)
+            if (minutes < 9) {
                 padWithZero(minutes);
-        } else
+            }
+        } else {
             minutes = '00';
+        }
         seconds = Math.floor(seconds % 60);
-        if (seconds < 10)
+        if (seconds < 10) {
             seconds = padWithZero(seconds);
-        else if (seconds < 1)
+        } else if (seconds < 1) {
             seconds = '00';
-        return (hours ? (hours + ':') : '') + minutes + ':' + seconds;
+        }
+        return (hours ?
+            (hours + ':') :
+            '') + minutes + ':' + seconds;
     }
 
     function padWithZero(val) {
@@ -163,17 +170,21 @@ $(function () {
                         track.artwork_url.replace(/https:\/\/i1.sndcdn.com/g, 'assets/images/mock');
                     }
                 }
-                markup += '<div class="item' + (!track.artwork_url ? ' item--no-artwork' : '') + '">';
-                markup += '<span class="item__thumbnail" style="' + (track.artwork_url ? 'background-image: url(' + track.artwork_url + ')' : '') + '">';
+                markup += '<div class="item' + (!track.artwork_url ?
+                    ' item--no-artwork' :
+                    '') + '">';
+                markup += '<div class="item__thumbnail" style="' + (track.artwork_url ?
+                    'background-image: url(' + track.artwork_url + ')' :
+                    '') + '">';
                 markup += '<i class="item__icon"></i>';
                 if (track.genre) {
-                    markup += '<span class="item__tag" title="' + track.genre + '">#' + track.genre + '</span>';
+                    markup += '<div class="item__tag" title="' + track.genre + '">#' + track.genre + '</div>';
                 }
                 // markup += '<span class="item__truncated">' + track.title.substring(0, cache.truncatedTitleLength) + '</span>';
-                markup += '</span>';
-                markup += '<ul class="item__data">';
+                markup += '</div>';
+                markup += '<ul class="item__meta">';
                 markup += '<li class="item__title" title="' + track.custom.title + '">' + track.custom.title + '</li>';
-                markup += '<li class="item__meta">';
+                markup += '<li class="item__creator">';
                 markup += '<small class="item__author" title="' + track.user.username + '">' + track.user.username + '</small>';
                 duration = msToHMS(track.duration);
                 markup += '<small class="item__duration" title="' + duration + '">' + duration + '</small>';
@@ -184,10 +195,17 @@ $(function () {
             console.info('total tracks:', tracks.length);
             console.info('total art-covers:', counter);
         } else {
-            markup = '<div class="item">Your search - <b>' + cache.searchQuery + '</b> - did not match any tracks.</div>';
+            markup = 'Your search - <b>' + cache.searchQuery + '</b> - did not match any tracks.';
             cache.$body.removeClass('show-grid-view');
         }
-        cache.$items = cache.$list.toggleClass('no-results', !tracks.length)[options.append ? 'append' : 'html'](markup);
+        if (tracks.length) {
+            cache.$list.addClass('has-results').removeClass('no-results');
+        } else {
+            cache.$list.removeClass('has-results').addClass('no-results');
+        }
+        cache.$items = cache.$list[options.append ?
+            'append' :
+            'html'](markup);
         cache.$items = cache.$items.children();
     }
 
@@ -196,13 +214,18 @@ $(function () {
             reset = true;
         }
         var el = cache.$progress[0],
-            percentage = reset ? 0 : Math.ceil((100 / cache.player.streamInfo.duration) * cache.player.currentTime());
+            percentage = reset ?
+            0 :
+            Math.ceil((100 / cache.player.streamInfo.duration) * cache.player.currentTime());
         el.value = percentage;
         // Update the progress bar's text (for browsers that don't support the progress element)
         el.innerHTML = percentage + '% played';
     }
 
     function replayTrack() {
+        if (!cache.player) {
+            return;
+        }
         updateProgressBar(true);
         cache.player.seek(0);
         cache.player.play();
@@ -241,7 +264,11 @@ $(function () {
         if (offset) {
             fetch = $.get(query);
         } else {
-            var queryURI = '/tracks?' + $.param($.extend({}, cache.queryOptions, {
+            // geo filtering
+            // US 37.0902° N, 95.7129° W
+            // EU 54.5260° N, 15.2551° W
+            // https://developers.soundcloud.com/docs/api/reference#tracks
+            var queryURI = '/tracks?tag_list=geo:lat=54.5260%20geo:lon=15.2551&' + $.param($.extend({}, cache.queryOptions, {
                 q: query,
                 linked_partitioning: true
             }));
@@ -293,19 +320,19 @@ $(function () {
         var tmp = raw.split('-');
         return {
             artist: tmp[0] || '',
-            title: tmp[1] || '',
+            title: tmp[1] || ''
         };
     }
 
     function init() {
 
-        console.info('app version:', cache.version);
+        console.info('App version:', cache.version);
 
-        drag('#titlebar');
-
-        if (!drag.supported) {
-            document.querySelector('#titlebar').style['-webkit-app-region'] = 'drag';
-        }
+        // drag('#titlebar');
+        //
+        // if (!drag.supported) {
+        //     document.querySelector('#titlebar').style['-webkit-app-region'] = 'drag';
+        // }
 
         cache.$body.removeClass('show-loader');
 
@@ -318,23 +345,25 @@ $(function () {
             }
             var $item = $(this);
             var track = cache.tracks[$item.index()];
-            var hasArtCover = track.artwork_url ? true : false;
+            var hasArtwork = track.artwork_url ?
+                true :
+                false;
             // abort if user hit a playing track
             if (cache.index === $item.index()) {
                 return;
             }
-            $item.addClass('item--selected');
+            $item.addClass('is-active');
             if ($.isNumeric(cache.index)) {
-                $(cache.$items.get(cache.index)).toggleClass('item--selected item--visited');
+                $(cache.$items.get(cache.index)).toggleClass('is-active item--visited');
             }
             // cache.$mask.css('background-image', 'url(' + (track.artwork_url || '') + ')');
-            // cache.$body.toggleClass('show-mask', hasArtCover).toggleClass('animate-mask', hasArtCover);
+            // cache.$body.toggleClass('show-mask', hasArtwork).toggleClass('animate-mask', hasArtwork);
             // show what's playing
             cache.$body.addClass('show-playing');
-            cache.$playing.toggleClass('playing--no-artcover', !hasArtCover);
+            cache.$playing.toggleClass('playing--no-artwork', !hasArtwork);
             cache.$playing_title.text(track.custom.title);
             cache.$playing_artist.text(track.custom.artist);
-            if (hasArtCover) {
+            if (hasArtwork) {
                 cache.$playing_thumbnail.css('background-image', 'url(' + track.artwork_url + ')');
             } else {
                 cache.$playing_thumbnail.css('background-image', '');
@@ -377,13 +406,10 @@ $(function () {
             case 'previous':
                 previousTrack();
                 break;
-            case 'replay':
-                replayTrack();
-                break;
             }
         });
 
-        cache.$nav__buttons = $('.btn', cache.$nav).click(function () {
+        cache.$nav__buttons = $('.btn--nav', cache.$nav).click(function () {
             var $btn = $(this);
             var id = $btn.prop('id');
             switch (id) {
@@ -409,13 +435,22 @@ $(function () {
                 }
                 break;
             case 'shuffle':
-                cache.shuffle = cache.shuffle ? false : true;
+                cache.shuffle = cache.shuffle ?
+                    false :
+                    true;
                 break;
             case 'repeat':
-                cache.repeat = cache.repeat ? false : true;
+                cache.repeat = cache.repeat ?
+                    false :
+                    true;
+                break;
+            case 'replay':
+                replayTrack();
                 break;
             }
-            $btn.toggleClass('btn--selected');
+            if (!$btn.data().hasOwnProperty('stateless')) {
+                $btn.toggleClass('is-active');
+            }
         });
 
         cache.$progress.click(function (e) {
@@ -425,29 +460,11 @@ $(function () {
             }
         });
 
-        // cache.$mute.click(function () {
-        //     if (!cache.player) {
-        //         return;
-        //     }
-        //     if (cache.player.getVolume() > 0) {
-        //         cache.volume = cache.volume;
-        //         cache.player.setVolume(0);
-        //         changeIconButtonType(this, 'volume_off');
-        //     } else {
-        //         cache.player.setVolume(cache.volume);
-        //         changeIconButtonType(this, 'volume_up');
-        //     }
-        // });
-
         // http://stackoverflow.com/questions/6271237/detecting-when-user-scrolls-to-bottom-of-div-with-jquery
         cache.$main.scroll(function () {
             var $this = $(this);
             var scrollPosition = $this.scrollTop() + $this.outerHeight();
-            var totalHeight = this.scrollHeight +
-                parseInt($this.css('padding-top'), 10) +
-                parseInt($this.css('padding-bottom'), 10) +
-                parseInt($this.css('border-top-width'), 10) +
-                parseInt($this.css('border-bottom-width'), 10);
+            var totalHeight = this.scrollHeight + parseInt($this.css('padding-top'), 10) + parseInt($this.css('padding-bottom'), 10) + parseInt($this.css('border-top-width'), 10) + parseInt($this.css('border-bottom-width'), 10);
             if (scrollPosition == totalHeight) {
                 if (cache.query[cache.offset + 1]) {
                     if (isdev) {
@@ -465,7 +482,7 @@ $(function () {
             }
             cache.searchQuery = this.value;
             getTracks(this.value, null, {
-                new: true,
+                new: true
             });
         }, cache.keyupDebounceDelay));
 

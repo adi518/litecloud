@@ -1,1 +1,1 @@
-cmd /k "cls & grunt"
+cmd /k grunt %*

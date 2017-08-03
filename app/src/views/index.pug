@@ -13,13 +13,13 @@ html(lang="en")
                 button(id="maximize" class="btn btn--titlebar")
                 button(id="terminate" class="btn btn--titlebar close rounded")
         nav(id="nav-right" class="nav")
-            button(id="toggleYoutube" class="btn btn--nav btn--solo-icon center block")
+            button(id="toggleYoutube" class="btn btn--nav btn--solo-icon center block" disabled)
                 i(class="icon material-icons") subscriptions
-            button(id="toggleSettings" class="btn btn--nav btn--solo-icon center block")
+            button(id="toggleSettings" class="btn btn--nav btn--solo-icon center block" disabled)
                 i(class="icon material-icons") settings
             button(id="toggleMute" class="btn btn--nav btn--solo-icon center block")
                 i(class="icon material-icons") volume_up
-            button(id="addToPlaylist" class="btn btn--nav btn--solo-icon center block")
+            button(id="addToPlaylist" class="btn btn--nav btn--solo-icon center block" disabled)
                 i(class="icon material-icons") playlist_add
             button(id="toggleRepeat" class="btn btn--nav btn--solo-icon center block")
                 i(class="icon material-icons") repeat
@@ -27,12 +27,14 @@ html(lang="en")
                 i(class="icon material-icons") shuffle
             button(id="toggleGrid" class="btn btn--nav btn--solo-icon center block")
                 i(class="icon material-icons") view_headline
-            button(id="replay" class="btn btn--nav btn--solo-icon center block")
+            button(id="replay" class="btn btn--nav btn--solo-icon center block" data-stateless)
                 i(class="icon material-icons") autorenew
-            button(id="addToFavorites" class="btn btn--nav btn--solo-icon center block")
+            button(id="toggleLargePlayer" class="btn btn--nav btn--solo-icon center block" disabled)
+                i(class="icon material-icons") view_carousel
+            button(id="addToFavorites" class="btn btn--nav btn--solo-icon center block" disabled)
                 i(class="icon material-icons") favorite_border
         nav(id="nav" class="nav")
-            input(id="search" type="text" placeholder="...")
+            input(id="search" placeholder="...")
             div(id="playing" class="playing")
                 h2(class="playing__header") playing now
                 div(id="playing-thumbnail" class="playing__thumbnail")

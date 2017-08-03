@@ -3,14 +3,16 @@
 progress {
     box-shadow: inset 0 -#{to-rem(1)} #{to-rem(1)} $color-333;
 
-    &::-webkit-progress-value {
-        background: linear-gradient(to top, $color-black 10%, $color-pistachio 100%);
-    }
+    &::-webkit-progress {
+        &-value {
+            background: linear-gradient(to top, $color-black 10%, $color-pistachio 100%);
+        }
 
-    &::-webkit-progress-bar {
-        // scss-lint:disable ColorVariable
-        background-color: rgba(0, 0, 0, .5);
-        // scss-lint:enable ColorVariable
+        &-bar {
+            // scss-lint:disable ColorVariable
+            background-color: rgba(0, 0, 0, .5);
+            // scss-lint:enable ColorVariable
+        }
     }
 }
 
@@ -18,7 +20,7 @@ progress {
     color: $color-emperor;
     text-shadow: 0 #{to-rem(1)} #{to-rem(1)} $color-gray;
 
-    &:hover {
+    @include pseudo ('hover') {
         color: $color-pistachio;
     }
 }

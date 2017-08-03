@@ -12,6 +12,10 @@
     display: flex;
 }
 
+%grid {
+    display: grid
+}
+
 %block {
     display: block;
 }
@@ -113,7 +117,7 @@
     text-align: center;
 }
 
-%border-radius-50p {
+%half-border-radius {
     border-radius: 50%;
 }
 
@@ -121,7 +125,7 @@
     cursor: default;
 }
 
-%cursor-pointer {
+%pointer {
     cursor: pointer;
 }
 
@@ -177,7 +181,6 @@
 }
 
 %translate3d-hack {
-    @extend %fixed;
     // pass rendering to a gpu thread (boosts fps)
     // https://benfrain.com/improving-css-performance-fixed-position-elements/
     // http://stackoverflow.com/questions/12969228/chrome-slow-scrolling-with-fixed-position-elements

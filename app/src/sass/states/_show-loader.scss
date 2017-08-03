@@ -7,6 +7,6 @@
     }
 
     #loader {
-        @extend #loader.spin;
+        @extend #loader.is-active;
     }
 }
