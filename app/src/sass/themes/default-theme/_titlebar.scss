@@ -31,6 +31,10 @@
 
     @include pseudo('hover') {
         border-color: $hover-color;
+        //
+        &.is-active {
+            background-color: $hover-color;
+        }
     }
 }
 

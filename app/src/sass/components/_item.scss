@@ -33,7 +33,7 @@
             @include element ('icon') {
                 @extend %block;
                 @extend %center;
-                @include vertical-align;
+                @extend %vertical-align;
                 $dim: to-rem(70);
                 @include dim($dim);
                 background-size: $dim $dim;

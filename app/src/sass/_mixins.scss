@@ -78,18 +78,19 @@
 }
 //
 //
-@mixin vertical-align($position: null) {
-    @if $position == 'top' {
-        transform: translateY(-100%);
-    }
-
-    @else if $position == 'bottom' {
-        transform: translateY(0%);
-    }
-    @else {
+@mixin align($direction: null, $position: null) {
+    @if $direction == 'vertical' {
         transform: translateY(-50%);
     }
-    position: relative;
+    @else {
+        transform: translate(-50%, -50%);
+        left: 50%;
+    }
+    @if $position {
+        position: #{$position};
+    } @else {
+        position: relative;
+    }
     top: 50%;
 }
 //

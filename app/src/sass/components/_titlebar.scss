@@ -43,10 +43,24 @@
 }
 
 #maximize {
+    // @extend %relative;
     @include dim(to-rem(16));
     border: to-rem(2) solid;
     margin-top: to-rem(2);
     border-radius: 50%;
+
+    &.is-active {
+        border-width: 0;
+        background-color: $color-tundora;
+        // @include pseudo('before') {
+        //     @extend %block;
+        //     @extend %no-content;
+        //     @extend %circle;
+        //     @include dim(to-rem(10));
+        //     @include align('both', 'absolute');
+        //     background-color: $color-pistachio;
+        // }
+    }
 }
 
 #terminate {

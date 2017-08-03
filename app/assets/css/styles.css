@@ -122,60 +122,67 @@ main {
   border-radius: 50%;
 }
 
-/* line 124, ../../src/sass/_placeholders.scss */
+/* line 128, ../../src/sass/_placeholders.scss */
 .list.no-results, .playing, #logo, #title {
   cursor: default;
 }
 
-/* line 128, ../../src/sass/_placeholders.scss */
+/* line 132, ../../src/sass/_placeholders.scss */
 .btn, .item, progress {
   cursor: pointer;
 }
 
-/* line 132, ../../src/sass/_placeholders.scss */
+/* line 136, ../../src/sass/_placeholders.scss */
 .btn--nav, .btn--player, .btn--titlebar, .show-grid .item:hover, .show-grid .item.is-active, .list.no-results {
   background-color: transparent;
 }
 
-/* line 136, ../../src/sass/_placeholders.scss */
+/* line 140, ../../src/sass/_placeholders.scss */
 body {
   -webkit-user-select: none;
   user-select: none;
 }
 
-/* line 145, ../../src/sass/_placeholders.scss */
+/* line 149, ../../src/sass/_placeholders.scss */
 .clearfix::after, .item::after, .clearfix::before, .item::before {
   display: block;
   content: '\0020';
   height: 0;
 }
-/* line 153, ../../src/sass/_placeholders.scss */
+/* line 157, ../../src/sass/_placeholders.scss */
 .clearfix::after, .item::after {
   clear: both;
 }
 
-/* line 158, ../../src/sass/_placeholders.scss */
+/* line 162, ../../src/sass/_placeholders.scss */
 #mask:after, #minimize:before, #nav-right .btn--solo-icon:before, .show-grid .item small:after {
   content: '';
 }
 
-/* line 162, ../../src/sass/_placeholders.scss */
+/* line 166, ../../src/sass/_placeholders.scss */
 .btn, #search, #minimize {
   outline: 0;
 }
 
 /* line 174, ../../src/sass/_placeholders.scss */
+.item--no-artwork .item__icon {
+  transform: translateY(-50%);
+  position: relative;
+  top: 50%;
+}
+
+/* line 182, ../../src/sass/_placeholders.scss */
 .btn--nav, .item, .list.no-results, .component__header, .playing__header {
   text-transform: uppercase;
 }
 
-/* line 178, ../../src/sass/_placeholders.scss */
+/* line 186, ../../src/sass/_placeholders.scss */
 .item__meta {
   margin: 0;
   padding: 0;
 }
 
-/* line 183, ../../src/sass/_placeholders.scss */
+/* line 191, ../../src/sass/_placeholders.scss */
 #mask,
 #nav,
 #nav-right,
@@ -750,9 +757,6 @@ i.btn {
 }
 /* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
 .item--no-artwork .item__icon {
-  transform: translateY(-50%);
-  position: relative;
-  top: 50%;
   width: 4.375rem;
   height: 4.375rem;
   background-size: 4.375rem 4.375rem;
@@ -1011,14 +1015,19 @@ progress::-webkit-progress-value {
   margin-top: 0.125rem;
   border-radius: 50%;
 }
+/* line 52, ../../src/sass/components/_titlebar.scss */
+#maximize.is-active {
+  border-width: 0;
+  background-color: #444;
+}
 
-/* line 56, ../../src/sass/components/_titlebar.scss */
+/* line 70, ../../src/sass/components/_titlebar.scss */
 #titlebar-btns {
   margin-left: auto;
   margin-right: 0.625rem;
 }
 
-/* line 61, ../../src/sass/components/_titlebar.scss */
+/* line 75, ../../src/sass/components/_titlebar.scss */
 .btn--titlebar {
   vertical-align: top;
   margin-left: 5px;
@@ -1311,8 +1320,12 @@ main {
 #maximize:hover {
   border-color: #84bd00;
 }
+/* line 35, ../../src/sass/themes/default-theme/_titlebar.scss */
+#maximize:hover.is-active {
+  background-color: #84bd00;
+}
 
-/* line 37, ../../src/sass/themes/default-theme/_titlebar.scss */
+/* line 41, ../../src/sass/themes/default-theme/_titlebar.scss */
 #terminate {
   position: relative;
   display: inline-block;
@@ -1321,11 +1334,11 @@ main {
   overflow: hidden;
   outline: 0;
 }
-/* line 122, ../../src/sass/_mixins.scss */
+/* line 123, ../../src/sass/_mixins.scss */
 #terminate:hover::after, #terminate:hover::before {
   background-color: #84bd00;
 }
-/* line 128, ../../src/sass/_mixins.scss */
+/* line 129, ../../src/sass/_mixins.scss */
 #terminate::after, #terminate::before {
   content: '';
   position: absolute;
@@ -1336,64 +1349,64 @@ main {
   margin-top: -1px;
   background: #555;
 }
-/* line 140, ../../src/sass/_mixins.scss */
+/* line 141, ../../src/sass/_mixins.scss */
 #terminate::before {
   -moz-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-/* line 144, ../../src/sass/_mixins.scss */
+/* line 145, ../../src/sass/_mixins.scss */
 #terminate::after {
   -moz-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
-/* line 148, ../../src/sass/_mixins.scss */
+/* line 149, ../../src/sass/_mixins.scss */
 #terminate.big {
   -moz-transform: scale(3);
   -ms-transform: scale(3);
   -webkit-transform: scale(3);
   transform: scale(3);
 }
-/* line 153, ../../src/sass/_mixins.scss */
+/* line 154, ../../src/sass/_mixins.scss */
 #terminate.hairline::after, #terminate.hairline::before {
   height: 1px;
 }
-/* line 160, ../../src/sass/_mixins.scss */
+/* line 161, ../../src/sass/_mixins.scss */
 #terminate.thick::after, #terminate.thick::before {
   height: 4px;
   margin-top: -2px;
 }
-/* line 168, ../../src/sass/_mixins.scss */
+/* line 169, ../../src/sass/_mixins.scss */
 #terminate.black::after, #terminate.black::before {
   height: 8px;
   margin-top: -4px;
 }
-/* line 176, ../../src/sass/_mixins.scss */
+/* line 177, ../../src/sass/_mixins.scss */
 #terminate.heavy::after, #terminate.heavy::before {
   height: 12px;
   margin-top: -6px;
 }
-/* line 184, ../../src/sass/_mixins.scss */
+/* line 185, ../../src/sass/_mixins.scss */
 #terminate.pointy::after, #terminate.pointy::before {
   width: 200%;
   left: -50%;
 }
-/* line 192, ../../src/sass/_mixins.scss */
+/* line 193, ../../src/sass/_mixins.scss */
 #terminate.rounded::after, #terminate.rounded::before {
   border-radius: 5px;
 }
-/* line 199, ../../src/sass/_mixins.scss */
+/* line 200, ../../src/sass/_mixins.scss */
 #terminate.blades::after, #terminate.blades::before {
   border-radius: 5px 0;
 }
-/* line 206, ../../src/sass/_mixins.scss */
+/* line 207, ../../src/sass/_mixins.scss */
 #terminate.warp::after, #terminate.warp::before {
   border-radius: 120% 0;
 }
-/* line 213, ../../src/sass/_mixins.scss */
+/* line 214, ../../src/sass/_mixins.scss */
 #terminate.fat::after, #terminate.fat::before {
   border-radius: 100%;
 }

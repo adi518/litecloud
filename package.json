@@ -4,10 +4,12 @@
   "description": "Soundcloud container",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "install-deps": "install.bat",
-    "start": "electron .",
-    "start-offline": "start-offline.bat",
-    "watch": "watch.bat"
+    "install-deps": "install",
+    "remove-deps": "timeout 5 && rimraf node_modules",
+    "watch": "watch",
+    "rebuild": ".\\node_modules\\.bin\\electron-rebuild.cmd",
+    "start": "npm run rebuild && electron .",
+    "start-offline": "set NODE_ENV=dev&&npm start"
   },
   "repository": {
     "type": "git",

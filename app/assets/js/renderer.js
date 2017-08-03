@@ -39,6 +39,8 @@ if (isdev) {
 
 'use strict';
 
+const focusedWindow = BrowserWindow.getFocusedWindow();
+
 cache = $.extend({}, cache, {
     version: pjson.version,
     test: true,
@@ -324,6 +326,10 @@ $(function () {
         };
     }
 
+    function setMaximizeClass() {
+        cache.$maximize.toggleClass('is-active', focusedWindow.isMaximized())
+    }
+
     function init() {
 
         console.info('App version:', cache.version);
@@ -333,6 +339,8 @@ $(function () {
         // if (!drag.supported) {
         //     document.querySelector('#titlebar').style['-webkit-app-region'] = 'drag';
         // }
+
+        setMaximizeClass()
 
         cache.$body.removeClass('show-loader');
 
@@ -488,24 +496,23 @@ $(function () {
 
         // Minimize
         cache.$minimize.click(() => {
-            var window = BrowserWindow.getFocusedWindow();
-            window.minimize();
+            focusedWindow.minimize();
         });
 
         // Maximize
         cache.$maximize.click(() => {
-            var window = BrowserWindow.getFocusedWindow();
-            if (window.isMaximized()) {
-                window.unmaximize();
+            if (focusedWindow.isMaximized()) {
+                focusedWindow.unmaximize();
             } else {
-                window.maximize();
+                focusedWindow.maximize();
             }
         });
 
+        focusedWindow.on('maximize', setMaximizeClass).on('unmaximize', setMaximizeClass)
+
         // Terminate
         cache.$terminate.click(() => {
-            var window = BrowserWindow.getFocusedWindow();
-            window.close();
+            focusedWindow.close();
         });
 
         // Bind Media-keys
