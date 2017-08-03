@@ -121,6 +121,10 @@
     border-radius: 50%;
 }
 
+%circle {
+    @extend %half-border-radius;
+}
+
 %cursor-default {
     cursor: default;
 }
@@ -163,8 +167,12 @@
     outline: 0;
 }
 
+%align {
+    @include align;
+}
+
 %vertical-align {
-    @include vertical-align;
+    @include align('vertical')
 }
 
 %lowercase {

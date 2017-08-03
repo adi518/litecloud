@@ -1,1 +1,1 @@
-.\node_modules\.bin\electron-rebuild.cmd && timeout 2
+npm run rebuild && timeout 2
