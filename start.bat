@@ -1,1 +1,1 @@
-start /min node electron-thesbros/cli.js ./
+start /min rebuild-electron && npm start

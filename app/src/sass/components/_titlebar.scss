@@ -20,7 +20,6 @@
 
 #title {
     @extend %cursor-default;
-    font-family: $font-family-bold-italic;
     padding-left: to-rem(10);
     font-size: to-rem(12);
 }

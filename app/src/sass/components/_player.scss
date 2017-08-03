@@ -32,7 +32,7 @@ progress {
     margin-top: to-rem(10);
 }
 
-.btn--player {
+.btn.btn--player { // stronger specificity to avoid font-size override by `material-icons.css`
     @extend %btn--clear;
     font-size: to-rem(45);
 }

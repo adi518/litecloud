@@ -9,9 +9,9 @@
     padding-right: to-rem(35);
     transition: padding .2s;
 
-    &:not(:first-child) {
-        margin-top: to-rem(35);
-    }
+    // &:not(:first-child) {
+    //     margin-top: to-rem(35);
+    // }
 
     @include scope ('.item:hover') {
         //

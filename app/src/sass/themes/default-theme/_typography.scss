@@ -1,4 +1,5 @@
 // scss-lint:disable Compass::PropertyWithMixin
+// scss-lint:disable UrlQuotes
 // http://htmlarrows.com/
 // http://graphicdesign.stackexchange.com/questions/30072/what-is-the-font-used-in-the-new-spotify-interface-looking-for-an-alternative-f
 // https://fonts.google.com/specimen/Montserrat?selection.family=Montserrat
@@ -7,6 +8,16 @@
 // MATERIAL DESIGN ICONS
 //
 @import 'material-design-icons/iconfont/material-icons';
+// @import 'c:/projects/litecloud/node_modules/material-design-icons/iconfont/material-icons.css';
+//
+// Material Icons
+//
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/MaterialIcons/MaterialIcons-Regular.woff2') format('woff2');
+}
 //
 // MONTSERRAT
 //

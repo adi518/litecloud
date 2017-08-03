@@ -50,8 +50,8 @@ function createWindow() {
   if (isdev) {
     //
   } else {
-    options.minWidth = 1580;
-    options.minHeight = 1024;
+    options.minWidth = 1580
+    options.minHeight = 1024
   }
 
   mainWindow = new BrowserWindow(options)

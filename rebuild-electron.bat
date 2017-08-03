@@ -1,1 +1,1 @@
-.\node_modules\.bin\electron-rebuild.cmd
+cmd /k .\node_modules\.bin\electron-rebuild.cmd

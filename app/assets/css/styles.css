@@ -9,7 +9,7 @@
 }
 
 /* line 11, ../../src/sass/_placeholders.scss */
-#titlebar, .show-grid .list.has-results {
+#titlebar {
   display: flex;
 }
 
@@ -127,7 +127,7 @@ main {
 }
 
 /* line 128, ../../src/sass/_placeholders.scss */
-.btn--nav, .btn--player, .btn--titlebar, .show-grid .item:hover, .show-grid .item.is-active, .list.no-results {
+.btn--nav, .btn.btn--player, .btn--titlebar, .show-grid .item:hover, .show-grid .item.is-active, .list.no-results {
   background-color: transparent;
 }
 
@@ -196,25 +196,22 @@ main {
   margin-right: auto;
 }
 
-/*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
-/**
- * 1. Change the default font family in all browsers (opinionated).
- * 2. Correct the line height in all browsers.
- * 3. Prevent adjustments of font size after orientation changes in
- *    IE on Windows Phone and in iOS.
- */
+/*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
-/* line 13, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in
+ *    IE on Windows Phone and in iOS.
+ */
+/* line 12, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
 html {
-  font-family: sans-serif;
-  /* 1 */
   line-height: 1.15;
-  /* 2 */
+  /* 1 */
   -ms-text-size-adjust: 100%;
-  /* 3 */
+  /* 2 */
   -webkit-text-size-adjust: 100%;
-  /* 3 */
+  /* 2 */
 }
 
 /* Sections
@@ -222,7 +219,7 @@ html {
 /**
  * Remove the margin in all browsers (opinionated).
  */
-/* line 27, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 25, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
 body {
   margin: 0;
 }
@@ -230,7 +227,7 @@ body {
 /**
  * Add the correct display in IE 9-.
  */
-/* line 35, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 33, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
 article,
 aside,
 footer,
@@ -244,7 +241,7 @@ section {
  * Correct the font size and margin on `h1` elements within `section` and
  * `article` contexts in Chrome, Firefox, and Safari.
  */
-/* line 49, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 47, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
@@ -256,7 +253,7 @@ h1 {
  * Add the correct display in IE 9-.
  * 1. Add the correct display in IE.
  */
-/* line 62, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 60, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
 figcaption,
 figure,
 main {
@@ -267,7 +264,7 @@ main {
 /**
  * Add the correct margin in IE 8.
  */
-/* line 72, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 70, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
 figure {
   margin: 1em 40px;
 }
@@ -276,7 +273,7 @@ figure {
  * 1. Add the correct box sizing in Firefox.
  * 2. Show the overflow in Edge and IE.
  */
-/* line 81, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 79, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
 hr {
   box-sizing: content-box;
   /* 1 */
@@ -290,7 +287,7 @@ hr {
  * 1. Correct the inheritance and scaling of font size in all browsers.
  * 2. Correct the odd `em` font sizing in all browsers.
  */
-/* line 92, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 90, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
 pre {
   font-family: monospace, monospace;
   /* 1 */
@@ -304,7 +301,7 @@ pre {
  * 1. Remove the gray background on active links in IE 10.
  * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
  */
-/* line 105, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 103, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
 a {
   background-color: transparent;
   /* 1 */
@@ -313,20 +310,10 @@ a {
 }
 
 /**
- * Remove the outline on focused links when they are also active or hovered
- * in all browsers (opinionated).
- */
-/* line 115, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
-a:active,
-a:hover {
-  outline-width: 0;
-}
-
-/**
- * 1. Remove the bottom border in Firefox 39-.
+ * 1. Remove the bottom border in Chrome 57- and Firefox 39-.
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
-/* line 125, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 113, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
 abbr[title] {
   border-bottom: none;
   /* 1 */
@@ -339,7 +326,7 @@ abbr[title] {
 /**
  * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
  */
-/* line 135, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 123, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
 b,
 strong {
   font-weight: inherit;
@@ -348,7 +335,7 @@ strong {
 /**
  * Add the correct font weight in Chrome, Edge, and Safari.
  */
-/* line 144, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 132, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
 b,
 strong {
   font-weight: bolder;
@@ -358,7 +345,7 @@ strong {
  * 1. Correct the inheritance and scaling of font size in all browsers.
  * 2. Correct the odd `em` font sizing in all browsers.
  */
-/* line 154, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 142, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
 code,
 kbd,
 samp {
@@ -371,7 +358,7 @@ samp {
 /**
  * Add the correct font style in Android 4.3-.
  */
-/* line 165, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 153, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
 dfn {
   font-style: italic;
 }
@@ -379,7 +366,7 @@ dfn {
 /**
  * Add the correct background and color in IE 9-.
  */
-/* line 173, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 161, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
 mark {
   background-color: #ff0;
   color: #000;
@@ -388,7 +375,7 @@ mark {
 /**
  * Add the correct font size in all browsers.
  */
-/* line 182, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 170, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
 small {
   font-size: 80%;
 }
@@ -397,7 +384,7 @@ small {
  * Prevent `sub` and `sup` elements from affecting the line height in
  * all browsers.
  */
-/* line 191, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 179, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
 sub,
 sup {
   font-size: 75%;
@@ -406,12 +393,12 @@ sup {
   vertical-align: baseline;
 }
 
-/* line 199, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 187, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
 sub {
   bottom: -0.25em;
 }
 
-/* line 203, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 191, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
 sup {
   top: -0.5em;
 }
@@ -421,7 +408,7 @@ sup {
 /**
  * Add the correct display in IE 9-.
  */
-/* line 214, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 202, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
 audio,
 video {
   display: inline-block;
@@ -430,7 +417,7 @@ video {
 /**
  * Add the correct display in iOS 4-7.
  */
-/* line 223, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 211, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
 audio:not([controls]) {
   display: none;
   height: 0;
@@ -439,7 +426,7 @@ audio:not([controls]) {
 /**
  * Remove the border on images inside links in IE 10-.
  */
-/* line 232, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 220, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
 img {
   border-style: none;
 }
@@ -447,7 +434,7 @@ img {
 /**
  * Hide the overflow in IE.
  */
-/* line 240, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 228, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
 svg:not(:root) {
   overflow: hidden;
 }
@@ -458,7 +445,7 @@ svg:not(:root) {
  * 1. Change the font styles in all browsers (opinionated).
  * 2. Remove the margin in Firefox and Safari.
  */
-/* line 252, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 240, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
 button,
 input,
 optgroup,
@@ -478,7 +465,7 @@ textarea {
  * Show the overflow in IE.
  * 1. Show the overflow in Edge.
  */
-/* line 268, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 256, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
 button,
 input {
   /* 1 */
@@ -489,7 +476,7 @@ input {
  * Remove the inheritance of text transform in Edge, Firefox, and IE.
  * 1. Remove the inheritance of text transform in Firefox.
  */
-/* line 278, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 266, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
 button,
 select {
   /* 1 */
@@ -501,7 +488,7 @@ select {
  *    controls in Android 4.
  * 2. Correct the inability to style clickable types in iOS and Safari.
  */
-/* line 289, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 277, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
 button,
 html [type="button"],
 [type="reset"],
@@ -513,7 +500,7 @@ html [type="button"],
 /**
  * Remove the inner border and padding in Firefox.
  */
-/* line 300, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 288, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
 button::-moz-focus-inner,
 [type="button"]::-moz-focus-inner,
 [type="reset"]::-moz-focus-inner,
@@ -525,7 +512,7 @@ button::-moz-focus-inner,
 /**
  * Restore the focus styles unset by the previous rule.
  */
-/* line 312, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 300, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
 button:-moz-focusring,
 [type="button"]:-moz-focusring,
 [type="reset"]:-moz-focusring,
@@ -534,13 +521,11 @@ button:-moz-focusring,
 }
 
 /**
- * Change the border, margin, and padding in all browsers (opinionated).
+ * Correct the padding in Firefox.
  */
-/* line 323, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 311, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
 fieldset {
-  border: 1px solid #c0c0c0;
-  margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em;
+  padding: 0.35em 0.75em 0.625em;
 }
 
 /**
@@ -549,7 +534,7 @@ fieldset {
  * 3. Remove the padding so developers are not caught out when they zero out
  *    `fieldset` elements in all browsers.
  */
-/* line 336, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 322, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
 legend {
   box-sizing: border-box;
   /* 1 */
@@ -569,7 +554,7 @@ legend {
  * 1. Add the correct display in IE 9-.
  * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
  */
-/* line 350, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 336, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
 progress {
   display: inline-block;
   /* 1 */
@@ -580,7 +565,7 @@ progress {
 /**
  * Remove the default vertical scrollbar in IE.
  */
-/* line 359, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 345, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
 textarea {
   overflow: auto;
 }
@@ -589,7 +574,7 @@ textarea {
  * 1. Add the correct box sizing in IE 10-.
  * 2. Remove the padding in IE 10-.
  */
-/* line 368, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 354, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
 [type="checkbox"],
 [type="radio"] {
   box-sizing: border-box;
@@ -601,7 +586,7 @@ textarea {
 /**
  * Correct the cursor style of increment and decrement buttons in Chrome.
  */
-/* line 378, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 364, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
 [type="number"]::-webkit-inner-spin-button,
 [type="number"]::-webkit-outer-spin-button {
   height: auto;
@@ -611,7 +596,7 @@ textarea {
  * 1. Correct the odd appearance in Chrome and Safari.
  * 2. Correct the outline style in Safari.
  */
-/* line 388, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 374, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
 [type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
@@ -622,7 +607,7 @@ textarea {
 /**
  * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
  */
-/* line 397, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 383, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
 [type="search"]::-webkit-search-cancel-button,
 [type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
@@ -632,7 +617,7 @@ textarea {
  * 1. Correct the inability to style clickable types in iOS and Safari.
  * 2. Change font properties to `inherit` in Safari.
  */
-/* line 407, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 393, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
 ::-webkit-file-upload-button {
   -webkit-appearance: button;
   /* 1 */
@@ -646,7 +631,7 @@ textarea {
  * Add the correct display in IE 9-.
  * 1. Add the correct display in Edge, IE, and Firefox.
  */
-/* line 420, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 406, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
 details,
 menu {
   display: block;
@@ -655,7 +640,7 @@ menu {
 /*
  * Add the correct display in all browsers.
  */
-/* line 429, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 415, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
 summary {
   display: list-item;
 }
@@ -665,7 +650,7 @@ summary {
 /**
  * Add the correct display in IE 9-.
  */
-/* line 440, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 426, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
 canvas {
   display: inline-block;
 }
@@ -673,7 +658,7 @@ canvas {
 /**
  * Add the correct display in IE.
  */
-/* line 448, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 434, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
 template {
   display: none;
 }
@@ -683,7 +668,7 @@ template {
 /**
  * Add the correct display in IE 10-.
  */
-/* line 459, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 445, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
 [hidden] {
   display: none;
 }
@@ -706,7 +691,7 @@ i.btn {
 }
 
 /* line 19, ../../src/sass/components/_buttons.scss */
-.btn--nav, .btn--player {
+.btn--nav, .btn.btn--player {
   border-width: 0;
 }
 
@@ -744,10 +729,6 @@ i.btn {
 .item {
   padding-right: 2.1875rem;
   transition: padding .2s;
-}
-/* line 12, ../../src/sass/components/_item.scss */
-.item:not(:first-child) {
-  margin-top: 2.1875rem;
 }
 /* line 18, ../../src/sass/components/_item.scss */
 .item:hover .item__meta {
@@ -917,7 +898,7 @@ progress::-webkit-progress-value {
 }
 
 /* line 35, ../../src/sass/components/_player.scss */
-.btn--player {
+.btn.btn--player {
   font-size: 2.8125rem;
 }
 
@@ -996,12 +977,11 @@ progress::-webkit-progress-value {
 
 /* line 21, ../../src/sass/components/_titlebar.scss */
 #title {
-  font-family: "Montserrat-MediumItalic", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif;
   padding-left: 0.625rem;
   font-size: 0.75rem;
 }
 
-/* line 28, ../../src/sass/components/_titlebar.scss */
+/* line 27, ../../src/sass/components/_titlebar.scss */
 #minimize {
   width: 1.25rem;
   height: 1.25rem;
@@ -1016,7 +996,7 @@ progress::-webkit-progress-value {
   left: 0;
 }
 
-/* line 46, ../../src/sass/components/_titlebar.scss */
+/* line 45, ../../src/sass/components/_titlebar.scss */
 #maximize {
   width: 1rem;
   height: 1rem;
@@ -1025,13 +1005,13 @@ progress::-webkit-progress-value {
   border-radius: 50%;
 }
 
-/* line 57, ../../src/sass/components/_titlebar.scss */
+/* line 56, ../../src/sass/components/_titlebar.scss */
 #titlebar-btns {
   margin-left: auto;
   margin-right: 0.625rem;
 }
 
-/* line 62, ../../src/sass/components/_titlebar.scss */
+/* line 61, ../../src/sass/components/_titlebar.scss */
 .btn--titlebar {
   vertical-align: top;
   margin-left: 5px;
@@ -1125,19 +1105,22 @@ main {
 
 /* line 62, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
 .show-grid .list.has-results {
-  padding-top: 0;
+  display: flex;
   flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(12.1875rem, 1fr));
+  grid-row-gap: 2.1875rem;
+  grid-column-gap: 1.875rem;
   justify-content: space-between;
+  margin-top: 2.1875rem;
   margin-left: 1.25rem;
+  padding-top: 0;
 }
 /* line 35, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
 .show-grid .item {
   text-transform: capitalize;
   width: 12.1875rem;
   line-height: 1rem;
-  margin-top: 2.1875rem;
-  margin-right: 0.9375rem;
-  margin-left: 0.9375rem;
   font-size: 0.875rem;
   padding-right: 0;
   padding-left: 0;
@@ -1167,7 +1150,7 @@ main {
   padding-bottom: 0;
   border-bottom-width: 0;
 }
-/* line 86, ../../src/sass/states/_show-grid.scss */
+/* line 96, ../../src/sass/states/_show-grid.scss */
 .show-grid .item.is-active .item__thumbnail {
   background-blend-mode: multiply;
 }
@@ -1243,6 +1226,12 @@ main {
 }
 
 @font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/MaterialIcons/MaterialIcons-Regular.woff2") format("woff2");
+}
+@font-face {
   font-family: 'Montserrat';
   src: url("../fonts/Montserrat/Montserrat-Regular.ttf");
   font-weight: 300;
@@ -1260,7 +1249,7 @@ main {
   font-weight: 300;
   font-style: normal;
 }
-/* line 32, ../../src/sass/themes/default-theme/_typography.scss */
+/* line 43, ../../src/sass/themes/default-theme/_typography.scss */
 body,
 button,
 input,
@@ -1270,7 +1259,7 @@ textarea {
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif;
 }
 
-/* line 41, ../../src/sass/themes/default-theme/_typography.scss */
+/* line 52, ../../src/sass/themes/default-theme/_typography.scss */
 b,
 strong {
   font-family: "Montserrat-Medium", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif;

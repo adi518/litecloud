@@ -17,7 +17,7 @@ const remote = electron.remote;
 const {BrowserWindow, globalShortcut} = remote;
 /* beautify ignore:end */
 // remote.getCurrentWindow().removeAllListeners();
-const drag = require('electron-drag');
+// const drag = require('electron-drag');
 window.$ = window.jQuery = require('jquery');
 require('./assets/js/vendor/jquery.$$.min.js');
 const debounce = require('debounce');
@@ -37,7 +37,7 @@ if (isdev) {
 cache = $.extend({}, cache, {
     version: pjson.version,
     test: true,
-    testKeyword: 'chill music',
+    testKeyword: 'alle farben',
     keyupDebounceDelay: 500,
     loaderDelay: 1500,
     init: {
@@ -323,11 +323,11 @@ $(function () {
 
         console.info('app version:', cache.version);
 
-        drag('#titlebar');
-
-        if (!drag.supported) {
-            document.querySelector('#titlebar').style['-webkit-app-region'] = 'drag';
-        }
+        // drag('#titlebar');
+        //
+        // if (!drag.supported) {
+        //     document.querySelector('#titlebar').style['-webkit-app-region'] = 'drag';
+        // }
 
         cache.$body.removeClass('show-loader');
 
