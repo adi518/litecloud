@@ -12,6 +12,10 @@
     display: flex;
 }
 
+%grid {
+    display: grid
+}
+
 %block {
     display: block;
 }
@@ -121,7 +125,7 @@
     cursor: default;
 }
 
-%cursor-pointer {
+%pointer {
     cursor: pointer;
 }
 

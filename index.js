@@ -16,19 +16,19 @@ require('electron-context-menu')({
       showInspectElement: isdev
     }
   ]
-});
+})
 
 // Add debug tools (not part of the quick-start boilerplate)
 const electronDebug = require('electron-debug')
 let electronDebugOptions = {
   enabled: true
-};
-
-if (isdev) {
-  electronDebugOptions.showDevTools = true;
 }
 
-electronDebug(electronDebugOptions);
+if (isdev) {
+  electronDebugOptions.showDevTools = true
+}
+
+electronDebug(electronDebugOptions)
 
 const path = require('path')
 const url = require('url')
@@ -37,7 +37,7 @@ const url = require('url')
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
 
-function createWindow() {
+function createWindow () {
   // Create the browser window.
 
   var options = {

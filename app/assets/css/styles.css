@@ -1,3 +1,4 @@
+@import url(../../../node_modules/material-design-icons/iconfont/material-icons.css);
 /* line 3, ../../src/sass/_placeholders.scss */
 #loader,
 #player,
@@ -14,43 +15,48 @@
 }
 
 /* line 15, ../../src/sass/_placeholders.scss */
+.list {
+  display: grid;
+}
+
+/* line 19, ../../src/sass/_placeholders.scss */
 .show-grid .item__tag, .show-loader #overlay,
 .show-loader #loader, .show-mask #mask:after, .show-player #player, .show-playing #playing, .block, .btn--nav.btn--solo-icon .icon, .item--no-artwork .item__icon, progress, #nav-right .btn--solo-icon:before, .show-grid .item__thumbnail {
   display: block;
 }
 
-/* line 19, ../../src/sass/_placeholders.scss */
+/* line 23, ../../src/sass/_placeholders.scss */
 i.btn,
 span.btn, .show-grid .item small {
   display: inline-block;
 }
 
-/* line 35, ../../src/sass/_placeholders.scss */
+/* line 39, ../../src/sass/_placeholders.scss */
 .item__thumbnail {
   float: left;
 }
 
-/* line 39, ../../src/sass/_placeholders.scss */
+/* line 43, ../../src/sass/_placeholders.scss */
 .show-grid .item__duration {
   float: right;
 }
 
-/* line 43, ../../src/sass/_placeholders.scss */
+/* line 47, ../../src/sass/_placeholders.scss */
 .show-grid .item__thumbnail {
   float: none;
 }
 
-/* line 51, ../../src/sass/_placeholders.scss */
+/* line 55, ../../src/sass/_placeholders.scss */
 .item.is-active .item__thumbnail, #minimize, .show-grid .item__thumbnail, .show-grid .item__meta {
   position: relative;
 }
 
-/* line 55, ../../src/sass/_placeholders.scss */
+/* line 59, ../../src/sass/_placeholders.scss */
 .item__tag, #minimize:before, .show-grid .item__creator {
   position: absolute;
 }
 
-/* line 59, ../../src/sass/_placeholders.scss */
+/* line 63, ../../src/sass/_placeholders.scss */
 #loader, #mask,
 #nav,
 #nav-right,
@@ -60,116 +66,116 @@ main {
   position: fixed;
 }
 
-/* line 71, ../../src/sass/_placeholders.scss */
+/* line 75, ../../src/sass/_placeholders.scss */
 .item--no-artwork .item__icon, .playing__description {
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 76, ../../src/sass/_placeholders.scss */
+/* line 80, ../../src/sass/_placeholders.scss */
 body {
   margin: 0;
 }
 
-/* line 80, ../../src/sass/_placeholders.scss */
+/* line 84, ../../src/sass/_placeholders.scss */
 body {
   padding: 0;
 }
 
-/* line 84, ../../src/sass/_placeholders.scss */
+/* line 88, ../../src/sass/_placeholders.scss */
 .btn--nav, #overlay, progress, #search, #titlebar, .show-grid .item__creator {
   width: 100%;
 }
 
-/* line 88, ../../src/sass/_placeholders.scss */
+/* line 92, ../../src/sass/_placeholders.scss */
 html {
   height: 100%;
 }
 
-/* line 92, ../../src/sass/_placeholders.scss */
+/* line 96, ../../src/sass/_placeholders.scss */
 .show-loader, .clearfix::after, .item::after, .clearfix::before, .item::before, .item__meta, .item__tag, #minimize, body, .show-grid .item__title {
   overflow: hidden;
 }
 
-/* line 100, ../../src/sass/_placeholders.scss */
+/* line 104, ../../src/sass/_placeholders.scss */
 main {
   overflow: auto;
 }
 
-/* line 104, ../../src/sass/_placeholders.scss */
+/* line 108, ../../src/sass/_placeholders.scss */
 .item__tag, .show-grid .item__author {
   white-space: nowrap;
 }
 
-/* line 108, ../../src/sass/_placeholders.scss */
+/* line 112, ../../src/sass/_placeholders.scss */
 .item__tag, .show-grid .item__title, .show-grid .item__author {
   text-overflow: ellipsis;
 }
 
-/* line 112, ../../src/sass/_placeholders.scss */
+/* line 116, ../../src/sass/_placeholders.scss */
 .list.no-results, .nav--player, .playing__description {
   text-align: center;
 }
 
-/* line 116, ../../src/sass/_placeholders.scss */
+/* line 120, ../../src/sass/_placeholders.scss */
 #logo {
   border-radius: 50%;
 }
 
-/* line 120, ../../src/sass/_placeholders.scss */
+/* line 124, ../../src/sass/_placeholders.scss */
 .list.no-results, .playing, #logo, #title {
   cursor: default;
 }
 
-/* line 124, ../../src/sass/_placeholders.scss */
+/* line 128, ../../src/sass/_placeholders.scss */
 .btn, .item, progress {
   cursor: pointer;
 }
 
-/* line 128, ../../src/sass/_placeholders.scss */
-.btn--nav, .btn.btn--player, .btn--titlebar, .show-grid .item:hover, .show-grid .item.is-active, .list.no-results {
+/* line 132, ../../src/sass/_placeholders.scss */
+.btn--nav, .btn--player, .btn--titlebar, .show-grid .item:hover, .show-grid .item.is-active, .list.no-results {
   background-color: transparent;
 }
 
-/* line 132, ../../src/sass/_placeholders.scss */
+/* line 136, ../../src/sass/_placeholders.scss */
 body {
   -webkit-user-select: none;
   user-select: none;
 }
 
-/* line 141, ../../src/sass/_placeholders.scss */
+/* line 145, ../../src/sass/_placeholders.scss */
 .clearfix::after, .item::after, .clearfix::before, .item::before {
   display: block;
   content: '\0020';
   height: 0;
 }
-/* line 149, ../../src/sass/_placeholders.scss */
+/* line 153, ../../src/sass/_placeholders.scss */
 .clearfix::after, .item::after {
   clear: both;
 }
 
-/* line 154, ../../src/sass/_placeholders.scss */
+/* line 158, ../../src/sass/_placeholders.scss */
 #mask:after, #minimize:before, #nav-right .btn--solo-icon:before, .show-grid .item small:after {
   content: '';
 }
 
-/* line 158, ../../src/sass/_placeholders.scss */
+/* line 162, ../../src/sass/_placeholders.scss */
 .btn, #search, #minimize {
   outline: 0;
 }
 
-/* line 170, ../../src/sass/_placeholders.scss */
+/* line 174, ../../src/sass/_placeholders.scss */
 .btn--nav, .item, .list.no-results, .component__header, .playing__header {
   text-transform: uppercase;
 }
 
-/* line 174, ../../src/sass/_placeholders.scss */
+/* line 178, ../../src/sass/_placeholders.scss */
 .item__meta {
   margin: 0;
   padding: 0;
 }
 
-/* line 179, ../../src/sass/_placeholders.scss */
+/* line 183, ../../src/sass/_placeholders.scss */
 #mask,
 #nav,
 #nav-right,
@@ -691,7 +697,7 @@ i.btn {
 }
 
 /* line 19, ../../src/sass/components/_buttons.scss */
-.btn--nav, .btn.btn--player {
+.btn--nav, .btn--player {
   border-width: 0;
 }
 
@@ -728,13 +734,13 @@ i.btn {
 /* line 35, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
 .item {
   padding-right: 2.1875rem;
-  transition: padding .2s;
+  transition: padding .5s, background-color .5s;
 }
-/* line 18, ../../src/sass/components/_item.scss */
+/* line 14, ../../src/sass/components/_item.scss */
 .item:hover .item__meta {
   margin-top: 0.625rem;
 }
-/* line 26, ../../src/sass/components/_item.scss */
+/* line 22, ../../src/sass/components/_item.scss */
 .item--no-artwork:hover .item__icon {
   opacity: .5;
 }
@@ -760,7 +766,7 @@ i.btn {
   padding-left: 0.625rem;
   border-bottom: 0.0625rem solid;
 }
-/* line 60, ../../src/sass/components/_item.scss */
+/* line 56, ../../src/sass/components/_item.scss */
 .item.is-active:hover .item__meta {
   margin-top: 0;
 }
@@ -786,7 +792,7 @@ i.btn {
 /* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
 .item__meta {
   list-style-type: none;
-  transition: margin-top, .1s;
+  transition: margin-top .1s;
 }
 /* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
 .item__truncated {
@@ -806,6 +812,7 @@ i.btn {
 
 /* line 35, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
 .list {
+  grid-row-gap: 2.1875rem;
   margin-left: 1.5625rem;
   margin-right: 1.25rem;
   padding-top: 2.1875rem;
@@ -898,7 +905,7 @@ progress::-webkit-progress-value {
 }
 
 /* line 35, ../../src/sass/components/_player.scss */
-.btn.btn--player {
+.btn--player {
   font-size: 2.8125rem;
 }
 
@@ -1105,11 +1112,7 @@ main {
 
 /* line 62, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
 .show-grid .list.has-results {
-  display: flex;
-  flex-wrap: wrap;
-  display: grid;
   grid-template-columns: repeat(auto-fill, minmax(12.1875rem, 1fr));
-  grid-row-gap: 2.1875rem;
   grid-column-gap: 1.875rem;
   justify-content: space-between;
   margin-top: 2.1875rem;
@@ -1124,6 +1127,7 @@ main {
   font-size: 0.875rem;
   padding-right: 0;
   padding-left: 0;
+  transition: none;
 }
 /* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
 .show-grid .item:hover .item__thumbnail {
@@ -1150,7 +1154,7 @@ main {
   padding-bottom: 0;
   border-bottom-width: 0;
 }
-/* line 96, ../../src/sass/states/_show-grid.scss */
+/* line 90, ../../src/sass/states/_show-grid.scss */
 .show-grid .item.is-active .item__thumbnail {
   background-blend-mode: multiply;
 }
@@ -1171,6 +1175,7 @@ main {
   overflow: visible;
   height: 5.625rem;
   padding-top: 0.9375rem;
+  transition: none;
 }
 /* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
 .show-grid .item__title {
@@ -1197,38 +1202,6 @@ main {
   font-family: 'Material Icons';
   font-style: normal;
   font-weight: 400;
-  src: url(MaterialIcons-Regular.eot);
-  /* For IE6-8 */
-  src: local("Material Icons"), local("MaterialIcons-Regular"), url(MaterialIcons-Regular.woff2) format("woff2"), url(MaterialIcons-Regular.woff) format("woff"), url(MaterialIcons-Regular.ttf) format("truetype");
-}
-/* line 13, C:/projects/litecloud/node_modules/material-design-icons/iconfont/material-icons.css */
-.material-icons {
-  font-family: 'Material Icons';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px;
-  /* Preferred icon size */
-  display: inline-block;
-  line-height: 1;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
-  direction: ltr;
-  /* Support for all WebKit browsers. */
-  -webkit-font-smoothing: antialiased;
-  /* Support for Safari and Chrome. */
-  text-rendering: optimizeLegibility;
-  /* Support for Firefox. */
-  -moz-osx-font-smoothing: grayscale;
-  /* Support for IE. */
-  font-feature-settings: 'liga';
-}
-
-@font-face {
-  font-family: 'Material Icons';
-  font-style: normal;
-  font-weight: 400;
   src: url("../fonts/MaterialIcons/MaterialIcons-Regular.woff2") format("woff2");
 }
 @font-face {
@@ -1249,7 +1222,7 @@ main {
   font-weight: 300;
   font-style: normal;
 }
-/* line 43, ../../src/sass/themes/default-theme/_typography.scss */
+/* line 45, ../../src/sass/themes/default-theme/_typography.scss */
 body,
 button,
 input,
@@ -1259,7 +1232,7 @@ textarea {
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif;
 }
 
-/* line 52, ../../src/sass/themes/default-theme/_typography.scss */
+/* line 54, ../../src/sass/themes/default-theme/_typography.scss */
 b,
 strong {
   font-family: "Montserrat-Medium", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif;

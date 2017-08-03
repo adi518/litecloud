@@ -3,15 +3,11 @@
 // COMPONENT
 //
 @include component ('item') {
-    @extend %cursor-pointer;
+    @extend %pointer;
     @extend %clearfix;
     @extend %uppercase;
     padding-right: to-rem(35);
-    transition: padding .2s;
-
-    // &:not(:first-child) {
-    //     margin-top: to-rem(35);
-    // }
+    transition: padding .5s, background-color .5s;
 
     @include scope ('.item:hover') {
         //
@@ -94,7 +90,7 @@
         @extend %unstyled-list;
         @extend %overflow-hidden; // prevents content wrap-around
         list-style-type: none;
-        transition: margin-top, .1s;
+        transition: margin-top .1s;
     }
 
     @include element ('truncated') {

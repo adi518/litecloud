@@ -8,7 +8,7 @@
 progress {
     @extend %block;
     @extend %full-width; // override user-agent
-    @extend %cursor-pointer;
+    @extend %pointer;
     border-radius: to-rem(2);
     height: to-rem(6);
     -webkit-appearance: none;
@@ -32,7 +32,7 @@ progress {
     margin-top: to-rem(10);
 }
 
-.btn.btn--player { // stronger specificity to avoid font-size override by `material-icons.css`
+.btn--player {
     @extend %btn--clear;
     font-size: to-rem(45);
 }

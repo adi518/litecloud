@@ -10,14 +10,10 @@
     @include component ('list') {
         //
         @include state(results, has) {
-            display: flex; // fallback
-            flex-wrap: wrap; // fallback
-            display: grid;
             // learncssgrid.com
             // https://fettblog.eu/grid-concepts/
             // https://alligator.io/css/css-grid-layout-fr-unit/
             grid-template-columns: repeat(auto-fill, minmax($large-thumbnail-size, 1fr));
-            grid-row-gap: to-rem(35);
             grid-column-gap: to-rem(30);
             justify-content: space-between; // required by both flex/grid
             margin-top: to-rem(35);
@@ -33,12 +29,10 @@
         text-transform: capitalize;
         width: $large-thumbnail-size;
         line-height: to-rem(16);
-        // margin-top: to-rem(35); // replaced with grid-gap
-        // margin-right: to-rem(15); // replaced with grid-gap
-        // margin-left: to-rem(15); // replaced with grid-gap
         font-size: to-rem(14);
         padding-right: 0;
         padding-left: 0;
+        transition: none;
 
         // TODO: bemify
         small {
@@ -124,6 +118,7 @@
             overflow: visible;
             height: to-rem(90);
             padding-top: to-rem(15);
+            transition: none;
         }
 
         @include element ('title') {
