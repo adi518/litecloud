@@ -17,12 +17,7 @@ const remote = electron.remote;
 const {BrowserWindow, globalShortcut} = remote;
 /* beautify ignore:end */
 // remote.getCurrentWindow().removeAllListeners();
-try {
-    const drag = require('electron-drag');
-} catch(e) {
-    console.warn('failed requiring electron-drag')
-    console.error(e)
-}
+const drag = require('electron-drag');
 window.$ = window.jQuery = require('jquery');
 require('./assets/js/vendor/jquery.$$.min.js');
 const debounce = require('debounce');
@@ -334,11 +329,11 @@ $(function () {
 
         console.info('App version:', cache.version);
 
-        // drag('#titlebar');
-        //
-        // if (!drag.supported) {
-        //     document.querySelector('#titlebar').style['-webkit-app-region'] = 'drag';
-        // }
+        drag('#titlebar');
+
+        if (!drag.supported) {
+            document.querySelector('#titlebar').style['-webkit-app-region'] = 'drag';
+        }
 
         setMaximizeClass()
 
