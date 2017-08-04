@@ -32,7 +32,7 @@ progress {
     margin-top: to-rem(10);
 }
 
-.btn--player {
+.btn.btn--player { // we need stronger specificity
     @extend %btn--clear;
     font-size: to-rem(45);
 }

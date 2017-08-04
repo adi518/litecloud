@@ -133,7 +133,7 @@ main {
 }
 
 /* line 136, ../../src/sass/_placeholders.scss */
-.btn--nav, .btn--player, .btn--titlebar, .show-grid .item:hover, .show-grid .item.is-active, .list.no-results {
+.btn--nav, .btn.btn--player, .btn--titlebar, .show-grid .item:hover, .show-grid .item.is-active, .list.no-results {
   background-color: transparent;
 }
 
@@ -704,7 +704,7 @@ i.btn {
 }
 
 /* line 19, ../../src/sass/components/_buttons.scss */
-.btn--nav, .btn--player {
+.btn--nav, .btn.btn--player {
   border-width: 0;
 }
 
@@ -909,7 +909,7 @@ progress::-webkit-progress-value {
 }
 
 /* line 35, ../../src/sass/components/_player.scss */
-.btn--player {
+.btn.btn--player {
   font-size: 2.8125rem;
 }
 

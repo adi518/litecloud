@@ -4,7 +4,7 @@
   "description": "Soundcloud container",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "install-deps": "install",
+    "install-deps": "bundler & npm i",
     "remove-deps": "timeout 5 && rimraf node_modules",
     "watch": "watch",
     "rebuild": ".\\node_modules\\.bin\\electron-rebuild.cmd",

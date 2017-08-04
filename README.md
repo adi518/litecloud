@@ -11,8 +11,10 @@ This project currently serves as a learning curve for various technologies, some
 `npm run install-deps`
 
 ## Development
-* `npm start` or `npm run start-offline` (no requests will be made to Soundcloud API).
 * `npm run watch`
+* `npm run rebuild`
+* `npm start`
+* `npm run start-offline`
 
 ## Support
 Please [open an issue](https://github.com/adi518/litecloud/issues) for support.

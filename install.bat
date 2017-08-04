@@ -1,1 +1,1 @@
-cmd /c "bundler & npm i"
+npm run install-deps
