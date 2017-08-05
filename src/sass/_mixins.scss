@@ -1,0 +1,220 @@
+// scss-lint:disable Compass::PropertyWithMixin
+// scss-lint:disable EmptyLineBetweenBlocks
+// scss-lint:disable SpaceBeforeBrace
+// scss-lint:disable Indentation
+// scss-lint:disable ElsePlacement
+// scss-lint:disable DebugStatement
+// scss-lint:disable NameFormat
+@import 'node_modules/compass-mixins/lib/compass';
+@import 'node_modules/bemify/sass/bemify';
+//
+//
+@mixin scope($rule) {
+     @at-root{
+        #{$rule} {
+            @content;
+        }
+    }
+}
+//
+//
+@mixin pseudo($type) {
+    $concatenator: null;
+    @if index($type, ('before' 'after')) {
+        $concatenator: '::';
+    }
+    @else {
+        $concatenator: ':';
+    }
+
+    &#{$concatenator + $type} {
+        @content;
+    }
+}
+//
+//
+@mixin position-args($args) {
+     @each $o in top right bottom left{
+        $i: index($args, $o);
+        @if $i and $i + 1 <= length($args) and type-of(nth($args, $i + 1)) == number {
+            #{$o}: nth($args, $i + 1);
+        }
+    }
+}
+//
+//
+@mixin dim($value) {
+    width: $value;
+    height: $value;
+}
+//
+//
+@mixin position($position, $args) {
+     @include position-args($args);
+    position: $position;
+}
+//
+//
+@mixin absolute($args) {
+     @include position(absolute, $args);
+}
+//
+//
+@mixin fixed($args) {
+     @include position(fixed, $args);
+}
+//
+//
+@mixin relative($args) {
+     @include position(relative, $args);
+}
+//
+//
+@mixin x-rem($property, $value) {
+     @if ($old-browsers-support){
+        #{$property}: $value + px;
+    }
+    #{$property}: to-rem($value);
+}
+//
+//
+@mixin align($direction: null, $position: null) {
+    @if $direction == 'vertical' {
+        transform: translateY(-50%);
+    }
+    @else {
+        transform: translate(-50%, -50%);
+        left: 50%;
+    }
+    @if $position {
+        position: #{$position};
+    } @else {
+        position: relative;
+    }
+    top: 50%;
+}
+//
+//
+@mixin ellipsis($line-clamp) {
+     @extend %text-overflow-ellipsis;
+    @extend %overflow-hidden;
+    display: -webkit-box;
+    @if ($line-clamp) {
+        -webkit-line-clamp: $line-clamp;
+    }
+    @else {
+        -webkit-line-clamp: 1;
+    }
+    -webkit-box-orient: vertical;
+}
+//
+//
+// https://codepen.io/ndeniche/pen/ljbDL
+@mixin close($width, $height, $color, $hover-color) {
+    // .close {
+    position: relative;
+    display: inline-block;
+    width: $width;
+    height: $height;
+    overflow: hidden;
+    outline: 0;
+
+    &:hover {
+        &::after,
+        &::before {
+            background-color: $hover-color;
+        }
+    }
+
+    &::after,
+    &::before {
+        content: '';
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        top: 50%;
+        left: 0;
+        margin-top: -1px;
+        background: $color;
+    }
+
+    &::before {
+        @include transform(rotate(45deg));
+    }
+
+    &::after {
+        @include transform(rotate(-45deg));
+    }
+
+    &.big {
+        @include transform(scale(3));
+    }
+
+    &.hairline {
+        &::after,
+        &::before {
+            height: 1px;
+        }
+    }
+
+    &.thick {
+        &::after,
+        &::before {
+            height: 4px;
+            margin-top: -2px;
+        }
+    }
+
+    &.black {
+        &::after,
+        &::before {
+            height: 8px;
+            margin-top: -4px;
+        }
+    }
+
+    &.heavy {
+        &::after,
+        &::before {
+            height: 12px;
+            margin-top: -6px;
+        }
+    }
+
+    &.pointy {
+        &::after,
+        &::before {
+            width: 200%;
+            left: -50%;
+        }
+    }
+
+    &.rounded {
+        &::after,
+        &::before {
+            border-radius: 5px;
+        }
+    }
+
+    &.blades {
+        &::after,
+        &::before {
+            border-radius: 5px 0;
+        }
+    }
+
+    &.warp {
+        &::after,
+        &::before {
+            border-radius: 120% 0;
+        }
+    }
+
+    &.fat {
+        &::after,
+        &::before {
+            border-radius: 100%;
+        }
+    }
+    // }
+}

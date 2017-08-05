@@ -1,0 +1,12 @@
+.show-loader {
+    @extend %disable-scroll;
+
+    #overlay,
+    #loader {
+        @extend %show;
+    }
+
+    #loader {
+        @extend .loader-is-active;
+    }
+}

@@ -8,8 +8,8 @@ require 'sass-css-importer'
 require 'sass-globbing'
 add_import_path 'node_modules'
 add_import_path Sass::CssImporter::Importer.new('node_modules')
-sass_path = 'app/src/sass'
-css_path = 'app/assets/css'
+sass_path = 'src/sass'
+css_path = 'src/assets/css'
 relative_assets = true
 line_comments = true
 asset_cache_buster do |http_path, real_path|

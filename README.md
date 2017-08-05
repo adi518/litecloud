@@ -1,5 +1,5 @@
 # Litecloud
-Litecloud is a Soundcloud container integrating the Soundcloud API using React, Electron & Node.js.
+Litecloud is a Soundcloud container integrating the Soundcloud API using VueJS, Electron & Node.js.
 
 ## Prologue
 This project currently serves as a learning curve for various technologies, some of which are yet implemented.
