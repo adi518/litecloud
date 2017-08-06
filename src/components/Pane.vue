@@ -4,7 +4,9 @@ nav(id="nav" class="nav")
     Playing
     Player
 </template>
+
 <script>
+// Components
 import Search from './Search'
 import Playing from './Playing'
 import Player from './Player'

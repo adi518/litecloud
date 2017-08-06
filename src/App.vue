@@ -1,8 +1,8 @@
 <template lang="pug">
 #app
   Titlebar
-  NavigationRight
-  Navigation
+  Pane
+  PaneRight
   List
   #loader
   #overlay
@@ -10,18 +10,21 @@
 </template>
 
 <script>
+// Assets
 import materialIcons from 'material-design-icons/iconfont/material-icons.css'
 import normalize from 'normalize.css'
+
+// Components
 import Titlebar from './components/Titlebar'
-import Navigation from './components/Nav'
-import NavigationRight from './components/NavRight'
+import Pane from './components/Pane'
+import PaneRight from './components/PaneRight'
 import List from './components/List'
 
 export default {
   components: {
     Titlebar,
-    Navigation,
-    NavigationRight,
+    Pane,
+    PaneRight,
     List,
   }
 }

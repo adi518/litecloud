@@ -46,7 +46,6 @@ cache = $.extend({}, cache, {
     init: {
         grid: true
     },
-    grid: true,
     clientId: 'd3cc13db45cba4f1ff6846dc46b0ef8a',
     truncatedTitleLength: 20,
     played: [],
