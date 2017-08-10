@@ -1,1 +1,1 @@
-npm run start-offline
+start /min npm run start-offline

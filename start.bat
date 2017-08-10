@@ -1,1 +1,1 @@
-start /min rebuild-electron && npm start
+start /min npm start
