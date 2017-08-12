@@ -5,7 +5,7 @@ Litecloud is a Soundcloud container integrating the Soundcloud API using VueJS, 
 This project currently serves as a learning curve for various technologies, some of which are yet implemented.
 
 ## Prerequisites
-`git clone https://github.com/adi518/litecloud.git`
+`clone`
 
 ## Install
 `npm run install-deps`

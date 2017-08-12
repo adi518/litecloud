@@ -1,47 +1,54 @@
 <template lang="pug">
-input(id="search" placeholder="..." @keyup="debounceOnKeyup")
+input(id="search" placeholder="..." v-model="keyword")
 </template>
 
 <script>
+// https://jsfiddle.net/9b62g07k/
+// https://www.webpackbin.com/bins/-KqoXc43ubNhc4Aun2YZ
 // https://stackoverflow.com/questions/42199956/how-to-implement-debounce-in-vue2
-import axios from 'axios'
+// https://stackoverflow.com/questions/42260233/vue-js-difference-between-v-model-and-vbind
+// https://stackoverflow.com/questions/24306290/lodash-debounce-not-working-in-anonymous-function
 import debounce from 'lodash.debounce'
-// import $ from 'jquery' // get rid of it later
-
-var cache = {}
 
 export default {
-  props: {
-    delay: {
-      type: Number,
-      default: 500
+  mounted() {
+    if (this.$store.state.isDev) {
+      this.keyword = this.$store.state.keyword
     }
   },
   data() {
     return {
-      value: '',
-      query: null,
-      offset: null,
-      tracks: null,
+      keyword: ''
+    }
+  },
+  props: {
+    delay: {
+      type: Number,
+      default() {
+        return this.$store.state.searchDebounceDelay
+      }
     }
   },
   computed: {
-    debounceOnKeyup() {
-      return debounce(this.onKeyup, this.delay)
+    debounce() {
+      return debounce(this.search, this.delay)
     }
   },
   methods: {
-    onKeyup(event) {
-      // https://stackoverflow.com/questions/24306290/lodash-debounce-not-working-in-anonymous-function
-      // https://www.webpackbin.com/bins/-KqoXc43ubNhc4Aun2YZ
-      if (event.target.value === '') {
+    search(keyword, oldKeyword) {
+      if (!keyword || keyword === oldKeyword) {
         return
       }
-      // dispatch an action here
-      // this.getTracks(this.query, null, {
-      //   new: true
-      // })
+      this.$store.dispatch('GET_TRACKS', {
+        query: keyword,
+        new: true
+      })
     },
+  },
+  watch: {
+    keyword() {
+      return this.debounce.apply(this, arguments)
+    }
   }
 }
 </script>
