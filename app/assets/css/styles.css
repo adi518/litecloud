@@ -217,7 +217,7 @@ main {
  * 2. Prevent adjustments of font size after orientation changes in
  *    IE on Windows Phone and in iOS.
  */
-/* line 12, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 12, C:/projects/litecloud-master/node_modules/normalize.css/normalize.css */
 html {
   line-height: 1.15;
   /* 1 */
@@ -232,7 +232,7 @@ html {
 /**
  * Remove the margin in all browsers (opinionated).
  */
-/* line 25, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 25, C:/projects/litecloud-master/node_modules/normalize.css/normalize.css */
 body {
   margin: 0;
 }
@@ -240,7 +240,7 @@ body {
 /**
  * Add the correct display in IE 9-.
  */
-/* line 33, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 33, C:/projects/litecloud-master/node_modules/normalize.css/normalize.css */
 article,
 aside,
 footer,
@@ -254,7 +254,7 @@ section {
  * Correct the font size and margin on `h1` elements within `section` and
  * `article` contexts in Chrome, Firefox, and Safari.
  */
-/* line 47, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 47, C:/projects/litecloud-master/node_modules/normalize.css/normalize.css */
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
@@ -266,7 +266,7 @@ h1 {
  * Add the correct display in IE 9-.
  * 1. Add the correct display in IE.
  */
-/* line 60, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 60, C:/projects/litecloud-master/node_modules/normalize.css/normalize.css */
 figcaption,
 figure,
 main {
@@ -277,7 +277,7 @@ main {
 /**
  * Add the correct margin in IE 8.
  */
-/* line 70, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 70, C:/projects/litecloud-master/node_modules/normalize.css/normalize.css */
 figure {
   margin: 1em 40px;
 }
@@ -286,7 +286,7 @@ figure {
  * 1. Add the correct box sizing in Firefox.
  * 2. Show the overflow in Edge and IE.
  */
-/* line 79, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 79, C:/projects/litecloud-master/node_modules/normalize.css/normalize.css */
 hr {
   box-sizing: content-box;
   /* 1 */
@@ -300,7 +300,7 @@ hr {
  * 1. Correct the inheritance and scaling of font size in all browsers.
  * 2. Correct the odd `em` font sizing in all browsers.
  */
-/* line 90, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 90, C:/projects/litecloud-master/node_modules/normalize.css/normalize.css */
 pre {
   font-family: monospace, monospace;
   /* 1 */
@@ -314,7 +314,7 @@ pre {
  * 1. Remove the gray background on active links in IE 10.
  * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
  */
-/* line 103, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 103, C:/projects/litecloud-master/node_modules/normalize.css/normalize.css */
 a {
   background-color: transparent;
   /* 1 */
@@ -326,7 +326,7 @@ a {
  * 1. Remove the bottom border in Chrome 57- and Firefox 39-.
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
-/* line 113, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 113, C:/projects/litecloud-master/node_modules/normalize.css/normalize.css */
 abbr[title] {
   border-bottom: none;
   /* 1 */
@@ -339,7 +339,7 @@ abbr[title] {
 /**
  * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
  */
-/* line 123, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 123, C:/projects/litecloud-master/node_modules/normalize.css/normalize.css */
 b,
 strong {
   font-weight: inherit;
@@ -348,7 +348,7 @@ strong {
 /**
  * Add the correct font weight in Chrome, Edge, and Safari.
  */
-/* line 132, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 132, C:/projects/litecloud-master/node_modules/normalize.css/normalize.css */
 b,
 strong {
   font-weight: bolder;
@@ -358,7 +358,7 @@ strong {
  * 1. Correct the inheritance and scaling of font size in all browsers.
  * 2. Correct the odd `em` font sizing in all browsers.
  */
-/* line 142, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 142, C:/projects/litecloud-master/node_modules/normalize.css/normalize.css */
 code,
 kbd,
 samp {
@@ -371,7 +371,7 @@ samp {
 /**
  * Add the correct font style in Android 4.3-.
  */
-/* line 153, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 153, C:/projects/litecloud-master/node_modules/normalize.css/normalize.css */
 dfn {
   font-style: italic;
 }
@@ -379,7 +379,7 @@ dfn {
 /**
  * Add the correct background and color in IE 9-.
  */
-/* line 161, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 161, C:/projects/litecloud-master/node_modules/normalize.css/normalize.css */
 mark {
   background-color: #ff0;
   color: #000;
@@ -388,7 +388,7 @@ mark {
 /**
  * Add the correct font size in all browsers.
  */
-/* line 170, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 170, C:/projects/litecloud-master/node_modules/normalize.css/normalize.css */
 small {
   font-size: 80%;
 }
@@ -397,7 +397,7 @@ small {
  * Prevent `sub` and `sup` elements from affecting the line height in
  * all browsers.
  */
-/* line 179, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 179, C:/projects/litecloud-master/node_modules/normalize.css/normalize.css */
 sub,
 sup {
   font-size: 75%;
@@ -406,12 +406,12 @@ sup {
   vertical-align: baseline;
 }
 
-/* line 187, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 187, C:/projects/litecloud-master/node_modules/normalize.css/normalize.css */
 sub {
   bottom: -0.25em;
 }
 
-/* line 191, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 191, C:/projects/litecloud-master/node_modules/normalize.css/normalize.css */
 sup {
   top: -0.5em;
 }
@@ -421,7 +421,7 @@ sup {
 /**
  * Add the correct display in IE 9-.
  */
-/* line 202, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 202, C:/projects/litecloud-master/node_modules/normalize.css/normalize.css */
 audio,
 video {
   display: inline-block;
@@ -430,7 +430,7 @@ video {
 /**
  * Add the correct display in iOS 4-7.
  */
-/* line 211, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 211, C:/projects/litecloud-master/node_modules/normalize.css/normalize.css */
 audio:not([controls]) {
   display: none;
   height: 0;
@@ -439,7 +439,7 @@ audio:not([controls]) {
 /**
  * Remove the border on images inside links in IE 10-.
  */
-/* line 220, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 220, C:/projects/litecloud-master/node_modules/normalize.css/normalize.css */
 img {
   border-style: none;
 }
@@ -447,7 +447,7 @@ img {
 /**
  * Hide the overflow in IE.
  */
-/* line 228, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 228, C:/projects/litecloud-master/node_modules/normalize.css/normalize.css */
 svg:not(:root) {
   overflow: hidden;
 }
@@ -458,7 +458,7 @@ svg:not(:root) {
  * 1. Change the font styles in all browsers (opinionated).
  * 2. Remove the margin in Firefox and Safari.
  */
-/* line 240, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 240, C:/projects/litecloud-master/node_modules/normalize.css/normalize.css */
 button,
 input,
 optgroup,
@@ -478,7 +478,7 @@ textarea {
  * Show the overflow in IE.
  * 1. Show the overflow in Edge.
  */
-/* line 256, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 256, C:/projects/litecloud-master/node_modules/normalize.css/normalize.css */
 button,
 input {
   /* 1 */
@@ -489,7 +489,7 @@ input {
  * Remove the inheritance of text transform in Edge, Firefox, and IE.
  * 1. Remove the inheritance of text transform in Firefox.
  */
-/* line 266, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 266, C:/projects/litecloud-master/node_modules/normalize.css/normalize.css */
 button,
 select {
   /* 1 */
@@ -501,7 +501,7 @@ select {
  *    controls in Android 4.
  * 2. Correct the inability to style clickable types in iOS and Safari.
  */
-/* line 277, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 277, C:/projects/litecloud-master/node_modules/normalize.css/normalize.css */
 button,
 html [type="button"],
 [type="reset"],
@@ -513,7 +513,7 @@ html [type="button"],
 /**
  * Remove the inner border and padding in Firefox.
  */
-/* line 288, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 288, C:/projects/litecloud-master/node_modules/normalize.css/normalize.css */
 button::-moz-focus-inner,
 [type="button"]::-moz-focus-inner,
 [type="reset"]::-moz-focus-inner,
@@ -525,7 +525,7 @@ button::-moz-focus-inner,
 /**
  * Restore the focus styles unset by the previous rule.
  */
-/* line 300, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 300, C:/projects/litecloud-master/node_modules/normalize.css/normalize.css */
 button:-moz-focusring,
 [type="button"]:-moz-focusring,
 [type="reset"]:-moz-focusring,
@@ -536,7 +536,7 @@ button:-moz-focusring,
 /**
  * Correct the padding in Firefox.
  */
-/* line 311, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 311, C:/projects/litecloud-master/node_modules/normalize.css/normalize.css */
 fieldset {
   padding: 0.35em 0.75em 0.625em;
 }
@@ -547,7 +547,7 @@ fieldset {
  * 3. Remove the padding so developers are not caught out when they zero out
  *    `fieldset` elements in all browsers.
  */
-/* line 322, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 322, C:/projects/litecloud-master/node_modules/normalize.css/normalize.css */
 legend {
   box-sizing: border-box;
   /* 1 */
@@ -567,7 +567,7 @@ legend {
  * 1. Add the correct display in IE 9-.
  * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
  */
-/* line 336, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 336, C:/projects/litecloud-master/node_modules/normalize.css/normalize.css */
 progress {
   display: inline-block;
   /* 1 */
@@ -578,7 +578,7 @@ progress {
 /**
  * Remove the default vertical scrollbar in IE.
  */
-/* line 345, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 345, C:/projects/litecloud-master/node_modules/normalize.css/normalize.css */
 textarea {
   overflow: auto;
 }
@@ -587,7 +587,7 @@ textarea {
  * 1. Add the correct box sizing in IE 10-.
  * 2. Remove the padding in IE 10-.
  */
-/* line 354, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 354, C:/projects/litecloud-master/node_modules/normalize.css/normalize.css */
 [type="checkbox"],
 [type="radio"] {
   box-sizing: border-box;
@@ -599,7 +599,7 @@ textarea {
 /**
  * Correct the cursor style of increment and decrement buttons in Chrome.
  */
-/* line 364, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 364, C:/projects/litecloud-master/node_modules/normalize.css/normalize.css */
 [type="number"]::-webkit-inner-spin-button,
 [type="number"]::-webkit-outer-spin-button {
   height: auto;
@@ -609,7 +609,7 @@ textarea {
  * 1. Correct the odd appearance in Chrome and Safari.
  * 2. Correct the outline style in Safari.
  */
-/* line 374, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 374, C:/projects/litecloud-master/node_modules/normalize.css/normalize.css */
 [type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
@@ -620,7 +620,7 @@ textarea {
 /**
  * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
  */
-/* line 383, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 383, C:/projects/litecloud-master/node_modules/normalize.css/normalize.css */
 [type="search"]::-webkit-search-cancel-button,
 [type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
@@ -630,7 +630,7 @@ textarea {
  * 1. Correct the inability to style clickable types in iOS and Safari.
  * 2. Change font properties to `inherit` in Safari.
  */
-/* line 393, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 393, C:/projects/litecloud-master/node_modules/normalize.css/normalize.css */
 ::-webkit-file-upload-button {
   -webkit-appearance: button;
   /* 1 */
@@ -644,7 +644,7 @@ textarea {
  * Add the correct display in IE 9-.
  * 1. Add the correct display in Edge, IE, and Firefox.
  */
-/* line 406, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 406, C:/projects/litecloud-master/node_modules/normalize.css/normalize.css */
 details,
 menu {
   display: block;
@@ -653,7 +653,7 @@ menu {
 /*
  * Add the correct display in all browsers.
  */
-/* line 415, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 415, C:/projects/litecloud-master/node_modules/normalize.css/normalize.css */
 summary {
   display: list-item;
 }
@@ -663,7 +663,7 @@ summary {
 /**
  * Add the correct display in IE 9-.
  */
-/* line 426, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 426, C:/projects/litecloud-master/node_modules/normalize.css/normalize.css */
 canvas {
   display: inline-block;
 }
@@ -671,7 +671,7 @@ canvas {
 /**
  * Add the correct display in IE.
  */
-/* line 434, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 434, C:/projects/litecloud-master/node_modules/normalize.css/normalize.css */
 template {
   display: none;
 }
@@ -681,7 +681,7 @@ template {
 /**
  * Add the correct display in IE 10-.
  */
-/* line 445, C:/projects/litecloud/node_modules/normalize.css/normalize.css */
+/* line 445, C:/projects/litecloud-master/node_modules/normalize.css/normalize.css */
 [hidden] {
   display: none;
 }
@@ -708,17 +708,17 @@ i.btn {
   border-width: 0;
 }
 
-/* line 35, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
+/* line 35, C:/projects/litecloud-master/node_modules/bemify/sass/_bemify.scss */
 .btn {
   transition: color .2s;
 }
 
-/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud-master/node_modules/bemify/sass/_bemify.scss */
 .btn__icon {
   font-size: 1.5rem;
 }
 
-/* line 52, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
+/* line 52, C:/projects/litecloud-master/node_modules/bemify/sass/_bemify.scss */
 .btn--nav {
   line-height: 2rem;
   text-align: left;
@@ -738,7 +738,7 @@ i.btn {
   padding-right: 0;
 }
 
-/* line 35, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
+/* line 35, C:/projects/litecloud-master/node_modules/bemify/sass/_bemify.scss */
 .item {
   padding-right: 2.1875rem;
   transition: padding .5s, background-color .5s;
@@ -751,11 +751,11 @@ i.btn {
 .item--no-artwork:hover .item__icon {
   opacity: .5;
 }
-/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud-master/node_modules/bemify/sass/_bemify.scss */
 .item--no-artwork .item__thumbnail {
   image-rendering: auto;
 }
-/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud-master/node_modules/bemify/sass/_bemify.scss */
 .item--no-artwork .item__icon {
   width: 4.375rem;
   height: 4.375rem;
@@ -763,7 +763,7 @@ i.btn {
   background-image: url("../images/ic_album_black_48px.svg");
   opacity: .45;
 }
-/* line 62, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
+/* line 62, C:/projects/litecloud-master/node_modules/bemify/sass/_bemify.scss */
 .item.is-active {
   padding-top: 0.625rem;
   padding-bottom: 0.625rem;
@@ -774,16 +774,16 @@ i.btn {
 .item.is-active:hover .item__meta {
   margin-top: 0;
 }
-/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud-master/node_modules/bemify/sass/_bemify.scss */
 .item.is-active .item__thumbnail {
   background-blend-mode: multiply;
 }
-/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud-master/node_modules/bemify/sass/_bemify.scss */
 .item.is-active .item__meta {
   margin-top: 0;
 }
 
-/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud-master/node_modules/bemify/sass/_bemify.scss */
 .item__thumbnail {
   width: 8.4375rem;
   height: 8.4375rem;
@@ -793,16 +793,16 @@ i.btn {
   transition: background-color .2s, background-blend-mode .2s;
   image-rendering: -webkit-optimize-contrast;
 }
-/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud-master/node_modules/bemify/sass/_bemify.scss */
 .item__meta {
   list-style-type: none;
   transition: margin-top .1s;
 }
-/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud-master/node_modules/bemify/sass/_bemify.scss */
 .item__truncated {
   font-size: 0;
 }
-/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud-master/node_modules/bemify/sass/_bemify.scss */
 .item__tag {
   right: 0;
   top: 0.4375rem;
@@ -814,7 +814,7 @@ i.btn {
   max-width: 70%;
 }
 
-/* line 35, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
+/* line 35, C:/projects/litecloud-master/node_modules/bemify/sass/_bemify.scss */
 .list {
   grid-row-gap: 2.1875rem;
   margin-left: 1.5625rem;
@@ -822,7 +822,7 @@ i.btn {
   padding-top: 2.1875rem;
   padding-bottom: 2.1875rem;
 }
-/* line 62, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
+/* line 62, C:/projects/litecloud-master/node_modules/bemify/sass/_bemify.scss */
 .list.no-results {
   margin-right: 1.5625rem;
 }
@@ -889,7 +889,7 @@ i.btn {
 /* line 8, ../../src/sass/components/_player.scss */
 progress {
   border-radius: 0.125rem;
-  height: 0.375rem;
+  height: 0.4375rem;
   -webkit-appearance: none;
   appearance: none;
 }
@@ -913,7 +913,7 @@ progress::-webkit-progress-value {
   font-size: 2.8125rem;
 }
 
-/* line 35, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
+/* line 35, C:/projects/litecloud-master/node_modules/bemify/sass/_bemify.scss */
 .playing {
   margin-top: 0.625rem;
 }
@@ -923,18 +923,18 @@ progress::-webkit-progress-value {
   border-radius: 0;
 }
 
-/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud-master/node_modules/bemify/sass/_bemify.scss */
 .playing__thumbnail {
   width: 16.25rem;
   height: 16.25rem;
   border-radius: 0.125rem;
   background-size: cover;
 }
-/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud-master/node_modules/bemify/sass/_bemify.scss */
 .playing__description {
   width: 70%;
 }
-/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud-master/node_modules/bemify/sass/_bemify.scss */
 .playing__title {
   font-size: 0.8125rem;
 }
@@ -942,7 +942,7 @@ progress::-webkit-progress-value {
 .playing__title:not(:empty) {
   padding-top: 0.625rem;
 }
-/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud-master/node_modules/bemify/sass/_bemify.scss */
 .playing__artist {
   font-size: 0.75rem;
 }
@@ -1034,7 +1034,7 @@ progress::-webkit-progress-value {
   border-width: 0;
 }
 
-/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud-master/node_modules/bemify/sass/_bemify.scss */
 .component__header, .playing__header {
   margin-top: 0;
   margin-bottom: 0.625rem;
@@ -1119,7 +1119,7 @@ main {
   transition: background-image .8s;
 }
 
-/* line 62, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
+/* line 62, C:/projects/litecloud-master/node_modules/bemify/sass/_bemify.scss */
 .show-grid .list.has-results {
   grid-template-columns: repeat(auto-fill, minmax(12.1875rem, 1fr));
   grid-column-gap: 1.875rem;
@@ -1128,7 +1128,7 @@ main {
   margin-left: 1.25rem;
   padding-top: 0;
 }
-/* line 35, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
+/* line 35, C:/projects/litecloud-master/node_modules/bemify/sass/_bemify.scss */
 .show-grid .item {
   text-transform: capitalize;
   width: 12.1875rem;
@@ -1138,26 +1138,26 @@ main {
   padding-left: 0;
   transition: none;
 }
-/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud-master/node_modules/bemify/sass/_bemify.scss */
 .show-grid .item:hover .item__thumbnail {
   background-blend-mode: screen;
 }
-/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud-master/node_modules/bemify/sass/_bemify.scss */
 .show-grid .item:hover .item__meta {
   margin-top: 0;
 }
-/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud-master/node_modules/bemify/sass/_bemify.scss */
 .show-grid .item--no-artwork .item__thumbnail {
   width: inherit;
   height: 12.1875rem;
 }
-/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud-master/node_modules/bemify/sass/_bemify.scss */
 .show-grid .item--no-artwork .item__icon {
   width: 6.25rem;
   height: 6.25rem;
   background-size: 6.25rem 6.25rem;
 }
-/* line 62, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
+/* line 62, C:/projects/litecloud-master/node_modules/bemify/sass/_bemify.scss */
 .show-grid .item.is-active {
   padding-top: 0;
   padding-bottom: 0;
@@ -1172,32 +1172,32 @@ main {
   line-height: 12.1875rem;
   font-size: 1rem;
 }
-/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud-master/node_modules/bemify/sass/_bemify.scss */
 .show-grid .item__thumbnail {
   height: 12.1875rem;
   width: inherit;
   margin-right: 0;
   border-radius: 0.125rem;
 }
-/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud-master/node_modules/bemify/sass/_bemify.scss */
 .show-grid .item__meta {
   overflow: visible;
   height: 5.625rem;
   padding-top: 0.9375rem;
   transition: none;
 }
-/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud-master/node_modules/bemify/sass/_bemify.scss */
 .show-grid .item__title {
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
-/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud-master/node_modules/bemify/sass/_bemify.scss */
 .show-grid .item__author {
   width: 6.25rem;
   font-size: 0.75rem;
 }
-/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud-master/node_modules/bemify/sass/_bemify.scss */
 .show-grid .item__creator {
   bottom: 0;
 }
@@ -1273,7 +1273,7 @@ main {
   color: #333333;
 }
 
-/* line 52, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
+/* line 52, C:/projects/litecloud-master/node_modules/bemify/sass/_bemify.scss */
 .btn--nav {
   color: #555;
 }
@@ -1281,7 +1281,7 @@ main {
 .btn--nav:hover:enabled {
   color: #84bd00;
 }
-/* line 62, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
+/* line 62, C:/projects/litecloud-master/node_modules/bemify/sass/_bemify.scss */
 .btn.is-active {
   color: #84bd00;
 }
@@ -1430,7 +1430,7 @@ main {
 
 /* line 3, ../../src/sass/themes/default-theme/_player.scss */
 progress {
-  box-shadow: inset 0 -0.0625rem 0.0625rem #333333;
+  box-shadow: inset 0 -0.0625rem 0.0625rem #444;
 }
 /* line 7, ../../src/sass/themes/default-theme/_player.scss */
 progress::-webkit-progress-value {
@@ -1460,11 +1460,11 @@ progress::-webkit-progress-bar {
 .item:hover {
   background-color: #191919;
 }
-/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud-master/node_modules/bemify/sass/_bemify.scss */
 .item:hover .item__title {
   color: #84bd00;
 }
-/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud-master/node_modules/bemify/sass/_bemify.scss */
 .item--no-artwork:hover .item__thumbnail {
   background-color: #171717;
 }
@@ -1473,28 +1473,28 @@ progress::-webkit-progress-bar {
   background-color: #151515;
   border-bottom-color: #252525;
 }
-/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud-master/node_modules/bemify/sass/_bemify.scss */
 .item.is-active .item__thumbnail {
   background-color: #666;
 }
-/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud-master/node_modules/bemify/sass/_bemify.scss */
 .item.is-active.item--no-artwork .item__thumbnail {
   background-color: #151515;
 }
 
-/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud-master/node_modules/bemify/sass/_bemify.scss */
 .item__thumbnail {
   background-color: #111111;
 }
-/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud-master/node_modules/bemify/sass/_bemify.scss */
 .item__creator {
   color: #444;
 }
-/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud-master/node_modules/bemify/sass/_bemify.scss */
 .item__title {
   color: #818181;
 }
-/* line 43, C:/projects/litecloud/node_modules/bemify/sass/_bemify.scss */
+/* line 43, C:/projects/litecloud-master/node_modules/bemify/sass/_bemify.scss */
 .item__tag {
   background-color: #000;
   color: #fff;

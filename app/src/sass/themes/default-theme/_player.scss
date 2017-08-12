@@ -1,7 +1,7 @@
 // scss-lint:disable Compass::PropertyWithMixin
 
 progress {
-    box-shadow: inset 0 -#{to-rem(1)} #{to-rem(1)} $color-333;
+    box-shadow: inset 0 -#{to-rem(1)} #{to-rem(1)} $color-tundora;
 
     &::-webkit-progress {
         &-value {
