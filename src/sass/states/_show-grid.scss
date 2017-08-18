@@ -15,7 +15,7 @@
             // https://alligator.io/css/css-grid-layout-fr-unit/
             grid-template-columns: repeat(auto-fill, minmax($large-thumbnail-size, 1fr));
             grid-column-gap: to-rem(30);
-            justify-content: space-between; // required by both flex/grid
+            justify-items: center;
             margin-top: to-rem(35);
             margin-left: to-rem(20);
             padding-top: 0;
@@ -34,7 +34,7 @@
         padding-left: 0;
         transition: none;
 
-        // TODO: bemify
+        // TODO: classify & bemify
         small {
             @extend %inline-block;
 

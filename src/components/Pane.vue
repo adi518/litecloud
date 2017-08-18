@@ -1,5 +1,5 @@
 <template lang="pug">
-nav(id="nav" class="nav")  
+nav.nav#nav
     Search
     Playing
     Player

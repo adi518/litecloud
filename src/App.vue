@@ -1,9 +1,9 @@
 <template lang="pug">
-div(id="app" :class="classes")
+#app(:class="classes")
   Titlebar
   Pane
-  PaneRight  
-  main#main
+  PaneRight
+  main#main(@scroll="onScroll")
     List
   #loader
   #overlay
@@ -12,8 +12,9 @@ div(id="app" :class="classes")
 
 <script>
 // Assets
-import materialIcons from 'material-design-icons/iconfont/material-icons.css'
-import normalize from 'normalize.css'
+import 'material-design-icons/iconfont/material-icons.css'
+import 'normalize.css'
+import { log, onScrolled } from '@/utils'
 
 // Components
 import Titlebar from '@/components/Titlebar'
@@ -33,6 +34,20 @@ export default {
       return {
         'show-grid': this.$store.state.grid
       }
+    }
+  },
+  methods: {
+    onScroll(event) {
+      onScrolled(event.target).then(() => {
+        const state = this.$store.state
+        const query = state.query[state.offset + 1]
+        if (query) {
+          this.$store.dispatch('GET_TRACKS', {
+            query: query,
+            offset: true
+          })
+        }
+      })
     }
   }
 }

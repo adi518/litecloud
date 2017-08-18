@@ -9,10 +9,9 @@
       small.item__author
       small.item__duration
 </template>
-//- syntax highlight fixer comment
+
 <script>
 export default {
-  name: 'item',
+  
 }
 </script>
-<style lang="scss"></style>

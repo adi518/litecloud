@@ -1,5 +1,5 @@
 <template lang="pug">
-input(id="search" placeholder="..." v-model="keyword")
+input#search(placeholder="..." v-model="keyword")
 </template>
 
 <script>

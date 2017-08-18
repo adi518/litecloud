@@ -7,7 +7,7 @@ import Vuex from 'vuex'
 
 // Resources
 import { version } from '~/package.json'
-import { param, log, isDev } from '@/utils'
+import { log, isDev, param } from '@/utils'
 import path from 'path'
 import xhr from 'axios'
 import vendor from 'soundcloud'
@@ -17,7 +17,7 @@ Vue.use(Vuex)
 // State
 const state = {
   isDev,
-  // Meta
+  // Meta-data
   version,
   test: true,
   grid: true,
@@ -38,8 +38,10 @@ const state = {
 }
 
 if (isDev) {
-  state.keyword = 'alle farben'
+  state.keyword = 'tash sultana'
 }
+
+state.vendor.queryDefaults.client_id = state.vendor.clientId
 
 // Initialize Vendor API
 vendor.initialize({
@@ -56,45 +58,38 @@ const mutations = {
 const actions = {
   GET_TRACKS({ state, commit }, payload) {
     payload = payload || {}
-    let fetch
+    let queryURI
     if (payload.offset) {
-      fetch = xhr.get(query)
+      queryURI = payload.query
     } else {
-      // geo filtering
-      // US 37.0902° N, 95.7129° W
-      // EU 54.5260° N, 15.2551° W
-      // https://developers.soundcloud.com/docs/api/reference#tracks
-      const params = param(Object.assign(
-        {},
-        state.vendor.queryDefaults,
-        {
-          q: payload.query,
-          linked_partitioning: true,
-          tag_list: 'geo:lat=54.5260%20geo:lon=15.2551'
-        }))
-      var queryURI = `/tracks?${params}` // a redundant reference to ease debugging
+      // https://github.com/mzabriskie/axios/issues/350#issuecomment-227270046
+      const params = param(Object.assign({}, state.vendor.queryDefaults, {
+        q: payload.query,
+        linked_partitioning: true,
+        // geo filtering
+        // US 37.0902° N, 95.7129° W
+        // EU 54.5260° N, 15.2551° W
+        // https://developers.soundcloud.com/docs/api/reference#tracks
+        tag_list: 'geo:lat=54.5260%20geo:lon=15.2551?format=json'
+      }))
+      queryURI = `https://api.soundcloud.com/tracks?${params}` // a redundant reference to ease debugging
       state.query = [].concat(queryURI)
-      fetch = vendor.get(queryURI)
     }
-    fetch.then(function (response) {
+    xhr.get(queryURI).then(function ({ data }) {
       // new search?
       if (!state.tracks || payload.new) {
         // state.$main.scrollTop(0) // TODO: make reactive
         state.offset = 0
         state.tracks = []
       }
-      if (response.collection.length) {
-        state.tracks = state.tracks.concat(response.collection)
+      if (data.collection.length) {
+        state.tracks = state.tracks.concat(data.collection)
         // is partitioned response?
         // https://developers.soundcloud.com/blog/offset-pagination-deprecated
-        if (response.next_href) {
-          state.query.push(response.next_href)
+        if (data.next_href) {
+          state.query.push(data.next_href)
         }
       }
-      // TODO: make reactive
-      // drawItems(response.collection || [], {
-      //   append: offset
-      // })
     })
   },
 }

@@ -16,6 +16,7 @@
   "dependencies": {
     "axios": "^0.16.2",
     "jquery": "^3.2.1",
+    "jquery-slim": "^3.0.0",
     "lodash.debounce": "^4.0.8",
     "soundcloud": "^3.1.2",
     "striptags": "^3.0.1",
