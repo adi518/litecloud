@@ -39,7 +39,7 @@ const focusedWindow = BrowserWindow.getFocusedWindow()
 cache = $.extend({}, cache, {
     version: pjson.version,
     test: true,
-    testKeyword: 'alle farben',
+    testKeyword: 'years and years',
     keyupDebounceDelay: 500,
     loaderDelay: 1500,
     init: {
