@@ -42,10 +42,8 @@ export default {
         const state = this.$store.state
         const query = state.query[state.offset + 1]
         if (query) {
-          this.$store.dispatch('GET_TRACKS', {
-            query: query,
-            offset: true
-          })
+          this.$store.commit('OFFSET', true)
+          this.$store.dispatch('GET_TRACKS', query)
         }
       })
     }

@@ -30,6 +30,7 @@ module.exports = {
     "no-tabs": 0, // TODO: remove once formatting works
     "no-trailing-spaces": 0, // TODO: remove once formatting works
     "space-before-function-paren": 0, // TODO: remove once formatting works
-    "no-undef": 0 // TODO: remove once formatting works
+    "no-undef": 0, // TODO: remove once formatting works
+    "no-unneeded-ternary": 0 // TODO: remove once formatting works
   }
 }

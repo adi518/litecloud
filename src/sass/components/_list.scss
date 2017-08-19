@@ -16,6 +16,7 @@
          @extend %cursor-default;
         @extend %talign-center;
         @extend %uppercase;
+        @extend %block;
         margin-right: to-rem(25);
     }
 }

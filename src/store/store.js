@@ -7,16 +7,15 @@ import Vuex from 'vuex'
 
 // Resources
 import { version } from '~/package.json'
-import { log, isDev, param } from '@/utils'
-import path from 'path'
-import xhr from 'axios'
-import vendor from 'soundcloud'
+import { isDev, stripTags, msToHMS } from '@/utils'
+import Vendor from 'soundcloud'
+
+import * as actions from './actions'
 
 Vue.use(Vuex)
 
 // State
 const state = {
-  isDev,
   // Meta-data
   version,
   test: true,
@@ -25,6 +24,7 @@ const state = {
   searchDebounceDelay: 500,
   truncatedTitleLength: 20,
   // Data
+  keyword: null,
   tracks: [],
   played: [],
   offset: null,
@@ -43,61 +43,65 @@ if (isDev) {
 
 state.vendor.queryDefaults.client_id = state.vendor.clientId
 
-// Initialize Vendor API
-vendor.initialize({
+// TODO:
+Vendor.initialize({
   client_id: state.vendor.clientId
 })
 
-// define the possible mutations that can be applied to our state
-const mutations = {
-  SET_TRACKS(state) {
-    console.log(state.tracks)
+const splitTrackTitle = title => {
+  let split = title.split('-')
+  return {
+    artist: split[0] || '',
+    title: split[1] || ''
   }
 }
 
-const actions = {
-  GET_TRACKS({ state, commit }, payload) {
-    payload = payload || {}
-    let queryURI
-    if (payload.offset) {
-      queryURI = payload.query
-    } else {
-      // https://github.com/mzabriskie/axios/issues/350#issuecomment-227270046
-      const params = param(Object.assign({}, state.vendor.queryDefaults, {
-        q: payload.query,
-        linked_partitioning: true,
-        // geo filtering
-        // US 37.0902° N, 95.7129° W
-        // EU 54.5260° N, 15.2551° W
-        // https://developers.soundcloud.com/docs/api/reference#tracks
-        tag_list: 'geo:lat=54.5260%20geo:lon=15.2551?format=json'
-      }))
-      queryURI = `https://api.soundcloud.com/tracks?${params}` // a redundant reference to ease debugging
-      state.query = [].concat(queryURI)
-    }
-    xhr.get(queryURI).then(function ({ data }) {
-      // new search?
-      if (!state.tracks || payload.new) {
-        // state.$main.scrollTop(0) // TODO: make reactive
-        state.offset = 0
-        state.tracks = []
+const getters = {
+  tracks: state => {
+    const tracks = state.tracks.map(track => {
+      track.isPlaying = false
+      if (!track.custom) {
+        track.custom = splitTrackTitle(stripTags(track.title))
       }
-      if (data.collection.length) {
-        state.tracks = state.tracks.concat(data.collection)
-        // is partitioned response?
-        // https://developers.soundcloud.com/blog/offset-pagination-deprecated
-        if (data.next_href) {
-          state.query.push(data.next_href)
-        }
-      }
+      return track
     })
+    state.tracks = tracks
+    return state.tracks
   },
+  keyword: state => {
+    return state.keyword
+  }
 }
 
-// create the Vuex instance by combining the state and mutations objects
-// then export the Vuex store for use by our components
+const mutations = {
+  KEYWORD: (state, payload) => {
+    state.keyword = payload
+  },
+  OFFSET: (state, payload) => {
+    state.offset = payload
+  },
+  TRACKS: (state, payload) => {
+    // new search?
+    if (!state.tracks || !state.offset) {
+      // state.$main.scrollTop(0) // TODO: make reactive
+      state.offset = null
+      state.tracks = []
+      state.query = [].concat(payload.queryURI)
+    }
+    if (payload.data.collection.length) {
+      state.tracks = state.tracks.concat(payload.data.collection)
+      // is partitioned response?
+      // https://developers.soundcloud.com/blog/offset-pagination-deprecated
+      if (payload.data.next_href) {
+        state.query.push(payload.data.next_href)
+      }
+    }
+  }
+}
+
 export const store = new Vuex.Store({
   state,
+  getters,
   mutations,
   actions
 })
