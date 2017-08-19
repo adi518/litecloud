@@ -48,6 +48,7 @@
         padding-bottom: to-rem(10);
         padding-left: to-rem(10);
         border-bottom: to-rem(1) solid;
+        border-right: 4px solid $color-pistachio;
     }
 
     @include scope ('.item.is-active') {

@@ -769,8 +769,9 @@ i.btn {
   padding-bottom: 0.625rem;
   padding-left: 0.625rem;
   border-bottom: 0.0625rem solid;
+  border-right: 4px solid #84bd00;
 }
-/* line 56, ../../src/sass/components/_item.scss */
+/* line 57, ../../src/sass/components/_item.scss */
 .item.is-active:hover .item__meta {
   margin-top: 0;
 }
@@ -1162,8 +1163,9 @@ main {
   padding-top: 0;
   padding-bottom: 0;
   border-bottom-width: 0;
+  border-right: 0;
 }
-/* line 90, ../../src/sass/states/_show-grid.scss */
+/* line 91, ../../src/sass/states/_show-grid.scss */
 .show-grid .item.is-active .item__thumbnail {
   background-blend-mode: multiply;
 }
