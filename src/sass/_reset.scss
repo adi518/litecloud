@@ -2,15 +2,16 @@
 // bof: https://necolas.github.io/normalize.css/
 // @import 'node_modules/normalize.css/normalize';
 // eof: https://necolas.github.io/normalize.css/
+// https://developer.mozilla.org/en-US/docs/Web/CSS/font-smooth
+// https://developer.mozilla.org/en-US/docs/Web/CSS/text-rendering
 
 html {
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased; // https://developer.mozilla.org/en-US/docs/Web/CSS/font-smooth
-    text-rendering: optimizeLegibility; // https://developer.mozilla.org/en-US/docs/Web/CSS/text-rendering
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  box-sizing: border-box;
+}
 
-    &::after,
-    &::before,
-    * {
-        box-sizing: inherit;
-    }
+*, *::before, *::after {
+  box-sizing: inherit;
 }
