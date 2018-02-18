@@ -1,0 +1,11 @@
+// scss-lint:disable Compass::PropertyWithMixin
+// @import 'components/*.*';
+
+@include component ('component') {
+    @include element ('header') {
+        @extend %uppercase;
+        margin-top: 0;
+        margin-bottom: to-rem(10);
+        font-size: to-rem(14);
+    }
+}

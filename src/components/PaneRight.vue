@@ -1,5 +1,5 @@
 <template lang="pug">
-nav(id="nav-right" class="nav")
+nav.nav
     button(id="toggleYoutube" class="btn btn--nav btn--solo-icon center block" disabled)
         i(class="icon material-icons") subscriptions
     button(id="toggleSettings" class="btn btn--nav btn--solo-icon center block" disabled)
@@ -21,3 +21,27 @@ nav(id="nav-right" class="nav")
     button(id="addToFavorites" class="btn btn--nav btn--solo-icon center block" disabled)
         i(class="icon material-icons") favorite_border
 </template>
+
+<style lang="scss" scoped>
+.nav {
+  @extend %fixed;
+  @extend %translate3d-hack;
+  right: 0;
+  z-index: 2;
+  width: $nav-right-width;
+  height: calc(100% - #{$titlebar-height});
+  padding: to-rem(35) to-rem(20) to-rem(20);
+  transform: translateY($titlebar-height);
+
+  .btn--solo-icon {
+    @include pseudo ('before') {
+      @extend %no-content;
+      @extend %block;
+      height: to-rem(1);
+      background-color: $color-181;
+      margin-bottom: to-rem(20);
+    }
+    margin-bottom: to-rem(15);
+  }
+}
+</style>

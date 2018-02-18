@@ -15,54 +15,11 @@ body {
     @extend %no-margin;
 }
 
-#nav,
-#nav-right,
-main {
-    height: calc(100% - #{$titlebar-height});
-}
-
-#nav {
-    width: $nav-width;
-    padding: to-rem(35) to-rem(20) to-rem(20);
-    transform: translate3d(0, $titlebar-height, 0);
-    border-right: to-rem(1) solid;
-}
-
-#nav-right {
-    width: $nav-right-width;
-    padding: to-rem(35) to-rem(20) to-rem(20);
-    transform: translateY($titlebar-height);
-    right: 0;
-
-    .btn--solo-icon {
-        @include pseudo ('before') {
-            @extend %no-content;
-            @extend %block;
-            height: to-rem(1);
-            background-color: $color-181;
-            margin-bottom: to-rem(20);
-        }
-        //
-        margin-bottom: to-rem(15);
-    }
-}
-
-main {
-    @extend %overflow-auto;
-    width: $main-width;
-    transform: translate3d($nav-width, $titlebar-height, 0);
-    overflow-x: hidden; // keep content from causing h.scroll
-}
-
 //
 // POSITIONING
 //
 #mask,
-#nav,
-#nav-right,
-#overlay,
-#titlebar,
-main {
+#overlay {
     @extend %fixed;
     @extend %translate3d-hack;
 }
@@ -73,13 +30,6 @@ main {
     @include pseudo ('after') {
         z-index: 1;
     }
-}
-
-#nav,
-#nav-right,
-#titlebar,
-main {
-    z-index: 2;
 }
 
 #overlay {

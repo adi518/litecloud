@@ -45,8 +45,8 @@ $font-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans,
 $font-family: 'Montserrat', #{$font-stack} !default;
 $font-family-bold: 'Montserrat-Medium', #{$font-stack} !default;
 $font-family-bold-italic: 'Montserrat-MediumItalic', #{$font-stack} !default;
-$logo-path: 'assets/img/logo.png' !default;
-$no-artwork-path: 'assets/img/ic_album_black_48px.svg' !default;
+$logo-path: '~@/assets/img/logo.png' !default;
+$no-artwork-path: '~@/assets/img/ic_album_black_48px.svg' !default;
 $titlebar-height: to-rem(40) !default;
 $loader-dim: to-rem(112) !default;
 $loader-animation-duration: 1.5s !default;

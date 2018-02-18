@@ -44,6 +44,13 @@ exports.cssLoaders = function (options) {
     }
   }
 
+  const abstracts = `
+    @import '~@/sass/functions';
+    @import '~@/sass/variables';
+    @import '~@/sass/mixins';
+    @import '~@/sass/placeholders';
+  `
+
   // https://vue-loader.vuejs.org/en/configurations/extract-css.html
   return {
     css: generateLoaders(),
@@ -51,7 +58,11 @@ exports.cssLoaders = function (options) {
     less: generateLoaders('less'),
     sass: generateLoaders('sass', { indentedSyntax: true }),
     // scss: generateLoaders('sass'),
-    scss: generateLoaders('sass').concat({ loader: 'import-glob' }),
+    scss: generateLoaders('sass', {
+      // https://github.com/vuejs/vue-loader/issues/328#issuecomment-270077773
+      includePaths: ['./src/sass'],
+      data: abstracts
+    }).concat({ loader: 'import-glob' }),
     stylus: generateLoaders('stylus'),
     styl: generateLoaders('stylus')
   }

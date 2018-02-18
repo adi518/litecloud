@@ -59,6 +59,9 @@ const Utils = {
         resolve()
       }
     })
+  },
+  isScrolled(el) {
+    return el.scrollTop + el.clientHeight === el.scrollHeight
   }
 }
 
@@ -72,4 +75,5 @@ export const pad = Utils.pad
 export const msToHMS = Utils.msToHMS
 export const stripTags = Utils.stripTags
 export const onScrolled = Utils.onScrolled
+export const isScrolled = Utils.isScrolled
 

@@ -9,9 +9,3 @@
       small.item__author
       small.item__duration
 </template>
-
-<script>
-export default {
-  
-}
-</script>

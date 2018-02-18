@@ -1,38 +1,38 @@
 // https://css-tricks.com/html5-progress-element/
 // scss-lint:disable Compass::PropertyWithMixin
 
-#player {
-    margin-top: to-rem(16);
-}
+// #player {
+//     margin-top: to-rem(16);
+// }
 
-progress {
-    @extend %block;
-    @extend %full-width; // override user-agent
-    @extend %pointer;
-    border-radius: to-rem(2);
-    height: to-rem(6);
-    -webkit-appearance: none;
-    appearance: none;
+// progress {
+//     @extend %block;
+//     @extend %full-width; // override user-agent
+//     @extend %pointer;
+//     border-radius: to-rem(2);
+//     height: to-rem(6);
+//     -webkit-appearance: none;
+//     appearance: none;
 
-    &::-webkit-progress {
-        //
-        &-bar {
-            border-radius: to-rem(2);
-            transition: width .2s;
-        }
+//     &::-webkit-progress {
+//         //
+//         &-bar {
+//             border-radius: to-rem(2);
+//             transition: width .2s;
+//         }
 
-        &-value {
-            border-radius: to-rem(2);
-        }
-    }
-}
+//         &-value {
+//             border-radius: to-rem(2);
+//         }
+//     }
+// }
 
-.nav--player {
-    @extend %talign-center;
-    margin-top: to-rem(10);
-}
+// .nav--player {
+//     @extend %talign-center;
+//     margin-top: to-rem(10);
+// }
 
-.btn.btn--player { // we need stronger specificity
-    @extend %btn--clear;
-    font-size: to-rem(45);
-}
+// .btn.btn--player { // we need stronger specificity
+//     @extend %btn--clear;
+//     font-size: to-rem(45);
+// }

@@ -3,7 +3,7 @@
   Titlebar
   Pane
   PaneRight
-  main#main(@scroll="onScroll")
+  main(@scroll="onScroll")
     List
   #loader
   #overlay
@@ -14,7 +14,7 @@
 // Assets
 import 'material-design-icons/iconfont/material-icons.css'
 import 'normalize.css'
-import { log, onScrolled } from '@/utils'
+import { log, onScrolled, isScrolled } from '@/utils'
 
 // Components
 import Titlebar from '@/components/Titlebar'
@@ -27,7 +27,7 @@ export default {
     Titlebar,
     Pane,
     PaneRight,
-    List,
+    List
   },
   computed: {
     classes() {
@@ -38,14 +38,14 @@ export default {
   },
   methods: {
     onScroll(event) {
-      onScrolled(event.target).then(() => {
+      if (isScrolled(event.target)) {
         const state = this.$store.state
         const query = state.query[state.offset + 1]
         if (query) {
           this.$store.commit('OFFSET', true)
           this.$store.dispatch('GET_TRACKS', query)
         }
-      })
+      }
     }
   }
 }
@@ -70,4 +70,17 @@ export default {
 @import './sass/themes/*.*';
 @import './sass/themes/default-theme/states/*.*';
 @import './sass/themes';
+</style>
+
+<style lang="scss" scoped>
+main {
+  @extend %fixed;
+  @extend %overflow-auto;
+  @extend %translate3d-hack;
+  z-index: 2;
+  width: $main-width;
+  height: calc(100% - #{$titlebar-height});
+  transform: translate3d($nav-width, $titlebar-height, 0);
+  overflow-x: hidden; // keep content from causing h.scroll
+}
 </style>

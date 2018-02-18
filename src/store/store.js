@@ -58,15 +58,14 @@ const splitTrackTitle = title => {
 
 const getters = {
   tracks: state => {
-    const tracks = state.tracks.map(track => {
+    return state.tracks.map(track => {
       track.isPlaying = false
-      if (!track.custom) {
+      const regularTrack = !track.custom
+      if (regularTrack) {
         track.custom = splitTrackTitle(stripTags(track.title))
       }
       return track
     })
-    state.tracks = tracks
-    return state.tracks
   },
   keyword: state => {
     return state.keyword

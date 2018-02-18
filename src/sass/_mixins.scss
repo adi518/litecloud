@@ -9,6 +9,31 @@
 @import 'node_modules/bemify/sass/bemify';
 //
 //
+@mixin full-width {
+  width: 100%;
+}
+//
+//
+@mixin pointer {
+  cursor: pointer;
+}
+//
+//
+@mixin _block {
+  display: block;
+}
+//
+//
+@mixin cursor-default {
+  cursor: default;
+}
+//
+//
+@mixin half-border-radius {
+    border-radius: 50%;
+}
+//
+//
 @mixin scope($rule) {
      @at-root{
         #{$rule} {
